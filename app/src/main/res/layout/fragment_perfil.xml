@@ -5,6 +5,168 @@
     android:layout_height="match_parent"
     tools:context=".Perfil.PerfilFragment">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="35dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/perfil"
+
+            android:layout_gravity="center">
+        </ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cargo"
+            android:textSize="25sp"
+            android:layout_marginTop="10dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp">
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ID:"
+            android:textColor="@color/verde"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/esp_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="00"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginLeft="25dp">
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nombre:"
+            android:textColor="@color/verde"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="15dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="nombre"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginLeft="25dp">
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Apellidos:"
+            android:textColor="@color/verde"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="15dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/apellido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="apellido"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginLeft="25dp">
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Correo:"
+            android:textColor="@color/verde"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="15dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/correo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="correo"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginLeft="25dp">
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Teléfono:"
+            android:textColor="@color/verde"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="15dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/telefono"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="telefono"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginLeft="25dp">
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Rol:"
+            android:textColor="@color/verde"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="15dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/rol"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="rol"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_marginLeft="25dp">
+        </TextView>
+
+        <Button
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/verde"
+            android:text="Actualiza tus Datos"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center">
+        </Button>
+    </LinearLayout>
 
 
 </FrameLayout>
