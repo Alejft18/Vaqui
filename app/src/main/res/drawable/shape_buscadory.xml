@@ -6,8 +6,7 @@
 
     <stroke
         android:color="@color/grey"
-        android:width="3dp"
-        >
+        android:width="3dp">
 
     </stroke>
 </shape>
