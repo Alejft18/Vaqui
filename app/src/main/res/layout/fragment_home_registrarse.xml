@@ -68,7 +68,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="300dp"
                 android:layout_height="35dp"
-                android:gravity="left"
+                android:gravity="center"
                 android:hint="Apellidos"
                 tools:visibility="invisible" />
 
