@@ -19,10 +19,13 @@
         android:layout_height="wrap_content" >
 
         <SearchView
+            android:id="@+id/searchhView"
             android:layout_width="match_parent"
             android:layout_height="35dp"
+            android:queryHint="Ingresa el ID"
             android:layout_margin="25dp"
-            android:background="@drawable/shape_buscador"></SearchView>
+            android:background="@drawable/shape_buscador">
+        </SearchView>
 
         <View
             android:layout_width="match_parent"
