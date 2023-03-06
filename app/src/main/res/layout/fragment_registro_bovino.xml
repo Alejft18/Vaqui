@@ -11,12 +11,13 @@
         android:orientation="vertical">
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
-            android:text="Ingresa los siguientes datos"
+            android:text="Ingresa los siguientes datos del bovino"
             android:textAlignment="center"
-            android:textSize="20dp"
+            android:layout_gravity="center"
+            android:textSize="16dp"
             android:textStyle="bold">
 
         </TextView>
@@ -33,7 +34,7 @@
                 android:layout_width="300dp"
                 android:layout_height="35dp"
                 android:gravity="left"
-                android:hint="Numero de documento"
+                android:hint="ID Bovino"
                 android:visibility="invisible" />
 
 
@@ -51,7 +52,7 @@
                 android:layout_width="300dp"
                 android:layout_height="35dp"
                 android:gravity="left"
-                android:hint="Numero completo"
+                android:hint="Raza Bovino"
                 tools:visibility="invisible" />
 
 
@@ -69,7 +70,7 @@
                 android:layout_width="300dp"
                 android:layout_height="35dp"
                 android:gravity="left"
-                android:hint="Apellidos"
+                android:hint="Genero Bovino"
                 tools:visibility="invisible" />
 
 
@@ -87,7 +88,7 @@
                 android:layout_width="300dp"
                 android:layout_height="35dp"
                 android:gravity="left"
-                android:hint="Numero de telefono"
+                android:hint="Fecha de nacimiento"
                 android:visibility="visible"
                 tools:visibility="invisible" />
 
@@ -95,6 +96,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -112,53 +114,20 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/shape_home"
-            android:orientation="horizontal">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="300dp"
-                android:layout_height="35dp"
-                android:gravity="left"
-                android:hint="Nueva contraseña"
-                android:visibility="visible"
-                tools:visibility="invisible" />
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/shape_home"
-            android:orientation="horizontal">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="300dp"
-                android:layout_height="35dp"
-                android:gravity="left"
-                android:hint="Codigo de finca"
-                android:visibility="visible"
-                tools:visibility="invisible" />
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
         <Button
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="70dp"
             android:backgroundTint="@color/principalverde"
-            android:text="Registrarse"
+            android:text="ingresar bovino"
             android:textColor="@color/white"></Button>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
 
     </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
