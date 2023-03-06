@@ -4,82 +4,56 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
 
+
+
+
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvBuscador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+    <RelativeLayout
+        android:id="@+id/RlBuscador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
 
         <SearchView
-            android:id="@+id/searchView2"
-            android:layout_width="350dp"
+            android:id="@+id/searchhView"
+            android:layout_width="match_parent"
             android:layout_height="35dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/shape_menu" >
-
+            android:queryHint="Ingresa el ID"
+            android:layout_margin="25dp"
+            android:background="@drawable/shape_menu">
         </SearchView>
 
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.5"
+            android:background="@color/white">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="350dp"
-            android:layout_height="100dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="25dp">
+        </View>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/shape_menu"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="90dp"
-                    android:layout_height="90dp"
-                    android:src="@drawable/perfil"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="15dp"></ImageView>
-
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="60dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="25dp"
-                        android:textStyle="bold"
-                        android:text="Cedula"></TextView>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Cargo"
-                        android:textAlignment="center"
-                        android:layout_marginTop="7dp"
-                        android:textSize="18dp"
-                        android:textStyle="bold"></TextView>
-
-                </LinearLayout>
-
-
-
-
-
-            </LinearLayout>
-
-        </androidx.cardview.widget.CardView>
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminateTint="@color/verde">
+        </ProgressBar>
+    </RelativeLayout>
 
 
 
 
 
 
-    </LinearLayout>
 
 
 
