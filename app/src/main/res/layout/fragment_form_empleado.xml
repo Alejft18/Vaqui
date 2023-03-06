@@ -29,6 +29,14 @@
         app:cardBackgroundColor="@color/white">
 
         <ImageView
+            android:layout_width="30dp"
+            android:layout_height="20dp"
+            android:src="@drawable/cerrar"
+            android:layout_marginLeft="6dp"
+            android:layout_marginTop="6dp">
+        </ImageView>
+
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/empleado"
