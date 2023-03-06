@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".form_empleado">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.4"
+            android:background="@color/black">
+        </View>
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="300dp"
+        android:layout_height="280dp"
+        android:layout_marginLeft="55dp"
+        android:layout_marginTop="220dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="8dp"
+        app:cardBackgroundColor="@color/white">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/empleado"
+            android:layout_marginLeft="120dp"
+            android:layout_marginTop="30dp">
+        </ImageView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Juan Esteban Hernan Diaz"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="100dp"
+            android:textStyle="bold"
+            android:textSize="16dp">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cédula:      102387451"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="140dp"
+            android:textStyle="normal"
+            android:textSize="14dp">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cargo:      Ordeñador principal"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="160dp"
+            android:textStyle="normal"
+            android:textSize="14dp">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EPS:      Aliansalud"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="180dp"
+            android:textStyle="normal"
+            android:textSize="14dp">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fecha de nacimiento:      31/10/1999"
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="200dp"
+            android:textStyle="normal"
+            android:textSize="14dp">
+        </TextView>
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>
