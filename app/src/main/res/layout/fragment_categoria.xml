@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,14 +8,56 @@
     android:background="@color/gris">
 
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/verde"
+        app:layout_anchor="@+id/toolbar"
+        app:layout_anchorGravity="center">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vaqui"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="cargo"
+                android:textColor="@color/white"
+                android:textSize="13dp"
+                android:textStyle="normal" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/perfil_usuario"
+            android:layout_gravity="end"
+            android:layout_marginRight="20dp">
+        </ImageView>
+    </androidx.appcompat.widget.Toolbar>
+
     <TextView
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Categorias"
-        android:textSize="25dp"
-        android:gravity="center"
         android:layout_marginTop="80dp"
-        android:textColor="@color/verde">
+        android:gravity="center"
+        android:text="Categorias"
+        android:textColor="@color/verde"
+        android:textSize="25dp">
     </TextView>
 
     <androidx.cardview.widget.CardView
@@ -30,7 +72,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="90dp"
-            android:src="@drawable/vacaGeneral"
+            android:src="@drawable/vaca_general"
             android:layout_marginTop="5dp">
         </ImageView>
 
@@ -64,7 +106,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:src="@drawable/vacaLechera"
+            android:src="@drawable/vaca_lechera"
             android:layout_marginTop="15dp">
         </ImageView>
 
@@ -99,7 +141,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="90dp"
-            android:src="@drawable/vacaGestacion"
+            android:src="@drawable/vaca_gestacion"
             android:layout_marginTop="5dp"
             android:layout_marginRight="10dp">
         </ImageView>
@@ -134,7 +176,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="95dp"
-            android:src="@drawable/vacaSecado"
+            android:src="@drawable/vaca_secado"
             android:layout_marginTop="8dp">
         </ImageView>
 
@@ -223,4 +265,4 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-</FrameLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
