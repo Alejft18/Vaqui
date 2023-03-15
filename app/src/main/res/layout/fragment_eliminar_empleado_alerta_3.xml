@@ -9,14 +9,48 @@
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
+        android:alpha="0.4"
+        android:background="@color/black"></LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:gravity="center">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="250dp"
-            android:layout_height="170dp"
+            android:layout_width="290dp"
+            android:layout_height="180dp"
             android:layout_gravity="center"
-            android:backgroundTint="@drawable/shape_menu"
-            android:visibility="invisible"></androidx.cardview.widget.CardView>
+            android:background="@drawable/shape_menu">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Alerta"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="¿Desea eliminar este empleado?"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="20dp"></TextView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancelar     Aceptar"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="140dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/verde"></TextView>
+
+
+        </androidx.cardview.widget.CardView>
 
     </LinearLayout>
 
