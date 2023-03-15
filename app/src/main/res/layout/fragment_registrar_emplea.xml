@@ -13,7 +13,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="100dp"
             android:text="Ingresa los siguientes datos"
             android:textAlignment="center"
             android:textSize="20dp"
@@ -25,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="55dp"
+            android:layout_marginTop="90dp"
             android:background="@drawable/shape_home"
             android:orientation="horizontal">
 
@@ -109,53 +109,13 @@
                 android:hint="Correo electronico"
                 tools:visibility="invisible" />
 
-
         </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/shape_home"
-            android:orientation="horizontal">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="300dp"
-                android:layout_height="35dp"
-                android:gravity="left"
-                android:hint="Nueva contraseña"
-                android:visibility="visible"
-                tools:visibility="invisible" />
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="30dp"
-            android:background="@drawable/shape_home"
-            android:orientation="horizontal">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="300dp"
-                android:layout_height="35dp"
-                android:gravity="left"
-                android:hint="Codigo de finca"
-                android:visibility="visible"
-                tools:visibility="invisible" />
-
-
-        </com.google.android.material.textfield.TextInputLayout>
-
 
         <Button
             android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="80dp"
             android:backgroundTint="@color/principalverde"
             android:text="Registrarse"
             android:textColor="@color/white"></Button>
