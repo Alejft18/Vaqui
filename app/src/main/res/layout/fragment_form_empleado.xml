@@ -17,11 +17,31 @@
             android:alpha="0.4"
             android:background="@color/black">
         </View>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="hint" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="hint" />
+        </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
     <androidx.cardview.widget.CardView
         android:layout_width="300dp"
-        android:layout_height="280dp"
+        android:layout_height="300dp"
         android:layout_marginLeft="55dp"
         android:layout_marginTop="220dp"
         app:cardCornerRadius="10dp"
@@ -39,7 +59,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/empleado"
+            android:src="@drawable/vaca_ingresar"
             android:layout_marginLeft="120dp"
             android:layout_marginTop="30dp">
         </ImageView>
@@ -47,52 +67,51 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Juan Esteban Hernan Diaz"
-            android:layout_marginLeft="60dp"
+            android:text="Datos de la categoría"
+            android:layout_marginLeft="74dp"
             android:layout_marginTop="100dp"
             android:textStyle="bold"
             android:textSize="16dp">
         </TextView>
 
-        <TextView
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Cédula:      102387451"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="140dp"
-            android:textStyle="normal"
-            android:textSize="14dp">
-        </TextView>
+            android:layout_gravity="center"
+            android:background="@drawable/shape_buscadory"
+            android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cargo:      Ordeñador principal"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="160dp"
-            android:textStyle="normal"
-            android:textSize="14dp">
-        </TextView>
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="250dp"
+                android:layout_height="35dp"
+                android:gravity="left"
+                android:hint="Litros a que da a la semana"
+                tools:visibility="invisible" />
+        </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="EPS:      Aliansalud"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="180dp"
-            android:textStyle="normal"
-            android:textSize="14dp">
-        </TextView>
+            android:layout_gravity="center"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/shape_buscadory"
+            android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fecha de nacimiento:      31/10/1999"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="200dp"
-            android:textStyle="normal"
-            android:textSize="14dp">
-        </TextView>
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="250dp"
+                android:layout_height="35dp"
+                android:gravity="left"
+                android:hint="Fecha de parto"
+                tools:visibility="invisible" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:text="Ingresar"
+            android:layout_gravity="center"
+            android:layout_marginTop="110dp">
+        </Button>
     </androidx.cardview.widget.CardView>
 
 </FrameLayout>
