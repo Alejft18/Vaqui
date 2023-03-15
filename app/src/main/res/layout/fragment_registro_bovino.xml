@@ -73,7 +73,6 @@
                 android:hint="Genero Bovino"
                 tools:visibility="invisible" />
 
-
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
