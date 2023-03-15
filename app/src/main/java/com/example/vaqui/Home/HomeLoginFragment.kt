@@ -35,7 +35,7 @@ class HomeLoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home_login, container, false)
+        return inflater.inflate(R.layout.fragment_home_login_emple, container, false)
     }
 
     companion object {
