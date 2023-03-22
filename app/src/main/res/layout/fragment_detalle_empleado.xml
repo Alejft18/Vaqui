@@ -45,7 +45,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:id="@+id/tvBarra"
-                    android:background="@color/gris">
+                    android:background="@color/gray">
                 </Toolbar>
             </com.google.android.material.appbar.AppBarLayout>
 

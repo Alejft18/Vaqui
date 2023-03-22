@@ -10,7 +10,7 @@
         android:radius="13dp"
         />
     <solid
-        android:color="@color/gris"
+        android:color="@color/gray"
         />
 
 </shape>
