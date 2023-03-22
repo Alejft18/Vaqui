@@ -39,7 +39,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/leche"
+            android:src="@drawable/datos_lecheras"
             android:layout_marginLeft="120dp"
             android:layout_marginTop="30dp">
         </ImageView>
