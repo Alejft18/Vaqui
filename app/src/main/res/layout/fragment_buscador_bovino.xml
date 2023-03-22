@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Buscador.BuscadorBovinoFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvBuscador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+
+    <RelativeLayout
+        android:id="@+id/RlBuscador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <SearchView
+            android:id="@+id/searchhView"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:queryHint="Ingresa el ID"
+            android:layout_margin="25dp"
+            android:background="@drawable/shape_buscador">
+        </SearchView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.5"
+            android:background="@color/white">
+
+        </View>
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminateTint="@color/verde">
+        </ProgressBar>
+    </RelativeLayout>
+
+</FrameLayout>
