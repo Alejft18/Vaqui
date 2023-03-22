@@ -12,11 +12,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:background="@drawable/shape_buscador">
+            android:background="@drawable/shape_buscador"
+            android:padding="5dp">
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:src="@drawable/persona">
+                android:src="@drawable/vaca5">
             </ImageView>
 
             <LinearLayout
@@ -27,7 +28,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Cédula"
+                    android:text="ID"
                     android:textAlignment="center"
                     android:textSize="20dp"
                     android:textColor="@color/black"
@@ -36,11 +37,12 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Cargo"
+                    android:text="Categoria"
                     android:textAlignment="center"
                     android:textSize="20dp"
                     android:textColor="@color/black">
                 </TextView>
+
             </LinearLayout>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
