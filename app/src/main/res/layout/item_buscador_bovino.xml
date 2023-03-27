@@ -26,6 +26,7 @@
                 android:orientation="vertical"
                 android:layout_gravity="center">
                 <TextView
+                    android:id="@+id/BovinosID"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="ID"
@@ -35,9 +36,10 @@
                     android:layout_marginTop="35dp">
                 </TextView>
                 <TextView
+                    android:id="@+id/Raza"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Categoria"
+                    android:text="Raza"
                     android:textAlignment="center"
                     android:textSize="20dp"
                     android:textColor="@color/black">
