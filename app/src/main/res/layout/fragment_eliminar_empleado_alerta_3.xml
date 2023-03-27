@@ -12,7 +12,8 @@
         android:gravity="center"
         android:alpha="0.4"
         android:background="@color/black"
-        android:orientation="vertical"></LinearLayout>
+        android:orientation="vertical">
+    </LinearLayout>
 
 
     <LinearLayout
@@ -33,14 +34,16 @@
                 android:layout_height="wrap_content"
                 android:text="Alerta"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="20dp"></TextView>
+                android:layout_marginLeft="20dp">
+            </TextView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="¿Desea eliminar este bovino?"
                 android:layout_marginTop="40dp"
-                android:layout_marginLeft="20dp"></TextView>
+                android:layout_marginLeft="20dp">
+            </TextView>
 
             <TextView
                 android:layout_width="wrap_content"
@@ -49,14 +52,11 @@
                 android:layout_gravity="bottom"
                 android:layout_marginLeft="140dp"
                 android:layout_marginBottom="10dp"
-                android:textColor="@color/verde"></TextView>
-
+                android:textColor="@color/verde">
+            </TextView>
 
         </androidx.cardview.widget.CardView>
 
     </LinearLayout>
-
-
-
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
