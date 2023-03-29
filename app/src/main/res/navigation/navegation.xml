@@ -2,8 +2,32 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/navegation">
+    android:id="@+id/navegation"
+    app:startDestination="@id/splashScreen">
 
 
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="com.example.vaqui.splashScreen"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreen_to_fragment_home_inicio_sesion"
+            app:destination="@id/fragment_home_inicio_sesion" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_home_inicio_sesion"
+        android:name="com.example.vaqui.fragment_home_inicio_sesion"
+        android:label="fragment_home_inicio_sesion"
+        tools:layout="@layout/fragment_home_inicio_sesion" >
+        <action
+            android:id="@+id/action_fragment_home_inicio_sesion_to_fragment_home_adquiere_nuestros_servicios"
+            app:destination="@id/fragment_home_adquiere_nuestros_servicios" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_home_adquiere_nuestros_servicios"
+        android:name="com.example.vaqui.fragment_home_adquiere_nuestros_servicios"
+        android:label="fragment_home_adquiere_nuestros_servicios"
+        tools:layout="@layout/fragment_home_adquiere_nuestros_servicios" />
 
 </navigation>

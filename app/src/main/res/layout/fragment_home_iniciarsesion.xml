@@ -91,8 +91,7 @@
             android:layout_marginTop="-15dp"
             android:textColor="@color/olvidemicontra"
             android:layout_gravity="center"
-            android:text="_________________">
-        </TextView>
+            android:text="_________________"></TextView>
 
 
         <TextView
@@ -102,9 +101,9 @@
             android:layout_gravity="center"
             android:textStyle="normal"
             android:layout_marginTop="25dp"
+            android:textColor="#EA5455"
             android:textSize="11dp"
             android:text="Adquiere nuestros servicios"/>
 
-        android:textColor="#EA5455"
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

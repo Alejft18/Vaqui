@@ -1,5 +1,4 @@
 package com.example.vaqui.adapter
-import com.example.vaqui.Moldels.Bovinos
 import org.json.JSONObject
 import java.text.FieldPosition
 
