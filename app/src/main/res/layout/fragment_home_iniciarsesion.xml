@@ -22,6 +22,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+
             android:layout_marginTop="55dp"
             android:orientation="horizontal"
             android:layout_gravity="center">
@@ -45,6 +46,7 @@
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/grey"
             android:layout_marginTop="30dp"
             android:layout_gravity="center">
 
@@ -62,6 +64,8 @@
                 android:gravity="center"
                 android:hint="Contraseña" />
         </com.google.android.material.textfield.TextInputLayout>
+
+
 
         <Button
             android:layout_width="wrap_content"

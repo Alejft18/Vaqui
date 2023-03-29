@@ -2,8 +2,13 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/navegation">
+    android:id="@+id/navegation"
+    app:startDestination="@id/splashScreen">
 
 
-
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="com.example.vaqui.splashScreen"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" />
 </navigation>
