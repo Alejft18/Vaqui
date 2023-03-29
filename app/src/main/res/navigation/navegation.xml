@@ -11,11 +11,15 @@
         android:name="com.example.vaqui.splashScreen"
         android:label="fragment_splash_screen"
         tools:layout="@layout/fragment_splash_screen" />
-
     <fragment
-        android:id="@+id/in"
-        android:name="com.example.vaqui.splashScreen"
-        android:label="fragment_splash_screen"
-        tools:layout="@layout/fragment_splash_screen" />
+        android:id="@+id/fragment_home_inicio_sesion"
+        android:name="com.example.vaqui.fragment_home_inicio_sesion"
+        android:label="fragment_home_inicio_sesion"
+        tools:layout="@layout/fragment_home_inicio_sesion" />
+    <fragment
+        android:id="@+id/fragment_home_adquiere_nuestros_servicios"
+        android:name="com.example.vaqui.fragment_home_adquiere_nuestros_servicios"
+        android:label="fragment_home_adquiere_nuestros_servicios"
+        tools:layout="@layout/fragment_home_adquiere_nuestros_servicios" />
 
 </navigation>
