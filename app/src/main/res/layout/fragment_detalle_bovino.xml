@@ -19,7 +19,8 @@
             android:layout_marginEnd="25dp"
             android:layout_marginBottom="25dp"
             android:background="@drawable/shape_buscador"
-            android:queryHint="Ingresa el ID"></SearchView>
+            android:queryHint="Ingresa el ID">
+        </SearchView>
 
     </RelativeLayout>
 

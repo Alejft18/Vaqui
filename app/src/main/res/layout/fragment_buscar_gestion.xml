@@ -12,6 +12,7 @@
         android:orientation="vertical">
 
         <SearchView
+            android:id="@+id/searchBusGesti"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:queryHint="Ingrese el número de cédula"
@@ -24,13 +25,13 @@
         </SearchView>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvBuscador"
+            android:id="@+id/rvBuscadorGestion"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         </androidx.recyclerview.widget.RecyclerView>
 
         <RelativeLayout
-            android:id="@+id/RlBuscador"
+            android:id="@+id/RlBuscadorGestion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
 

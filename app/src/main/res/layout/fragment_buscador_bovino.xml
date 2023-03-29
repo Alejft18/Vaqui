@@ -9,8 +9,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+
     <SearchView
         android:layout_width="match_parent"
+        android:id="@+id/searchBusBovi"
         android:layout_height="wrap_content"
         android:queryHint="Ingrese el ID del bovino"
         android:iconifiedByDefault="false"
@@ -20,6 +22,7 @@
         android:queryBackground="@android:color/transparent"
         android:background="@drawable/shape_buscadory">
     </SearchView>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvBuscador"
         android:layout_width="match_parent"
