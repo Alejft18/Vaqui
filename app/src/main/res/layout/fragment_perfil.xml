@@ -5,6 +5,9 @@
     android:layout_height="match_parent"
     tools:context=".Perfil.PerfilFragment">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -48,7 +51,8 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:layout_gravity="center"
-            android:src="@drawable/perfil"></ImageView>
+            android:src="@drawable/perfil">
+        </ImageView>
 
         <TextView
             android:layout_width="match_parent"
@@ -59,7 +63,8 @@
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="25sp"
-            android:textStyle="bold"></TextView>
+            android:textStyle="bold">
+        </TextView>
 
         <TextView
             android:layout_width="match_parent"
@@ -68,7 +73,8 @@
             android:text="ID:"
             android:textColor="@color/verde"
             android:textSize="18sp"
-            android:textStyle="bold"></TextView>
+            android:textStyle="bold">
+        </TextView>
 
         <TextView
             android:id="@+id/esp_id"
@@ -77,7 +83,8 @@
             android:layout_marginLeft="25dp"
             android:text="00"
             android:textColor="@color/black"
-            android:textSize="16sp"></TextView>
+            android:textSize="16sp">
+        </TextView>
 
         <TextView
             android:layout_width="match_parent"
@@ -87,7 +94,8 @@
             android:text="Nombre:"
             android:textColor="@color/verde"
             android:textSize="18sp"
-            android:textStyle="bold"></TextView>
+            android:textStyle="bold">
+        </TextView>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -101,7 +109,8 @@
                 android:layout_marginLeft="25dp"
                 android:text="Nombre"
                 android:textColor="@color/black"
-                android:textSize="16sp"></TextView>
+                android:textSize="16sp">
+            </TextView>
 
             <TextView
                 android:id="@+id/apellido"
@@ -110,7 +119,8 @@
                 android:layout_marginLeft="7dp"
                 android:text="Apellido"
                 android:textColor="@color/black"
-                android:textSize="16sp"></TextView>
+                android:textSize="16sp">
+            </TextView>
         </LinearLayout>
 
 
@@ -122,7 +132,8 @@
             android:text="Correo:"
             android:textColor="@color/verde"
             android:textSize="18sp"
-            android:textStyle="bold"></TextView>
+            android:textStyle="bold">
+        </TextView>
 
         <TextView
             android:id="@+id/correo"
@@ -131,7 +142,8 @@
             android:layout_marginLeft="25dp"
             android:text="correo"
             android:textColor="@color/black"
-            android:textSize="16sp"></TextView>
+            android:textSize="16sp">
+        </TextView>
 
         <TextView
             android:layout_width="match_parent"
@@ -141,7 +153,8 @@
             android:text="Teléfono:"
             android:textColor="@color/verde"
             android:textSize="18sp"
-            android:textStyle="bold"></TextView>
+            android:textStyle="bold">
+        </TextView>
 
         <TextView
             android:id="@+id/telefono"
@@ -208,8 +221,11 @@
             android:backgroundTint="@color/verde"
             android:padding="10dp"
             android:text="Actualiza tus Datos"
-            android:textColor="@color/white"></Button>
+            android:textColor="@color/white">
+        </Button>
     </LinearLayout>
+
+    </ScrollView>
 
 
 </FrameLayout>
