@@ -3,31 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navegation"
-    app:startDestination="@id/splashScreen">
-
+    app:startDestination="@id/inicio">
+    <fragment
+        android:id="@+id/inicio"
+        android:name="com.example.vaqui.fragment_home_estadisticas_empleado"
+        android:label="fragment_home_estadisticas_empleado"
+        tools:layout="@layout/fragment_home_estadisticas_empleado" >
+        <action
+            android:id="@+id/action_fragment_home_estadisticas_empleado2_to_categoriasFragment"
+            app:destination="@id/categorias" />
+    </fragment>
 
     <fragment
-        android:id="@+id/splashScreen"
-        android:name="com.example.vaqui.splashScreen"
-        android:label="fragment_splash_screen"
-        tools:layout="@layout/fragment_splash_screen" >
+        android:id="@+id/categorias"
+        android:name="com.example.vaqui.Categorias.CategoriasFragment"
+        android:label="fragment_categorias"
+        tools:layout="@layout/fragment_categorias" >
         <action
-            android:id="@+id/action_splashScreen_to_fragment_home_inicio_sesion"
-            app:destination="@id/fragment_home_inicio_sesion" />
+            android:id="@+id/action_categoriasFragment_to_gestionFragment"
+            app:destination="@id/gestion" />
     </fragment>
     <fragment
-        android:id="@+id/fragment_home_inicio_sesion"
-        android:name="com.example.vaqui.fragment_home_inicio_sesion"
-        android:label="fragment_home_inicio_sesion"
-        tools:layout="@layout/fragment_home_inicio_sesion" >
-        <action
-            android:id="@+id/action_fragment_home_inicio_sesion_to_fragment_home_adquiere_nuestros_servicios"
-            app:destination="@id/fragment_home_adquiere_nuestros_servicios" />
-    </fragment>
-    <fragment
-        android:id="@+id/fragment_home_adquiere_nuestros_servicios"
-        android:name="com.example.vaqui.fragment_home_adquiere_nuestros_servicios"
-        android:label="fragment_home_adquiere_nuestros_servicios"
-        tools:layout="@layout/fragment_home_adquiere_nuestros_servicios" />
-
+        android:id="@+id/gestion"
+        android:name="com.example.vaqui.GestionFragment"
+        android:label="fragment_gestion"
+        tools:layout="@layout/fragment_gestion" />
 </navigation>
