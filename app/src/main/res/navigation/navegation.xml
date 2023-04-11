@@ -22,10 +22,20 @@
         <action
             android:id="@+id/action_categoriasFragment_to_gestionFragment"
             app:destination="@id/gestion" />
+
     </fragment>
     <fragment
         android:id="@+id/gestion"
         android:name="com.example.vaqui.GestionFragment"
         android:label="fragment_gestion"
-        tools:layout="@layout/fragment_gestion" />
+        tools:layout="@layout/fragment_gestion" >
+        <action
+            android:id="@+id/action_gestion_to_buscadorFragment"
+            app:destination="@id/buscar" />
+    </fragment>
+    <fragment
+        android:id="@+id/buscar"
+        android:name="com.example.vaqui.BuscadorFragment"
+        android:label="fragment_buscador"
+        tools:layout="@layout/fragment_buscador" />
 </navigation>
