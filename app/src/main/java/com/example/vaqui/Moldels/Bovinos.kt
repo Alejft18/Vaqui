@@ -8,5 +8,5 @@ class Bovinos : Serializable {
     var BovinoID : Int = 0
     var Raza : String = String()
     var Genero : String = String()
-    var Fecha_Nacimiento : LocalDate()
+    //var Fecha_Nacimiento : LocalDate()
 }
