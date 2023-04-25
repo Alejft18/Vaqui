@@ -58,7 +58,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fecha de nacimiento: 10/25/2019"
+            android:text="Fecha de revisión:"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="140dp"
             android:textSize="16dp">
@@ -67,7 +67,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ID: 456"
+            android:text="ID:"
             android:layout_marginLeft="120dp"
             android:layout_marginTop="160dp"
             android:textSize="16dp">
@@ -76,7 +76,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Peso: 640Kg"
+            android:text="Peso:"
             android:layout_marginLeft="110dp"
             android:layout_marginTop="180dp"
             android:textSize="16dp">
@@ -85,8 +85,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Partos: 3"
-            android:layout_marginLeft="120dp"
+            android:text="Categría:"
+            android:layout_marginLeft="110dp"
             android:layout_marginTop="200dp"
             android:textSize="16dp">
         </TextView>
@@ -94,7 +94,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Último parto: 05/10/2022"
+            android:text="Último parto:"
             android:layout_marginLeft="70dp"
             android:layout_marginTop="220dp"
             android:textSize="16dp">
@@ -103,7 +103,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Última toma de leche: 02/20/2023"
+            android:text="Última toma de leche:"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="240dp"
             android:textSize="16dp">
