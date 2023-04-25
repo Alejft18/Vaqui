@@ -14,19 +14,19 @@ import org.json.JSONObject
 class BovinosAdapter(private val bovinoList: ArrayList<JSONObject>, private val bovinosListener: BovinosListener) : RecyclerView.Adapter<BovinosAdapter.ViewHolder>() {
 
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
-        var BovinoID : TextView = view.findViewById(R.id.IdVacas)
-        var categorias : TextView = view.findViewById(R.id.categoVacas)
+        var BovinoID : TextView = view.findViewById(R.id.IdVacasg)
+        var raza : TextView = view.findViewById(R.id.razag)
 
         fun bind(bovinos: JSONObject){
             BovinoID.text = bovinos.getString("Bovino_ID")
-            categorias.text = bovinos.getString("Categoria")
+            raza.text = bovinos.getString("Raza")
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)= ViewHolder (
         LayoutInflater
             .from(parent.context)
-            .inflate(R.layout.item_categoria,  parent, false)
+            .inflate(R.layout.item_general,  parent, false)
         )
 
     override fun getItemCount() = this.bovinoList.size
