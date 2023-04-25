@@ -56,209 +56,218 @@
         android:layout_marginTop="80dp"
         android:textColor="@color/verde">
     </TextView>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="110dp">
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="160dp"
-            android:layout_height="120dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="180dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="13dp"
-            app:cardElevation="5dp">
+            <androidx.cardview.widget.CardView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="13dp"
+                app:cardElevation="5dp">
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:src="@drawable/vaca_general"
-                android:layout_marginTop="5dp">
-            </ImageView>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:src="@drawable/vaca_general"
+                    android:layout_marginTop="5dp">
+                </ImageView>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_gravity="bottom">
-
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="General"
-                    android:textAlignment="center"
-                    android:textSize="18dp"
-                    android:layout_marginBottom="10dp"
-                    android:textStyle="bold"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                    android:orientation="vertical"
+                    android:layout_gravity="bottom">
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="General"
+                        android:textAlignment="center"
+                        android:textSize="18dp"
+                        android:layout_marginBottom="10dp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="13dp"
+                app:cardElevation="5dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:src="@drawable/vaca_gestacion"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="10dp">
+                </ImageView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="bottom">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Gestación"
+                        android:textAlignment="center"
+                        android:textSize="18dp"
+                        android:layout_marginBottom="10dp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="20dp"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="13dp"
+                app:cardElevation="5dp">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:src="@drawable/toro"
+                    android:layout_marginTop="10dp">
+                </ImageView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_gravity="bottom">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Sementales"
+                        android:textAlignment="center"
+                        android:textSize="18dp"
+                        android:layout_marginBottom="10dp"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="61dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:layout_marginRight="30dp"
+        android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
-            android:layout_width="160dp"
+            android:layout_width="120dp"
             android:layout_height="120dp"
-            android:layout_marginTop="180dp"
-            app:cardBackgroundColor="@color/white"
             android:layout_marginLeft="220dp"
+            android:layout_marginTop="20dp"
+            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="13dp"
             app:cardElevation="5dp">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
-                android:src="@drawable/vaca_lechera"
-                android:layout_marginTop="15dp">
-            </ImageView>
+                android:layout_marginTop="15dp"
+                android:src="@drawable/vaca_lechera"></ImageView>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_gravity="bottom">
+                android:layout_gravity="bottom"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
                     android:text="Lecheras"
                     android:textAlignment="center"
                     android:textSize="18dp"
-                    android:layout_marginBottom="10dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-
         <androidx.cardview.widget.CardView
-            android:layout_width="160dp"
+            android:layout_width="120dp"
             android:layout_height="120dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="330dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="13dp"
-            app:cardElevation="5dp">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:src="@drawable/vaca_gestacion"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="10dp">
-            </ImageView>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_gravity="bottom">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Gestación"
-                    android:textAlignment="center"
-                    android:textSize="18dp"
-                    android:layout_marginBottom="10dp"
-                    android:textStyle="bold"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="160dp"
-            android:layout_height="120dp"
-            android:layout_marginTop="330dp"
-            app:cardBackgroundColor="@color/white"
             android:layout_marginLeft="220dp"
+            android:layout_marginTop="20dp"
+            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="13dp"
             app:cardElevation="5dp">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="95dp"
-                android:src="@drawable/vaca_secado"
-                android:layout_marginTop="8dp">
-            </ImageView>
+                android:layout_marginTop="8dp"
+                android:src="@drawable/vaca_secado"></ImageView>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_gravity="bottom">
+                android:layout_gravity="bottom"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
                     android:text="En secado"
                     android:textAlignment="center"
                     android:textSize="18dp"
-                    android:layout_marginBottom="10dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
-
         <androidx.cardview.widget.CardView
-            android:layout_width="160dp"
+            android:layout_width="120dp"
             android:layout_height="120dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="480dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="13dp"
-            app:cardElevation="5dp">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:src="@drawable/toro"
-                android:layout_marginTop="10dp">
-            </ImageView>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_gravity="bottom">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Sementales"
-                    android:textAlignment="center"
-                    android:textSize="18dp"
-                    android:layout_marginBottom="10dp"
-                    android:textStyle="bold"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="160dp"
-            android:layout_height="120dp"
-            android:layout_marginTop="480dp"
-            app:cardBackgroundColor="@color/white"
             android:layout_marginLeft="220dp"
+            android:layout_marginTop="20dp"
+            app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="13dp"
             app:cardElevation="5dp">
 
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="85dp"
-                android:src="@drawable/ternero"
-                android:layout_marginTop="10dp">
-            </ImageView>
+                android:layout_marginTop="10dp"
+                android:src="@drawable/ternero"></ImageView>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_gravity="bottom">
+                android:layout_gravity="bottom"
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
                     android:text="Terneros"
                     android:textAlignment="center"
                     android:textSize="18dp"
-                    android:layout_marginBottom="10dp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold" />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+</LinearLayout>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
