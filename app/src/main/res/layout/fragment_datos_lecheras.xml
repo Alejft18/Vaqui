@@ -58,7 +58,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fecha de nacimiento: 10/25/2019"
+            android:text="Fecha de revisión:"
             android:layout_marginLeft="40dp"
             android:layout_marginTop="140dp"
             android:textSize="16dp">
@@ -67,7 +67,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ID: 456"
+            android:text="ID:"
             android:layout_marginLeft="120dp"
             android:layout_marginTop="160dp"
             android:textSize="16dp">
@@ -76,7 +76,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Peso: 640Kg"
+            android:text="Peso:"
             android:layout_marginLeft="110dp"
             android:layout_marginTop="180dp"
             android:textSize="16dp">
@@ -85,7 +85,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Partos: 3"
+            android:text="Partos:"
             android:layout_marginLeft="120dp"
             android:layout_marginTop="200dp"
             android:textSize="16dp">
@@ -94,9 +94,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Último parto: 05/10/2022"
+            android:text="Último parto:"
             android:layout_marginLeft="70dp"
             android:layout_marginTop="220dp"
+            android:textSize="16dp">
+        </TextView>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Categoría:"
+            android:layout_marginLeft="70dp"
+            android:layout_marginTop="240dp"
             android:textSize="16dp">
         </TextView>
 
@@ -106,13 +115,13 @@
             android:layout_gravity="center"
             android:background="@drawable/shape_buscadory"
             android:orientation="horizontal"
-            android:layout_marginTop="60dp">
+            android:layout_marginTop="80dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="250dp"
                 android:layout_height="35dp"
                 android:gravity="left"
-                android:hint="Fecha de la extracción"
+                android:hint="Fecha de ordeño"
                 tools:visibility="invisible" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -122,13 +131,13 @@
             android:layout_gravity="center"
             android:background="@drawable/shape_buscadory"
             android:orientation="horizontal"
-            android:layout_marginTop="100dp">
+            android:layout_marginTop="130dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="250dp"
                 android:layout_height="35dp"
                 android:gravity="left"
-                android:hint="Litros extraidos"
+                android:hint="Litros "
                 tools:visibility="invisible" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -137,7 +146,7 @@
             android:layout_height="40dp"
             android:text="Actualizar"
             android:layout_gravity="center"
-            android:layout_marginTop="170dp">
+            android:layout_marginTop="180dp">
         </Button>
 
 
