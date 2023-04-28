@@ -27,5 +27,25 @@
         android:id="@+id/gestion"
         android:name="com.example.vaqui.GestionFragment"
         android:label="fragment_gestion"
-        tools:layout="@layout/fragment_gestion" />
+        tools:layout="@layout/fragment_gestion" >
+        <action
+            android:id="@+id/action_gestion_to_buscadorBovinoFragment2"
+            app:destination="@id/buscar" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/buscar"
+        android:name="com.example.vaqui.Buscador.BuscadorBovinoFragment"
+        android:label="fragment_buscador_bovino"
+        tools:layout="@layout/fragment_buscador_bovino" >
+        <action
+            android:id="@+id/action_buscadorBovinoFragment2_to_datos_general2"
+            app:destination="@id/datos_general" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/datos_general"
+        android:name="com.example.vaqui.datos_general"
+        android:label="fragment_datos_general"
+        tools:layout="@layout/fragment_datos_general" />
 </navigation>
