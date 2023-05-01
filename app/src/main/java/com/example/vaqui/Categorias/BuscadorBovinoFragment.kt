@@ -24,19 +24,9 @@ import org.json.JSONException
 import org.json.JSONObject
 import kotlin.math.log
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [BuscadorBovinoFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class BuscadorBovinoFragment : Fragment(), BovinosListener {
     private lateinit var recycler: RecyclerView
-    private lateinit var viewAlpha:View
+    private lateinit var viewAlpha: View
     private lateinit var pgbar: ProgressBar
     private lateinit var rlBovinosList: RelativeLayout
     private lateinit var bavinosList: ArrayList<JSONObject>
@@ -47,11 +37,16 @@ class BuscadorBovinoFragment : Fragment(), BovinosListener {
         savedInstanceState: Bundle?
     ): View? {
         Log.d("BuscadorBovinoFragment","Entered to onCreateView")
-        // Inflate the layout for this fragment
+        // Infla el diseño para este fragmento
         val ll = inflater.inflate(R.layout.fragment_buscador_bovino, container, false)
-        val url = "http://192.168.89.79/phpVqui/listar_bobinos_general.php"
-        val queue = Volley.newRequestQueue(this.context)
 
+        this.recycler = ll.findViewById(R.id.rvBuscador)
+        this.viewAlpha = ll.findViewById(R.id.view_bovinosList)
+        this.pgbar = ll.findViewById(R.id.pgbar_bovinoList)
+        this.rlBovinosList = ll.findViewById(R.id.RlBuscador)
+
+        val url = "http://192.168.1.79/phpVqui/listar_bobinos_general.php"
+        val queue = Volley.newRequestQueue(this.context)
 
         val stringRequest = StringRequest(Request.Method.GET, url,{ response ->
             val jsonArray = JSONArray(response)
@@ -74,10 +69,6 @@ class BuscadorBovinoFragment : Fragment(), BovinosListener {
             Log.w("jsonError", error)
         })
         queue.add(stringRequest)
-        this.recycler = ll.findViewById(R.id.rvBuscador)
-        this.viewAlpha = ll.findViewById(R.id.view_bovinosList)
-        this.pgbar = ll.findViewById(R.id.pgbar_bovinoList)
-        this.rlBovinosList = ll.findViewById(R.id.RlBuscador)
 
         return ll
     }

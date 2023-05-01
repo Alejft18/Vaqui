@@ -47,6 +47,8 @@
             android:layout_marginRight="20dp">
         </ImageView>
     </androidx.appcompat.widget.Toolbar>
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -57,8 +59,8 @@
             android:layout_height="wrap_content"
             android:text="Categorias"
             android:textSize="25dp"
-            android:gravity="center"
-            android:layout_marginTop="80dp"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="90dp"
             android:textColor="@color/verde">
         </TextView>
         <LinearLayout
@@ -69,12 +71,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:gravity="center_horizontal"
+                android:gravity="center"
                 android:layout_weight="1">
                 <androidx.cardview.widget.CardView
-                    android:layout_width="120dp"
+                    android:id="@+id/cateGeneral"
+                    android:layout_width="150dp"
                     android:layout_height="120dp"
-                    android:layout_marginTop="20dp"
                     app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="13dp"
                     app:cardElevation="5dp">
@@ -104,7 +106,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="120dp"
+                    android:layout_width="150dp"
                     android:layout_height="120dp"
                     android:layout_marginTop="20dp"
                     app:cardBackgroundColor="@color/white"
@@ -137,7 +139,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="120dp"
+                    android:layout_width="150dp"
                     android:layout_height="120dp"
                     android:layout_marginTop="20dp"
                     app:cardBackgroundColor="@color/white"
@@ -173,13 +175,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:gravity="center_horizontal"
+                android:gravity="center"
                 android:layout_weight="1">
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="120dp"
+                    android:layout_width="150dp"
                     android:layout_height="120dp"
-                    android:layout_marginTop="20dp"
                     app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="13dp"
                     app:cardElevation="5dp">
@@ -188,7 +189,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="70dp"
                         android:layout_marginTop="15dp"
-                        android:src="@drawable/vaca_lechera"></ImageView>
+                        android:src="@drawable/vaca_lechera">
+                    </ImageView>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -209,7 +211,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="120dp"
+                    android:layout_width="150dp"
                     android:layout_height="120dp"
                     android:layout_marginTop="20dp"
                     app:cardBackgroundColor="@color/white"
@@ -220,7 +222,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="95dp"
                         android:layout_marginTop="8dp"
-                        android:src="@drawable/vaca_secado"></ImageView>
+                        android:src="@drawable/vaca_secado">
+                    </ImageView>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -240,7 +243,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
-                    android:layout_width="120dp"
+                    android:layout_width="150dp"
                     android:layout_height="120dp"
 
                     android:layout_marginTop="20dp"
@@ -252,7 +255,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="85dp"
                         android:layout_marginTop="10dp"
-                        android:src="@drawable/ternero"></ImageView>
+                        android:src="@drawable/ternero">
+                    </ImageView>
 
                     <LinearLayout
                         android:layout_width="match_parent"
