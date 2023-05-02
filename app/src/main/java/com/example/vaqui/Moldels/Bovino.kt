@@ -1,7 +1,6 @@
 package com.example.vaqui.Moldels
 import java.io.Serializable
 import java.time.LocalDate
-import java.util.Date
 
 class Bovino: Serializable {
     var BovinoID : Int = 0
