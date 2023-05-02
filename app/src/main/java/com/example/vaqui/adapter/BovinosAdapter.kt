@@ -18,8 +18,8 @@ class BovinosAdapter(private val bovinoList: ArrayList<JSONObject>, private val 
         var raza : TextView = view.findViewById(R.id.razag)
 
         fun bind(bovinos: JSONObject){
-            BovinoID.text = bovinos.getString("Bovino_ID")
-            raza.text = bovinos.getString("Raza")
+            BovinoID.text = bovinos.getString("id")
+            raza.text = bovinos.getString("raza")
             Log.w("errorrrr", "No cargó la imagen")
         }
     }
