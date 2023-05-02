@@ -29,7 +29,7 @@ class BuscadorBovinoFragment : Fragment(), BovinosListener {
     private lateinit var viewAlpha: View
     private lateinit var pgbar: ProgressBar
     private lateinit var rlBovinosList: RelativeLayout
-    private lateinit var bavinosList: ArrayList<JSONObject>
+    private var bovinosList= ArrayList<JSONObject>()
 
 
     override fun onCreateView(
@@ -50,16 +50,16 @@ class BuscadorBovinoFragment : Fragment(), BovinosListener {
 
         val stringRequest = StringRequest(Request.Method.GET, url,{ response ->
             val jsonArray = JSONArray(response)
-            this.bavinosList = ArrayList()
+            this.bovinosList= ArrayList()
             try {
                 var i = 0
                 val l = jsonArray.length()
                 while (i < l) {
-                    bavinosList.add(jsonArray[i] as JSONObject)
+                    bovinosList.add(jsonArray[i] as JSONObject)
                     i++
                 }
-                Log.d("BuscadorBovinoFragment", this.bavinosList.toString())
-                this.recycler.adapter = BovinosAdapter(this.bavinosList, this)
+                Log.d("BuscadorBovinoFragment", this.bovinosList.toString())
+                this.recycler.adapter = BovinosAdapter(this.bovinosList, this)
                 this.viewAlpha.visibility = View.INVISIBLE
                 this.pgbar.visibility = View.INVISIBLE
 
@@ -71,6 +71,12 @@ class BuscadorBovinoFragment : Fragment(), BovinosListener {
         queue.add(stringRequest)
 
         return ll
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val adapter=BovinosAdapter(bovinosList,this)
+        recycler.adapter=adapter
     }
 
 
