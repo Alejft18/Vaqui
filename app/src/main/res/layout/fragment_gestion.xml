@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".GestionFragment">
+    tools:context=".GestionFragment"
+    android:background="@color/gray">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -65,7 +66,7 @@
 
 
         <androidx.cardview.widget.CardView
-            android:layout_width="350dp"
+            android:layout_width="320dp"
             android:layout_height="80dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="80dp"
@@ -75,7 +76,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/shape_menu"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -83,15 +83,16 @@
                     android:layout_height="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginLeft="15dp"
-                    android:src="@drawable/mas"></ImageView>
+                    android:src="@drawable/mas">
+                </ImageView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Ingresar empleado"
                     android:layout_marginLeft="40dp"
-                    android:textStyle="bold"
-                    android:textSize="23dp"
+                    android:textStyle="normal"
+                    android:textSize="22dp"
                     android:layout_gravity="center_vertical"/>
 
             </LinearLayout>
@@ -99,7 +100,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="350dp"
+            android:layout_width="320dp"
             android:layout_height="80dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
@@ -108,22 +109,22 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/shape_menu">
+                android:layout_height="match_parent">
 
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginLeft="15dp"
-                    android:src="@drawable/buscar"></ImageView>
+                    android:src="@drawable/buscar">
+                </ImageView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Buscar empleado"
                     android:layout_marginLeft="40dp"
-                    android:textStyle="bold"
+                    android:textStyle="normal"
                     android:textSize="23dp"
                     android:layout_gravity="center_vertical"/>
 
@@ -132,7 +133,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="350dp"
+            android:layout_width="320dp"
             android:layout_height="80dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
@@ -141,24 +142,23 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/shape_menu"
-                >
+                android:layout_height="match_parent">
 
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginLeft="15dp"
-                    android:src="@drawable/actualizar"></ImageView>
+                    android:src="@drawable/actualizar">
+                </ImageView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Actualizar empleado"
                     android:layout_marginLeft="40dp"
-                    android:textStyle="bold"
-                    android:textSize="23dp"
+                    android:textStyle="normal"
+                    android:textSize="22dp"
                     android:layout_gravity="center_vertical"/>
 
             </LinearLayout>
@@ -166,7 +166,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="350dp"
+            android:layout_width="320dp"
             android:layout_height="80dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
@@ -175,24 +175,23 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/shape_menu"
-                >
+                android:layout_height="match_parent">
 
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginLeft="15dp"
-                    android:src="@drawable/eliminar"></ImageView>
+                    android:src="@drawable/eliminar">
+                </ImageView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Eliminar empleado"
                     android:layout_marginLeft="40dp"
-                    android:textStyle="bold"
-                    android:textSize="23dp"
+                    android:textStyle="normal"
+                    android:textSize="22dp"
                     android:layout_gravity="center_vertical"/>
 
             </LinearLayout>

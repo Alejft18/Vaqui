@@ -20,6 +20,7 @@ class BovinosAdapter(private val bovinoList: ArrayList<JSONObject>, private val 
         fun bind(bovinos: JSONObject){
             BovinoID.text = bovinos.getString("Bovino_ID")
             raza.text = bovinos.getString("Raza")
+            Log.w("errorrrr", "No cargó la imagen")
         }
     }
 
@@ -35,12 +36,11 @@ class BovinosAdapter(private val bovinoList: ArrayList<JSONObject>, private val 
         val bovinos = bovinoList[position]
         try {
             holder.bind(bovinos)
-
             holder.itemView.setOnClickListener {
                 bovinosListener.onItemClicked(bovinos , position)
             }
         } catch (e : Exception) {
-
+            Log.w("errorrrr", "No cargó la imagen")
         }
     }
 
