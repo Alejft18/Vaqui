@@ -87,6 +87,7 @@ class BuscadorBovinoFragment : Fragment(), BovinosListener {
         this.rlBovinosList = ll.findViewById(R.id.RlBuscador)
 
         return ll
+
     }
 
     override fun onItemClicked(bovinos: JSONObject, position: Int) {

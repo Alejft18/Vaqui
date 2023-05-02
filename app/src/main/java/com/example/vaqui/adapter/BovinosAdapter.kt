@@ -41,6 +41,7 @@ class BovinosAdapter(private val bovinoList: ArrayList<JSONObject>, private val 
             }
         } catch (e : Exception) {
             Log.w("errorrrr", "No cargó la imagen")
+
         }
     }
 
