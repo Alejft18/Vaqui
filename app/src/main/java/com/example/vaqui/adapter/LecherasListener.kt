@@ -3,4 +3,5 @@ import org.json.JSONObject
 
 interface LecherasListener {
     fun onItemClicked(lecheras: JSONObject, position: Int)
+
 }

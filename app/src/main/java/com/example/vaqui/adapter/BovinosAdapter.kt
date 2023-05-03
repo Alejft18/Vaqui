@@ -24,6 +24,7 @@ class BovinosAdapter(private val bovinoList: ArrayList<JSONObject>, private val 
         }
     }
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)= ViewHolder (
         LayoutInflater
             .from(parent.context)

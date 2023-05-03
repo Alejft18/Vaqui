@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Categorias.BuscadorLecherasFragment">
+
+    <RelativeLayout
+        android:id="@+id/RlBuscadorLecheras"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <SearchView
+            android:layout_width="match_parent"
+            android:id="@+id/searchBusLeche"
+            android:layout_height="30dp"
+            android:queryHint="Ingrese el ID del bovino"
+            android:iconifiedByDefault="false"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginBottom="16dp"
+            android:queryBackground="@android:color/transparent"
+            android:background="@drawable/shape_buscadory">
+        </SearchView>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="300px"
+            android:layout_marginBottom="300px">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvBuscadorLecheras"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </androidx.recyclerview.widget.RecyclerView>
+        </ScrollView>
+
+
+        <View
+            android:id="@+id/view_lecherasList"
+            android:layout_width="561dp"
+            android:layout_height="match_parent"
+            android:alpha="0.5"
+            android:background="@color/black">
+
+        </View>
+
+        <ProgressBar
+            android:id="@+id/pgbar_lecherasList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminateTint="@color/verde">
+
+        </ProgressBar>
+    </RelativeLayout>
+
+</FrameLayout>
