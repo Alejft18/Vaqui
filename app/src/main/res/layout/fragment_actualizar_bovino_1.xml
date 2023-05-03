@@ -10,6 +10,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
         <SearchView
+            android:id="@+id/searchAcBovino"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:queryHint="Ingrese el ID del bovino"
@@ -21,13 +22,13 @@
             android:background="@drawable/shape_buscadory">
         </SearchView>
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvBuscador"
+            android:id="@+id/rvBuscadorAcBovino"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         </androidx.recyclerview.widget.RecyclerView>
 
         <RelativeLayout
-            android:id="@+id/RlBuscador"
+            android:id="@+id/RlBuscadorAcBovino"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
 
@@ -48,10 +49,6 @@
                 android:indeterminateTint="@color/verde">
             </ProgressBar>
         </RelativeLayout>
-
-
-
-
     </LinearLayout>
 
 </FrameLayout>

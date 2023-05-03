@@ -40,7 +40,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/datos_gestacion"
-            android:layout_marginLeft="120dp"
+            android:layout_marginLeft="110dp"
             android:layout_marginTop="30dp">
         </ImageView>
 
@@ -48,74 +48,139 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Datos en gestación"
-            android:layout_marginLeft="100dp"
+            android:layout_marginLeft="85dp"
             android:layout_marginTop="100dp"
             android:textStyle="bold"
             android:textColor="@color/verde"
             android:textSize="16dp">
         </TextView>
 
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fecha de nacimiento: 10/25/2019"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="140dp"
+            android:text="Fecha de rvisión:"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="130dp"
             android:textSize="16dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/FC_revision_gestacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="15/10/2020"
+            android:layout_marginLeft="170dp"
+            android:layout_marginTop="131dp">
         </TextView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="ID: 456"
+            android:text="ID: "
             android:layout_marginLeft="120dp"
-            android:layout_marginTop="160dp"
+            android:layout_marginTop="150dp"
             android:textSize="16dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/Id_gestacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="120"
+            android:layout_marginLeft="142dp"
+            android:layout_marginTop="151dp">
         </TextView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Peso: 640Kg"
-            android:layout_marginLeft="110dp"
-            android:layout_marginTop="180dp"
+            android:text="Peso: "
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="170dp"
             android:textSize="16dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/Peso_gestacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="320 Kg"
+            android:layout_marginLeft="145dp"
+            android:layout_marginTop="171dp">
         </TextView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Partos: 3"
-            android:layout_marginLeft="120dp"
-            android:layout_marginTop="200dp"
+            android:text="Fecha aprox del parto:"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="190dp"
             android:textSize="16dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/FC_aproxPartoG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="02/03/2023"
+            android:layout_marginLeft="190dp"
+            android:layout_marginTop="192dp">
         </TextView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Último parto: 05/10/2022"
+            android:text="Último parto:"
             android:layout_marginLeft="70dp"
-            android:layout_marginTop="220dp"
+            android:layout_marginTop="210dp"
             android:textSize="16dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/FC_ultiPartoG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="01/01/2022"
+            android:layout_marginLeft="164dp"
+            android:layout_marginTop="211dp">
         </TextView>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fecha inseminación: 01/20/2023"
-            android:layout_marginLeft="40dp"
-            android:layout_marginTop="240dp"
+            android:text="Fecha inseminación:"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="230dp"
             android:textSize="16dp">
         </TextView>
 
         <TextView
+            android:id="@+id/FC_inseminacionG"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fecha de palpo: 02/20/2023"
-            android:layout_marginLeft="60dp"
-            android:layout_marginTop="260dp"
+            android:text="01/01/2022"
+            android:layout_marginLeft="180dp"
+            android:layout_marginTop="231dp">
+        </TextView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Categoria:"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="250dp"
             android:textSize="16dp">
+        </TextView>
+
+        <TextView
+            android:id="@+id/Catego_gestacion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Gestación"
+            android:layout_marginLeft="175dp"
+            android:layout_marginTop="252dp">
         </TextView>
 
 

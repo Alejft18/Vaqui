@@ -16,7 +16,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/empleado"
+            android:src="@drawable/perfil_usuario"
             android:layout_marginTop="16dp"
             android:layout_marginLeft="20sp">
         </ImageView>
