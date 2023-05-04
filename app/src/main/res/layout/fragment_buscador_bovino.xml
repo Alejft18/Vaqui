@@ -5,37 +5,36 @@
     android:layout_height="match_parent"
     tools:context=".Buscador.BuscadorBovinoFragment">
 
-
-
-    <SearchView
-        android:layout_width="match_parent"
-        android:id="@+id/searchBusBovi"
-        android:layout_height="30dp"
-        android:queryHint="Ingrese el ID del bovino"
-        android:iconifiedByDefault="false"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginBottom="16dp"
-        android:queryBackground="@android:color/transparent"
-        android:background="@drawable/shape_buscadory">
-    </SearchView>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvBuscador1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </androidx.recyclerview.widget.RecyclerView>
-    </ScrollView>
-
-
-
     <RelativeLayout
         android:id="@+id/RlBuscador"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" >
+
+        <SearchView
+            android:layout_width="match_parent"
+            android:id="@+id/searchBusBovi"
+            android:layout_height="30dp"
+            android:queryHint="Ingrese el ID del bovino"
+            android:iconifiedByDefault="false"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginBottom="16dp"
+            android:queryBackground="@android:color/transparent"
+            android:background="@drawable/shape_buscadory">
+        </SearchView>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="300px"
+            android:layout_marginBottom="300px">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvBuscador1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </androidx.recyclerview.widget.RecyclerView>
+        </ScrollView>
+
 
         <View
             android:id="@+id/view_bovinosList"
