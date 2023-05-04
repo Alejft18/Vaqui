@@ -12,6 +12,9 @@
         <action
             android:id="@+id/action_fragment_home_estadisticas_empleado2_to_categoriasFragment"
             app:destination="@id/categorias" />
+        <action
+            android:id="@+id/action_inicio_to_perfilFragment"
+            app:destination="@id/perfilFragment" />
     </fragment>
 
     <fragment
@@ -48,4 +51,9 @@
         android:name="com.example.vaqui.datos_general"
         android:label="fragment_datos_general"
         tools:layout="@layout/fragment_datos_general" />
+    <fragment
+        android:id="@+id/perfilFragment"
+        android:name="com.example.vaqui.Perfil.PerfilFragment"
+        android:label="fragment_perfil"
+        tools:layout="@layout/fragment_perfil" />
 </navigation>
