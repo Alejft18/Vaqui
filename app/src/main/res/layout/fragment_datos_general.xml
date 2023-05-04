@@ -38,12 +38,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:id="@+id/tvBarra_general"
-                android:background="@color/gray">
-            </Toolbar>
+                android:background="@color/gray"/>
         </com.google.android.material.appbar.AppBarLayout>
 
 
         <ImageView
+            android:id="@+id/img_general"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:src="@drawable/datos_general"
@@ -76,7 +76,7 @@
             </TextView>
 
             <TextView
-                android:id="@+id/FC_nacimento_general"
+                android:id="@+id/fecha_general"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="15/10/2020"
@@ -98,7 +98,7 @@
                 android:textSize="16dp">
             </TextView>
             <TextView
-                android:id="@+id/Id_general"
+                android:id="@+id/id_general"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="120"
@@ -120,7 +120,7 @@
             </TextView>
 
             <TextView
-                android:id="@+id/Peso_general"
+                android:id="@+id/peso_general"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="320 Kg"
@@ -142,7 +142,7 @@
             </TextView>
 
             <TextView
-                android:id="@+id/Raza_general"
+                android:id="@+id/raza_general"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="NNNNNNNN"
@@ -164,7 +164,7 @@
             </TextView>
 
             <TextView
-                android:id="@+id/Genero_general"
+                android:id="@+id/genero_general"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Hembra"
@@ -187,7 +187,7 @@
             </TextView>
 
             <TextView
-                android:id="@+id/Proce_general"
+                android:id="@+id/procedencia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Finca NNNNN"
@@ -196,5 +196,38 @@
          </LinearLayout>
         </LinearLayout>
     </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_general"
+                android:id="@+id/bovinos_recycler"/>
+        </ScrollView>
+        <RelativeLayout
+            android:id="@+id/rl_BovinosGeneral"
+            android:layout_width="match_parent"
+            android:layout_height="800dp" >
+
+            <View
+                android:id="@+id/view_BovinosGeneral"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.5"
+                android:background="@color/gray" />
+            <ProgressBar
+                android:id="@+id/pgbar_BovinosGeneral"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+    </FrameLayout>
 
 </FrameLayout>
