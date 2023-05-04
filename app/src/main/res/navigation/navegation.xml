@@ -55,7 +55,11 @@
         android:id="@+id/recyclerView_Ternero"
         android:name="com.example.vaqui.RecyclerView_Ternero"
         android:label="fragment_recycler_view__ternero"
-        tools:layout="@layout/fragment_recycler_view__ternero" />
+        tools:layout="@layout/fragment_recycler_view__ternero" >
+        <action
+            android:id="@+id/action_recyclerView_Ternero_to_datos_terneros"
+            app:destination="@id/datos_terneros" />
+    </fragment>
     <fragment
         android:id="@+id/datos_terneros"
         android:name="com.example.vaqui.datos_terneros"
