@@ -31,6 +31,9 @@
         <action
             android:id="@+id/action_gestion_to_buscadorBovinoFragment2"
             app:destination="@id/buscar" />
+        <action
+            android:id="@+id/action_gestion_to_recyclerView_Ternero"
+            app:destination="@id/recyclerView_Ternero" />
     </fragment>
 
     <fragment
@@ -48,4 +51,14 @@
         android:name="com.example.vaqui.datos_general"
         android:label="fragment_datos_general"
         tools:layout="@layout/fragment_datos_general" />
+    <fragment
+        android:id="@+id/recyclerView_Ternero"
+        android:name="com.example.vaqui.RecyclerView_Ternero"
+        android:label="fragment_recycler_view__ternero"
+        tools:layout="@layout/fragment_recycler_view__ternero" />
+    <fragment
+        android:id="@+id/datos_terneros"
+        android:name="com.example.vaqui.datos_terneros"
+        android:label="fragment_datos_terneros"
+        tools:layout="@layout/fragment_datos_terneros" />
 </navigation>

@@ -1,5 +1,6 @@
 package com.example.vaqui.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,6 +17,7 @@ class TerneroAdapter(private val terneroList: ArrayList<JSONObject>, private val
         fun bind(bovinos: JSONObject){
             BovinoID.text = bovinos.getString("Bovino_ID")
             categorias.text = bovinos.getString("Categoria")
+            Log.w("errorrrr", "No cargó la imagen")
         }
     }
 
@@ -36,7 +38,7 @@ class TerneroAdapter(private val terneroList: ArrayList<JSONObject>, private val
                 ternerosListener.onItemClicked(bovinos , position)
             }
         } catch (e : Exception) {
-
+            Log.w("errorrrr", "No cargó la imagen")
         }
     }
 }
