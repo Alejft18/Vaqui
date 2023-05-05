@@ -65,4 +65,18 @@
         android:name="com.example.vaqui.datos_terneros"
         android:label="fragment_datos_terneros"
         tools:layout="@layout/fragment_datos_terneros" />
+    <fragment
+        android:id="@+id/recyclerViewSecado"
+        android:name="com.example.vaqui.RecyclerViewSecado"
+        android:label="fragment_recycler_view_secado"
+        tools:layout="@layout/fragment_recycler_view_secado" >
+        <action
+            android:id="@+id/action_recyclerViewSecado_to_datos_secado"
+            app:destination="@id/datos_secado" />
+    </fragment>
+    <fragment
+        android:id="@+id/datos_secado"
+        android:name="com.example.vaqui.datos_secado"
+        android:label="fragment_datos_secado"
+        tools:layout="@layout/fragment_datos_secado" />
 </navigation>
