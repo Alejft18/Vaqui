@@ -6,12 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AlphaAnimation
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.Recycler
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.android.volley.Request
@@ -21,6 +23,7 @@ import com.example.vaqui.adapter.BovinosListener
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
+import kotlin.math.log
 
 class BuscadorBovinoFragment : Fragment(), BovinosListener {
     private lateinit var recycler: RecyclerView
@@ -47,7 +50,7 @@ class BuscadorBovinoFragment : Fragment(), BovinosListener {
         // Infla el diseño para este fragmento
         val ll = inflater.inflate(R.layout.fragment_buscador_bovino, container, false)
         this.recycler = ll.findViewById(R.id.rvBuscador1)
-        val url = "http://192.168.0.19/phpVaqui/listar_bobinos_general.php"
+        val url = "http://192.168.0.11/phpVaqui/listar_bobinos_general.php"
         Log.d("BuscadorBovinoFragment","Entered to onCreateView")
         val queue = Volley.newRequestQueue(this.context)
         //queue.timeout = 10000 // aumentar el tiempo de espera a 10 segundos
