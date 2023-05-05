@@ -4,14 +4,13 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.vaqui.Moldels.Bovino
+import com.example.vaqui.Buscador.BuscadorBovinoFragment
 import com.example.vaqui.R
 import org.json.JSONObject
 
-class BovinosAdapter(private val bovinoList: ArrayList<JSONObject>, private val bovinosListener: BovinosListener) : RecyclerView.Adapter<BovinosAdapter.ViewHolder>() {
+class BovinosAdapter(private val bovinoList: ArrayList<JSONObject>, private val bovinosListener: BuscadorBovinoFragment) : RecyclerView.Adapter<BovinosAdapter.ViewHolder>() {
 
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
         var BovinoID : TextView = view.findViewById(R.id.IdVacasg)

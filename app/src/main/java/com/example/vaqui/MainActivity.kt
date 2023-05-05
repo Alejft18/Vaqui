@@ -2,11 +2,14 @@ package com.example.vaqui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageButton
 import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.vaqui.Perfil.PerfilFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -20,6 +23,13 @@ class MainActivity : AppCompatActivity() {
         val navController = host.navController
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupBottonNavMenu(navController)
+
+        val btnNavegar = findViewById<ImageButton>(R.id.btn_perfil)
+        btnNavegar.setOnClickListener{
+            val destino = PerfilFragment()
+            val navController = Navigation.findNavController(this,R.id.nav_host_fragment_container)
+            navController.navigate(R.id.perfilFragment)
+        }
     }
 
 

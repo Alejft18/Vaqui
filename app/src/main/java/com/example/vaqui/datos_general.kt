@@ -33,13 +33,10 @@ class datos_general : DialogFragment() {
     private lateinit var img_general : ImageView
 
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setStyle(STYLE_NORMAL,R.style.FullScreenDialogStyle)
     }
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -87,8 +84,6 @@ class datos_general : DialogFragment() {
         super.onStart()
         dialog?.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
     }
-
-
 
 
 }

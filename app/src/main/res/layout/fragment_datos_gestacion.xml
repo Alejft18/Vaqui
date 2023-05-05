@@ -71,7 +71,7 @@
                 android:textSize="16dp">
             </TextView>
             <TextView
-                android:id="@+id/FC_revision_gestacion"
+                android:id="@+id/fc_revision_gestacion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="15/10/2020"
@@ -92,7 +92,7 @@
                 android:textSize="16dp">
             </TextView>
             <TextView
-                android:id="@+id/Id_gestacion"
+                android:id="@+id/id_gestacion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="120"
@@ -113,7 +113,7 @@
                 android:textSize="16dp">
             </TextView>
             <TextView
-                android:id="@+id/Peso_gestacion"
+                android:id="@+id/peso_gestacion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="320 Kg"
@@ -134,7 +134,7 @@
                 android:textSize="16dp">
             </TextView>
             <TextView
-                android:id="@+id/FC_aproxPartoG"
+                android:id="@+id/fc_aproxPartoG"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="02/03/2023"
@@ -155,7 +155,7 @@
                 android:textSize="16dp">
             </TextView>
             <TextView
-                android:id="@+id/FC_ultiPartoG"
+                android:id="@+id/fc_ultiPartoG"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="01/01/2022"
@@ -176,7 +176,7 @@
                 android:textSize="16dp">
             </TextView>
             <TextView
-                android:id="@+id/FC_inseminacionG"
+                android:id="@+id/fc_inseminacionG"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="01/01/2022"
@@ -198,7 +198,7 @@
                 android:textSize="16dp">
             </TextView>
             <TextView
-                android:id="@+id/Catego_gestacion"
+                android:id="@+id/catego_gestacion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Gestación"
@@ -209,5 +209,38 @@
     </LinearLayout>
 
     </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_gestacion"
+                android:id="@+id/gestacion_recycler"/>
+        </ScrollView>
+        <RelativeLayout
+            android:id="@+id/rl_gestacion"
+            android:layout_width="match_parent"
+            android:layout_height="800dp" >
+
+            <View
+                android:id="@+id/view_gestacion"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.5"
+                android:background="@color/gray" />
+            <ProgressBar
+                android:id="@+id/pgbar_gestacion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+    </FrameLayout>
 
 </FrameLayout>

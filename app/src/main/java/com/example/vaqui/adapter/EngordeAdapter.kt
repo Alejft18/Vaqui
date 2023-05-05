@@ -1,5 +1,6 @@
 package com.example.vaqui.adapter
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,33 +11,34 @@ import org.json.JSONObject
 
 class EngordeAdapter(private val engordeList: ArrayList<JSONObject>, private val engordeListener: EngordeListener) : RecyclerView.Adapter<EngordeAdapter.ViewHolder>() {
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
-        var BovinoID : TextView = view.findViewById(R.id.IdVacas)
-        var categorias : TextView = view.findViewById(R.id.categoVacas)
+        var BovinoID : TextView = view.findViewById(R.id.idVacasengorde)
+        var categorias : TextView = view.findViewById(R.id.categoEngorde)
 
-        fun bind(bovinos: JSONObject){
-            BovinoID.text = bovinos.getString("Bovino_ID")
-            categorias.text = bovinos.getString("Categoria")
+        fun bind(engorde: JSONObject){
+            BovinoID.text = engorde.getString("id")
+            categorias.text = engorde.getString("categoria")
+            Log.w("errorrrr", "No cargó la imagen")
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)= ViewHolder (
         LayoutInflater
             .from(parent.context)
-            .inflate(R.layout.item_categoria,  parent, false)
+            .inflate(R.layout.item_engorde,  parent, false)
     )
 
     override fun getItemCount() = this.engordeList.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val bovinos = engordeList[position]
+        val engorde = engordeList[position]
         try {
-            holder.bind(bovinos)
+            holder.bind(engorde)
 
             holder.itemView.setOnClickListener {
-                engordeListener.onItemClicked(bovinos , position)
+                engordeListener.onItemClicked(engorde , position)
             }
         } catch (e : Exception) {
-
+            Log.w("errorrrr", "No cargó la imagen")
         }
     }
 }

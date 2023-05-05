@@ -1,4 +1,4 @@
-package com.example.vaqui.Buscador
+package com.example.vaqui
 
 import android.os.Bundle
 import android.util.Log
@@ -12,31 +12,32 @@ import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.android.volley.Request
-import com.example.vaqui.R
 import com.example.vaqui.adapter.BovinosAdapter
-import com.example.vaqui.adapter.BovinosListener
+import com.example.vaqui.adapter.GestacionAdapter
+import com.example.vaqui.adapter.GestacionListener
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 
-class BuscadorBovinoFragment : Fragment(), BovinosListener {
+class RecyclerView_Gestacion : Fragment(), GestacionListener {
     private lateinit var recycler: RecyclerView
     private lateinit var viewAlpha: View
     private lateinit var pgbar: ProgressBar
-    private lateinit var rlBovinosList: RelativeLayout
-    private var bovinosList= ArrayList<JSONObject>()
+    private lateinit var rlGestacionList: RelativeLayout
+    private var gestacionList= ArrayList<JSONObject>()
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val adapter=BovinosAdapter(bovinosList,this)
+        val adapter=GestacionAdapter(gestacionList,this)
 
         val layoutManager = LinearLayoutManager(requireContext())
         recycler.layoutManager = layoutManager
 
         recycler.adapter=adapter
-        Log.d("BuscadorBovinoFragment","Entered to OnViewCreate")
+        Log.d("RecyclerView_Gestacion","Entered to OnViewCreate")
     }
 
     override fun onCreateView(
@@ -45,28 +46,28 @@ class BuscadorBovinoFragment : Fragment(), BovinosListener {
     ): View? {
 
         // Infla el diseño para este fragmento
-        val ll = inflater.inflate(R.layout.fragment_buscador_bovino, container, false)
-        this.recycler = ll.findViewById(R.id.rvBuscador1)
-        val url = "http://192.168.0.19/phpVaqui/listar_bobinos_general.php"
-        Log.d("BuscadorBovinoFragment","Entered to onCreateView")
+        val ll = inflater.inflate(R.layout.fragment_recycler_view__gestacion, container, false)
+        this.recycler = ll.findViewById(R.id.rvGestacion)
+        val url = "http://192.168.0.19/phpVaqui/listar_gestacion.php"
+        Log.d("RecyclerView_Gestacion","Entered to onCreateView")
         val queue = Volley.newRequestQueue(this.context)
         //queue.timeout = 10000 // aumentar el tiempo de espera a 10 segundos
 
         val stringRequest = StringRequest(Request.Method.GET, url,{ response ->
             val jsonArray = JSONArray(response)
 
-            this.bovinosList= ArrayList()
+            this.gestacionList= ArrayList()
             try {
                 var i = 0
                 val l = jsonArray.length()
                 while (i < l) {
-                    bovinosList.add(jsonArray[i] as JSONObject)
+                    gestacionList.add(jsonArray[i] as JSONObject)
                     i++
                 }
-                Log.d("listbovinos", this.bovinosList.toString())
+                Log.d("listgestacion", this.gestacionList.toString())
 
-                if (bovinosList != null) {
-                    recycler.adapter = BovinosAdapter(bovinosList, this)
+                if (gestacionList != null) {
+                    recycler.adapter = GestacionAdapter(gestacionList, this)
                     viewAlpha.visibility = View.INVISIBLE
                     pgbar.visibility = View.INVISIBLE
                 }
@@ -78,18 +79,17 @@ class BuscadorBovinoFragment : Fragment(), BovinosListener {
         })
 
         queue.add(stringRequest)
-        this.recycler = ll.findViewById(R.id.rvBuscador1)
-        this.viewAlpha = ll.findViewById(R.id.view_bovinosList)
-        this.pgbar = ll.findViewById(R.id.pgbar_bovinoList)
-        this.rlBovinosList = ll.findViewById(R.id.RlBuscador)
+        this.recycler = ll.findViewById(R.id.rvGestacion)
+        this.viewAlpha = ll.findViewById(R.id.view_gestacionList)
+        this.pgbar = ll.findViewById(R.id.pgbar_gestacionList)
+        this.rlGestacionList = ll.findViewById(R.id.RlGestacion)
 
         return ll
 
     }
 
-    override fun onItemClicked(bovinos: JSONObject, position: Int) {
-
-        val bundle = bundleOf("Bovino" to bovinos.toString())
+    override fun onItemClicked(gestacion: JSONObject, position: Int) {
+        val bundle = bundleOf("Gestacion" to gestacion.toString())
         findNavController().navigate(
             R.id.datos_general,
             bundle
