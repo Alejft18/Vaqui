@@ -79,4 +79,18 @@
         android:name="com.example.vaqui.datos_secado"
         android:label="fragment_datos_secado"
         tools:layout="@layout/fragment_datos_secado" />
+    <fragment
+        android:id="@+id/fragment_recycler_view_gestacion"
+        android:name="com.example.vaqui.fragment_recycler_view_gestacion"
+        android:label="fragment_recycler_view_gestacion"
+        tools:layout="@layout/fragment_recycler_view_gestacion" >
+        <action
+            android:id="@+id/action_fragment_recycler_view_gestacion_to_datos_gestacion"
+            app:destination="@id/datos_gestacion" />
+    </fragment>
+    <fragment
+        android:id="@+id/datos_gestacion"
+        android:name="com.example.vaqui.datos_gestacion"
+        android:label="fragment_datos_gestacion"
+        tools:layout="@layout/fragment_datos_gestacion" />
 </navigation>

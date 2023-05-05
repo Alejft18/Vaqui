@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment_recycler_view_gestacion">
+
+    <RelativeLayout
+        android:id="@+id/RlBuscadorGestacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <SearchView
+            android:id="@+id/searchBusGestacion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:queryHint="Ingrese el id de la vaca"
+            android:iconifiedByDefault="false"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="80dp"
+            android:layout_marginBottom="16dp"
+            android:queryBackground="@android:color/transparent"
+            android:background="@drawable/shape_buscadory">
+        </SearchView>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="300px"
+            android:layout_marginBottom="300px">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvBuscadorGestacion"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+            </androidx.recyclerview.widget.RecyclerView>
+        </ScrollView>
+
+        <View
+            android:id="@+id/view_gestacionList"
+            android:layout_width="561dp"
+            android:layout_height="match_parent"
+            android:alpha="0.5"
+            android:background="@color/black">
+        </View>
+
+        <ProgressBar
+            android:id="@+id/pgbar_gestacionlist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:indeterminateTint="@color/vaquiP">
+        </ProgressBar>
+    </RelativeLayout>
+
+</FrameLayout>
