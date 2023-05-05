@@ -38,14 +38,37 @@ class CategoriasFragment : Fragment() {
         this.cateSemental = ll.findViewById(R.id.cateSemental)
         this.cateTernero = ll.findViewById(R.id.cateTernero)
 
-        return ll
-
-        cateGenera.setOnClickListener(){
-            val navController= Navigation.findNavController(getActivity(),R.id.nav_host_fragment_container)
+        cateGenera.setOnClickListener{
+            val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
             navController.navigate(R.id.generalfragment)
         }
 
+        /*cateLecheras.setOnClickListener{
+            val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
+            navController.navigate(R.id.lecherasfragment)
+        }
 
+        cateGesta.setOnClickListener{
+            val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
+            navController.navigate(R.id.gestafragment)
+        }
+
+        cateSecado.setOnClickListener{
+            val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
+            navController.navigate(R.id.secadoFragment)
+        }
+
+        cateSemental.setOnClickListener{
+            val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
+            navController.navigate(R.id.sementalfragment)
+        }
+
+        cateTernero.setOnClickListener{
+            val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
+            navController.navigate(R.id.ternerofragment)
+        }*/
+
+        return ll
     }
 
 

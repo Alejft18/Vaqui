@@ -82,10 +82,10 @@ class RecyclerView_Engorde : Fragment(), EngordeListener {
         })
 
         queue.add(stringRequest)
-        this.recycler = ll.findViewById(R.id.rvEngorde)
+        /*this.recycler = ll.findViewById(R.id.rvEngorde)
         this.viewAlpha = ll.findViewById(R.id.view_BovinosEngorde)
         this.pgbar = ll.findViewById(R.id.pgbar_BovinosEngorde)
-        this.rlEngordeList = ll.findViewById(R.id.rl_Bovinosengorde)
+        this.rlEngordeList = ll.findViewById(R.id.rl_Bovinosengorde)*/
 
         return ll
 

@@ -90,9 +90,9 @@ class RecyclerView_Ternero : Fragment(), TernerosListener {
     override fun onItemClicked(terneros: JSONObject, position: Int) {
 
         val bundle = bundleOf("Ternero" to terneros.toString())
-        findNavController().navigate(
+        /*findNavController().navigate(
             R.id.datos_terneros,
             bundle
-        )
+        )*/
     }
 }

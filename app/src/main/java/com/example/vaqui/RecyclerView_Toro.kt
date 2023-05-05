@@ -88,10 +88,10 @@ class RecyclerView_Toro : Fragment(), ToroListener {
 
     override fun onItemClicked(toro: JSONObject, position: Int) {
 
-        val bundle = bundleOf("Toro" to toro.toString())
+        /*val bundle = bundleOf("Toro" to toro.toString())
         findNavController().navigate(
             R.id.datos_sementales,
             bundle
-        )
+        )*/
     }
 }

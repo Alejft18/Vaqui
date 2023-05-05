@@ -22,7 +22,7 @@ class ToroAdapter (private val toroList: ArrayList<JSONObject>, private val toro
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)= ViewHolder (
         LayoutInflater
             .from(parent.context)
-            .inflate(R.layout.item_categoria,  parent, false)
+            .inflate(R.layout.item_general,  parent, false)
     )
 
     override fun getItemCount() = this.toroList.size

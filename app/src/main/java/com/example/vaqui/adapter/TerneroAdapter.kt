@@ -24,7 +24,7 @@ class TerneroAdapter(private val terneroList: ArrayList<JSONObject>, private val
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)= ViewHolder (
         LayoutInflater
             .from(parent.context)
-            .inflate(R.layout.item_categoria,  parent, false)
+            .inflate(R.layout.item_general,  parent, false)
     )
 
     override fun getItemCount() = this.terneroList.size

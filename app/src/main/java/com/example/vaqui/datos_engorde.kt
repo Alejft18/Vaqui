@@ -49,9 +49,9 @@ class datos_engorde : DialogFragment() {
         this.catego_engorde = ll.findViewById(R.id.catego_engorde)
 
 
-        this.recycler = ll.findViewById(R.id.engorde_recycler)
+        /*this.recycler = ll.findViewById(R.id.engorde_recycler)
         this.viewAlpha = ll.findViewById(R.id.view_BovinosEngorde)
-        this.rlEngordeList = ll.findViewById(R.id.rl_Bovinosengorde)
+        this.rlEngordeList = ll.findViewById(R.id.rl_Bovinosengorde)*/
 
         return ll
     }

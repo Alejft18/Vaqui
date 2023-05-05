@@ -96,9 +96,9 @@ class RecyclerViewSecado : Fragment(), SecadoListener {
     override fun onItemClicked(secado: JSONObject, position: Int) {
 
         val bundle = bundleOf("Secado" to secado.toString())
-        findNavController().navigate(
+        /*findNavController().navigate(
             R.id.datos_secado,
             bundle
-        )
+        )*/
     }
 }

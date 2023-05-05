@@ -12,8 +12,8 @@ import org.json.JSONObject
 
 class GestacionAdapter(private val gestacionList: ArrayList<JSONObject>, private val gestacionListener: GestacionListener): RecyclerView.Adapter<GestacionAdapter.ViewHolder>() {
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
-        var BovinoID : TextView = view.findViewById(R.id.IdVacasgestacion)
-        var categorias : TextView = view.findViewById(R.id.categoriagesta)
+        var BovinoID : TextView = view.findViewById(R.id.id_general)
+        var categorias : TextView = view.findViewById(R.id.raza_general)
 
         fun bind(gestacion: JSONObject){
             BovinoID.text = gestacion.getString("id")
@@ -25,7 +25,7 @@ class GestacionAdapter(private val gestacionList: ArrayList<JSONObject>, private
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)= ViewHolder (
         LayoutInflater
             .from(parent.context)
-            .inflate(R.layout.item_gestacion,  parent, false)
+            .inflate(R.layout.item_general,  parent, false)
     )
 
     override fun getItemCount() = this.gestacionList.size

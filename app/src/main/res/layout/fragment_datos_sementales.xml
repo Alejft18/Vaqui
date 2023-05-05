@@ -205,7 +205,6 @@
             android:id="@+id/rl_Toros"
             android:layout_width="match_parent"
             android:layout_height="800dp" >
-
             <View
                 android:id="@+id/view_Toros"
                 android:layout_width="match_parent"

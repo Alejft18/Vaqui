@@ -93,7 +93,7 @@ class fragment_recycler_view_gestacion : Fragment(), GestacionListener {
 
         val bundle = bundleOf("Gestacion" to gestacion.toString())
         findNavController().navigate(
-            R.id.datos_gestacion,
+            R.id.datos_general,
             bundle
         )
     }
