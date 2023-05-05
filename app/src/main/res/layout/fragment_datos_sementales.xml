@@ -185,7 +185,40 @@
         </TextView>
         </LinearLayout>
     </LinearLayout>
-
     </LinearLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_general"
+                android:id="@+id/toros_recycler"/>
+        </ScrollView>
+        <RelativeLayout
+            android:id="@+id/rl_Toros"
+            android:layout_width="match_parent"
+            android:layout_height="800dp" >
+
+            <View
+                android:id="@+id/view_Toros"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alpha="0.5"
+                android:background="@color/gray" />
+            <ProgressBar
+                android:id="@+id/pgbar_Toros"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+
+        </RelativeLayout>
+    </FrameLayout>
 
 </FrameLayout>
