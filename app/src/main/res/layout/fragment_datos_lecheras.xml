@@ -173,9 +173,51 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:text="Fecha de ordeño"
+                android:textStyle="bold"
+                android:layout_marginLeft="60dp"
+                android:textSize="16dp">
+            </TextView>
+            <TextView
+                android:id="@+id/FC_ordeño"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="05/05/2022"
+                android:layout_marginLeft="4dp">
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Litros del día"
+                android:textStyle="bold"
+                android:layout_marginLeft="100dp"
+                android:textSize="16dp">
+            </TextView>
+            <TextView
+                android:id="@+id/Litros_dia"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="15 L"
+                android:layout_marginLeft="4dp">
+            </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="Categoría:"
                 android:textStyle="bold"
-                android:layout_marginLeft="80dp"
+                android:layout_marginLeft="100dp"
                 android:textSize="16dp">
             </TextView>
             <TextView
@@ -187,43 +229,6 @@
             </TextView>
         </LinearLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/shape_buscadory"
-            android:orientation="horizontal">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="250dp"
-                android:layout_height="35dp"
-                android:gravity="left"
-                android:hint="Fecha de ordeño"
-                tools:visibility="invisible" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/shape_buscadory"
-            android:orientation="horizontal">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="250dp"
-                android:layout_height="35dp"
-                android:gravity="left"
-                android:hint="Litros "
-                tools:visibility="invisible" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <Button
-            android:layout_width="130dp"
-            android:layout_height="40dp"
-            android:text="Actualizar"
-            android:layout_gravity="center"
-            android:layout_marginTop="18dp">
-        </Button>
     </LinearLayout>
     </LinearLayout>
 
