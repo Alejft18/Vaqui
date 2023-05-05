@@ -65,4 +65,18 @@
         android:name="com.example.vaqui.datos_terneros"
         android:label="fragment_datos_terneros"
         tools:layout="@layout/fragment_datos_terneros" />
+    <fragment
+        android:id="@+id/recyclerView_Toro"
+        android:name="com.example.vaqui.RecyclerView_Toro"
+        android:label="fragment_recycler_view__toro"
+        tools:layout="@layout/fragment_recycler_view__toro" >
+        <action
+            android:id="@+id/action_recyclerView_Toro_to_datos_sementales"
+            app:destination="@id/datos_sementales" />
+    </fragment>
+    <fragment
+        android:id="@+id/datos_sementales"
+        android:name="com.example.vaqui.datos_sementales"
+        android:label="fragment_datos_sementales"
+        tools:layout="@layout/fragment_datos_sementales" />
 </navigation>
