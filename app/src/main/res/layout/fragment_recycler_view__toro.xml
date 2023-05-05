@@ -44,10 +44,11 @@
         </View>
 
         <ProgressBar
+            android:id="@+id/pgbar_toroList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:indeterminateTint="@color/vaquiP">
+            android:indeterminateTint="@color/verde">
         </ProgressBar>
     </RelativeLayout>
 
