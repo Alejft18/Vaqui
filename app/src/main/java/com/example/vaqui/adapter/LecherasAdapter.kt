@@ -23,7 +23,7 @@ class LecherasAdapter(private val lecherasList: ArrayList<JSONObject>,private va
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)= ViewHolder (
         LayoutInflater
             .from(parent.context)
-            .inflate(R.layout.item_categoria,  parent, false)
+            .inflate(R.layout.item_engorde,  parent, false)
     )
 
     override fun getItemCount() = this.lecherasList.size

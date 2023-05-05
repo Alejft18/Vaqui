@@ -70,7 +70,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="50px"
+            android:layout_margin="0px"
             android:orientation="horizontal">
             <LinearLayout
                 android:layout_width="match_parent"
@@ -79,6 +79,7 @@
                 android:layout_margin="10dp"
                 android:gravity="center"
                 android:layout_weight="1">
+
                 <androidx.cardview.widget.CardView
                     android:id="@+id/cateGeneral"
                     android:layout_width="150dp"
@@ -112,6 +113,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cateGesta"
                     android:layout_width="150dp"
                     android:layout_height="120dp"
                     android:layout_marginTop="20dp"
@@ -145,6 +147,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cateSemental"
                     android:layout_width="150dp"
                     android:layout_height="120dp"
                     android:layout_marginTop="20dp"
@@ -186,6 +189,7 @@
                 android:layout_weight="1">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cateLecheras"
                     android:layout_width="150dp"
                     android:layout_height="120dp"
                     app:cardBackgroundColor="@color/white"
@@ -218,6 +222,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cateSecado"
                     android:layout_width="150dp"
                     android:layout_height="120dp"
                     android:layout_marginTop="20dp"
@@ -250,9 +255,9 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cateTernero"
                     android:layout_width="150dp"
                     android:layout_height="120dp"
-
                     android:layout_marginTop="20dp"
                     app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="13dp"
@@ -281,9 +286,14 @@
                             android:textStyle="bold" />
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
+
             </LinearLayout>
 
+
+
         </LinearLayout>
-        </LinearLayout>
+
+
+    </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

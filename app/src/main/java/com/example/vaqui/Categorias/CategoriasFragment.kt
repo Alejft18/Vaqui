@@ -6,56 +6,49 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.cardview.widget.CardView
+import androidx.navigation.Navigation
 import com.example.vaqui.R
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [CategoriasFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class CategoriasFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var cateGenera : CardView
+    private lateinit var cateLecheras : CardView
+    private lateinit var cateGesta : CardView
+    private lateinit var cateSecado : CardView
+    private lateinit var cateSemental : CardView
+    private lateinit var cateTernero : CardView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_categorias, container, false)
+        val ll = inflater.inflate(R.layout.fragment_categorias, container, false)
+
+        this.cateGenera = ll.findViewById(R.id.cateGeneral)
+        this.cateLecheras = ll.findViewById(R.id.cateLecheras)
+        this.cateGesta = ll.findViewById(R.id.cateGesta)
+        this.cateSecado = ll.findViewById(R.id.cateSecado)
+        this.cateSemental = ll.findViewById(R.id.cateSemental)
+        this.cateTernero = ll.findViewById(R.id.cateTernero)
+
+        return ll
+
+        cateGenera.setOnClickListener(){
+            val navController= Navigation.findNavController(getActivity(),R.id.nav_host_fragment_container)
+            navController.navigate(R.id.generalfragment)
+        }
+
+
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment CategoriasFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            CategoriasFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
+
+
+
 }
