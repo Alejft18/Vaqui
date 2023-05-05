@@ -3,22 +3,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".buscarGestion">
+    tools:context=".RecyclerView_Gestacion">
 
     <RelativeLayout
-        android:id="@+id/RlBuscadorGestion"
+        android:id="@+id/RlGestacion"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content" >
 
         <SearchView
-            android:id="@+id/searchBusGesti"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:queryHint="Ingrese el número de cédula"
+            android:id="@+id/searchBusBovigestacion"
+            android:layout_height="30dp"
+            android:queryHint="Ingrese el ID del bovino"
             android:iconifiedByDefault="false"
             android:layout_marginHorizontal="16dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="70dp"
             android:layout_marginBottom="16dp"
             android:queryBackground="@android:color/transparent"
             android:background="@drawable/shape_buscadory">
@@ -30,25 +29,28 @@
             android:layout_marginTop="300px"
             android:layout_marginBottom="300px">
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rvBuscador1"
+                android:id="@+id/rvGestacion"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
             </androidx.recyclerview.widget.RecyclerView>
         </ScrollView>
 
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white"
-            android:alpha="0.5">
 
+        <View
+            android:id="@+id/view_gestacionList"
+            android:layout_width="561dp"
+            android:layout_height="match_parent"
+            android:alpha="0.5"
+            android:background="@color/black">
         </View>
 
         <ProgressBar
+            android:id="@+id/pgbar_gestacionList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:indeterminateTint="@color/vaquiP">
+            android:indeterminateTint="@color/verde">
+
         </ProgressBar>
     </RelativeLayout>
 

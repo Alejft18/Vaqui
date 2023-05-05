@@ -24,11 +24,10 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(navController.graph)
         setupBottonNavMenu(navController)
 
-        //Opcion del boton
         val btnNavegar = findViewById<ImageButton>(R.id.btn_perfil)
         btnNavegar.setOnClickListener{
-            val destino =PerfilFragment()
-            val navController= Navigation.findNavController(this,R.id.nav_host_fragment_container)
+            val destino = PerfilFragment()
+            val navController = Navigation.findNavController(this,R.id.nav_host_fragment_container)
             navController.navigate(R.id.perfilFragment)
         }
     }
