@@ -116,6 +116,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cateGesta"
                     android:layout_width="150dp"
                     android:layout_height="120dp"
                     android:layout_marginTop="20dp"
@@ -149,6 +150,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cateSemental"
                     android:layout_width="150dp"
                     android:layout_height="120dp"
                     android:layout_marginTop="20dp"
@@ -190,6 +192,7 @@
                 android:layout_weight="1">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cateLecheras"
                     android:layout_width="150dp"
                     android:layout_height="120dp"
                     app:cardBackgroundColor="@color/white"
@@ -222,6 +225,7 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cateSecado"
                     android:layout_width="150dp"
                     android:layout_height="120dp"
                     android:layout_marginTop="20dp"
@@ -254,9 +258,9 @@
                 </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cateTernero"
                     android:layout_width="150dp"
                     android:layout_height="120dp"
-
                     android:layout_marginTop="20dp"
                     app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="13dp"
@@ -295,6 +299,7 @@
                 android:orientation="horizontal">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cateEngorde"
                     android:layout_width="150dp"
                     android:layout_height="120dp"
                     app:cardBackgroundColor="@color/white"
@@ -318,7 +323,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="10dp"
-                            android:text="Terneros"
+                            android:text="Engorde"
                             android:textAlignment="center"
                             android:textSize="18dp"
                             android:textStyle="bold" />

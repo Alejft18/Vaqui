@@ -39,10 +39,10 @@
                 android:layout_marginLeft="120dp"/>
 
             <TextView
-                android:id="@+id/raza_toro"
+                android:id="@+id/categoriToro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Raza"
+                android:text="Categoria"
                 android:textStyle="bold"
                 android:textSize="20dp"
                 android:gravity="center"

@@ -11,8 +11,8 @@ import org.json.JSONObject
 
 class EngordeAdapter(private val engordeList: ArrayList<JSONObject>, private val engordeListener: EngordeListener) : RecyclerView.Adapter<EngordeAdapter.ViewHolder>() {
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
-        var BovinoID : TextView = view.findViewById(R.id.id_general)
-        var categorias : TextView = view.findViewById(R.id.raza_general)
+        var BovinoID : TextView = view.findViewById(R.id.idEngorde)
+        var categorias : TextView = view.findViewById(R.id.categoriaEngorde)
 
         fun bind(engorde: JSONObject){
             BovinoID.text = engorde.getString("id")
@@ -24,7 +24,7 @@ class EngordeAdapter(private val engordeList: ArrayList<JSONObject>, private val
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)= ViewHolder (
         LayoutInflater
             .from(parent.context)
-            .inflate(R.layout.item_general,  parent, false)
+            .inflate(R.layout.item_engorde,  parent, false)
     )
 
     override fun getItemCount() = this.engordeList.size

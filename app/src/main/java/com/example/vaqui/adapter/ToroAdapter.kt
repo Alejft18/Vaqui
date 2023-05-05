@@ -10,30 +10,30 @@ import org.json.JSONObject
 
 class ToroAdapter (private val toroList: ArrayList<JSONObject>, private val toroListener: ToroListener) : RecyclerView.Adapter<ToroAdapter.ViewHolder>(){
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
-        var BovinoID : TextView = view.findViewById(R.id.IdVacas)
-        var categorias : TextView = view.findViewById(R.id.categoVacas)
+        var BovinoID : TextView = view.findViewById(R.id.Idtor_item)
+        var categorias : TextView = view.findViewById(R.id.categoriToro)
 
-        fun bind(bovinos: JSONObject){
-            BovinoID.text = bovinos.getString("Bovino_ID")
-            categorias.text = bovinos.getString("Categoria")
+        fun bind(toro: JSONObject){
+            BovinoID.text = toro.getString("id")
+            categorias.text = toro.getString("categoria")
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)= ViewHolder (
         LayoutInflater
             .from(parent.context)
-            .inflate(R.layout.item_general,  parent, false)
+            .inflate(R.layout.item_toro,  parent, false)
     )
 
     override fun getItemCount() = this.toroList.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val bovinos = toroList[position]
+        val toro = toroList[position]
         try {
-            holder.bind(bovinos)
+            holder.bind(toro)
 
             holder.itemView.setOnClickListener {
-                toroListener.onItemClicked(bovinos , position)
+                toroListener.onItemClicked(toro , position)
             }
         } catch (e : Exception) {
 

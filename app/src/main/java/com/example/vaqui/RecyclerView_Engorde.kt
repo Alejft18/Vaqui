@@ -51,7 +51,7 @@ class RecyclerView_Engorde : Fragment(), EngordeListener {
         // Infla el diseño para este fragmento
         val ll = inflater.inflate(R.layout.fragment_recycler_view__engorde, container, false)
         this.recycler = ll.findViewById(R.id.rvEngorde)
-        val url = "http://192.168.0.19/phpVaqui/listar_engorde.php"
+        val url = "http://192.168.152.148/phpVaqui/listar_engorde.php"
         Log.d("RecyclerView_Engorde","Entered to onCreateView")
         val queue = Volley.newRequestQueue(this.context)
         //queue.timeout = 10000 // aumentar el tiempo de espera a 10 segundos
@@ -82,10 +82,10 @@ class RecyclerView_Engorde : Fragment(), EngordeListener {
         })
 
         queue.add(stringRequest)
-        /*this.recycler = ll.findViewById(R.id.rvEngorde)
-        this.viewAlpha = ll.findViewById(R.id.view_BovinosEngorde)
-        this.pgbar = ll.findViewById(R.id.pgbar_BovinosEngorde)
-        this.rlEngordeList = ll.findViewById(R.id.rl_Bovinosengorde)*/
+        this.recycler = ll.findViewById(R.id.rvEngorde)
+        this.viewAlpha = ll.findViewById(R.id.view_engordeList)
+        this.pgbar = ll.findViewById(R.id.pgbar_engordeList)
+        this.rlEngordeList = ll.findViewById(R.id.RlEngorde)
 
         return ll
 
@@ -95,7 +95,7 @@ class RecyclerView_Engorde : Fragment(), EngordeListener {
 
         val bundle = bundleOf("Engorde" to engorde.toString())
         findNavController().navigate(
-            R.id.datos_general,
+            R.id.datos_engorde,
             bundle
         )
     }

@@ -13,7 +13,7 @@
         <SearchView
             android:id="@+id/searchBusTernero"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:queryHint="Ingrese el id del ternero"
             android:iconifiedByDefault="false"
             android:layout_marginHorizontal="16dp"

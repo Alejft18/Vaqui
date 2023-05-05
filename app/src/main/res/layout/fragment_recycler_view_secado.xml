@@ -13,7 +13,7 @@
         <SearchView
             android:id="@+id/searchBusSecado"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="30dp"
             android:queryHint="Ingrese el id de la vaca"
             android:iconifiedByDefault="false"
             android:layout_marginHorizontal="16dp"

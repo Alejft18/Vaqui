@@ -28,6 +28,24 @@
         <action
             android:id="@+id/action_categorias_to_buscadorBovinoFragment"
             app:destination="@id/generalfragment" />
+        <action
+            android:id="@+id/action_categorias_to_recyclerViewLecheras"
+            app:destination="@id/lecherasfragment" />
+        <action
+            android:id="@+id/action_categorias_to_secadofragment"
+            app:destination="@id/secadofragment" />
+        <action
+            android:id="@+id/action_categorias_to_recyclerView_Gestacion"
+            app:destination="@id/gestacionfragment" />
+        <action
+            android:id="@+id/action_categorias_to_recyclerView_Ternero"
+            app:destination="@id/ternerofragment" />
+        <action
+            android:id="@+id/action_categorias_to_recyclerView_Toro"
+            app:destination="@id/torofragment" />
+        <action
+            android:id="@+id/action_categorias_to_recyclerView_Engorde"
+            app:destination="@id/engordefragment" />
     </fragment>
     <fragment
         android:id="@+id/gestion"
@@ -46,20 +64,14 @@
             app:destination="@id/datos_general" />
     </fragment>
     <fragment
-        android:id="@+id/engordefragment"
-        android:name="com.example.vaqui.RecyclerView_Engorde"
-        android:label="fragment_recycler_view__engorde"
-        tools:layout="@layout/fragment_recycler_view__engorde" />
-    <fragment
-        android:id="@+id/gestionfragment"
-        android:name="com.example.vaqui.fragment_recycler_view_gestacion"
-        android:label="fragment_recycler_view_gestacion"
-        tools:layout="@layout/fragment_recycler_view_gestacion" />
-    <fragment
         android:id="@+id/secadofragment"
         android:name="com.example.vaqui.RecyclerViewSecado"
         android:label="fragment_recycler_view_secado"
-        tools:layout="@layout/fragment_recycler_view_secado" />
+        tools:layout="@layout/fragment_recycler_view_secado" >
+        <action
+            android:id="@+id/action_secadofragment_to_datos_secado"
+            app:destination="@id/datos_secado" />
+    </fragment>
     <fragment
         android:id="@+id/perfilFragment"
         android:name="com.example.vaqui.Perfil.PerfilFragment"
@@ -70,5 +82,80 @@
         android:name="com.example.vaqui.datos_general"
         android:label="fragment_datos_general"
         tools:layout="@layout/fragment_datos_general" />
+    <fragment
+        android:id="@+id/lecherasfragment"
+        android:name="com.example.vaqui.RecyclerViewLecheras"
+        android:label="fragment_recycler_view_lecheras"
+        tools:layout="@layout/fragment_recycler_view_lecheras" >
+        <action
+            android:id="@+id/action_lecherasfragment_to_datos_lecheras"
+            app:destination="@id/datos_lecheras" />
+    </fragment>
+    <dialog
+        android:id="@+id/datos_secado"
+        android:name="com.example.vaqui.datos_secado"
+        android:label="fragment_datos_secado"
+        tools:layout="@layout/fragment_datos_secado" />
+    <fragment
+        android:id="@+id/gestacionfragment"
+        android:name="com.example.vaqui.RecyclerView_Gestacion"
+        android:label="fragment_recycler_view__gestacion"
+        tools:layout="@layout/fragment_recycler_view__gestacion" >
+        <action
+            android:id="@+id/action_recyclerView_Gestacion_to_datos_gestacion"
+            app:destination="@id/datos_gestacion" />
+    </fragment>
+    <dialog
+        android:id="@+id/datos_gestacion"
+        android:name="com.example.vaqui.datos_gestacion"
+        android:label="fragment_datos_gestacion"
+        tools:layout="@layout/fragment_datos_gestacion" />
+    <fragment
+        android:id="@+id/ternerofragment"
+        android:name="com.example.vaqui.RecyclerView_Ternero"
+        android:label="fragment_recycler_view__ternero"
+        tools:layout="@layout/fragment_recycler_view__ternero" >
+        <action
+            android:id="@+id/action_recyclerView_Ternero_to_datos_terneros"
+            app:destination="@id/datos_terneros" />
+    </fragment>
+    <dialog
+        android:id="@+id/datos_terneros"
+        android:name="com.example.vaqui.datos_terneros"
+        android:label="fragment_datos_terneros"
+        tools:layout="@layout/fragment_datos_terneros" />
+    <fragment
+        android:id="@+id/torofragment"
+        android:name="com.example.vaqui.RecyclerView_Toro"
+        android:label="fragment_recycler_view__toro"
+        tools:layout="@layout/fragment_recycler_view__toro" >
+        <action
+            android:id="@+id/action_recyclerView_Toro_to_datos_sementales"
+            app:destination="@id/datos_sementales" />
+    </fragment>
+    <dialog
+        android:id="@+id/datos_sementales"
+        android:name="com.example.vaqui.datos_sementales"
+        android:label="fragment_datos_sementales"
+        tools:layout="@layout/fragment_datos_sementales" />
+    <fragment
+        android:id="@+id/engordefragment"
+        android:name="com.example.vaqui.RecyclerView_Engorde"
+        android:label="fragment_recycler_view__engorde"
+        tools:layout="@layout/fragment_recycler_view__engorde" >
+        <action
+            android:id="@+id/action_recyclerView_Engorde_to_datos_engorde"
+            app:destination="@id/datos_engorde" />
+    </fragment>
+    <dialog
+        android:id="@+id/datos_engorde"
+        android:name="com.example.vaqui.datos_engorde"
+        android:label="fragment_datos_engorde"
+        tools:layout="@layout/fragment_datos_engorde" />
+    <dialog
+        android:id="@+id/datos_lecheras"
+        android:name="com.example.vaqui.datos_lecheras"
+        android:label="fragment_datos_lecheras"
+        tools:layout="@layout/fragment_datos_lecheras" />
 
 </navigation>

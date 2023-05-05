@@ -28,7 +28,7 @@
 
 
             <TextView
-                android:id="@+id/Idgestacion_item"
+                android:id="@+id/idgestacion_item"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="ID"
@@ -39,10 +39,10 @@
                 android:layout_marginLeft="120dp"/>
 
             <TextView
-                android:id="@+id/FCinseminacion_item"
+                android:id="@+id/categoriaGesta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Fecha inicio"
+                android:text="Categoria"
                 android:textStyle="bold"
                 android:textSize="20dp"
                 android:gravity="center"

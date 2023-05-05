@@ -15,30 +15,28 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.example.vaqui.adapter.BovinosAdapter
-import com.example.vaqui.adapter.GestacionAdapter
-import com.example.vaqui.adapter.GestacionListener
+import com.example.vaqui.adapter.LecherasAdapter
+import com.example.vaqui.adapter.LecherasListener
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
 
-class fragment_recycler_view_gestacion : Fragment(), GestacionListener {
-
+class RecyclerViewLecheras : Fragment(), LecherasListener {
     private lateinit var recycler: RecyclerView
     private lateinit var viewAlpha: View
     private lateinit var pgbar: ProgressBar
-    private lateinit var rlGestacionList: RelativeLayout
-    private var gestacionList= ArrayList<JSONObject>()
+    private lateinit var rlLecherasList: RelativeLayout
+    private var lecherasList= ArrayList<JSONObject>()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val adapter= GestacionAdapter(gestacionList,this)
+        val adapter= LecherasAdapter(lecherasList,this)
 
         val layoutManager = LinearLayoutManager(requireContext())
         recycler.layoutManager = layoutManager
 
         recycler.adapter=adapter
-        Log.d("fragment_recycler_view_gestacion","Entered to OnViewCreate")
+        Log.d("RecyclerViewLecheras","Entered to OnViewCreate")
     }
 
     override fun onCreateView(
@@ -47,28 +45,28 @@ class fragment_recycler_view_gestacion : Fragment(), GestacionListener {
     ): View? {
 
         // Infla el diseño para este fragmento
-        val ll = inflater.inflate(R.layout.fragment_recycler_view_gestacion, container, false)
-        this.recycler = ll.findViewById(R.id.rvBuscadorGestacion)
-        val url = "http://192.168.0.11/phpVaqui/listar_bobinos_general.php"
-        Log.d("fragment_recycler_view_gestacion","Entered to onCreateView")
+        val ll = inflater.inflate(R.layout.fragment_recycler_view_lecheras, container, false)
+        this.recycler = ll.findViewById(R.id.rvLecheras)
+        val url = "http://192.168.152.148/phpVaqui/listar_lecheras.php"
+        Log.d("RecyclerViewLecheras","Entered to onCreateView")
         val queue = Volley.newRequestQueue(this.context)
         //queue.timeout = 10000 // aumentar el tiempo de espera a 10 segundos
 
         val stringRequest = StringRequest(Request.Method.GET, url,{ response ->
             val jsonArray = JSONArray(response)
 
-            this.gestacionList= ArrayList()
+            this.lecherasList= ArrayList()
             try {
                 var i = 0
                 val l = jsonArray.length()
                 while (i < l) {
-                    gestacionList.add(jsonArray[i] as JSONObject)
+                    lecherasList.add(jsonArray[i] as JSONObject)
                     i++
                 }
-                Log.d("listgestacion", this.gestacionList.toString())
+                Log.d("listlecheras", this.lecherasList.toString())
 
-                if (gestacionList != null) {
-                    recycler.adapter = GestacionAdapter(gestacionList, this)
+                if (lecherasList != null) {
+                    recycler.adapter = LecherasAdapter(lecherasList, this)
                     viewAlpha.visibility = View.INVISIBLE
                     pgbar.visibility = View.INVISIBLE
                 }
@@ -80,23 +78,20 @@ class fragment_recycler_view_gestacion : Fragment(), GestacionListener {
         })
 
         queue.add(stringRequest)
-        this.recycler = ll.findViewById(R.id.rvBuscadorGestacion)
-        this.viewAlpha = ll.findViewById(R.id.view_gestacionList)
-        this.pgbar = ll.findViewById(R.id.pgbar_gestacionlist)
-        this.rlGestacionList = ll.findViewById(R.id.RlBuscadorGestacion)
+        this.recycler = ll.findViewById(R.id.rvLecheras)
+        this.viewAlpha = ll.findViewById(R.id.view_lecherasList)
+        this.pgbar = ll.findViewById(R.id.pgbar_lecherasList)
+        this.rlLecherasList = ll.findViewById(R.id.RlLecheras)
 
         return ll
 
     }
 
-    override fun onItemClicked(gestacion: JSONObject, position: Int) {
-
-        val bundle = bundleOf("Gestacion" to gestacion.toString())
+    override fun onItemClicked(lecheras: JSONObject, position: Int) {
+        val bundle = bundleOf("Lecheras" to lecheras.toString())
         findNavController().navigate(
             R.id.datos_general,
             bundle
         )
     }
-
-
 }

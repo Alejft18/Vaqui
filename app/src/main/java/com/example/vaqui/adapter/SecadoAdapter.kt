@@ -10,19 +10,19 @@ import org.json.JSONObject
 
 class SecadoAdapter (private val secadoList: ArrayList<JSONObject>, private val secadoListener: SecadoListener) : RecyclerView.Adapter<SecadoAdapter.ViewHolder>() {
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
-        var BovinoID : TextView = view.findViewById(R.id.IdVacas)
-        var categorias : TextView = view.findViewById(R.id.categoVacas)
+        var BovinoID : TextView = view.findViewById(R.id.idsecado)
+        var categorias : TextView = view.findViewById(R.id.categoriaSecado)
 
         fun bind(bovinos: JSONObject){
-            BovinoID.text = bovinos.getString("Bovino_ID")
-            categorias.text = bovinos.getString("Categoria")
+            BovinoID.text = bovinos.getString("id")
+            categorias.text = bovinos.getString("categoria")
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int)= ViewHolder (
         LayoutInflater
             .from(parent.context)
-            .inflate(R.layout.item_general,  parent, false)
+            .inflate(R.layout.item_secado,  parent, false)
     )
 
     override fun getItemCount() = this.secadoList.size

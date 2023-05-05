@@ -1,5 +1,6 @@
 package com.example.vaqui.Categorias
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -16,6 +17,7 @@ class CategoriasFragment : Fragment() {
     private lateinit var cateSecado : CardView
     private lateinit var cateSemental : CardView
     private lateinit var cateTernero : CardView
+    private lateinit var cateEngorde : CardView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +26,7 @@ class CategoriasFragment : Fragment() {
     }
 
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -37,36 +40,42 @@ class CategoriasFragment : Fragment() {
         this.cateSecado = ll.findViewById(R.id.cateSecado)
         this.cateSemental = ll.findViewById(R.id.cateSemental)
         this.cateTernero = ll.findViewById(R.id.cateTernero)
+        this.cateEngorde = ll.findViewById(R.id.cateEngorde)
 
         cateGenera.setOnClickListener{
             val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
             navController.navigate(R.id.generalfragment)
         }
 
-        /*cateLecheras.setOnClickListener{
+        cateLecheras.setOnClickListener{
             val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
             navController.navigate(R.id.lecherasfragment)
         }
 
         cateGesta.setOnClickListener{
             val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
-            navController.navigate(R.id.gestafragment)
+            navController.navigate(R.id.gestacionfragment)
         }
 
         cateSecado.setOnClickListener{
             val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
-            navController.navigate(R.id.secadoFragment)
+            navController.navigate(R.id.secadofragment)
         }
 
         cateSemental.setOnClickListener{
             val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
-            navController.navigate(R.id.sementalfragment)
+            navController.navigate(R.id.torofragment)
         }
 
         cateTernero.setOnClickListener{
             val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
             navController.navigate(R.id.ternerofragment)
-        }*/
+        }
+
+        cateEngorde.setOnClickListener{
+            val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
+            navController.navigate(R.id.engordefragment )
+        }
 
         return ll
     }

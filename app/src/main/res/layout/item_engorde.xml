@@ -28,7 +28,7 @@
 
 
             <TextView
-                android:id="@+id/IdSecao_item"
+                android:id="@+id/idEngorde"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="ID"
@@ -39,10 +39,10 @@
                 android:layout_marginLeft="120dp"/>
 
             <TextView
-                android:id="@+id/FCinicio_engorde"
+                android:id="@+id/categoriaEngorde"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Fecha de inicio"
+                android:text="Categoria"
                 android:textStyle="bold"
                 android:textSize="20dp"
                 android:gravity="center"

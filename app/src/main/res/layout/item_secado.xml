@@ -28,7 +28,7 @@
 
 
             <TextView
-                android:id="@+id/Idsecado"
+                android:id="@+id/idsecado"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="ID"
@@ -39,10 +39,10 @@
                 android:layout_marginLeft="120dp"/>
 
             <TextView
-                android:id="@+id/ultimo_tomaLeche"
+                android:id="@+id/categoriaSecado"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Toma de leche"
+                android:text="categoria"
                 android:textStyle="bold"
                 android:textSize="20dp"
                 android:gravity="center"
