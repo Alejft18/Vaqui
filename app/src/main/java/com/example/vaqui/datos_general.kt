@@ -51,7 +51,6 @@ class datos_general : DialogFragment() {
         this.raza_general = ll.findViewById(R.id.raza_general)
         this.genero_general = ll.findViewById(R.id.genero_general)
         this.fecha_general = ll.findViewById(R.id.fecha_general)
-        this.peso_general = ll.findViewById(R.id.peso_general)
         this.procedencia = ll.findViewById(R.id.procedencia)
         this.img_general = ll.findViewById(R.id.img_general)
 
@@ -69,7 +68,7 @@ class datos_general : DialogFragment() {
             dismiss()
         }
 
-    val general = JSONObject(arguments?.getString("tbl_general"))
+    val general = JSONObject(arguments?.getString("bovinos"))
         this.id_general.text=general.getString("id")
         this.raza_general.text=general.getString("raza")
         this.genero_general.text=general.getString("genero")

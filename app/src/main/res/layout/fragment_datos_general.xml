@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".datos_general">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
         <View
             android:layout_width="match_parent"
@@ -21,7 +20,7 @@
 
     <LinearLayout
         android:layout_width="300dp"
-        android:layout_height="260dp"
+        android:layout_height="370dp"
         android:orientation="vertical"
         android:layout_gravity="center"
         app:cardElevation="8dp"
@@ -46,6 +45,7 @@
             android:id="@+id/img_general"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
+            android:layout_margin="15dp"
             android:src="@drawable/datos_general"
             android:layout_gravity="center">
         </ImageView>
@@ -58,20 +58,45 @@
                 android:layout_gravity="center"
                 android:textStyle="bold"
                 android:textColor="@color/verde"
-                android:textSize="18dp">
+                android:textSize="20dp">
             </TextView>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ID:"
+                    android:textStyle="bold"
+                    android:textSize="18dp">
+                </TextView>
+                <TextView
+                    android:id="@+id/id_general"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:text="120"
+                    android:layout_marginLeft="4dp">
+                </TextView>
+            </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
             android:orientation="horizontal">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Fecha de nacimiento:"
-                android:layout_marginLeft="30dp"
-                android:textSize="16dp"
+                android:textSize="18dp"
                 android:textStyle="bold">
             </TextView>
 
@@ -79,72 +104,32 @@
                 android:id="@+id/fecha_general"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="16dp"
                 android:text="15/10/2020"
                 android:layout_marginLeft="4dp">
             </TextView>
         </LinearLayout>
 
-         <LinearLayout
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ID:"
-                android:layout_marginLeft="130dp"
-                android:textStyle="bold"
-                android:textSize="16dp">
-            </TextView>
-            <TextView
-                android:id="@+id/id_general"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="120"
-                android:layout_marginLeft="4dp">
-            </TextView>
-         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Peso:"
-                android:layout_marginLeft="110dp"
-                android:textStyle="bold"
-                android:textSize="16dp">
-            </TextView>
-
-            <TextView
-                android:id="@+id/peso_general"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="320 Kg"
-                android:layout_marginLeft="4dp">
-            </TextView>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
             android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Raza:"
-                android:layout_marginLeft="90dp"
                 android:textStyle="bold"
-                android:textSize="16dp">
+                android:textSize="18dp">
             </TextView>
 
             <TextView
                 android:id="@+id/raza_general"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="16dp"
                 android:text="NNNNNNNN"
                 android:layout_marginLeft="4dp">
             </TextView>
@@ -153,14 +138,15 @@
          <LinearLayout
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
+             android:layout_gravity="center"
+             android:layout_margin="10dp"
              android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Género:"
                 android:textStyle="bold"
-                android:layout_marginLeft="100dp"
-                android:textSize="16dp">
+                android:textSize="18dp">
             </TextView>
 
             <TextView
@@ -168,6 +154,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Hembra"
+                android:textSize="16dp"
                 android:layout_marginLeft="4dp">
             </TextView>
          </LinearLayout>
@@ -176,26 +163,28 @@
          <LinearLayout
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
+             android:layout_margin="10dp"
+             android:layout_gravity="center"
              android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Procedencia:"
                 android:textStyle="bold"
-                android:textSize="16dp"
-                android:layout_marginLeft="60dp">
+                android:textSize="18dp">
             </TextView>
 
             <TextView
                 android:id="@+id/procedencia"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="16dp"
                 android:text="Finca NNNNN"
                 android:layout_marginLeft="4dp">
             </TextView>
          </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -229,5 +218,5 @@
 
         </RelativeLayout>
     </FrameLayout>
-
+    </LinearLayout>
 </FrameLayout>
