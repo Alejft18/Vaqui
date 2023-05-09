@@ -51,7 +51,7 @@ class RecyclerView_Engorde : Fragment(), EngordeListener {
         // Infla el diseño para este fragmento
         val ll = inflater.inflate(R.layout.fragment_recycler_view__engorde, container, false)
         this.recycler = ll.findViewById(R.id.rvEngorde)
-        val url = "http://192.168.74.201/phpVaqui/listar_engorde.php"
+        val url = "http://192.168.74.115/phpVaqui/listar_engorde.php"
         Log.d("RecyclerView_Engorde","Entered to onCreateView")
         val queue = Volley.newRequestQueue(this.context)
         //queue.timeout = 10000 // aumentar el tiempo de espera a 10 segundos
