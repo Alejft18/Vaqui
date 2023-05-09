@@ -38,7 +38,7 @@
                 android:text="cargo"
                 android:textColor="@color/white"
                 android:textSize="13dp"
-                android:textStyle="normal" />
+                android:textStyle="normal"/>
 
         </LinearLayout>
 
@@ -51,15 +51,6 @@
         </ImageView>
     </androidx.appcompat.widget.Toolbar>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Categorias"
-            android:textSize="25dp"
-            android:layout_gravity="center_horizontal"
-            android:textColor="@color/verde">
-        </TextView>
-
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -69,6 +60,15 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Categorias"
+            android:textSize="25dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/verde">
+        </TextView>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -308,9 +308,9 @@
 
                     <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="85dp"
+                        android:layout_height="75dp"
                         android:layout_marginTop="10dp"
-                        android:src="@drawable/ternero">
+                        android:src="@drawable/vaca_engorde">
                     </ImageView>
 
                     <LinearLayout
