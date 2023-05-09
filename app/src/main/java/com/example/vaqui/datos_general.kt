@@ -38,6 +38,7 @@ class datos_general : DialogFragment() {
         setStyle(STYLE_NORMAL,R.style.FullScreenDialogStyle)
     }
 
+    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
