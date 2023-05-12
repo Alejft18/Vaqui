@@ -89,9 +89,9 @@ class RecyclerView_Gestacion : Fragment(), GestacionListener {
     }
 
     override fun onItemClicked(gestacion: JSONObject, position: Int) {
-        val bundle = bundleOf("Gestacion" to gestacion.toString())
+        val bundle = bundleOf("gestacion" to gestacion.toString())
         findNavController().navigate(
-            R.id.datos_general,
+            R.id.datos_gestacion,
             bundle
         )
     }

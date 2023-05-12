@@ -31,6 +31,7 @@ class BuscadorBovinoFragment : Fragment(), BovinosListener {
     private lateinit var pgbar: ProgressBar
     private lateinit var rlBovinosList: RelativeLayout
     private var bovinosList= ArrayList<JSONObject>()
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val adapter=BovinosAdapter(bovinosList,this)
@@ -50,7 +51,7 @@ class BuscadorBovinoFragment : Fragment(), BovinosListener {
         // Infla el diseño para este fragmento
         val ll = inflater.inflate(R.layout.fragment_buscador_bovino, container, false)
         this.recycler = ll.findViewById(R.id.rvBuscador1)
-        val url = "http://192.168.74.115/phpVaqui/listar_bobinos_general.php"
+        val url = "http://192.168.6.213/phpVaqui/listar_bobinos_general.php"
         Log.d("BuscadorBovinoFragment","Entered to onCreateView")
         val queue = Volley.newRequestQueue(this.context)
         //queue.timeout = 10000 // aumentar el tiempo de espera a 10 segundos

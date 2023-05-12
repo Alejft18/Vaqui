@@ -20,11 +20,10 @@
 
     <LinearLayout
         android:layout_width="300dp"
-        android:layout_height="360dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         app:cardElevation="8dp"
-        android:background="@drawable/shape_detalle_mpleado"
-        android:orientation="horizontal">
+        android:background="@drawable/shape_detalle_mpleado">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -44,7 +43,6 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="50dp"
-            android:layout_margin="10dp"
             android:src="@drawable/datos_terneros"
             android:layout_gravity="center">
         </ImageView>
@@ -56,28 +54,26 @@
             android:layout_gravity="center"
             android:textStyle="bold"
             android:textColor="@color/verde"
-            android:textSize="20dp">
+            android:textSize="18dp">
         </TextView>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_gravity="center"
             android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Fecha de revisión:"
+                android:layout_marginLeft="40dp"
                 android:textStyle="bold"
-                android:textSize="18dp">
+                android:textSize="16dp">
             </TextView>
             <TextView
                 android:id="@+id/FC_revision_ternero"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="15/10/2020"
-                android:textSize="16dp"
                 android:layout_marginLeft="4dp">
             </TextView>
         </LinearLayout>
@@ -85,22 +81,20 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_gravity="center"
             android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ID:"
+                android:layout_marginLeft="130dp"
                 android:textStyle="bold"
-                android:textSize="18dp">
+                android:textSize="16dp">
             </TextView>
             <TextView
                 android:id="@+id/Id_ternero"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="120"
-                android:textSize="16dp"
                 android:layout_marginLeft="4dp">
             </TextView>
         </LinearLayout>
@@ -108,22 +102,20 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_gravity="center"
             android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Peso:"
+                android:layout_marginLeft="110dp"
                 android:textStyle="bold"
-                android:textSize="18dp">
+                android:textSize="16dp">
             </TextView>
             <TextView
                 android:id="@+id/Peso_ternero"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="100 Kg"
-                android:textSize="16dp"
                 android:layout_marginLeft="4dp">
             </TextView>
         </LinearLayout>
@@ -131,21 +123,19 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_gravity="center"
             android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ID de la mamá: "
+                android:layout_marginLeft="90dp"
                 android:textStyle="bold"
-                android:textSize="18dp">
+                android:textSize="16dp">
             </TextView>
             <TextView
                 android:id="@+id/id_mamá_Ternero"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16dp"
                 android:text="255"
                 android:layout_marginLeft="4dp">
             </TextView>
@@ -154,26 +144,26 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_gravity="center"
             android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Categoría: "
+                android:layout_marginLeft="90dp"
                 android:textStyle="bold"
-                android:textSize="18dp">
+                android:textSize="16dp">
             </TextView>
             <TextView
                 android:id="@+id/Catego_ternero"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Terneros"
-                android:textSize="16dp"
                 android:layout_marginLeft="4dp">
             </TextView>
         </LinearLayout>
     </LinearLayout>
+    </LinearLayout>
+
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -206,7 +196,7 @@
                 android:layout_centerInParent="true" />
 
         </RelativeLayout>
-      </FrameLayout>
-    </LinearLayout>
+    </FrameLayout>
+
 </FrameLayout>
 
