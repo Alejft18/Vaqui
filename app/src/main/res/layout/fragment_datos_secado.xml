@@ -28,7 +28,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="420dp"
         android:orientation="vertical">
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
@@ -44,6 +44,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
             android:src="@drawable/datos_secado"
             android:layout_gravity="center">
         </ImageView>
@@ -55,26 +56,28 @@
             android:layout_gravity="center"
             android:textStyle="bold"
             android:textColor="@color/verde"
-            android:textSize="18dp">
+            android:textSize="20dp">
         </TextView>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
             android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Fecha de revisión:"
                 android:textStyle="bold"
-                android:layout_marginLeft="40dp"
-                android:textSize="16dp">
+                android:textSize="18dp">
             </TextView>
             <TextView
                 android:id="@+id/FC_revision_secado"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="15/10/2020"
+                android:textSize="16dp"
                 android:layout_marginLeft="4dp">
             </TextView>
         </LinearLayout>
@@ -82,19 +85,21 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
             android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="ID:"
-                android:layout_marginLeft="130dp"
                 android:textStyle="bold"
-                android:textSize="16dp">
+                android:textSize="18dp">
             </TextView>
             <TextView
                 android:id="@+id/Id_secado"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="16dp"
                 android:text="120"
                 android:layout_marginLeft="4dp">
             </TextView>
@@ -103,19 +108,21 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
             android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Peso:"
-                android:layout_marginLeft="110dp"
                 android:textStyle="bold"
-                android:textSize="16dp">
+                android:textSize="18dp">
             </TextView>
             <TextView
                 android:id="@+id/Peso_secado"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="16dp"
                 android:text="320 Kg"
                 android:layout_marginLeft="4dp">
             </TextView>
@@ -124,20 +131,22 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
             android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Última toma de leche:"
-                android:layout_marginLeft="30dp"
                 android:textStyle="bold"
-                android:textSize="16dp">
+                android:textSize="18dp">
             </TextView>
             <TextView
                 android:id="@+id/Ultima_toma_secado"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="03/10/2022"
+                android:textSize="16dp"
                 android:layout_marginLeft="4dp">
             </TextView>
         </LinearLayout>
@@ -145,20 +154,22 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
             android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Último parto:"
-                android:layout_marginLeft="60dp"
                 android:textStyle="bold"
-                android:textSize="16dp">
+                android:textSize="18dp">
             </TextView>
             <TextView
                 android:id="@+id/FC_ultiParto_S"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="01/01/2022"
+                android:textSize="16dp"
                 android:layout_marginLeft="4dp">
             </TextView>
         </LinearLayout>
@@ -166,20 +177,22 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
             android:orientation="horizontal">
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Categría:"
-                android:layout_marginLeft="90dp"
                 android:textStyle="bold"
-                android:textSize="16dp">
+                android:textSize="18dp">
             </TextView>
             <TextView
                 android:id="@+id/Catego_lechera"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Secado"
+                android:textSize="16dp"
                 android:layout_marginLeft="4dp">
             </TextView>
         </LinearLayout>
