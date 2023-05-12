@@ -73,7 +73,7 @@
                 android:textSize="16dp">
             </TextView>
             <TextView
-                android:id="@+id/FC_revision_lechera"
+                android:id="@+id/fecha_revision_lechera"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="15/10/2020"
@@ -95,7 +95,7 @@
             </TextView>
 
             <TextView
-                android:id="@+id/Id_lechera"
+                android:id="@+id/id_lechera"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="120"
@@ -116,7 +116,7 @@
                 android:textSize="16dp">
             </TextView>
             <TextView
-                android:id="@+id/Peso_lechera"
+                android:id="@+id/peso_lechera"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="320 Kg"
@@ -138,7 +138,7 @@
         </TextView>
 
         <TextView
-            android:id="@+id/Partos_lechera"
+            android:id="@+id/partos_lechera"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="3"
@@ -160,7 +160,7 @@
         </TextView>
 
         <TextView
-            android:id="@+id/FC_ultiParto_L"
+            android:id="@+id/fecha_ultiParto_leche"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="01/01/2022"
@@ -181,7 +181,7 @@
                 android:textSize="16dp">
             </TextView>
             <TextView
-                android:id="@+id/FC_ordeño"
+                android:id="@+id/fecha_ordeño_leche"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="05/05/2022"
@@ -196,13 +196,13 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Litros del día"
+                android:text="Litros producidos"
                 android:textStyle="bold"
                 android:layout_marginLeft="100dp"
                 android:textSize="16dp">
             </TextView>
             <TextView
-                android:id="@+id/Litros_dia"
+                android:id="@+id/litros_producidos"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="15 L"
@@ -223,7 +223,7 @@
                 android:textSize="16dp">
             </TextView>
             <TextView
-                android:id="@+id/Catego_lechera"
+                android:id="@+id/catego_lechera"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Lecheras"
@@ -246,18 +246,18 @@
                     android:id="@+id/lecheras_recycler"/>
             </ScrollView>
             <RelativeLayout
-                android:id="@+id/rl_BovinosGeneral"
+                android:id="@+id/rl_lecheras"
                 android:layout_width="match_parent"
                 android:layout_height="800dp" >
 
                 <View
-                    android:id="@+id/view_BovinosGeneral"
+                    android:id="@+id/view_lecheras"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:alpha="0.5"
                     android:background="@color/gray" />
                 <ProgressBar
-                    android:id="@+id/pgbar_BovinosGeneral"
+                    android:id="@+id/pgbar_lecheras"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true" />

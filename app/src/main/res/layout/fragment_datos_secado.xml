@@ -24,7 +24,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         app:cardElevation="8dp"
-        android:background="@drawable/shape_detalle_mpleado">
+        android:background="@drawable/shape_detalle_mpleado"
+        android:orientation="horizontal">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -36,7 +37,7 @@
             <Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:id="@+id/tvBarra_lechera"
+                android:id="@+id/tvBarra_secado"
                 android:background="@color/gray">
             </Toolbar>
         </com.google.android.material.appbar.AppBarLayout>
@@ -71,7 +72,7 @@
                 android:textSize="16dp">
             </TextView>
             <TextView
-                android:id="@+id/FC_revision_secado"
+                android:id="@+id/fecha_revision_secado"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="15/10/2020"
@@ -92,7 +93,7 @@
                 android:textSize="16dp">
             </TextView>
             <TextView
-                android:id="@+id/Id_secado"
+                android:id="@+id/id_secado"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="120"
@@ -113,7 +114,7 @@
                 android:textSize="16dp">
             </TextView>
             <TextView
-                android:id="@+id/Peso_secado"
+                android:id="@+id/peso_secado"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="320 Kg"
@@ -134,7 +135,7 @@
                 android:textSize="16dp">
             </TextView>
             <TextView
-                android:id="@+id/Ultima_toma_secado"
+                android:id="@+id/fecha_ordeño_secado"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="03/10/2022"
@@ -155,7 +156,7 @@
                 android:textSize="16dp">
             </TextView>
             <TextView
-                android:id="@+id/FC_ultiParto_S"
+                android:id="@+id/fecha_ultiParto_seca"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="01/01/2022"
@@ -176,7 +177,7 @@
                 android:textSize="16dp">
             </TextView>
             <TextView
-                android:id="@+id/Catego_lechera"
+                android:id="@+id/catego_secado"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Secado"
@@ -184,6 +185,38 @@
             </TextView>
         </LinearLayout>
     </LinearLayout>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_secado"
+                    android:id="@+id/secado_recycler"/>
+            </ScrollView>
+            <RelativeLayout
+                android:id="@+id/rl_secado"
+                android:layout_width="match_parent"
+                android:layout_height="800dp" >
+
+                <View
+                    android:id="@+id/view_secado"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha="0.5"
+                    android:background="@color/gray" />
+                <ProgressBar
+                    android:id="@+id/pgbar_secado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true" />
+
+            </RelativeLayout>
+        </FrameLayout>
 
     </LinearLayout>
 

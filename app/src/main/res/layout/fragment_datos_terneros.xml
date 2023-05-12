@@ -15,7 +15,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:alpha="0.4"
-            android:background="@color/black"></View>
+            android:background="@color/black">
+        </View>
     </LinearLayout>
 
     <LinearLayout
@@ -23,7 +24,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         app:cardElevation="8dp"
-        android:background="@drawable/shape_detalle_mpleado">
+        android:background="@drawable/shape_detalle_mpleado"
+        android:orientation="horizontal">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -35,7 +38,7 @@
             <Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:id="@+id/tvBarra_lechera"
+                android:id="@+id/tvBarra_ternero"
                 android:background="@color/gray">
             </Toolbar>
         </com.google.android.material.appbar.AppBarLayout>
@@ -70,7 +73,7 @@
                 android:textSize="16dp">
             </TextView>
             <TextView
-                android:id="@+id/FC_revision_ternero"
+                android:id="@+id/fecha_revision_ternero"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="15/10/2020"
@@ -91,7 +94,7 @@
                 android:textSize="16dp">
             </TextView>
             <TextView
-                android:id="@+id/Id_ternero"
+                android:id="@+id/id_ternero"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="120"
@@ -112,7 +115,7 @@
                 android:textSize="16dp">
             </TextView>
             <TextView
-                android:id="@+id/Peso_ternero"
+                android:id="@+id/peso_ternero"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="100 Kg"
@@ -133,7 +136,7 @@
                 android:textSize="16dp">
             </TextView>
             <TextView
-                android:id="@+id/id_mamá_Ternero"
+                android:id="@+id/id_madre_Ternero"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="255"
@@ -154,7 +157,7 @@
                 android:textSize="16dp">
             </TextView>
             <TextView
-                android:id="@+id/Catego_ternero"
+                android:id="@+id/catego_ternero"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Terneros"
@@ -162,41 +165,39 @@
             </TextView>
         </LinearLayout>
     </LinearLayout>
-    </LinearLayout>
-
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <ScrollView
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <androidx.recyclerview.widget.RecyclerView
+            <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                tools:listitem="@layout/item_general"
-                android:id="@+id/terneros_recycler"/>
-        </ScrollView>
-        <RelativeLayout
-            android:id="@+id/rl_Terneros"
-            android:layout_width="match_parent"
-            android:layout_height="800dp" >
-
-            <View
-                android:id="@+id/view_Terneros"
+                android:layout_height="match_parent">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    tools:listitem="@layout/item_ternero"
+                    android:id="@+id/terneros_recycler"/>
+            </ScrollView>
+            <RelativeLayout
+                android:id="@+id/rl_Terneros"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:alpha="0.5"
-                android:background="@color/gray" />
-            <ProgressBar
-                android:id="@+id/pgbar_Terneros"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerInParent="true" />
+                android:layout_height="800dp" >
 
-        </RelativeLayout>
-    </FrameLayout>
+                <View
+                    android:id="@+id/view_Terneros"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:alpha="0.5"
+                    android:background="@color/gray" />
+                <ProgressBar
+                    android:id="@+id/pgbar_Terneros"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true" />
+
+            </RelativeLayout>
+        </FrameLayout>
+    </LinearLayout>
 
 </FrameLayout>
 
