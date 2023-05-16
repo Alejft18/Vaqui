@@ -21,77 +21,84 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="300dp"
-        android:layout_height="300dp"
-        android:layout_marginLeft="55dp"
-        android:layout_marginTop="220dp"
+        android:layout_height="400dp"
+        android:layout_gravity="center"
         app:cardCornerRadius="10dp"
         app:cardElevation="8dp"
         app:cardBackgroundColor="@color/white">
 
-        <ImageView
-            android:layout_width="30dp"
-            android:layout_height="20dp"
-            android:src="@drawable/cerrar"
-            android:layout_marginLeft="6dp"
-            android:layout_marginTop="6dp">
-        </ImageView>
-
-        <ImageView
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:src="@drawable/vaca_ingresar"
-            android:layout_marginLeft="120dp"
-            android:layout_marginTop="30dp">
-        </ImageView>
+            android:orientation="vertical"
+            android:padding="20dp">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Datos de la categoría"
-            android:layout_marginLeft="74dp"
-            android:layout_marginTop="100dp"
-            android:textStyle="bold"
-            android:textSize="16dp">
-        </TextView>
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginTop="6dp"
+                android:src="@drawable/cerrar"></ImageView>
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@drawable/shape_buscadory"
-            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/vaca_ingresar"></ImageView>
 
-            <com.google.android.material.textfield.TextInputEditText
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:text="Datos de la categoría"
+                android:textSize="20dp"
+                android:textStyle="bold"></TextView>
+
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="250dp"
-                android:layout_height="35dp"
-                android:gravity="left"
-                android:hint="Litros a que da a la semana"
-                tools:visibility="invisible" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:background="@drawable/shape_buscadory">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="50dp"
-            android:background="@drawable/shape_buscadory"
-            android:orientation="horizontal">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="250dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:gravity="left"
+                    android:textSize="18dp"
+                    android:hint="Litros a la semana"
+                    tools:visibility="invisible" />
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
+            <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="250dp"
-                android:layout_height="35dp"
-                android:gravity="left"
-                android:hint="Fecha de parto"
-                tools:visibility="invisible" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/shape_buscadory"
+                android:orientation="horizontal">
 
-        <Button
-            android:layout_width="130dp"
-            android:layout_height="40dp"
-            android:text="Ingresar"
-            android:layout_gravity="center"
-            android:layout_marginTop="110dp">
-        </Button>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="250dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="10dp"
+                    android:textSize="18dp"
+                    android:gravity="left"
+                    android:hint="Fecha de parto"
+                    tools:visibility="invisible" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:layout_width="130dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:textSize="16dp"
+                android:backgroundTint="@color/verde"
+                android:textColor="@color/white"
+                android:layout_marginTop="25dp"
+                android:text="Ingresar"></Button>
+        </LinearLayout>
     </androidx.cardview.widget.CardView>
 
 </FrameLayout>

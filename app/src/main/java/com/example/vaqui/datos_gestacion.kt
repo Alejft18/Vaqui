@@ -65,13 +65,13 @@ class datos_gestacion : DialogFragment() {
             dismiss()
         }
 
-        val gestacion = JSONObject(arguments?.getString("tbl_gestacion"))
-        this.fc_revision_gestacion.text=gestacion.getString("fecha_Revision")
+        val gestacion = JSONObject(arguments?.getString("gestacion"))
         this.id_gestacion.text=gestacion.getString("id")
         this.peso_gestacion.text=gestacion.getString("peso_kilos")
+        this.fc_inseminacionG.text=gestacion.getString("fecha_inseminacion")
         this.fc_aproxPartoG.text=gestacion.getString("fecha_aproxParto")
         this.fc_ultiPartoG.text=gestacion.getString("fecha_ultimoParto")
-        this.fc_inseminacionG.text=gestacion.getString("fecha_inseminacion")
+        this.fc_revision_gestacion.text=gestacion.getString("fecha_Revision")
         this.catego_gestacion.text=gestacion.getString("categoria")
 
     }

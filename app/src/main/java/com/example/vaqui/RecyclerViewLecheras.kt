@@ -90,7 +90,7 @@ class RecyclerViewLecheras : Fragment(), LecherasListener {
     override fun onItemClicked(lecheras: JSONObject, position: Int) {
         val bundle = bundleOf("lecheras" to lecheras.toString())
         findNavController().navigate(
-            R.id.datos_general,
+            R.id.datos_lecheras,
             bundle
         )
     }

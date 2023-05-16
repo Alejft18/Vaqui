@@ -93,7 +93,7 @@ class RecyclerView_Engorde : Fragment(), EngordeListener {
 
     override fun onItemClicked(engorde: JSONObject, position: Int) {
 
-        val bundle = bundleOf("Engorde" to engorde.toString())
+        val bundle = bundleOf("engorde" to engorde.toString())
         findNavController().navigate(
             R.id.datos_engorde,
             bundle

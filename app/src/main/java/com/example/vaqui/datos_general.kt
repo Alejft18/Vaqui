@@ -26,7 +26,6 @@ class datos_general : DialogFragment() {
     private lateinit var rlGeneralList : RelativeLayout
     private lateinit var id_general : TextView
     private lateinit var fecha_general : TextView
-    private lateinit var peso_general : TextView
     private lateinit var raza_general : TextView
     private lateinit var genero_general : TextView
     private lateinit var procedencia : TextView
@@ -84,6 +83,4 @@ class datos_general : DialogFragment() {
         super.onStart()
         dialog?.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
     }
-
-
 }

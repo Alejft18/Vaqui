@@ -8,8 +8,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
         <View
             android:layout_width="match_parent"
@@ -21,11 +20,11 @@
 
     <LinearLayout
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_height="370dp"
         android:orientation="vertical"
+        android:layout_gravity="center"
         app:cardElevation="8dp"
-        android:background="@drawable/shape_detalle_mpleado"
-        android:layout_gravity="center">
+        android:background="@drawable/shape_detalle_mpleado">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -45,6 +44,7 @@
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="50dp"
+                android:layout_margin="15dp"
                 android:src="@drawable/datos_general"
                 android:layout_gravity="center">
             </ImageView>
@@ -56,26 +56,28 @@
                 android:text="Datos engorde"
                 android:layout_gravity="center"
                 android:textStyle="bold"
-                android:textColor="@color/verde"
-                android:textSize="18dp">
+                android:textSize="20dp"
+                android:textColor="@color/verde">
             </TextView>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Fecha de revisión:"
                     android:textStyle="bold"
-                    android:layout_marginLeft="50dp"
-                    android:textSize="16dp">
+                    android:textSize="18dp">
                 </TextView>
                 <TextView
                     android:id="@+id/fc_revision_engorde"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="16dp"
                     android:text="15/10/2020"
                     android:layout_marginLeft="4dp">
                 </TextView>
@@ -84,20 +86,22 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ID:"
                     android:textStyle="bold"
-                    android:layout_marginLeft="130dp"
-                    android:textSize="16dp">
+                    android:textSize="18dp">
                 </TextView>
                 <TextView
                     android:id="@+id/id_engorde"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="120"
+                    android:textSize="16dp"
                     android:layout_marginLeft="4dp">
             </TextView>
             </LinearLayout>
@@ -105,14 +109,15 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Peso:"
-                    android:layout_marginLeft="110dp"
                     android:textStyle="bold"
-                    android:textSize="16dp">
+                    android:textSize="18dp">
                 </TextView>
 
                 <TextView
@@ -120,6 +125,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="320 Kg"
+                    android:textSize="16dp"
                     android:layout_marginLeft="4dp">
                 </TextView>
             </LinearLayout>
@@ -127,19 +133,21 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Alimento:"
-                    android:textSize="16dp"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="80dp">
+                    android:textSize="18dp"
+                    android:textStyle="bold">
                 </TextView>
                 <TextView
                     android:id="@+id/alimento_engorde"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:textSize="16dp"
                     android:text="Concentrado"
                     android:layout_marginLeft="4dp">
                 </TextView>
@@ -148,26 +156,26 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
                 android:orientation="horizontal">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Categoría:"
-                    android:textSize="16dp"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="90dp">
+                    android:textSize="18dp"
+                    android:textStyle="bold">
                 </TextView>
                 <TextView
                     android:id="@+id/catego_engorde"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Engorde"
+                    android:textSize="16dp"
                     android:layout_marginLeft="4dp">
                 </TextView>
             </LinearLayout>
         </LinearLayout>
-
-    </LinearLayout>
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -201,5 +209,5 @@
 
         </RelativeLayout>
     </FrameLayout>
-
+    </LinearLayout>
 </FrameLayout>
