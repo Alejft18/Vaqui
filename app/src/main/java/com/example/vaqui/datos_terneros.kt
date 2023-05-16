@@ -38,7 +38,7 @@ class datos_terneros : DialogFragment() {
     ): View? {
         // Inflate the layout for this fragment
         val ll= inflater.inflate(R.layout.fragment_datos_terneros, container, false)
-        this.tvBarra_ternero = ll.findViewById(R.id.id_secado)
+        this.tvBarra_ternero = ll.findViewById(R.id.tvBarra_ternero)
 
         this.id_ternero= ll.findViewById(R.id.id_ternero)
         this.peso_ternero= ll.findViewById(R.id.peso_ternero)

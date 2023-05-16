@@ -53,7 +53,7 @@ class RecyclerViewSecado : Fragment(), SecadoListener {
         // Inflate the layout for this fragment
         val ll = inflater.inflate(R.layout.fragment_recycler_view_secado, container, false)
         this.recycler = ll.findViewById(R.id.rvBuscadorSecado)
-        val url = "http://192.168.74.115/phpVaqui/listar_secado.php"
+        val url = "http://192.168.226.82/phpVaqui/listar_secado.php"
         Log.d("RecyclerViewSecado","Entered to onCreateView")
         val queue = Volley.newRequestQueue(this.context)
         //queue.timeout = 10000 // aumentar el tiempo de espera a 10 segundos

@@ -37,7 +37,7 @@
             <Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:id="@+id/tvBarra_lechera"
+                android:id="@+id/tvBarra_toro"
                 android:background="@color/gray">
             </Toolbar>
         </com.google.android.material.appbar.AppBarLayout>
@@ -75,7 +75,7 @@
                 android:textSize="18dp">
             </TextView>
             <TextView
-                android:id="@+id/FC_revision_toro"
+                android:id="@+id/fecha_revision_toro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="15/10/2020"
@@ -98,7 +98,7 @@
                 android:textSize="18dp">
             </TextView>
             <TextView
-                android:id="@+id/Id_toro"
+                android:id="@+id/id_toro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="120"
@@ -121,7 +121,7 @@
                 android:textSize="18dp">
             </TextView>
             <TextView
-                android:id="@+id/Peso_toro"
+                android:id="@+id/peso_toro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="320 Kg"
@@ -144,7 +144,7 @@
                 android:textSize="18dp">
             </TextView>
             <TextView
-                android:id="@+id/vacas_montadas_T"
+                android:id="@+id/vacas_montadas_toro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="5"
@@ -168,7 +168,7 @@
                 android:textSize="18dp">
             </TextView>
             <TextView
-                android:id="@+id/FC_ultiParto_S"
+                android:id="@+id/fecha_extraccion_toro"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="10"
@@ -191,7 +191,7 @@
             android:textSize="18dp">
         </TextView>
         <TextView
-            android:id="@+id/Catego_lechera"
+            android:id="@+id/catego_toro"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Toros"

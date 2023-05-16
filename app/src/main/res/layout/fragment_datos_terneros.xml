@@ -36,7 +36,7 @@
             <Toolbar
                 android:layout_width="match_parent"
                 android:layout_height="30dp"
-                android:id="@+id/tvBarra_lechera"
+                android:id="@+id/tvBarra_ternero"
                 android:background="@color/gray">
             </Toolbar>
         </com.google.android.material.appbar.AppBarLayout>
@@ -74,7 +74,7 @@
                 android:textSize="18dp">
             </TextView>
             <TextView
-                android:id="@+id/FC_revision_ternero"
+                android:id="@+id/fecha_revision_ternero"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="15/10/2020"
@@ -97,7 +97,7 @@
                 android:textSize="18dp">
             </TextView>
             <TextView
-                android:id="@+id/Id_ternero"
+                android:id="@+id/id_ternero"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="120"
@@ -120,7 +120,7 @@
                 android:textSize="18dp">
             </TextView>
             <TextView
-                android:id="@+id/Peso_ternero"
+                android:id="@+id/peso_ternero"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="100 Kg"
@@ -143,7 +143,7 @@
                 android:textSize="18dp">
             </TextView>
             <TextView
-                android:id="@+id/id_mamá_Ternero"
+                android:id="@+id/id_madre_Ternero"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="255"
@@ -166,7 +166,7 @@
                 android:textSize="18dp">
             </TextView>
             <TextView
-                android:id="@+id/Catego_ternero"
+                android:id="@+id/catego_ternero"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Terneros"
