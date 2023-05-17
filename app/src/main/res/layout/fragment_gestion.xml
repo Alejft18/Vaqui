@@ -89,7 +89,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Ingresar empleado"
+                    android:text="Ingresar Bovino"
                     android:layout_marginLeft="40dp"
                     android:textStyle="normal"
                     android:textSize="22dp"
@@ -122,7 +122,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Buscar empleado"
+                    android:text="Buscar Bovino"
                     android:layout_marginLeft="40dp"
                     android:textStyle="normal"
                     android:textSize="23dp"
@@ -155,7 +155,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Actualizar empleado"
+                    android:text="Actualizar Bovino"
                     android:layout_marginLeft="40dp"
                     android:textStyle="normal"
                     android:textSize="22dp"
@@ -188,7 +188,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Eliminar empleado"
+                    android:text="Eliminar Bovino"
                     android:layout_marginLeft="40dp"
                     android:textStyle="normal"
                     android:textSize="22dp"
