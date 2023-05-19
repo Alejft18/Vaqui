@@ -66,7 +66,7 @@ class datos_engorde : DialogFragment() {
         val general = JSONObject(arguments?.getString("engorde"))
         this.id_engorde.text=general.getString("id")
         this.peso_engorde.text=general.getString("peso_kilos")
-        this.fc_revision_engorde.text=general.getString("fecha_Revision")
+        this.fc_revision_engorde.text=general.getString("fecha_revision")
         this.alimento_engorde.text=general.getString("alimento")
         this.catego_engorde.text=general.getString("categoria")
 

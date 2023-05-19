@@ -21,6 +21,7 @@ class datos_gestacion : DialogFragment() {
     private lateinit var recycler : RecyclerView
     private lateinit var viewAlpha : View
     private lateinit var rlGestacionList : RelativeLayout
+
     private lateinit var fecha_revision_gestacion : TextView
     private lateinit var id_gestacion : TextView
     private lateinit var peso_gestacion : TextView
@@ -52,7 +53,7 @@ class datos_gestacion : DialogFragment() {
         this.catego_gestacion = ll.findViewById(R.id.catego_gestacion)
 
         this.recycler = ll.findViewById(R.id.gestacion_recycler)
-        this.viewAlpha = ll.findViewById(R.id.view_gestacionList)
+        this.viewAlpha = ll.findViewById(R.id.view_gestacion)
         this.rlGestacionList = ll.findViewById(R.id.rl_gestacion)
 
         return ll
@@ -71,7 +72,7 @@ class datos_gestacion : DialogFragment() {
         this.fecha_inseminacionGesta.text=gestacion.getString("fecha_inseminacion")
         this.fecha_aproxPartoGesta.text=gestacion.getString("fecha_aproxParto")
         this.fecha_ultiPartoGesta.text=gestacion.getString("fecha_ultimoParto")
-        this.fecha_revision_gestacion.text=gestacion.getString("fecha_Revision")
+        this.fecha_revision_gestacion.text=gestacion.getString("fecha_revision")
         this.catego_gestacion.text=gestacion.getString("categoria")
 
     }

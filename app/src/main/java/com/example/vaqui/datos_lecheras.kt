@@ -27,7 +27,7 @@ class datos_lecheras : DialogFragment() {
     private lateinit var peso_lechera : TextView
     private lateinit var partos_lechera : TextView
     private lateinit var fecha_ultiParto_leche : TextView
-    private lateinit var fecha_ordeño_leche : TextView
+    private lateinit var fecha_ordeno_leche : TextView
     private lateinit var litros_producidos : TextView
     private lateinit var catego_lechera : TextView
 
@@ -45,12 +45,13 @@ class datos_lecheras : DialogFragment() {
         // Inflate the layout for this fragment
         val ll=  inflater.inflate(R.layout.fragment_datos_lecheras, container, false)
         this.tvBarra_lechera = ll.findViewById(R.id.tvBarra_lechera)
+
         this.id_lechera = ll.findViewById(R.id.id_lechera)
         this.fecha_revision_lechera = ll.findViewById(R.id.fecha_revision_lechera)
         this.peso_lechera = ll.findViewById(R.id.peso_lechera)
         this.partos_lechera = ll.findViewById(R.id.partos_lechera)
         this.fecha_ultiParto_leche = ll.findViewById(R.id.fecha_ultiParto_leche)
-        this.fecha_ordeño_leche = ll.findViewById(R.id.fecha_ordeño_leche)
+        this.fecha_ordeno_leche = ll.findViewById(R.id.fecha_ordeno_leche)
         this.litros_producidos = ll.findViewById(R.id.litros_producidos)
         this.catego_lechera = ll.findViewById(R.id.catego_lechera)
 
@@ -70,8 +71,8 @@ class datos_lecheras : DialogFragment() {
 
         val lecheras = JSONObject(arguments?.getString("lecheras"))
             this.id_lechera.text=lecheras.getString("id")
-            this.litros_producidos.text=lecheras.getString("litros_Producidos")
-            this.fecha_ordeño_leche.text=lecheras.getString("fecha_ordeño")
+            this.litros_producidos.text=lecheras.getString("litros_producidos")
+            this.fecha_ordeno_leche.text=lecheras.getString("fecha_ordeno")
             this.peso_lechera.text=lecheras.getString("peso_kilos")
             this.fecha_revision_lechera.text=lecheras.getString("fecha_revision")
             this.fecha_ultiParto_leche.text=lecheras.getString("fecha_parto")
