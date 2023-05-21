@@ -34,7 +34,7 @@ class GestionFragment : Fragment() {
 
         card_ingresar_bovino.setOnClickListener{
             val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
-            navController.navigate(R.id.formulario_general)
+            navController.navigate(R.id.formularioGeneralFragment)
         }
 
         return ll

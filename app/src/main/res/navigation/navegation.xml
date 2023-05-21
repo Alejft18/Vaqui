@@ -60,8 +60,8 @@
             android:id="@+id/action_gestion_to_generalfragment3"
             app:destination="@id/generalfragment2" />
         <action
-            android:id="@+id/action_gestion_to_mainActivity"
-            app:destination="@id/formulario_general" />
+            android:id="@+id/action_gestion_to_formularioGeneralFragment"
+            app:destination="@id/formularioGeneralFragment" />
     </fragment>
     <fragment
         android:id="@+id/generalfragment"
@@ -180,15 +180,15 @@
         android:name="com.example.vaqui.datos_lecheras"
         android:label="fragment_datos_lecheras"
         tools:layout="@layout/fragment_datos_lecheras" />
-    <activity
-        android:id="@+id/formulario_general"
-        android:name="com.example.vaqui.MainActivity"
-        android:label="fragment_formulario_general"
-        tools:layout="@layout/fragment_formulario_general" />
     <fragment
         android:id="@+id/gestionEmpleadosFragment"
         android:name="com.example.vaqui.GestionEmpleadosFragment"
         android:label="fragment_gestion_empleados"
         tools:layout="@layout/fragment_gestion_empleados" />
+    <fragment
+        android:id="@+id/formularioGeneralFragment"
+        android:name="com.example.vaqui.FormularioGeneralFragment"
+        android:label="fragment_formulario_general"
+        tools:layout="@layout/fragment_formulario_general" />
 
 </navigation>
