@@ -83,7 +83,7 @@
                     android:layout_height="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginLeft="15dp"
-                    android:src="@drawable/mas">
+                    android:src="@drawable/agregar_usuario">
                 </ImageView>
 
                 <TextView
@@ -151,7 +151,7 @@
                     android:layout_height="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginLeft="15dp"
-                    android:src="@drawable/actualizar">
+                    android:src="@drawable/actualizar1">
                 </ImageView>
 
                 <TextView
@@ -185,7 +185,7 @@
                     android:layout_height="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginLeft="15dp"
-                    android:src="@drawable/eliminar">
+                    android:src="@drawable/eliminar_emple">
                 </ImageView>
 
                 <TextView

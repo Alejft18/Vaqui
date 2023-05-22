@@ -84,7 +84,7 @@
                     android:layout_height="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginLeft="15dp"
-                    android:src="@drawable/mas">
+                    android:src="@drawable/boton_agregar">
                 </ImageView>
 
                 <TextView
@@ -118,7 +118,7 @@
                     android:layout_height="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginLeft="15dp"
-                    android:src="@drawable/buscar">
+                    android:src="@drawable/vaca_general">
                 </ImageView>
 
                 <TextView
@@ -151,7 +151,7 @@
                     android:layout_height="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginLeft="15dp"
-                    android:src="@drawable/actualizar">
+                    android:src="@drawable/actualizar1">
                 </ImageView>
 
                 <TextView
