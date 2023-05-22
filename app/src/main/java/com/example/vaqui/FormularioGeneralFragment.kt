@@ -1,6 +1,7 @@
 package com.example.vaqui
 
 
+import android.app.DatePickerDialog
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -14,11 +15,14 @@ import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.google.android.material.textfield.TextInputEditText
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.HashMap
 
 
 class FormularioGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener {
     private lateinit var txtRaza: TextInputEditText
-    private lateinit var txtFechaNacimiento: TextInputEditText
+    private lateinit var txtFechaNacimiento: EditText
 
     private lateinit var genero: Spinner
     private lateinit var procedencia: Spinner
@@ -41,6 +45,37 @@ class FormularioGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
         txtFechaNacimiento=view.findViewById(R.id.ingreso_fecha_general)
         procedencia=view.findViewById(R.id.spinner_procedencia)
 
+
+        //logica para la fecha de nacimiento
+        val myCalendar=Calendar.getInstance()
+
+        val datePicker=DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
+            myCalendar.set(Calendar.YEAR,year)
+            myCalendar.set(Calendar.MONTH,month)
+            myCalendar.set(Calendar.DAY_OF_MONTH,dayOfMonth)
+            updateLable(myCalendar)
+        }
+
+        // Deshabilito el teclado para la fecha de nacimiento
+        txtFechaNacimiento.apply {
+            isFocusable = false
+            isClickable = true   // Hacer el EditText clickeable
+        }
+
+        txtFechaNacimiento.setOnClickListener {
+            val dialog = DatePickerDialog(requireContext(),datePicker,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH))
+            //pongo la fecha maxima como dia actual
+            dialog.datePicker.maxDate=Calendar.getInstance().timeInMillis
+
+            //pongo la fecha minima hasta el año 2000
+            val minDate = Calendar.getInstance()
+            minDate.set(2000, Calendar.JANUARY, 1)
+            dialog.datePicker.minDate = minDate.timeInMillis
+
+            dialog.show()
+        }
+
+        //Logica de los spinners
         val spinnerData1= arrayOf("Seleccione el genero","masculino","femenino")
         val spinnerData2= arrayOf("Seleccione la procedencia","de la finca","de otra finca")
 
@@ -58,6 +93,13 @@ class FormularioGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
         procedencia.adapter = adapter2
 
         return view
+    }
+
+    //formato de la fecha
+    private fun updateLable(myCalendar: Calendar){
+        val myformat = "yyyy-MM-dd"
+        val sdf = SimpleDateFormat(myformat,Locale("es","CO"))
+        txtFechaNacimiento.setText(sdf.format(myCalendar.time))
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -85,6 +127,7 @@ class FormularioGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
     }
 
 
+    //subo los datos al momento de darle click
     private fun clickAddGeneral(view: View) {
         val url="http://192.168.226.187/phpVaqui/agregar_bovino_general.php"
         val queue = Volley.newRequestQueue(requireContext())

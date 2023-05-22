@@ -1,41 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragment_formulario_lecheras">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="250dp"
-            android:layout_height="wrap_content"
-            android:textSize="20dp"
-            android:layout_marginTop="60dp"
-            android:textAlignment="center"
-            android:textStyle="bold"
-            android:layout_gravity="center"
-            android:text="Ingresa los sigueintes datos de las vacas lecheras"></TextView>
-
+        android:layout_height="wrap_content">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical">
 
+            <TextView
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="100dp"
+                android:text="Ingresa los siguientes datos de la vaca lechera"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:textStyle="bold">
+            </TextView>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Id Bovino" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -44,9 +38,24 @@
                 android:layout_margin="16dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ingreso_litros_lechera"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Litros Producidos" />
+                    android:hint="litros producidos"
+                    android:inputType="numberDecimal"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ingreso_fecha_ordeno_lechera"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="fecha de ordeño" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -55,9 +64,11 @@
                 android:layout_margin="16dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ingreso_peso_lechera"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Fecha de ordeño" />
+                    android:inputType="numberDecimal"
+                    android:hint="peso (en kilos)" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -66,9 +77,11 @@
                 android:layout_margin="16dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ingreso_fecha_revi_lechera"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Peso" />
+                    android:hint="fecha de revision"
+                    android:inputType="numberDecimal"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -77,9 +90,11 @@
                 android:layout_margin="16dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ingreso_fecha_parto_lechera"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Fecha de revision" />
+                    android:hint="fecha del parto"
+                    android:inputType="numberDecimal"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -88,31 +103,26 @@
                 android:layout_margin="16dp">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ingreso_cantidad_partos_lechera"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Fecha de parto" />
+                    android:hint="cantidad de partos"
+                    android:inputType="numberDecimal"/>
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/boton_enviar_lechera"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Cantidad de partos" />
-            </com.google.android.material.textfield.TextInputLayout>
-
+                android:layout_gravity="center"
+                android:background="@color/verde"
+                android:text="Ingresar lechera"
+                android:textColor="@color/white"
+                android:onClick="clickAddLechera"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="50dp"/>
         </LinearLayout>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="Ingresar Bovino"
-            android:textColor="@color/white"/>
-
-
-    </LinearLayout>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </ScrollView>
+</FrameLayout>
