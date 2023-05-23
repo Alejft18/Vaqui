@@ -189,6 +189,64 @@
         android:id="@+id/formularioGeneralFragment"
         android:name="com.example.vaqui.FormularioGeneralFragment"
         android:label="fragment_formulario_general"
-        tools:layout="@layout/fragment_formulario_general" />
+        tools:layout="@layout/fragment_formulario_general" >
+        <action
+            android:id="@+id/action_formularioGeneralFragment_to_elegir_categoria"
+            app:destination="@id/elegir_categoria" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_formulario_lecheras"
+        android:name="com.example.vaqui.fragment_formulario_lecheras"
+        android:label="fragment_formulario_lecheras"
+        tools:layout="@layout/fragment_formulario_lecheras" />
+    <fragment
+        android:id="@+id/elegir_categoria"
+        android:name="com.example.vaqui.elegir_categoria"
+        android:label="fragment_elegir_categoria"
+        tools:layout="@layout/fragment_elegir_categoria" >
+        <action
+            android:id="@+id/action_elegir_categoria_to_fragment_formulario_lecheras"
+            app:destination="@id/fragment_formulario_lecheras" />
+        <action
+            android:id="@+id/action_elegir_categoria_to_fragment_formulario_gestacion"
+            app:destination="@id/fragment_formulario_gestacion" />
+        <action
+            android:id="@+id/action_elegir_categoria_to_fragment_formulario_secado"
+            app:destination="@id/fragment_formulario_secado" />
+        <action
+            android:id="@+id/action_elegir_categoria_to_fragment_formulario_engorde"
+            app:destination="@id/fragment_formulario_engorde" />
+        <action
+            android:id="@+id/action_elegir_categoria_to_fragment_formulario_sementales"
+            app:destination="@id/fragment_formulario_sementales" />
+        <action
+            android:id="@+id/action_elegir_categoria_to_fragment_formulario_ternero"
+            app:destination="@id/fragment_formulario_ternero" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_formulario_gestacion"
+        android:name="com.example.vaqui.fragment_formulario_gestacion"
+        android:label="fragment_formulario_gestacion"
+        tools:layout="@layout/fragment_formulario_gestacion" />
+    <fragment
+        android:id="@+id/fragment_formulario_secado"
+        android:name="com.example.vaqui.fragment_formulario_secado"
+        android:label="fragment_formulario_secado"
+        tools:layout="@layout/fragment_formulario_secado" />
+    <fragment
+        android:id="@+id/fragment_formulario_engorde"
+        android:name="com.example.vaqui.fragment_formulario_engorde"
+        android:label="fragment_formulario_engorde"
+        tools:layout="@layout/fragment_formulario_engorde" />
+    <fragment
+        android:id="@+id/fragment_formulario_sementales"
+        android:name="com.example.vaqui.fragment_formulario_sementales"
+        android:label="fragment_formulario_sementales"
+        tools:layout="@layout/fragment_formulario_sementales" />
+    <fragment
+        android:id="@+id/fragment_formulario_ternero"
+        android:name="com.example.vaqui.fragment_formulario_ternero"
+        android:label="fragment_formulario_ternero"
+        tools:layout="@layout/fragment_formulario_ternero" />
 
 </navigation>

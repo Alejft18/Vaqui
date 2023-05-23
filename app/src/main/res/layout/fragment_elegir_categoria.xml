@@ -50,13 +50,14 @@
     </TextView>
 
     <androidx.cardview.widget.CardView
-            android:layout_width="160dp"
-            android:layout_height="120dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="180dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="13dp"
-            app:cardElevation="5dp">
+        android:id="@+id/card_elegir_lechera"
+        android:layout_width="160dp"
+        android:layout_height="120dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="180dp"
+        app:cardBackgroundColor="@color/white"
+        app:cardCornerRadius="13dp"
+        app:cardElevation="5dp">
 
             <ImageView
                 android:layout_width="match_parent"
@@ -84,6 +85,7 @@
 
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/card_elegir_gestacion"
             android:layout_width="160dp"
             android:layout_height="120dp"
             android:layout_marginTop="180dp"
@@ -120,6 +122,7 @@
 
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/card_elegir_secado"
             android:layout_width="160dp"
             android:layout_height="120dp"
             android:layout_marginLeft="30dp"
@@ -154,6 +157,7 @@
 
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/card_elegir_engorde"
             android:layout_width="160dp"
             android:layout_height="120dp"
             android:layout_marginTop="330dp"
@@ -188,6 +192,7 @@
 
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/card_elegir_sementales"
             android:layout_width="160dp"
             android:layout_height="120dp"
             android:layout_marginLeft="30dp"
@@ -222,6 +227,7 @@
 
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/card_elegir_terneros"
             android:layout_width="160dp"
             android:layout_height="120dp"
             android:layout_marginTop="480dp"

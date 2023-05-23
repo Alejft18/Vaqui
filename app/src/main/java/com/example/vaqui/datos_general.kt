@@ -1,11 +1,12 @@
 package com.example.vaqui
 
 import android.annotation.SuppressLint
+import android.app.Dialog
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.Window
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.TextView
@@ -13,9 +14,7 @@ import android.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.Recycler
 import com.bumptech.glide.Glide
-import com.example.vaqui.adapter.BovinosListener
 import org.json.JSONObject
 
 
@@ -35,6 +34,7 @@ class datos_general : DialogFragment() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setStyle(STYLE_NORMAL,R.style.FullScreenDialogStyle)
+
     }
 
     @SuppressLint("MissingInflatedId")
@@ -53,9 +53,7 @@ class datos_general : DialogFragment() {
         this.procedencia = ll.findViewById(R.id.procedencia)
         this.img_general = ll.findViewById(R.id.img_general)
 
-        this.recycler = ll.findViewById(R.id.bovinos_recycler)
-        this.viewAlpha = ll.findViewById(R.id.view_BovinosGeneral)
-        this.rlGeneralList = ll.findViewById(R.id.rl_BovinosGeneral)
+
 
         return ll
     }
