@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment_formulario_lecheras">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_gravity="center_vertical">
+
+            <TextView
+                android:layout_width="260dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="100dp"
+                android:text="Ingresa los siguientes datos de la vaca lechera"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:textStyle="bold">
+            </TextView>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ingreso_litros_lechera"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="litros producidos"
+                    android:inputType="numberDecimal"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ingreso_fecha_ordeno_lechera"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="fecha de ordeño" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ingreso_peso_lechera"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:hint="peso (en kilos)" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ingreso_fecha_revi_lechera"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="fecha de revision"
+                    android:inputType="numberDecimal"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ingreso_fecha_parto_lechera"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="fecha del parto"
+                    android:inputType="numberDecimal"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ingreso_cantidad_partos_lechera"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="cantidad de partos"
+                    android:inputType="numberDecimal"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/boton_enviar_lechera"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/verde"
+                android:text="Ingresar lechera"
+                android:textColor="@color/white"
+                android:onClick="clickAddLechera"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="50dp"/>
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

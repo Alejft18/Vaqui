@@ -56,7 +56,8 @@
                         android:textSize="25dp"
                         android:textStyle="bold"
                         android:layout_gravity="center"
-                        android:text="Cedula"></TextView>
+                        android:text="Cedula">
+                    </TextView>
 
                     <Button
                         android:layout_width="250dp"
@@ -66,7 +67,8 @@
                         android:layout_marginTop="30dp"
                         android:textSize="18dp"
                         android:backgroundTint="@color/verde"
-                        android:textStyle="bold"></Button>
+                        android:textStyle="bold">
+                    </Button>
 
                 </LinearLayout>
 

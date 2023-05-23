@@ -23,7 +23,7 @@
     </item>
 
     <item
-        android:id="@+id/buscar"
+        android:id="@+id/generalfragment2"
         android:enabled="true"
         android:icon="@drawable/imagen_buscar"
         android:title="Buscar">

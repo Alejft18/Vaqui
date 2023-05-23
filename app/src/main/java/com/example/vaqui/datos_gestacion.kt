@@ -21,12 +21,13 @@ class datos_gestacion : DialogFragment() {
     private lateinit var recycler : RecyclerView
     private lateinit var viewAlpha : View
     private lateinit var rlGestacionList : RelativeLayout
-    private lateinit var fc_revision_gestacion : TextView
+
+    private lateinit var fecha_revision_gestacion : TextView
     private lateinit var id_gestacion : TextView
     private lateinit var peso_gestacion : TextView
-    private lateinit var fc_aproxPartoG : TextView
-    private lateinit var fc_ultiPartoG : TextView
-    private lateinit var fc_inseminacionG : TextView
+    private lateinit var fecha_aproxPartoGesta : TextView
+    private lateinit var fecha_ultiPartoGesta : TextView
+    private lateinit var fecha_inseminacionGesta : TextView
     private lateinit var catego_gestacion : TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -43,16 +44,16 @@ class datos_gestacion : DialogFragment() {
         val ll=inflater.inflate(R.layout.fragment_datos_gestacion,container,false)
         this.tvBarra_gestacion = ll.findViewById(R.id.tvBarra_gestacion)
 
-        this.fc_revision_gestacion = ll.findViewById(R.id.fc_revision_gestacion)
+        this.fecha_revision_gestacion = ll.findViewById(R.id.fecha_revision_gestacion)
         this.id_gestacion = ll.findViewById(R.id.id_gestacion)
         this.peso_gestacion = ll.findViewById(R.id.peso_gestacion)
-        this.fc_aproxPartoG = ll.findViewById(R.id.fc_aproxPartoG)
-        this.fc_ultiPartoG = ll.findViewById(R.id.fc_ultiPartoG)
-        this.fc_inseminacionG = ll.findViewById(R.id.fc_inseminacionG)
+        this.fecha_aproxPartoGesta = ll.findViewById(R.id.fecha_aproxPartoGesta)
+        this.fecha_ultiPartoGesta = ll.findViewById(R.id.fecha_ultiPartoGesta)
+        this.fecha_inseminacionGesta = ll.findViewById(R.id.fecha_inseminacionGesta)
         this.catego_gestacion = ll.findViewById(R.id.catego_gestacion)
 
         this.recycler = ll.findViewById(R.id.gestacion_recycler)
-        this.viewAlpha = ll.findViewById(R.id.view_gestacionList)
+        this.viewAlpha = ll.findViewById(R.id.view_gestacion)
         this.rlGestacionList = ll.findViewById(R.id.rl_gestacion)
 
         return ll
@@ -68,10 +69,10 @@ class datos_gestacion : DialogFragment() {
         val gestacion = JSONObject(arguments?.getString("gestacion"))
         this.id_gestacion.text=gestacion.getString("id")
         this.peso_gestacion.text=gestacion.getString("peso_kilos")
-        this.fc_inseminacionG.text=gestacion.getString("fecha_inseminacion")
-        this.fc_aproxPartoG.text=gestacion.getString("fecha_aproxParto")
-        this.fc_ultiPartoG.text=gestacion.getString("fecha_ultimoParto")
-        this.fc_revision_gestacion.text=gestacion.getString("fecha_Revision")
+        this.fecha_inseminacionGesta.text=gestacion.getString("fecha_inseminacion")
+        this.fecha_aproxPartoGesta.text=gestacion.getString("fecha_aproxParto")
+        this.fecha_ultiPartoGesta.text=gestacion.getString("fecha_ultimoParto")
+        this.fecha_revision_gestacion.text=gestacion.getString("fecha_revision")
         this.catego_gestacion.text=gestacion.getString("categoria")
 
     }

@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".GestionEmpleadosFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="55dp"
-        android:background="@color/verde"
-        app:layout_anchor="@+id/toolbar"
-        app:layout_anchorGravity="center">
+        android:background="@color/verde">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -66,7 +65,8 @@
 
 
         <androidx.cardview.widget.CardView
-            android:layout_width="350dp"
+            android:id="@+id/card_ingresar_empleado"
+            android:layout_width="320dp"
             android:layout_height="80dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="80dp"
@@ -76,7 +76,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/shape_menu"
                 android:orientation="horizontal">
 
                 <ImageView
@@ -84,15 +83,16 @@
                     android:layout_height="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginLeft="15dp"
-                    android:src="@drawable/mas"></ImageView>
+                    android:src="@drawable/agregar_usuario">
+                </ImageView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Ingresar empleado"
+                    android:text="Ingresar Empleado"
                     android:layout_marginLeft="40dp"
-                    android:textStyle="bold"
-                    android:textSize="23dp"
+                    android:textStyle="normal"
+                    android:textSize="22dp"
                     android:layout_gravity="center_vertical"/>
 
             </LinearLayout>
@@ -100,7 +100,8 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="350dp"
+            android:id="@+id/card_buscar_emple"
+            android:layout_width="320dp"
             android:layout_height="80dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
@@ -109,22 +110,22 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/shape_menu">
+                android:layout_height="match_parent">
 
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginLeft="15dp"
-                    android:src="@drawable/buscar"></ImageView>
+                    android:src="@drawable/buscar">
+                </ImageView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Buscar empleado"
+                    android:text="Buscar Empleado"
                     android:layout_marginLeft="40dp"
-                    android:textStyle="bold"
+                    android:textStyle="normal"
                     android:textSize="23dp"
                     android:layout_gravity="center_vertical"/>
 
@@ -133,7 +134,8 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="350dp"
+            android:id="@+id/card_actu_empleado"
+            android:layout_width="320dp"
             android:layout_height="80dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
@@ -142,24 +144,23 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/shape_menu"
-                >
+                android:layout_height="match_parent">
 
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginLeft="15dp"
-                    android:src="@drawable/actualizar"></ImageView>
+                    android:src="@drawable/actualizar1">
+                </ImageView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Actualizar empleado"
+                    android:text="Actualizar Empleado"
                     android:layout_marginLeft="40dp"
-                    android:textStyle="bold"
-                    android:textSize="23dp"
+                    android:textStyle="normal"
+                    android:textSize="22dp"
                     android:layout_gravity="center_vertical"/>
 
             </LinearLayout>
@@ -167,7 +168,8 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="350dp"
+            android:id="@+id/card_eliminar_empleado"
+            android:layout_width="320dp"
             android:layout_height="80dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
@@ -176,24 +178,23 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/shape_menu"
-                >
+                android:layout_height="match_parent">
 
                 <ImageView
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginLeft="15dp"
-                    android:src="@drawable/eliminar"></ImageView>
+                    android:src="@drawable/eliminar_emple">
+                </ImageView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Eliminar empleado"
+                    android:text="Eliminar Empleado"
                     android:layout_marginLeft="40dp"
-                    android:textStyle="bold"
-                    android:textSize="23dp"
+                    android:textStyle="normal"
+                    android:textSize="22dp"
                     android:layout_gravity="center_vertical"/>
 
             </LinearLayout>
@@ -202,8 +203,5 @@
 
 
     </LinearLayout>
-
-
-
 
 </FrameLayout>

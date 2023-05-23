@@ -66,6 +66,7 @@
 
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/card_ingresar_bovino"
             android:layout_width="320dp"
             android:layout_height="80dp"
             android:layout_gravity="center_horizontal"
@@ -83,13 +84,13 @@
                     android:layout_height="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginLeft="15dp"
-                    android:src="@drawable/mas">
+                    android:src="@drawable/boton_agregar">
                 </ImageView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Ingresar empleado"
+                    android:text="Ingresar Bovino"
                     android:layout_marginLeft="40dp"
                     android:textStyle="normal"
                     android:textSize="22dp"
@@ -100,6 +101,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/card_buscar_bovi"
             android:layout_width="320dp"
             android:layout_height="80dp"
             android:layout_gravity="center_horizontal"
@@ -116,13 +118,13 @@
                     android:layout_height="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginLeft="15dp"
-                    android:src="@drawable/buscar">
+                    android:src="@drawable/vaca_general">
                 </ImageView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Buscar empleado"
+                    android:text="Buscar Bovino"
                     android:layout_marginLeft="40dp"
                     android:textStyle="normal"
                     android:textSize="23dp"
@@ -149,13 +151,13 @@
                     android:layout_height="50dp"
                     android:layout_marginTop="15dp"
                     android:layout_marginLeft="15dp"
-                    android:src="@drawable/actualizar">
+                    android:src="@drawable/actualizar1">
                 </ImageView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Actualizar empleado"
+                    android:text="Actualizar Bovino"
                     android:layout_marginLeft="40dp"
                     android:textStyle="normal"
                     android:textSize="22dp"
@@ -188,7 +190,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Eliminar empleado"
+                    android:text="Eliminar Bovino"
                     android:layout_marginLeft="40dp"
                     android:textStyle="normal"
                     android:textSize="22dp"

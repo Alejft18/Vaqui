@@ -15,6 +15,9 @@
         <action
             android:id="@+id/action_inicio_to_perfilFragment"
             app:destination="@id/perfilFragment" />
+        <action
+            android:id="@+id/action_inicio_to_gestionEmpleadosFragment"
+            app:destination="@id/gestionEmpleadosFragment" />
     </fragment>
 
     <fragment
@@ -53,6 +56,12 @@
         android:label="fragment_gestion"
         tools:layout="@layout/fragment_gestion" >
 
+        <action
+            android:id="@+id/action_gestion_to_generalfragment3"
+            app:destination="@id/generalfragment2" />
+        <action
+            android:id="@+id/action_gestion_to_formularioGeneralFragment"
+            app:destination="@id/formularioGeneralFragment" />
     </fragment>
     <fragment
         android:id="@+id/generalfragment"
@@ -62,6 +71,15 @@
         <action
             android:id="@+id/action_generalfragment_to_datos_general"
             app:destination="@id/datos_general" />
+    </fragment>
+    <fragment
+        android:id="@+id/generalfragment2"
+        android:name="com.example.vaqui.Buscador.BuscadorBovinoFragment"
+        android:label="fragment_buscador_bovino"
+        tools:layout="@layout/fragment_buscador_bovino">
+        <action
+            android:id="@+id/action_generalfragment3_to_datos_general3"
+            app:destination="@id/datos_general2" />
     </fragment>
     <fragment
         android:id="@+id/secadofragment"
@@ -79,6 +97,11 @@
         tools:layout="@layout/fragment_perfil" />
     <dialog
         android:id="@+id/datos_general"
+        android:name="com.example.vaqui.datos_general"
+        android:label="fragment_datos_general"
+        tools:layout="@layout/fragment_datos_general" />
+    <dialog
+        android:id="@+id/datos_general2"
         android:name="com.example.vaqui.datos_general"
         android:label="fragment_datos_general"
         tools:layout="@layout/fragment_datos_general" />
@@ -157,5 +180,15 @@
         android:name="com.example.vaqui.datos_lecheras"
         android:label="fragment_datos_lecheras"
         tools:layout="@layout/fragment_datos_lecheras" />
+    <fragment
+        android:id="@+id/gestionEmpleadosFragment"
+        android:name="com.example.vaqui.GestionEmpleadosFragment"
+        android:label="fragment_gestion_empleados"
+        tools:layout="@layout/fragment_gestion_empleados" />
+    <fragment
+        android:id="@+id/formularioGeneralFragment"
+        android:name="com.example.vaqui.FormularioGeneralFragment"
+        android:label="fragment_formulario_general"
+        tools:layout="@layout/fragment_formulario_general" />
 
 </navigation>

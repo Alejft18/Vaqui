@@ -2,7 +2,12 @@ package com.example.vaqui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.ImageButton
+import android.widget.Spinner
+import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.NavHostFragment
@@ -31,7 +36,6 @@ class MainActivity : AppCompatActivity() {
             navController.navigate(R.id.perfilFragment)
         }
     }
-
 
     private fun setupBottonNavMenu(navController: NavController){
         val bottoNav = findViewById<BottomNavigationView>(R.id.btnMenu)

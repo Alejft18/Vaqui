@@ -70,12 +70,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Fecha de rvisión:"
+                android:text="Fecha de revisión:"
                 android:textStyle="bold"
                 android:textSize="18dp">
             </TextView>
             <TextView
-                android:id="@+id/fc_revision_gestacion"
+                android:id="@+id/fecha_revision_gestacion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="15/10/2020"
@@ -144,7 +144,7 @@
                 android:textSize="18dp">
             </TextView>
             <TextView
-                android:id="@+id/fc_aproxPartoG"
+                android:id="@+id/fecha_aproxPartoGesta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="02/03/2023"
@@ -167,7 +167,7 @@
                 android:textSize="18dp">
             </TextView>
             <TextView
-                android:id="@+id/fc_ultiPartoG"
+                android:id="@+id/fecha_ultiPartoGesta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="01/01/2022"
@@ -190,7 +190,7 @@
                 android:textSize="18dp">
             </TextView>
             <TextView
-                android:id="@+id/fc_inseminacionG"
+                android:id="@+id/fecha_inseminacionGesta"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16dp"
