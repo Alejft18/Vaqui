@@ -48,7 +48,7 @@ class RecyclerView_Toro : Fragment(), ToroListener {
         // Inflate the layout for this fragment
         val ll = inflater.inflate(R.layout.fragment_recycler_view__toro, container, false)
         this.recycler = ll.findViewById(R.id.rvBuscadorToro)
-        val url = "http://192.168.226.77/phpVaqui/listar_toros.php"
+        val url = "http://192.168.95.187/phpVaqui/listar_toros.php"
         Log.d("RecyclerView_Toro", "Entered to onCreateView")
         val queue = Volley.newRequestQueue(this.context)
 

@@ -132,7 +132,7 @@ class fragment_formulario_lecheras : Fragment() {
     }
 
     private fun clickAddLechera(view: View) {
-        val url="http://192.168.226.187/phpVaqui/agregar_lechera.php"
+        val url="http://192.168.95.187/phpVaqui/agregar_lechera.php"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->
@@ -150,7 +150,6 @@ class fragment_formulario_lecheras : Fragment() {
                 parametros.put("fecha_revision",ingreso_fecha_revi_lechera?.text.toString())
                 parametros.put("fecha_parto",fecha_parto_lechera?.text.toString())
                 parametros.put("cant_partos",cantidad_partos_lechera?.text.toString())
-
 
                 Log.d("error", "$parametros")
                 Log.d("error", "error")

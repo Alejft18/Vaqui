@@ -8,7 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 
 import com.android.volley.Request
 import com.android.volley.Response
@@ -23,9 +25,9 @@ import kotlin.collections.HashMap
 class FormularioGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener {
     private lateinit var txtRaza: TextInputEditText
     private lateinit var txtFechaNacimiento: EditText
-
     private lateinit var genero: Spinner
     private lateinit var procedencia: Spinner
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -109,6 +111,7 @@ class FormularioGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
 
         val botonEnviar: Button = view.findViewById(R.id.boton_enviar_general)
         botonEnviar.setOnClickListener { clickAddGeneral(view) }
+
     }
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
@@ -129,11 +132,16 @@ class FormularioGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
 
     //subo los datos al momento de darle click
     private fun clickAddGeneral(view: View) {
-        val url="http://192.168.226.187/phpVaqui/agregar_bovino_general.php"
+        val url="http://192.168.95.187/phpVaqui/agregar_bovino_general.php"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->
                 Toast.makeText(requireContext(), "Bovino ingresado exitosamente", Toast.LENGTH_LONG).show()
+
+                    //Si se ingresa correctamente se va a la pantalla de elegir categoria
+                    val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
+                    navController.navigate(R.id.action_formularioGeneralFragment_to_elegir_categoria)
+
             }, Response.ErrorListener{
                 Toast.makeText(requireContext(), "Bovino no agregado", Toast.LENGTH_LONG).show()
             }

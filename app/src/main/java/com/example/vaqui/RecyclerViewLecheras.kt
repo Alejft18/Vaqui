@@ -47,7 +47,7 @@ class RecyclerViewLecheras : Fragment(), LecherasListener {
         // Infla el diseño para este fragmento
         val ll = inflater.inflate(R.layout.fragment_recycler_view_lecheras, container, false)
         this.recycler = ll.findViewById(R.id.rvLecheras)
-        val url = "http://192.168.226.77/phpVaqui/listar_lecheras.php"
+        val url = "http://192.168.95.187/phpVaqui/listar_lecheras.php"
         Log.d("RecyclerViewLecheras","Entered to onCreateView")
         val queue = Volley.newRequestQueue(this.context)
         //queue.timeout = 10000 // aumentar el tiempo de espera a 10 segundos
