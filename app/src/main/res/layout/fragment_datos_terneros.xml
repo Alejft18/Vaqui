@@ -20,7 +20,7 @@
 
     <LinearLayout
         android:layout_width="300dp"
-        android:layout_height="380dp"
+        android:layout_height="450dp"
         android:layout_gravity="center"
         app:cardElevation="8dp"
         android:background="@drawable/shape_detalle_mpleado"
@@ -173,6 +173,29 @@
                 android:textSize="16dp"
                 android:layout_marginLeft="4dp">
             </TextView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/olvidemicontra"
+                android:text="Actualizar"
+                android:textColor="@color/white"/>
+
+            <Button
+                android:layout_width="120dp"
+                android:layout_height="33dp"
+                android:background="@drawable/border_boton"
+                android:text="Eliminar"
+                android:textColor="@color/rojo_botones" />
+
         </LinearLayout>
     </LinearLayout>
 
