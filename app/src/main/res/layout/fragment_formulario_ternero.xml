@@ -26,19 +26,8 @@ tools:context=".fragment_formulario_ternero">
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Id Bovino" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ingreso_id_madre_ternero"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp">
@@ -55,6 +44,7 @@ tools:context=".fragment_formulario_ternero">
             android:layout_margin="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ingreso_peso_ternero"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Peso en kilos" />
@@ -66,6 +56,7 @@ tools:context=".fragment_formulario_ternero">
             android:layout_margin="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ingreso_fechaRevision_ternero"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Fecha de revision" />
@@ -74,6 +65,8 @@ tools:context=".fragment_formulario_ternero">
     </LinearLayout>
 
     <Button
+        android:id="@+id/boton_enviar_ternero"
+        android:onClick="clickAddTernero"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/verde"
