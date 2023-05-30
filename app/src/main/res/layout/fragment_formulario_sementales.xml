@@ -27,23 +27,15 @@ tools:context=".fragment_formulario_sementales">
         android:orientation="vertical">
 
 
+
         <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ingreso_peso_toro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Id Bovino" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp">
-
-            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ingreso_peso_semental"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Peso en kilos" />
@@ -55,6 +47,7 @@ tools:context=".fragment_formulario_sementales">
             android:layout_margin="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ingreso_fecha_extraccion_toro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Fecha de extraccion" />
@@ -66,6 +59,7 @@ tools:context=".fragment_formulario_sementales">
             android:layout_margin="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ingreso_vacas_montadas_toro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Cantidad de vacas montadas" />
@@ -77,6 +71,7 @@ tools:context=".fragment_formulario_sementales">
             android:layout_margin="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ingreso_fecha_revi_toro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Fecha de revision" />
@@ -85,12 +80,14 @@ tools:context=".fragment_formulario_sementales">
     </LinearLayout>
 
     <Button
+        android:id="@+id/boton_enviar_toro"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/verde"
         android:layout_gravity="center"
         android:text="Ingresar Bovino"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:onClick="clickAddToro"/>
 
 </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
