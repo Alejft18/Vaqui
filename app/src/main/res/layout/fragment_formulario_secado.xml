@@ -26,24 +26,13 @@ android:layout_height="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Id Bovino" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp">
-
-            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ingreso_fechaUltParto_secado"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Fecha ultimo parto" />
@@ -55,6 +44,7 @@ android:layout_height="match_parent"
             android:layout_margin="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ingreso_peso_secado"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Peso en kilos" />
@@ -66,6 +56,7 @@ android:layout_height="match_parent"
             android:layout_margin="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ingreso_fechaRevision_secado"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Fecha de revision" />
@@ -77,6 +68,7 @@ android:layout_height="match_parent"
             android:layout_margin="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ingreso_fechaOrdenio_secado"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Fecha de ordeño" />
@@ -85,10 +77,12 @@ android:layout_height="match_parent"
     </LinearLayout>
 
     <Button
+        android:id="@+id/boton_enviar_secado"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/verde"
         android:layout_gravity="center"
+        android:onClick="clickAddSecado"
         android:text="Ingresar Bovino"
         android:textColor="@color/white"/>
 
