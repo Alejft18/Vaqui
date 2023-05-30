@@ -41,32 +41,32 @@ class elegir_categoria : Fragment() {
 
         card_elegir_lechera.setOnClickListener{
             val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
-            navController.navigate(R.id.fragment_formulario_lecheras)
+            navController.navigate(R.id.action_elegir_categoria_to_fragment_formulario_lecheras)
         }
 
         card_elegir_gestacion.setOnClickListener{
             val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
-            navController.navigate(R.id.fragment_formulario_gestacion)
+            navController.navigate(R.id.action_elegir_categoria_to_fragment_formulario_gestacion)
         }
 
         card_elegir_secado.setOnClickListener{
             val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
-            navController.navigate(R.id.fragment_formulario_secado)
+            navController.navigate(R.id.action_elegir_categoria_to_fragment_formulario_secado)
         }
 
         card_elegir_engorde.setOnClickListener{
             val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
-            navController.navigate(R.id.fragment_formulario_engorde)
+            navController.navigate(R.id.action_elegir_categoria_to_fragment_formulario_engorde)
         }
 
         card_elegir_sementales.setOnClickListener{
             val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
-            navController.navigate(R.id.fragment_formulario_sementales)
+            navController.navigate(R.id.action_elegir_categoria_to_fragment_formulario_sementales)
         }
 
         card_elegir_terneros.setOnClickListener{
             val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
-            navController.navigate(R.id.fragment_formulario_ternero)
+            navController.navigate(R.id.action_elegir_categoria_to_fragment_formulario_ternero)
         }
 
         return ll
