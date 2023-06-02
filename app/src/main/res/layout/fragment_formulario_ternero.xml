@@ -27,12 +27,12 @@ tools:context=".fragment_formulario_ternero">
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/ingreso_id_madre_ternero"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ingreso_id_madre_ternero"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Id madre" />

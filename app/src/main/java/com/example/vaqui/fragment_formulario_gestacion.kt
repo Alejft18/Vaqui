@@ -155,7 +155,7 @@ class fragment_formulario_gestacion : Fragment() {
     }
 
     private fun clickAddGestacion(view: View) {
-        val url="http://192.168.95.187/phpVaqui/agregar_gestacion.php"
+        val url="http://192.168.226.77/phpVaqui/agregar_gestacion.php"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->

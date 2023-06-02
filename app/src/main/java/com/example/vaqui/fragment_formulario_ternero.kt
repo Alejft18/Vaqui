@@ -87,7 +87,7 @@ class fragment_formulario_ternero : Fragment() {
     }
 
     private fun clickAddTernero(view: View) {
-        val url="http://192.168.95.187/phpVaqui/agregar_ternero.php"
+        val url="http://192.168.226.77/phpVaqui/agregar_ternero.php"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->
@@ -101,7 +101,7 @@ class fragment_formulario_ternero : Fragment() {
 
                 parametros.put("id_madre",ingreso_id_madre_ternero?.text.toString())
                 parametros.put("peso_kilos",ingreso_peso_ternero?.text.toString())
-                parametros.put("fecha_revision ",ingreso_fechaRevision_ternero?.text.toString())
+                parametros.put("fecha_revision",ingreso_fechaRevision_ternero?.text.toString())
 
                 Log.d("error", "$parametros")
                 Log.d("error", "error")
