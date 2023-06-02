@@ -138,7 +138,6 @@ class FormularioGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
             Response.Listener<String> { response->
                 Toast.makeText(requireContext(), "Bovino ingresado exitosamente", Toast.LENGTH_LONG).show()
 
-                    //Si se ingresa correctamente se va a la pantalla de elegir categoria
                     val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
                     navController.navigate(R.id.action_formularioGeneralFragment_to_elegir_categoria)
 

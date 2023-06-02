@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
@@ -83,9 +84,8 @@ class fragment_formulario_engorde : Fragment() {
     private fun updateLable(myCalendar: Calendar) {
         val myformat = "yyyy-MM-dd"
         val sdf = SimpleDateFormat(myformat,Locale("es","CO"))
-        ingreso_peso_engorde.setText(sdf.format(myCalendar.time))
         ingreso_fecha_revi_engorde.setText(sdf.format(myCalendar.time))
-        ingreso_alimento.setText(sdf.format(myCalendar.time))
+
     }
 
 
@@ -96,6 +96,7 @@ class fragment_formulario_engorde : Fragment() {
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->
                 Toast.makeText(requireContext(), "Vaca engorde ingresada exitosamente", Toast.LENGTH_LONG).show()
+                findNavController().navigate(R.id.action_fragment_formulario_engorde_to_gestion)
             }, Response.ErrorListener{
                 Toast.makeText(requireContext(), "Vaca engorde no agregada", Toast.LENGTH_LONG).show()
             }
@@ -114,6 +115,8 @@ class fragment_formulario_engorde : Fragment() {
             }
         }
         queue.add(resultadoPost)
+
+
 
     }
 

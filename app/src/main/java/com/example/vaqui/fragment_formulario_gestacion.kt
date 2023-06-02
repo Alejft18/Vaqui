@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
@@ -57,12 +58,35 @@ class fragment_formulario_gestacion : Fragment() {
 
         //logica de las fechas (datePicker)
         val myCalendar= Calendar.getInstance()
-
         val datePicker= DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
             myCalendar.set(Calendar.YEAR,year)
             myCalendar.set(Calendar.MONTH,month)
             myCalendar.set(Calendar.DAY_OF_MONTH,dayOfMonth)
             updateLable(myCalendar)
+        }
+
+        val myCalendar2= Calendar.getInstance()
+        val datePicker2= DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
+            myCalendar2.set(Calendar.YEAR,year)
+            myCalendar2.set(Calendar.MONTH,month)
+            myCalendar2.set(Calendar.DAY_OF_MONTH,dayOfMonth)
+            updateLable2(myCalendar2)
+        }
+
+        val myCalendar3= Calendar.getInstance()
+        val datePicker3= DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
+            myCalendar3.set(Calendar.YEAR,year)
+            myCalendar3.set(Calendar.MONTH,month)
+            myCalendar3.set(Calendar.DAY_OF_MONTH,dayOfMonth)
+            updateLable3(myCalendar3)
+        }
+
+        val myCalendar4= Calendar.getInstance()
+        val datePicker4= DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
+            myCalendar4.set(Calendar.YEAR,year)
+            myCalendar4.set(Calendar.MONTH,month)
+            myCalendar4.set(Calendar.DAY_OF_MONTH,dayOfMonth)
+            updateLable4(myCalendar4)
         }
 
         // Deshabilito el teclado en las fechas
@@ -100,9 +124,7 @@ class fragment_formulario_gestacion : Fragment() {
         }
 
         ingreso_fecha_aproxParto_gesta.setOnClickListener {
-            val dialog = DatePickerDialog(requireContext(),datePicker,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH))
-            //pongo la fecha maxima como dia actual
-            dialog.datePicker.maxDate=Calendar.getInstance().timeInMillis
+            val dialog = DatePickerDialog(requireContext(),datePicker2,myCalendar2.get(Calendar.YEAR),myCalendar2.get(Calendar.MONTH),myCalendar2.get(Calendar.DAY_OF_MONTH))
 
             //pongo la fecha minima hasta el año 2000
             val minDate = Calendar.getInstance()
@@ -113,7 +135,7 @@ class fragment_formulario_gestacion : Fragment() {
         }
 
         ingreso_fecha_ulti_parto_gesta.setOnClickListener {
-            val dialog = DatePickerDialog(requireContext(),datePicker,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH))
+            val dialog = DatePickerDialog(requireContext(),datePicker3,myCalendar3.get(Calendar.YEAR),myCalendar3.get(Calendar.MONTH),myCalendar3.get(Calendar.DAY_OF_MONTH))
             //pongo la fecha maxima como dia actual
             dialog.datePicker.maxDate=Calendar.getInstance().timeInMillis
 
@@ -126,7 +148,7 @@ class fragment_formulario_gestacion : Fragment() {
         }
 
         ingreso_fecha_revi_gesta.setOnClickListener {
-            val dialog = DatePickerDialog(requireContext(),datePicker,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH))
+            val dialog = DatePickerDialog(requireContext(),datePicker4,myCalendar4.get(Calendar.YEAR),myCalendar4.get(Calendar.MONTH),myCalendar4.get(Calendar.DAY_OF_MONTH))
 
             //pongo la fecha maxima como dia actual
             dialog.datePicker.maxDate=Calendar.getInstance().timeInMillis
@@ -148,8 +170,23 @@ class fragment_formulario_gestacion : Fragment() {
         val myformat = "yyyy-MM-dd"
         val sdf = SimpleDateFormat(myformat,Locale("es","CO"))
         ingreso_fecha_inseminacionGesta.setText(sdf.format(myCalendar.time))
+    }
+
+    private fun updateLable2(myCalendar: Calendar) {
+        val myformat = "yyyy-MM-dd"
+        val sdf = SimpleDateFormat(myformat,Locale("es","CO"))
         ingreso_fecha_aproxParto_gesta.setText(sdf.format(myCalendar.time))
+    }
+
+    private fun updateLable3(myCalendar: Calendar) {
+        val myformat = "yyyy-MM-dd"
+        val sdf = SimpleDateFormat(myformat, Locale("es", "CO"))
         ingreso_fecha_ulti_parto_gesta.setText(sdf.format(myCalendar.time))
+    }
+
+    private fun updateLable4(myCalendar: Calendar) {
+        val myformat = "yyyy-MM-dd"
+        val sdf = SimpleDateFormat(myformat,Locale("es","CO"))
         ingreso_fecha_revi_gesta.setText(sdf.format(myCalendar.time))
 
     }
@@ -180,6 +217,7 @@ class fragment_formulario_gestacion : Fragment() {
             }
         }
         queue.add(resultadoPost)
+        findNavController().navigate(R.id.action_fragment_formulario_gestacion_to_gestion2)
 
     }
 

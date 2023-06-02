@@ -198,7 +198,11 @@
         android:id="@+id/fragment_formulario_lecheras"
         android:name="com.example.vaqui.fragment_formulario_lecheras"
         android:label="fragment_formulario_lecheras"
-        tools:layout="@layout/fragment_formulario_lecheras" />
+        tools:layout="@layout/fragment_formulario_lecheras" >
+        <action
+            android:id="@+id/action_fragment_formulario_lecheras_to_gestion"
+            app:destination="@id/gestion" />
+    </fragment>
     <fragment
         android:id="@+id/elegir_categoria"
         android:name="com.example.vaqui.elegir_categoria"
@@ -227,22 +231,38 @@
         android:id="@+id/fragment_formulario_gestacion"
         android:name="com.example.vaqui.fragment_formulario_gestacion"
         android:label="fragment_formulario_gestacion"
-        tools:layout="@layout/fragment_formulario_gestacion" />
+        tools:layout="@layout/fragment_formulario_gestacion" >
+        <action
+            android:id="@+id/action_fragment_formulario_gestacion_to_gestion2"
+            app:destination="@id/gestion" />
+    </fragment>
     <fragment
         android:id="@+id/fragment_formulario_secado"
         android:name="com.example.vaqui.fragment_formulario_secado"
         android:label="fragment_formulario_secado"
-        tools:layout="@layout/fragment_formulario_secado" />
+        tools:layout="@layout/fragment_formulario_secado" >
+        <action
+            android:id="@+id/action_fragment_formulario_secado_to_gestion2"
+            app:destination="@id/gestion" />
+    </fragment>
     <fragment
         android:id="@+id/fragment_formulario_engorde"
         android:name="com.example.vaqui.fragment_formulario_engorde"
         android:label="fragment_formulario_engorde"
-        tools:layout="@layout/fragment_formulario_engorde" />
+        tools:layout="@layout/fragment_formulario_engorde" >
+        <action
+            android:id="@+id/action_fragment_formulario_engorde_to_gestion"
+            app:destination="@id/gestion" />
+    </fragment>
     <fragment
         android:id="@+id/fragment_formulario_sementales"
         android:name="com.example.vaqui.fragment_formulario_sementales"
         android:label="fragment_formulario_sementales"
-        tools:layout="@layout/fragment_formulario_sementales" />
+        tools:layout="@layout/fragment_formulario_sementales" >
+        <action
+            android:id="@+id/action_fragment_formulario_sementales_to_gestion"
+            app:destination="@id/gestion" />
+    </fragment>
     <fragment
         android:id="@+id/fragment_formulario_ternero"
         android:name="com.example.vaqui.fragment_formulario_ternero"

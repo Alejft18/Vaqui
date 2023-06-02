@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
@@ -47,18 +48,27 @@ class fragment_formulario_sementales : Fragment() {
         ingreso_peso_semental=view.findViewById(R.id.ingreso_peso_semental)
         ingreso_fecha_extraccion_toro=view.findViewById(R.id.ingreso_fecha_extraccion_toro)
         ingreso_vacas_montadas_toro=view.findViewById(R.id.ingreso_vacas_montadas_toro)
-        ingreso_fecha_revi_toro=view.findViewById(R.id.ingreso_fecha_extraccion_toro)
+        ingreso_fecha_revi_toro=view.findViewById(R.id.ingreso_fecha_revi_toro)
 
 
         //logica de las fechas (datePicker)
         val myCalendar= Calendar.getInstance()
-
         val datePicker= DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
             myCalendar.set(Calendar.YEAR,year)
             myCalendar.set(Calendar.MONTH,month)
             myCalendar.set(Calendar.DAY_OF_MONTH,dayOfMonth)
             updateLable(myCalendar)
         }
+
+        val myCalendar2= Calendar.getInstance()
+        val datePicker2= DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
+            myCalendar2.set(Calendar.YEAR,year)
+            myCalendar2.set(Calendar.MONTH,month)
+            myCalendar2.set(Calendar.DAY_OF_MONTH,dayOfMonth)
+            updateLable2(myCalendar2)
+        }
+
+
 
         // Deshabilito el teclado en las fechas
         ingreso_fecha_extraccion_toro.apply {
@@ -87,7 +97,7 @@ class fragment_formulario_sementales : Fragment() {
 
 
         ingreso_fecha_revi_toro.setOnClickListener {
-            val dialog = DatePickerDialog(requireContext(),datePicker,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH))
+            val dialog = DatePickerDialog(requireContext(),datePicker2,myCalendar2.get(Calendar.YEAR),myCalendar2.get(Calendar.MONTH),myCalendar2.get(Calendar.DAY_OF_MONTH))
             //pongo la fecha maxima como dia actual
             dialog.datePicker.maxDate=Calendar.getInstance().timeInMillis
 
@@ -105,6 +115,11 @@ class fragment_formulario_sementales : Fragment() {
         val myformat = "yyyy-MM-dd"
         val sdf = SimpleDateFormat(myformat,Locale("es","CO"))
         ingreso_fecha_extraccion_toro.setText(sdf.format(myCalendar.time))
+    }
+
+    private fun updateLable2(myCalendar: Calendar) {
+        val myformat = "yyyy-MM-dd"
+        val sdf = SimpleDateFormat(myformat,Locale("es","CO"))
         ingreso_fecha_revi_toro.setText(sdf.format(myCalendar.time))
     }
 
@@ -135,6 +150,8 @@ class fragment_formulario_sementales : Fragment() {
             }
         }
         queue.add(resultadoPost)
+        findNavController().navigate(R.id.action_fragment_formulario_sementales_to_gestion)
+
 
     }
 

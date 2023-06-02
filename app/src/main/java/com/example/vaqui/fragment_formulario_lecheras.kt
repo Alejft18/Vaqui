@@ -9,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
@@ -49,12 +51,27 @@ class fragment_formulario_lecheras : Fragment() {
 
         //logica de las fechas (datePicker)
         val myCalendar= Calendar.getInstance()
-
         val datePicker= DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
             myCalendar.set(Calendar.YEAR,year)
             myCalendar.set(Calendar.MONTH,month)
             myCalendar.set(Calendar.DAY_OF_MONTH,dayOfMonth)
             updateLable(myCalendar)
+        }
+
+        val myCalendar2= Calendar.getInstance()
+        val datePicker2= DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
+            myCalendar2.set(Calendar.YEAR,year)
+            myCalendar2.set(Calendar.MONTH,month)
+            myCalendar2.set(Calendar.DAY_OF_MONTH,dayOfMonth)
+            updateLable2(myCalendar2)
+        }
+
+        val myCalendar3= Calendar.getInstance()
+        val datePicker3= DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
+            myCalendar3.set(Calendar.YEAR,year)
+            myCalendar3.set(Calendar.MONTH,month)
+            myCalendar3.set(Calendar.DAY_OF_MONTH,dayOfMonth)
+            updateLable3(myCalendar3)
         }
 
         // Deshabilito el teclado en las fechas
@@ -88,7 +105,7 @@ class fragment_formulario_lecheras : Fragment() {
         }
 
         ingreso_fecha_revi_lechera.setOnClickListener {
-            val dialog = DatePickerDialog(requireContext(),datePicker,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH))
+            val dialog = DatePickerDialog(requireContext(),datePicker2,myCalendar2.get(Calendar.YEAR),myCalendar2.get(Calendar.MONTH),myCalendar2.get(Calendar.DAY_OF_MONTH))
             //pongo la fecha maxima como dia actual
             dialog.datePicker.maxDate=Calendar.getInstance().timeInMillis
 
@@ -101,7 +118,7 @@ class fragment_formulario_lecheras : Fragment() {
         }
 
         fecha_parto_lechera.setOnClickListener {
-            val dialog = DatePickerDialog(requireContext(),datePicker,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH))
+            val dialog = DatePickerDialog(requireContext(),datePicker3,myCalendar3.get(Calendar.YEAR),myCalendar3.get(Calendar.MONTH),myCalendar3.get(Calendar.DAY_OF_MONTH))
             //pongo la fecha maxima como dia actual
             dialog.datePicker.maxDate=Calendar.getInstance().timeInMillis
 
@@ -120,7 +137,17 @@ class fragment_formulario_lecheras : Fragment() {
         val myformat = "yyyy-MM-dd"
         val sdf = SimpleDateFormat(myformat,Locale("es","CO"))
         ingreso_fecha_ordeno_lechera.setText(sdf.format(myCalendar.time))
+
+    }
+    private fun updateLable2(myCalendar: Calendar) {
+        val myformat = "yyyy-MM-dd"
+        val sdf = SimpleDateFormat(myformat,Locale("es","CO"))
         ingreso_fecha_revi_lechera.setText(sdf.format(myCalendar.time))
+    }
+
+    private fun updateLable3(myCalendar: Calendar) {
+        val myformat = "yyyy-MM-dd"
+        val sdf = SimpleDateFormat(myformat,Locale("es","CO"))
         fecha_parto_lechera.setText(sdf.format(myCalendar.time))
     }
 
@@ -158,6 +185,9 @@ class fragment_formulario_lecheras : Fragment() {
             }
         }
         queue.add(resultadoPost)
+
+        findNavController().navigate(R.id.action_fragment_formulario_lecheras_to_gestion)
+
 
     }
 
