@@ -305,7 +305,8 @@
                     android:layout_height="120dp"
                     app:cardBackgroundColor="@color/white"
                     app:cardCornerRadius="13dp"
-                    app:cardElevation="5dp">
+                    app:cardElevation="5dp"
+                    android:layout_marginBottom="30dp">
 
                     <ImageView
                         android:layout_width="match_parent"

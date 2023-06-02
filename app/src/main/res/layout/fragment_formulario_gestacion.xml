@@ -19,7 +19,8 @@ tools:context=".fragment_formulario_gestacion">
         android:textAlignment="center"
         android:textStyle="bold"
         android:layout_gravity="center"
-        android:text="Ingresa los sigueintes datos de las vacas en gestacion"></TextView>
+        android:text="Ingresa los sigueintes datos de las vacas en gestacion">
+    </TextView>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -33,17 +34,7 @@ tools:context=".fragment_formulario_gestacion">
             android:layout_margin="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Id Bovino" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp">
-
-            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ingreso_peso_gestacion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Peso en kilos" />
@@ -55,6 +46,7 @@ tools:context=".fragment_formulario_gestacion">
             android:layout_margin="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ingreso_fecha_inseminacionGesta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Fecha de inseminacion" />
@@ -66,6 +58,7 @@ tools:context=".fragment_formulario_gestacion">
             android:layout_margin="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ingreso_fecha_aproxParto_gesta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="fecha_aproxParto" />
@@ -77,6 +70,7 @@ tools:context=".fragment_formulario_gestacion">
             android:layout_margin="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ingreso_fecha_ulti_parto_gesta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Fecha del ultimo parto" />
@@ -88,6 +82,7 @@ tools:context=".fragment_formulario_gestacion">
             android:layout_margin="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ingreso_fecha_revi_gesta"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Fecha de  Revision" />
@@ -96,12 +91,14 @@ tools:context=".fragment_formulario_gestacion">
     </LinearLayout>
 
     <Button
+        android:id="@+id/boton_enviar_gestacion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/verde"
         android:layout_gravity="center"
         android:text="Ingresar Bovino"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:onClick="clickAddGestacion"/>
 
 </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

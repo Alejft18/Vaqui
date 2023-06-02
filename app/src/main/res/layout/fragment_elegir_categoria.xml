@@ -38,220 +38,257 @@
     </androidx.appcompat.widget.Toolbar>
 
 
-    <TextView
-        android:layout_width="match_parent"
+
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:gravity="center"
-        android:text="Selecione la categoría a la que pertenece"
-        android:textColor="@color/verde"
-        android:textSize="25dp"
-        android:textStyle="bold">
-    </TextView>
+        android:layout_marginTop="25dp"
+        android:layout_gravity="center"
+        android:orientation="vertical">
 
-    <androidx.cardview.widget.CardView
-            android:layout_width="160dp"
-            android:layout_height="120dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="180dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="13dp"
-            app:cardElevation="5dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Selecione la categoría a la que pertenece"
+            android:textSize="18sp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/verde"
+            android:textAlignment="center"
+            android:layout_marginBottom="40dp">
+        </TextView>
 
-            <ImageView
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="50px"
+            android:orientation="horizontal">
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:src="@drawable/vaca_lechera"
-                android:layout_marginTop="15dp">
-            </ImageView>
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:layout_weight="1">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_elegir_lechera"
+                    android:layout_width="150dp"
+                    android:layout_height="120dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="13dp"
+                    app:cardElevation="5dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:src="@drawable/vaca_lechera"
+                        android:layout_marginTop="15dp">
+                    </ImageView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_gravity="bottom">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Lecheras"
+                            android:textAlignment="center"
+                            android:textSize="18dp"
+                            android:layout_marginBottom="10dp"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_elegir_secado"
+                    android:layout_width="150dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="20dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="13dp"
+                    app:cardElevation="5dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        android:src="@drawable/vaca_secado"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginRight="10dp">
+                    </ImageView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_gravity="bottom">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="En secado"
+                            android:textAlignment="center"
+                            android:textSize="18dp"
+                            android:layout_marginBottom="10dp"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_elegir_sementales"
+                    android:layout_width="150dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="20dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="13dp"
+                    app:cardElevation="5dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:src="@drawable/toro"
+                        android:layout_marginTop="10dp">
+                    </ImageView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_gravity="bottom">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Sementales"
+                            android:textAlignment="center"
+                            android:textSize="18dp"
+                            android:layout_marginBottom="10dp"
+                            android:textStyle="bold"/>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:layout_gravity="bottom">
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:layout_weight="1">
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Lecheras"
-                    android:textAlignment="center"
-                    android:textSize="18dp"
-                    android:layout_marginBottom="10dp"
-                    android:textStyle="bold"/>
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_elegir_gestacion"
+                    android:layout_width="150dp"
+                    android:layout_height="120dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="13dp"
+                    app:cardElevation="5dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="90dp"
+                        android:layout_marginTop="5dp"
+                        android:src="@drawable/vaca_gestacion">
+                    </ImageView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="Gestación"
+                            android:textAlignment="center"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_elegir_engorde"
+                    android:layout_width="150dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="20dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="13dp"
+                    app:cardElevation="5dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/vaca_engorde">
+                    </ImageView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="Engorde"
+                            android:textAlignment="center"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_elegir_terneros"
+                    android:layout_width="150dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop="20dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="13dp"
+                    app:cardElevation="5dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="85dp"
+                        android:layout_marginTop="10dp"
+                        android:src="@drawable/ternero">
+                    </ImageView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="10dp"
+                            android:text="Terneros"
+                            android:textAlignment="center"
+                            android:textSize="18dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
             </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
 
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="160dp"
-            android:layout_height="120dp"
-            android:layout_marginTop="180dp"
-            app:cardBackgroundColor="@color/white"
-            android:layout_marginLeft="220dp"
-            app:cardCornerRadius="13dp"
-            app:cardElevation="5dp">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:src="@drawable/vaca_gestacion"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="10dp">
-            </ImageView>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_gravity="bottom">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Gestacion"
-                    android:textAlignment="center"
-                    android:textSize="18dp"
-                    android:layout_marginBottom="10dp"
-                    android:textStyle="bold"/>
-
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </LinearLayout>
 
 
-        <androidx.cardview.widget.CardView
-            android:layout_width="160dp"
-            android:layout_height="120dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="330dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="13dp"
-            app:cardElevation="5dp">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="95dp"
-                android:src="@drawable/vaca_secado"
-                android:layout_marginTop="8dp">
-            </ImageView>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_gravity="bottom">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="En secado"
-                    android:textAlignment="center"
-                    android:textSize="18dp"
-                    android:layout_marginBottom="10dp"
-                    android:textStyle="bold"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="160dp"
-            android:layout_height="120dp"
-            android:layout_marginTop="330dp"
-            app:cardBackgroundColor="@color/white"
-            android:layout_marginLeft="220dp"
-            app:cardCornerRadius="13dp"
-            app:cardElevation="5dp">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="70dp"
-                android:src="@drawable/vaca_engorde"
-                android:layout_marginTop="15dp">
-            </ImageView>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_gravity="bottom">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Engorde"
-                    android:textAlignment="center"
-                    android:textSize="18dp"
-                    android:layout_marginBottom="10dp"
-                    android:textStyle="bold"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="160dp"
-            android:layout_height="120dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="480dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="13dp"
-            app:cardElevation="5dp">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:src="@drawable/toro"
-                android:layout_marginTop="10dp">
-            </ImageView>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_gravity="bottom">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Sementales"
-                    android:textAlignment="center"
-                    android:textSize="18dp"
-                    android:layout_marginBottom="10dp"
-                    android:textStyle="bold"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
-
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="160dp"
-            android:layout_height="120dp"
-            android:layout_marginTop="480dp"
-            app:cardBackgroundColor="@color/white"
-            android:layout_marginLeft="220dp"
-            app:cardCornerRadius="13dp"
-            app:cardElevation="5dp">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="85dp"
-                android:src="@drawable/ternero"
-                android:layout_marginTop="10dp">
-            </ImageView>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_gravity="bottom">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Terneros"
-                    android:textAlignment="center"
-                    android:textSize="18dp"
-                    android:layout_marginBottom="10dp"
-                    android:textStyle="bold"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
 
 </FrameLayout>
