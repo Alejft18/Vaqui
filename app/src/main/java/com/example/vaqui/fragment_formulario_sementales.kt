@@ -126,7 +126,7 @@ class fragment_formulario_sementales : Fragment() {
 
 
     private fun clickAddToro(view: View) {
-        val url="http://192.168.226.77/phpVaqui/agregar_toro.php"
+        val url="http://192.168.226.187/phpVaqui/agregar_toro.php"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->

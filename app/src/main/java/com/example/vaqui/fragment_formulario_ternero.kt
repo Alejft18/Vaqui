@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
@@ -45,7 +46,7 @@ class fragment_formulario_ternero : Fragment() {
 
         ingreso_id_madre_ternero = view.findViewById(R.id.ingreso_id_madre_ternero)
         ingreso_peso_ternero = view.findViewById(R.id.ingreso_peso_ternero)
-        ingreso_fechaRevision_ternero = view.findViewById(R.id.ingreso_fechaRevision_ternero)
+        ingreso_fechaRevision_ternero = view.findViewById(R.id.ingreso_fechaRevi_ternero)
 
         //logica de las fechas (datePicker)
         val myCalendar= Calendar.getInstance()
@@ -87,7 +88,7 @@ class fragment_formulario_ternero : Fragment() {
     }
 
     private fun clickAddTernero(view: View) {
-        val url="http://192.168.226.77/phpVaqui/agregar_ternero.php"
+        val url="http://192.168.226.187/phpVaqui/agregar_ternero.php"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->
@@ -110,6 +111,7 @@ class fragment_formulario_ternero : Fragment() {
             }
         }
         queue.add(resultadoPost)
+        findNavController().navigate(R.id.action_fragment_formulario_ternero_to_gestion)
 
     }
 }

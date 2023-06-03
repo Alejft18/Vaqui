@@ -132,7 +132,7 @@ class FormularioGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
 
     //subo los datos al momento de darle click
     private fun clickAddGeneral(view: View) {
-        val url="http://192.168.226.77/phpVaqui/agregar_bovino_general.php"
+        val url="http://192.168.226.187/phpVaqui/agregar_bovino_general.php"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->

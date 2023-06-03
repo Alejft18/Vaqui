@@ -99,7 +99,11 @@
         android:id="@+id/datos_general"
         android:name="com.example.vaqui.datos_general"
         android:label="fragment_datos_general"
-        tools:layout="@layout/fragment_datos_general" />
+        tools:layout="@layout/fragment_datos_general" >
+        <action
+            android:id="@+id/action_datos_general_to_actualizarGeneralFragment"
+            app:destination="@id/actualizarGeneralFragment" />
+    </dialog>
     <dialog
         android:id="@+id/datos_general2"
         android:name="com.example.vaqui.datos_general"
@@ -267,6 +271,15 @@
         android:id="@+id/fragment_formulario_ternero"
         android:name="com.example.vaqui.fragment_formulario_ternero"
         android:label="fragment_formulario_ternero"
-        tools:layout="@layout/fragment_formulario_ternero" />
+        tools:layout="@layout/fragment_formulario_ternero" >
+        <action
+            android:id="@+id/action_fragment_formulario_ternero_to_gestion"
+            app:destination="@id/gestion" />
+    </fragment>
+    <fragment
+        android:id="@+id/actualizarGeneralFragment"
+        android:name="com.example.vaqui.ActualizarGeneralFragment"
+        android:label="fragment_actualizar_general"
+        tools:layout="@layout/fragment_actualizar_general" />
 
 </navigation>

@@ -155,7 +155,7 @@ class fragment_formulario_secado : Fragment() {
     }
 
     private fun clickAddSecado(view: View) {
-        val url="http://192.168.226.77/phpVaqui/agregar_secado.php"
+        val url="http://192.168.226.187/phpVaqui/agregar_secado.php"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->

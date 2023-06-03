@@ -19,7 +19,7 @@ tools:context=".fragment_formulario_sementales">
         android:textAlignment="center"
         android:textStyle="bold"
         android:layout_gravity="center"
-        android:text="Ingresa los sigueintes datos del toro"/>
+        android:text="Ingresa los siguientes datos del toro"/>
 
     <LinearLayout
         android:layout_width="match_parent"
