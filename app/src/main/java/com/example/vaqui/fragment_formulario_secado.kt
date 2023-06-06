@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
@@ -51,12 +52,27 @@ class fragment_formulario_secado : Fragment() {
 
         //logica de las fechas (datePicker)
         val myCalendar= Calendar.getInstance()
-
         val datePicker= DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
             myCalendar.set(Calendar.YEAR,year)
             myCalendar.set(Calendar.MONTH,month)
             myCalendar.set(Calendar.DAY_OF_MONTH,dayOfMonth)
             updateLable(myCalendar)
+        }
+
+        val myCalendar2= Calendar.getInstance()
+        val datePicker2= DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
+            myCalendar2.set(Calendar.YEAR,year)
+            myCalendar2.set(Calendar.MONTH,month)
+            myCalendar2.set(Calendar.DAY_OF_MONTH,dayOfMonth)
+            updateLable2(myCalendar2)
+        }
+
+        val myCalendar3= Calendar.getInstance()
+        val datePicker3= DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
+            myCalendar3.set(Calendar.YEAR,year)
+            myCalendar3.set(Calendar.MONTH,month)
+            myCalendar3.set(Calendar.DAY_OF_MONTH,dayOfMonth)
+            updateLable3(myCalendar3)
         }
 
         // Deshabilito el teclado en las fechas
@@ -90,7 +106,7 @@ class fragment_formulario_secado : Fragment() {
         }
 
         ingreso_fechaRevision_secado.setOnClickListener {
-            val dialog = DatePickerDialog(requireContext(),datePicker,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH))
+            val dialog = DatePickerDialog(requireContext(),datePicker2,myCalendar2.get(Calendar.YEAR),myCalendar2.get(Calendar.MONTH),myCalendar2.get(Calendar.DAY_OF_MONTH))
             //pongo la fecha maxima como dia actual
             dialog.datePicker.maxDate=Calendar.getInstance().timeInMillis
 
@@ -103,7 +119,7 @@ class fragment_formulario_secado : Fragment() {
         }
 
         ingreso_fechaOrdenio_secado.setOnClickListener {
-            val dialog = DatePickerDialog(requireContext(),datePicker,myCalendar.get(Calendar.YEAR),myCalendar.get(Calendar.MONTH),myCalendar.get(Calendar.DAY_OF_MONTH))
+            val dialog = DatePickerDialog(requireContext(),datePicker3,myCalendar3.get(Calendar.YEAR),myCalendar3.get(Calendar.MONTH),myCalendar3.get(Calendar.DAY_OF_MONTH))
             //pongo la fecha maxima como dia actual
             dialog.datePicker.maxDate=Calendar.getInstance().timeInMillis
 
@@ -124,12 +140,22 @@ class fragment_formulario_secado : Fragment() {
         val myformat = "yyyy-MM-dd"
         val sdf = SimpleDateFormat(myformat, Locale("es","CO"))
         ingreso_fechaUltParto_secado.setText(sdf.format(myCalendar.time))
+    }
+
+    private fun updateLable2(myCalendar: Calendar) {
+        val myformat = "yyyy-MM-dd"
+        val sdf = SimpleDateFormat(myformat, Locale("es","CO"))
         ingreso_fechaRevision_secado.setText(sdf.format(myCalendar.time))
+    }
+
+    private fun updateLable3(myCalendar: Calendar) {
+        val myformat = "yyyy-MM-dd"
+        val sdf = SimpleDateFormat(myformat, Locale("es","CO"))
         ingreso_fechaOrdenio_secado.setText(sdf.format(myCalendar.time))
     }
 
     private fun clickAddSecado(view: View) {
-        val url="http://192.168.95.187/phpVaqui/agregar_secado.php"
+        val url="http://192.168.226.187/phpVaqui/agregar_secado.php"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->
@@ -153,6 +179,7 @@ class fragment_formulario_secado : Fragment() {
             }
         }
         queue.add(resultadoPost)
+        findNavController().navigate(R.id.action_fragment_formulario_secado_to_gestion2)
 
     }
 

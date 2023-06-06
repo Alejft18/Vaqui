@@ -7,12 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.Window
-import android.widget.ImageView
-import android.widget.RelativeLayout
-import android.widget.TextView
-import android.widget.Toolbar
+import android.widget.*
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import org.json.JSONObject
@@ -29,6 +27,8 @@ class datos_general : DialogFragment() {
     private lateinit var genero_general : TextView
     private lateinit var procedencia : TextView
     private lateinit var img_general : ImageView
+
+    private lateinit var btn_detalle_actualizar_general: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,11 +52,16 @@ class datos_general : DialogFragment() {
         this.fecha_general = ll.findViewById(R.id.fecha_general)
         this.procedencia = ll.findViewById(R.id.procedencia)
         this.img_general = ll.findViewById(R.id.img_general)
+        this.btn_detalle_actualizar_general = ll.findViewById(R.id.btn_detalle_actualizar_general)
 
-
+        btn_detalle_actualizar_general.setOnClickListener {
+            findNavController().navigate(R.id.action_datos_general_to_actualizarGeneralFragment)
+        }
 
         return ll
     }
+
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

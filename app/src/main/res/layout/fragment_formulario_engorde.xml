@@ -36,6 +36,7 @@ tools:context=".fragment_formulario_engorde">
                 android:id="@+id/ingreso_peso_engorde"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
                 android:hint="Peso en kilos" />
         </com.google.android.material.textfield.TextInputLayout>
 

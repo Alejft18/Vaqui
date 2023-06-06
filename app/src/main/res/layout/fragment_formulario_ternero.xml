@@ -19,7 +19,8 @@ tools:context=".fragment_formulario_ternero">
         android:textAlignment="center"
         android:textStyle="bold"
         android:layout_gravity="center"
-        android:text="Ingresa los sigueintes datos de los terneros"></TextView>
+        android:text="Ingresa los siguientes datos del ternero">
+    </TextView>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,12 +28,12 @@ tools:context=".fragment_formulario_ternero">
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/ingreso_id_madre_ternero"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ingreso_id_madre_ternero"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Id madre" />
@@ -47,6 +48,7 @@ tools:context=".fragment_formulario_ternero">
                 android:id="@+id/ingreso_peso_ternero"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
                 android:hint="Peso en kilos" />
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -56,7 +58,7 @@ tools:context=".fragment_formulario_ternero">
             android:layout_margin="16dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ingreso_fechaRevision_ternero"
+                android:id="@+id/ingreso_fechaRevi_ternero"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Fecha de revision" />

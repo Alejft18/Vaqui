@@ -132,13 +132,12 @@ class FormularioGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
 
     //subo los datos al momento de darle click
     private fun clickAddGeneral(view: View) {
-        val url="http://192.168.95.187/phpVaqui/agregar_bovino_general.php"
+        val url="http://192.168.226.187/phpVaqui/agregar_bovino_general.php"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->
                 Toast.makeText(requireContext(), "Bovino ingresado exitosamente", Toast.LENGTH_LONG).show()
 
-                    //Si se ingresa correctamente se va a la pantalla de elegir categoria
                     val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
                     navController.navigate(R.id.action_formularioGeneralFragment_to_elegir_categoria)
 

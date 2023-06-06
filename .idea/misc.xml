@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
@@ -6,17 +7,25 @@
         <entry key="..\:/Users/joseo/AndroidStudioProjects/Vaqui/app/src/main/res/drawable/shape_buscador.xml" value="0.146" />
         <entry key="..\:/Users/joseo/AndroidStudioProjects/Vaqui/app/src/main/res/drawable/shape_buscadory.xml" value="0.146" />
         <entry key="..\:/Users/joseo/AndroidStudioProjects/Vaqui/app/src/main/res/drawable/shape_categoria.xml" value="0.146" />
+        <entry key="..\:/Users/joseo/AndroidStudioProjects/Vaqui/app/src/main/res/layout/fragment_actualizar_bovino_1.xml" value="0.2318840579710145" />
+        <entry key="..\:/Users/joseo/AndroidStudioProjects/Vaqui/app/src/main/res/layout/fragment_actualizar_bovino_2.xml" value="0.2318840579710145" />
+        <entry key="..\:/Users/joseo/AndroidStudioProjects/Vaqui/app/src/main/res/layout/fragment_actualizar_general.xml" value="0.1" />
         <entry key="..\:/Users/joseo/AndroidStudioProjects/Vaqui/app/src/main/res/layout/fragment_categorias.xml" value="0.2318840579710145" />
         <entry key="..\:/Users/joseo/AndroidStudioProjects/Vaqui/app/src/main/res/layout/fragment_datos_engorde.xml" value="0.1956521739130435" />
         <entry key="..\:/Users/joseo/AndroidStudioProjects/Vaqui/app/src/main/res/layout/fragment_datos_general.xml" value="0.1956521739130435" />
         <entry key="..\:/Users/joseo/AndroidStudioProjects/Vaqui/app/src/main/res/layout/fragment_elegir_categoria.xml" value="0.25" />
         <entry key="..\:/Users/joseo/AndroidStudioProjects/Vaqui/app/src/main/res/layout/fragment_formulario_engorde.xml" value="0.1956521739130435" />
         <entry key="..\:/Users/joseo/AndroidStudioProjects/Vaqui/app/src/main/res/layout/fragment_formulario_general.xml" value="0.25" />
+        <entry key="..\:/Users/joseo/AndroidStudioProjects/Vaqui/app/src/main/res/layout/fragment_formulario_gestacion.xml" value="0.2318840579710145" />
         <entry key="..\:/Users/joseo/AndroidStudioProjects/Vaqui/app/src/main/res/layout/fragment_formulario_lecheras.xml" value="0.18" />
+        <entry key="..\:/Users/joseo/AndroidStudioProjects/Vaqui/app/src/main/res/layout/fragment_formulario_secado.xml" value="0.2318840579710145" />
+        <entry key="..\:/Users/joseo/AndroidStudioProjects/Vaqui/app/src/main/res/layout/fragment_formulario_sementales.xml" value="0.2318840579710145" />
+        <entry key="..\:/Users/joseo/AndroidStudioProjects/Vaqui/app/src/main/res/layout/fragment_formulario_ternero.xml" value="0.2318840579710145" />
         <entry key="..\:/Users/joseo/AndroidStudioProjects/Vaqui/app/src/main/res/layout/fragment_gestion.xml" value="0.25" />
         <entry key="..\:/Users/joseo/AndroidStudioProjects/Vaqui/app/src/main/res/layout/fragment_gestion_empleados.xml" value="0.33" />
         <entry key="..\:/Users/joseo/AndroidStudioProjects/Vaqui/app/src/main/res/layout/fragment_gestion_menu_1.xml" value="0.19972826086956522" />
         <entry key="..\:/Users/joseo/AndroidStudioProjects/Vaqui/app/src/main/res/layout/fragment_home_estadisticas_empleado.xml" value="0.25" />
+        <entry key="..\:/Users/joseo/AndroidStudioProjects/Vaqui/app/src/main/res/layout/item_gestacion.xml" value="0.2318840579710145" />
         <entry key="..\:/Users/joseo/AndroidStudioProjects/Vaqui/app/src/main/res/layout/item_secado.xml" value="0.1956521739130435" />
       </map>
     </option>
