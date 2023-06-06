@@ -69,7 +69,7 @@ class datos_secado : DialogFragment() {
         this.fecha_ultiParto_seca.text=secado.getString("fecha_ultParto")
         this.peso_secado.text=secado.getString("peso_kilos")
         this.fecha_revision_secado.text=secado.getString("fecha_revision")
-        this.fecha_ordeno_secado.text=secado.getString("fecha_ordeño")
+        this.fecha_ordeno_secado.text=secado.getString("fecha_ultimoOrdeno")
         this.catego_secado.text=secado.getString("categoria")
 
     }
