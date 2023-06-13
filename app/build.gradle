@@ -36,6 +36,7 @@ android {
 
 dependencies {
     implementation 'androidx.privacysandbox.tools:tools-core:+'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
     def nav_version = "2.5.3"
 
     implementation "androidx.navigation:navigation-fragment:$nav_version"
