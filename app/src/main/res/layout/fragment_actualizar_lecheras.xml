@@ -136,7 +136,7 @@
                 android:layout_margin="16dp">
 
                 <EditText
-                    android:id="@+id/actualizar_oedeño_lechera"
+                    android:id="@+id/actualizar_ordeño_lechera"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Fecha de ordeño" />

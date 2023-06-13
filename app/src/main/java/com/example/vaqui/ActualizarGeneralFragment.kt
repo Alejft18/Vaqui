@@ -156,8 +156,4 @@ class ActualizarGeneralFragment : Fragment(),AdapterView.OnItemSelectedListener 
         actualizar_spinner_procedencia.onItemSelectedListener = this
     }
 
-
-
-
-
 }
