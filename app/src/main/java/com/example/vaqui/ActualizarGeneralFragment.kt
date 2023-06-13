@@ -100,7 +100,7 @@ class ActualizarGeneralFragment : Fragment(),AdapterView.OnItemSelectedListener 
 
 
         boton_actualizar_general.setOnClickListener {
-            val url="http://192.168.226.187/phpVaqui/actualizar_bovino_general.php"
+            val url="http://192.168.226.77/phpVaqui/actualizar_bovino_general.php"
             val queue = Volley.newRequestQueue(getActivity())
             val resultPost= object  : StringRequest(
                 Request.Method.POST,url,
