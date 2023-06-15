@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".datos_gestacion">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
         <View
@@ -27,20 +27,20 @@
         android:background="@drawable/shape_detalle_mpleado"
         android:orientation="horizontal">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <com.google.android.material.appbar.AppBarLayout
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <Toolbar
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <com.google.android.material.appbar.AppBarLayout
                 android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:id="@+id/tvBarra_gestacion"
-                android:background="@color/gray">
-            </Toolbar>
-        </com.google.android.material.appbar.AppBarLayout>
+                android:layout_height="wrap_content">
+                <Toolbar
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:id="@+id/tvBarra_gestacion"
+                    android:background="@color/gray">
+                </Toolbar>
+            </com.google.android.material.appbar.AppBarLayout>
 
         <ImageView
             android:layout_width="wrap_content"
@@ -250,6 +250,7 @@
 
     </LinearLayout>
 
+
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -281,6 +282,8 @@
                 android:layout_centerInParent="true" />
 
         </RelativeLayout>
-    </FrameLayout>
+        </FrameLayout>
+        </LinearLayout>
+
     </LinearLayout>
 </FrameLayout>
