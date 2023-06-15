@@ -6,33 +6,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Buscador.DetalleEmpleadoFragment">
 
-    <RelativeLayout
-        android:id="@+id/RlBuscador"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-        <SearchView
-            android:id="@+id/searchhView"
-            android:layout_width="match_parent"
-            android:layout_height="35dp"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="25dp"
-            android:layout_marginBottom="25dp"
-            android:background="@drawable/shape_buscador"
-            android:queryHint="Ingresa el ID"></SearchView>
-
-    </RelativeLayout>
-
     <LinearLayout
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="500dp"
         android:orientation="vertical"
-        android:layout_gravity="center_horizontal"
-        android:background="@drawable/shape_detalle_mpleado"
-        android:layout_marginTop="150dp"
-        android:padding="5dp"
-        app:cardCornerRadius="15dp">
+        android:layout_gravity="center"
+        app:cardElevation="8dp"
+        android:background="@null"
+        >
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -44,66 +25,207 @@
                 <Toolbar
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
-                    android:id="@+id/tvBarra"
-                    android:background="@color/gray">
-                </Toolbar>
+                    android:id="@+id/tvBarra_empleado"
+
+                    android:background="@color/gray"/>
             </com.google.android.material.appbar.AppBarLayout>
 
+
             <ImageView
+                android:id="@+id/img_empleado"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/perfil"
-                android:layout_gravity="center"
-                android:layout_margin="10dp">
+                android:layout_height="50dp"
+                android:layout_margin="15dp"
+                android:src="@drawable/empleado"
+                android:layout_gravity="center">
             </ImageView>
 
             <TextView
-                android:layout_width="match_parent"
+                android:id="@+id/Titulo_general"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cédula"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textAlignment="center"
-                android:layout_marginBottom="10dp">
+                android:text="Datos del empleado"
+                android:layout_gravity="center"
+                android:textStyle="bold"
+                android:textColor="@color/verde"
+                android:textSize="20dp">
             </TextView>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_gravity="center"
-                android:layout_marginBottom="10dp">
-                <TextView
-                    android:id="@+id/nombre"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Nombre"
-                    android:textColor="@color/black"
-                    android:textSize="16sp">
-                </TextView>
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
 
                 <TextView
-                    android:id="@+id/apellido"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Apellido"
-                    android:textColor="@color/black"
-                    android:textSize="16sp"
-                    android:layout_marginLeft="7dp">
+                    android:text="ID:"
+                    android:textStyle="bold"
+                    android:textSize="18dp">
+                </TextView>
+                <TextView
+                    android:id="@+id/id_empleados"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:text="0000000000"
+                    android:layout_marginLeft="4dp">
                 </TextView>
             </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cargo"
-                android:textColor="@color/black"
-                android:textSize="16sp"
-                android:textAlignment="center"
-                android:layout_marginBottom="10dp">
-            </TextView>
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nombre:"
+                    android:textSize="18dp"
+                    android:textStyle="bold">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/nombre_empleado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:text=" xxxxxxxxxx"
+                    android:layout_marginLeft="4dp">
+                </TextView>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Apellidos:"
+                    android:textStyle="bold"
+                    android:textSize="18dp">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/apellidos_empleado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:text="xxxxxxxxxx"
+                    android:layout_marginLeft="4dp">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Telefono:"
+                    android:textStyle="bold"
+                    android:textSize="18dp">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/telefono_empleado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0000000000"
+                    android:textSize="16dp"
+                    android:layout_marginLeft="4dp">
+                </TextView>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Correo:"
+                    android:textStyle="bold"
+                    android:textSize="18dp">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/correo_empleado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0000000000"
+                    android:textSize="16dp"
+                    android:layout_marginLeft="4dp">
+                </TextView>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Area:"
+                    android:textStyle="bold"
+                    android:textSize="18dp">
+                </TextView>
+
+                <TextView
+                    android:id="@+id/area_empleado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16dp"
+                    android:text="xxxxxxxxxx"
+                    android:layout_marginLeft="4dp">
+                </TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_margin="20dp"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_detalle_actualizar_empleado"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/olvidemicontra"
+                    android:text="Actualizar"
+                    android:textColor="@color/white"/>
+
+                <Button
+                    android:id="@+id/btn_detalle_eliminar_empleado"
+                    android:layout_width="120dp"
+                    android:layout_height="33dp"
+                    android:background="@drawable/border_boton"
+                    android:text="Eliminar"
+                    android:textColor="@color/rojo_botones" />
+
+            </LinearLayout>
 
         </LinearLayout>
+
 
     </LinearLayout>
 

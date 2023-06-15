@@ -18,9 +18,6 @@ import org.json.JSONObject
 
 class datos_general : DialogFragment() {
     private lateinit var tvBarra_general : Toolbar
-    private lateinit var recycler : RecyclerView
-    private lateinit var viewAlpha : View
-    private lateinit var rlGeneralList : RelativeLayout
     private lateinit var id_general : TextView
     private lateinit var fecha_general : TextView
     private lateinit var raza_general : TextView

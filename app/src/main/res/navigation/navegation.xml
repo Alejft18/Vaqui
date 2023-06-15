@@ -188,7 +188,11 @@
         android:id="@+id/gestionEmpleadosFragment"
         android:name="com.example.vaqui.GestionEmpleadosFragment"
         android:label="fragment_gestion_empleados"
-        tools:layout="@layout/fragment_gestion_empleados" />
+        tools:layout="@layout/fragment_gestion_empleados" >
+        <action
+            android:id="@+id/action_gestionEmpleadosFragment_to_detalleEmpleadoFragment"
+            app:destination="@id/detalleEmpleadoFragment" />
+    </fragment>
     <fragment
         android:id="@+id/formularioGeneralFragment"
         android:name="com.example.vaqui.FormularioGeneralFragment"
@@ -281,5 +285,10 @@
         android:name="com.example.vaqui.ActualizarGeneralFragment"
         android:label="fragment_actualizar_general"
         tools:layout="@layout/fragment_actualizar_general" />
+    <fragment
+        android:id="@+id/detalleEmpleadoFragment"
+        android:name="com.example.vaqui.Buscador.DetalleEmpleadoFragment"
+        android:label="fragment_detalle_empleado"
+        tools:layout="@layout/fragment_detalle_empleado" />
 
 </navigation>
