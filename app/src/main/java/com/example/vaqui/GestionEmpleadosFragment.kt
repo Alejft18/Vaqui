@@ -5,28 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.cardview.widget.CardView
+import androidx.navigation.Navigation
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [GestionEmpleadosFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class GestionEmpleadosFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var card_buscar_emple : CardView
+    private lateinit var card_ingresar_empleado : CardView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
@@ -34,26 +24,21 @@ class GestionEmpleadosFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_gestion_empleados, container, false)
+        val ll =  inflater.inflate(R.layout.fragment_gestion_empleados, container, false)
+        this.card_buscar_emple = ll.findViewById(R.id.card_buscar_emple)
+        this.card_ingresar_empleado = ll.findViewById(R.id.card_ingresar_empleado)
+
+        card_buscar_emple.setOnClickListener {
+            val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
+            navController.navigate(R.id.action_gestionEmpleadosFragment_to_recyclerView_EmpleadosFragment)
+        }
+
+        card_ingresar_empleado.setOnClickListener {
+            val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
+            navController.navigate(R.id.action_gestionEmpleadosFragment_to_formularioEmpleadoFragment)
+        }
+
+        return ll
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment GestionEmpleadosFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            GestionEmpleadosFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
 }

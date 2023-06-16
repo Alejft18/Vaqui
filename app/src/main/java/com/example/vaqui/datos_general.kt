@@ -58,8 +58,6 @@ class datos_general : DialogFragment() {
         return ll
     }
 
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         this.tvBarra_general.navigationIcon=ContextCompat.getDrawable(view.context,R.drawable.ic_baseline_close_24)
@@ -82,5 +80,11 @@ class datos_general : DialogFragment() {
     override fun onStart() {
         super.onStart()
         dialog?.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
+    }
+
+    private fun getParams(): MutableMap<String, String>? {
+        val params = HashMap<String, String>()
+        params["id_general"] = id_general.text.toString()
+        return params
     }
 }

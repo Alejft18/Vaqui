@@ -15,9 +15,9 @@ import com.google.android.material.textfield.TextInputEditText
 import java.text.SimpleDateFormat
 import java.util.*
 
-class actualizarEngordeFragment : Fragment(), AdapterView.OnItemSelectedListener {
+class actualizarEngordeFragment : Fragment(){
 
-    private lateinit var id_engorde: TextView
+/*    private lateinit var id_engorde: TextView
     private lateinit var actualizar_fecha_revisión_engorde: EditText
     private lateinit var actualizar_peso_engorde: TextInputEditText
     private lateinit var actualizar_alimento_engorde: TextInputEditText
@@ -111,6 +111,6 @@ class actualizarEngordeFragment : Fragment(), AdapterView.OnItemSelectedListener
 
     override fun onNothingSelected(p0: AdapterView<*>?) {
         TODO("Not yet implemented")
-    }
+    }*/
 
 }

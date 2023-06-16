@@ -15,8 +15,8 @@ import com.google.android.material.textfield.TextInputEditText
 import java.text.SimpleDateFormat
 import java.util.*
 
-class actualizarGestasionFragment : Fragment(), AdapterView.OnItemSelectedListener {
-   private lateinit var id_gestacion: TextView
+class actualizarGestasionFragment : Fragment(){
+/*    private lateinit var id_gestacion: TextView
     private lateinit var actualizar_fecha_revisión_gestacion: EditText
     private lateinit var actualizar_peso_gestacion: TextInputEditText
     private lateinit var actualizar_aproxparto_gestacion: EditText
@@ -222,6 +222,6 @@ class actualizarGestasionFragment : Fragment(), AdapterView.OnItemSelectedListen
 
     override fun onNothingSelected(p0: AdapterView<*>?) {
         TODO("Not yet implemented")
-    }
+    }*/
 
 }

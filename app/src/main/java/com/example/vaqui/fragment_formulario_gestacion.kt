@@ -13,9 +13,11 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.android.volley.Request
 import com.android.volley.Response
+import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.google.android.material.textfield.TextInputEditText
+import org.json.JSONObject
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -26,6 +28,9 @@ class fragment_formulario_gestacion : Fragment() {
     private lateinit var ingreso_fecha_aproxParto_gesta : TextInputEditText
     private lateinit var ingreso_fecha_ulti_parto_gesta : TextInputEditText
     private lateinit var ingreso_fecha_revi_gesta : TextInputEditText
+    private var ultimoId: Int = 0
+    private val categoria = "gestacion"
+
 
 
 
@@ -38,7 +43,9 @@ class fragment_formulario_gestacion : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val botonEnviar: Button = view.findViewById(R.id.boton_enviar_gestacion)
-        botonEnviar.setOnClickListener { clickAddGestacion(view) }
+        botonEnviar.setOnClickListener {
+            obtenerUltimoIdGeneral()
+        }
     }
 
     @SuppressLint("MissingInflatedId")
@@ -191,29 +198,59 @@ class fragment_formulario_gestacion : Fragment() {
 
     }
 
-    private fun clickAddGestacion(view: View) {
-        val url="http://192.168.226.187/phpVaqui/agregar_gestacion.php"
+    private fun obtenerUltimoIdGeneral(){
+        val url = "http://192.168.78.187:8080/ultimoIdGeneral"
+        val queue = Volley.newRequestQueue(requireContext())
+
+        val request = JsonObjectRequest(Request.Method.GET, url,null,
+            { response ->
+
+                ultimoId = response.getInt("id")
+                println(ultimoId)
+
+                clickAddGestacion()
+            },
+            { error ->
+                Toast.makeText(requireContext(), "Error al obtener el último ID", Toast.LENGTH_LONG).show()
+            })
+
+        queue.add(request)
+    }
+
+    private fun clickAddGestacion() {
+        val url="http://192.168.78.187:8080/agregarGestacion/$ultimoId"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->
                 Toast.makeText(requireContext(), "Vaca gestacion ingresada exitosamente", Toast.LENGTH_LONG).show()
             }, Response.ErrorListener{
                 Toast.makeText(requireContext(), "Vaca gestacion no agregada", Toast.LENGTH_LONG).show()
-            }
-        ){
-            override fun getParams(): MutableMap<String, String>? {
-                val parametros = HashMap<String, String>()
+            }) {
 
+            override fun getHeaders(): MutableMap<String, String> {
+                val headers = HashMap<String, String>()
+                headers["Content-Type"] = "application/json"
+                return headers
+            }
+            override fun getBodyContentType(): String {
+                return "application/json"
+            }
+
+            override fun getBody(): ByteArray {
+                val parametros = JSONObject()
+
+                parametros.put("id",ultimoId)
                 parametros.put("peso_kilos",ingreso_peso_gestacion?.text.toString())
                 parametros.put("fecha_inseminacion",ingreso_fecha_inseminacionGesta?.text.toString())
                 parametros.put("fecha_aproxParto",ingreso_fecha_aproxParto_gesta?.text.toString())
                 parametros.put("fecha_ultimoParto",ingreso_fecha_ulti_parto_gesta?.text.toString())
                 parametros.put("fecha_revision",ingreso_fecha_revi_gesta?.text.toString())
+                parametros.put("categoria",categoria)
 
                 Log.d("error", "$parametros")
                 Log.d("error", "error")
-                return parametros
 
+                return parametros.toString().toByteArray(Charsets.UTF_8)
             }
         }
         queue.add(resultadoPost)

@@ -7,9 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.vaqui.R
+import com.example.vaqui.RecyclerView_Engorde
 import org.json.JSONObject
 
-class EngordeAdapter(private val engordeList: ArrayList<JSONObject>, private val engordeListener: EngordeListener) : RecyclerView.Adapter<EngordeAdapter.ViewHolder>() {
+class EngordeAdapter(private val engordeList: ArrayList<JSONObject>, private val engordeListener: EngordeListener) : RecyclerView.Adapter<EngordeAdapter.ViewHolder>(){
+
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view) {
         var BovinoID : TextView = view.findViewById(R.id.idEngorde)
         var categorias : TextView = view.findViewById(R.id.categoriaEngorde)

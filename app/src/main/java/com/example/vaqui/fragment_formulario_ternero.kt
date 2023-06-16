@@ -12,9 +12,11 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.android.volley.Request
 import com.android.volley.Response
+import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.google.android.material.textfield.TextInputEditText
+import org.json.JSONObject
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.HashMap
@@ -25,6 +27,8 @@ class fragment_formulario_ternero : Fragment() {
     private lateinit var ingreso_id_madre_ternero: TextInputEditText
     private lateinit var ingreso_peso_ternero: TextInputEditText
     private lateinit var ingreso_fechaRevision_ternero: TextInputEditText
+    private var ultimoId : Int = 0
+    private val categoria = "ternero"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +38,7 @@ class fragment_formulario_ternero : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val botonEnviar: Button = view.findViewById(R.id.boton_enviar_ternero)
-        botonEnviar.setOnClickListener { clickAddTernero(view) }
+        botonEnviar.setOnClickListener { obtenerUltimoIdGeneral() }
     }
 
     override fun onCreateView(
@@ -77,6 +81,8 @@ class fragment_formulario_ternero : Fragment() {
             dialog.show()
         }
 
+
+
         return view
 
     }
@@ -86,32 +92,61 @@ class fragment_formulario_ternero : Fragment() {
         val sdf = SimpleDateFormat(myformat, Locale("es","CO"))
         ingreso_fechaRevision_ternero.setText(sdf.format(myCalendar.time))
     }
+    private fun obtenerUltimoIdGeneral(){
+        val url = "http://192.168.78.187:8080/ultimoIdGeneral"
+        val queue = Volley.newRequestQueue(requireContext())
 
-    private fun clickAddTernero(view: View) {
-        val url="http://192.168.226.187/phpVaqui/agregar_ternero.php"
+        val request = JsonObjectRequest(Request.Method.GET, url,null,
+            { response ->
+
+                ultimoId = response.getInt("id")
+                println(ultimoId)
+
+                clickAddTernero()
+            },
+            { error ->
+                Toast.makeText(requireContext(), "Error al obtener el último ID", Toast.LENGTH_LONG).show()
+            })
+
+        queue.add(request)
+    }
+
+
+    private fun clickAddTernero() {
+        val url="http://192.168.78.187:8080/agregarTernero/$ultimoId/${ingreso_id_madre_ternero.text.toString().toInt()}"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->
                 Toast.makeText(requireContext(), "Ternero ingresada exitosamente", Toast.LENGTH_LONG).show()
+                findNavController().navigate(R.id.action_fragment_formulario_ternero_to_gestion)
+
             }, Response.ErrorListener{
                 Toast.makeText(requireContext(), "Ternero no agregado", Toast.LENGTH_LONG).show()
+            }) {
+            override fun getHeaders(): MutableMap<String, String> {
+                val headers = HashMap<String, String>()
+                headers["Content-Type"] = "application/json"
+                return headers
             }
-        ){
-            override fun getParams(): MutableMap<String, String>? {
-                val parametros = HashMap<String, String>()
+            override fun getBodyContentType(): String {
+                return "application/json"
+            }
 
-                parametros.put("id_madre",ingreso_id_madre_ternero?.text.toString())
-                parametros.put("peso_kilos",ingreso_peso_ternero?.text.toString())
+            override fun getBody(): ByteArray {
+                val parametros = JSONObject()
+
+                parametros.put("id",ultimoId)
+                parametros.put("id_madre",ingreso_id_madre_ternero?.text.toString().toInt())
+                parametros.put("peso_kilos",ingreso_peso_ternero?.text.toString().toDouble())
                 parametros.put("fecha_revision",ingreso_fechaRevision_ternero?.text.toString())
+                parametros.put("categoria",categoria)
 
                 Log.d("error", "$parametros")
                 Log.d("error", "error")
-                return parametros
+                return parametros.toString().toByteArray(Charsets.UTF_8)
 
             }
         }
         queue.add(resultadoPost)
-        findNavController().navigate(R.id.action_fragment_formulario_ternero_to_gestion)
-
     }
 }

@@ -190,8 +190,11 @@
         android:label="fragment_gestion_empleados"
         tools:layout="@layout/fragment_gestion_empleados" >
         <action
-            android:id="@+id/action_gestionEmpleadosFragment_to_detalleEmpleadoFragment"
-            app:destination="@id/detalleEmpleadoFragment" />
+            android:id="@+id/action_gestionEmpleadosFragment_to_recyclerView_EmpleadosFragment"
+            app:destination="@id/recyclerView_EmpleadosFragment" />
+        <action
+            android:id="@+id/action_gestionEmpleadosFragment_to_formularioEmpleadoFragment"
+            app:destination="@id/formularioEmpleadoFragment" />
     </fragment>
     <fragment
         android:id="@+id/formularioGeneralFragment"
@@ -290,5 +293,23 @@
         android:name="com.example.vaqui.Buscador.DetalleEmpleadoFragment"
         android:label="fragment_detalle_empleado"
         tools:layout="@layout/fragment_detalle_empleado" />
+    <fragment
+        android:id="@+id/recyclerView_EmpleadosFragment"
+        android:name="com.example.vaqui.RecyclerView_EmpleadosFragment"
+        android:label="fragment_recycler_view__empleados"
+        tools:layout="@layout/fragment_recycler_view__empleados" >
+        <action
+            android:id="@+id/action_recyclerView_EmpleadosFragment_to_detalleEmpleadoFragment"
+            app:destination="@id/detalleEmpleadoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/formularioEmpleadoFragment"
+        android:name="com.example.vaqui.FormularioEmpleadoFragment"
+        android:label="fragment_formulario_empleado"
+        tools:layout="@layout/fragment_formulario_empleado" >
+        <action
+            android:id="@+id/action_formularioEmpleadoFragment_to_gestionEmpleadosFragment"
+            app:destination="@id/gestionEmpleadosFragment" />
+    </fragment>
 
 </navigation>

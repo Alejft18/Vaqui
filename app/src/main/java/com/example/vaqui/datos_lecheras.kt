@@ -1,9 +1,7 @@
 package com.example.vaqui
 
 import android.annotation.SuppressLint
-import android.app.DialogFragment
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,7 +11,6 @@ import android.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
 import androidx.recyclerview.widget.RecyclerView
-import org.json.JSONArray
 import org.json.JSONObject
 
 
@@ -35,7 +32,7 @@ class datos_lecheras : DialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setStyle(STYLE_NORMAL,R.style.FullScreenDialogStyle)
+        setStyle(DialogFragment.STYLE_NORMAL,R.style.FullScreenDialogStyle)
     }
 
     @SuppressLint("MissingInflateId")

@@ -51,7 +51,7 @@ class DetalleEmpleadoFragment : DialogFragment() {
         this.apellidos_empleado = ll.findViewById(R.id.apellidos_empleado)
         this.telefono_empleado = ll.findViewById(R.id.telefono_empleado)
         this.correo_empleado = ll.findViewById(R.id.correo_empleado)
-        this.area_empleado = ll.findViewById(R.id.areaEmpleado)
+        this.area_empleado = ll.findViewById(R.id.area_empleado)
 
         this.btn_detalle_actualizar_empleado = ll.findViewById(R.id.btn_detalle_actualizar_empleado)
         this.btn_detalle_eliminar_empleado = ll.findViewById(R.id.btn_detalle_eliminar_empleado)

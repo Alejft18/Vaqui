@@ -18,7 +18,7 @@ import java.util.*
 
 class actualizarLecherasFragment : Fragment() {
 
-    private lateinit var id_lechera: TextView
+/*    private lateinit var id_lechera: TextView
     private lateinit var actualizar_fecha_revisión_lechera: EditText
     private lateinit var actualizar_peso_lechera: TextInputEditText
     private lateinit var actualizar_partos_lechera: TextInputEditText
@@ -177,6 +177,6 @@ class actualizarLecherasFragment : Fragment() {
         val myformat = "yyyy-MM-dd"
         val sdf = SimpleDateFormat(myformat, Locale("es","CO"))
         actualizar_ultpartaro_lechera.setText(sdf.format(myCalendar.time))
-    }
+    }*/
 
 }

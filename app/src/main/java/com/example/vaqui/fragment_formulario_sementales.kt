@@ -12,9 +12,11 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.android.volley.Request
 import com.android.volley.Response
+import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.google.android.material.textfield.TextInputEditText
+import org.json.JSONObject
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -24,6 +26,9 @@ class fragment_formulario_sementales : Fragment() {
     private lateinit var ingreso_fecha_extraccion_toro: TextInputEditText
     private lateinit var ingreso_vacas_montadas_toro: TextInputEditText
     private lateinit var ingreso_fecha_revi_toro: TextInputEditText
+    private var ultimoId: Int = 0
+    private val categoria= "toro"
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +39,7 @@ class fragment_formulario_sementales : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val botonEnviar: Button = view.findViewById(R.id.boton_enviar_toro)
-        botonEnviar.setOnClickListener { clickAddToro(view) }
+        botonEnviar.setOnClickListener { obtenerUltimoIdGeneral() }
     }
 
 
@@ -123,36 +128,64 @@ class fragment_formulario_sementales : Fragment() {
         ingreso_fecha_revi_toro.setText(sdf.format(myCalendar.time))
     }
 
+    private fun obtenerUltimoIdGeneral(){
+        val url = "http://192.168.78.187:8080/ultimoIdGeneral"
+        val queue = Volley.newRequestQueue(requireContext())
+
+        val request = JsonObjectRequest(Request.Method.GET, url,null,
+            { response ->
+
+                ultimoId = response.getInt("id")
+                println(ultimoId)
+
+                clickAddToro()
+            },
+            { error ->
+                Toast.makeText(requireContext(), "Error al obtener el último ID", Toast.LENGTH_LONG).show()
+            })
+
+        queue.add(request)
+    }
 
 
-    private fun clickAddToro(view: View) {
-        val url="http://192.168.226.187/phpVaqui/agregar_toro.php"
+
+    private fun clickAddToro() {
+        val url="http://192.168.78.187:8080/agregarToro/$ultimoId"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->
                 Toast.makeText(requireContext(), "Toro ingresado exitosamente", Toast.LENGTH_LONG).show()
+                findNavController().navigate(R.id.action_fragment_formulario_sementales_to_gestion)
+
             }, Response.ErrorListener{
                 Toast.makeText(requireContext(), "Toro no agregado", Toast.LENGTH_LONG).show()
+            }) {
+            override fun getHeaders(): MutableMap<String, String> {
+                val headers = HashMap<String, String>()
+                headers["Content-Type"] = "application/json"
+                return headers
             }
-        ){
-            override fun getParams(): MutableMap<String, String>? {
-                val parametros = HashMap<String, String>()
+            override fun getBodyContentType(): String {
+                return "application/json"
+            }
 
+            override fun getBody(): ByteArray {
+                val parametros = JSONObject()
+
+                parametros.put("id",ultimoId)
                 parametros.put("peso_kilos",ingreso_peso_semental?.text.toString())
                 parametros.put("fecha_extraccion",ingreso_fecha_extraccion_toro?.text.toString())
                 parametros.put("vacas_montadas",ingreso_vacas_montadas_toro?.text.toString())
                 parametros.put("fecha_revision",ingreso_fecha_revi_toro?.text.toString())
+                parametros.put("categoria",categoria)
 
                 Log.d("error", "$parametros")
                 Log.d("error", "error")
-                return parametros
+                return parametros.toString().toByteArray(Charsets.UTF_8)
 
             }
         }
         queue.add(resultadoPost)
-        findNavController().navigate(R.id.action_fragment_formulario_sementales_to_gestion)
-
-
     }
 
 

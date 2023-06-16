@@ -17,6 +17,7 @@ import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.google.android.material.textfield.TextInputEditText
+import org.json.JSONObject
 import java.text.SimpleDateFormat
 import java.util.*
 import kotlin.collections.HashMap
@@ -132,7 +133,7 @@ class FormularioGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
 
     //subo los datos al momento de darle click
     private fun clickAddGeneral(view: View) {
-        val url="http://192.168.226.187/phpVaqui/agregar_bovino_general.php"
+        val url="http://192.168.78.187:8080/agregarGeneral"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->
@@ -143,19 +144,22 @@ class FormularioGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
 
             }, Response.ErrorListener{
                 Toast.makeText(requireContext(), "Bovino no agregado", Toast.LENGTH_LONG).show()
+            }) {
+            override fun getHeaders(): MutableMap<String, String> {
+                val headers = HashMap<String, String>()
+                headers["Content-Type"] = "application/json" // Establece el tipo de contenido como JSON
+                return headers
             }
-        ){
-            override fun getParams(): MutableMap<String, String>? {
-                val parametros = HashMap<String, String>()
-
-                parametros.put("raza",txtRaza?.text.toString())
-                parametros.put("genero",genero?.selectedItem.toString())
-                parametros.put("fecha_nacimiento",txtFechaNacimiento?.text.toString())
-                parametros.put("procedencia",procedencia?.selectedItem.toString())
-                Log.d("error", "$parametros")
-                Log.d("error", "error")
-                return parametros
-
+            override fun getBodyContentType(): String {
+                return "application/json"
+            }
+            override fun getBody(): ByteArray {
+                val params = JSONObject()
+                params.put("raza",txtRaza?.text.toString())
+                params.put("genero",genero?.selectedItem.toString())
+                params.put("fecha_nacimiento",txtFechaNacimiento?.text.toString())
+                params.put("procedencia",procedencia?.selectedItem.toString())
+                return  params.toString().toByteArray(Charsets.UTF_8)
             }
         }
         queue.add(resultadoPost)

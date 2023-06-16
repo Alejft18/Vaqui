@@ -12,9 +12,11 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.android.volley.Request
 import com.android.volley.Response
+import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.google.android.material.textfield.TextInputEditText
+import org.json.JSONObject
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -23,6 +25,8 @@ class fragment_formulario_engorde : Fragment() {
     private lateinit var ingreso_peso_engorde: TextInputEditText
     private lateinit var ingreso_fecha_revi_engorde: TextInputEditText
     private lateinit var ingreso_alimento: TextInputEditText
+    private var ultimoId: Int =0
+    private val categoria = "engorde"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,7 +37,7 @@ class fragment_formulario_engorde : Fragment() {
 
         val botonEnviar: Button = view.findViewById(R.id.boton_enviar_engorde)
         botonEnviar.setOnClickListener {
-            clickAddEngorde(view)
+            obtenerUltimoIdGeneral()
         }
     }
 
@@ -78,6 +82,7 @@ class fragment_formulario_engorde : Fragment() {
             dialog.show()
         }
 
+
         return view
     }
 
@@ -88,36 +93,58 @@ class fragment_formulario_engorde : Fragment() {
 
     }
 
+    private fun obtenerUltimoIdGeneral(){
+        val url = "http://192.168.78.187:8080/ultimoIdGeneral"
+        val queue = Volley.newRequestQueue(requireContext())
 
+        val request = JsonObjectRequest(Request.Method.GET, url,null,
+            { response ->
 
-    private fun clickAddEngorde(view: View) {
-        val url="http://192.168.226.187/phpVaqui/agregar_engorde.php"
+                ultimoId = response.getInt("id")
+                println(ultimoId)
+
+                clickAddEngorde()
+            },
+            { error ->
+                Toast.makeText(requireContext(), "Error al obtener el último ID", Toast.LENGTH_LONG).show()
+            })
+
+        queue.add(request)
+    }
+
+    private fun clickAddEngorde() {
+        val url= "http://192.168.78.187:8080/ingresarEngorde/$ultimoId"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->
                 Toast.makeText(requireContext(), "Vaca engorde ingresada exitosamente", Toast.LENGTH_LONG).show()
                 findNavController().navigate(R.id.action_fragment_formulario_engorde_to_gestion)
+
             }, Response.ErrorListener{
                 Toast.makeText(requireContext(), "Vaca engorde no agregada", Toast.LENGTH_LONG).show()
+            }) {
+            override fun getHeaders(): MutableMap<String, String> {
+                val headers = HashMap<String, String>()
+                headers["Content-Type"] = "application/json"
+                return headers
             }
-        ){
-            override fun getParams(): MutableMap<String, String>? {
-                val parametros = HashMap<String, String>()
-
+            override fun getBodyContentType(): String {
+                return "application/json"
+            }
+            override fun getBody(): ByteArray {
+                val parametros = JSONObject()
+                parametros.put("id",ultimoId)
                 parametros.put("peso_kilos",ingreso_peso_engorde?.text.toString())
                 parametros.put("fecha_revision",ingreso_fecha_revi_engorde?.text.toString())
                 parametros.put("alimento",ingreso_alimento?.text.toString())
+                parametros.put("categoria",categoria)
 
                 Log.d("error", "$parametros")
                 Log.d("error", "error")
-                return parametros
 
+                return parametros.toString().toByteArray(Charsets.UTF_8)
             }
         }
         queue.add(resultadoPost)
-
-
-
     }
-
 }

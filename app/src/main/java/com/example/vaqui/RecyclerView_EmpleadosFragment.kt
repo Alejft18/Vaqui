@@ -40,7 +40,7 @@ class RecyclerView_EmpleadosFragment : Fragment(), UsuariosListener {
         recycler.layoutManager = layoutManager
 
         recycler.adapter=adapter
-        Log.d("RecyclerView_Engorde","Entered to OnViewCreate")
+        Log.d("RecyclerView_Empleados","Entered to OnViewCreate")
     }
 
     @SuppressLint("MissingInflatedId")
@@ -52,8 +52,8 @@ class RecyclerView_EmpleadosFragment : Fragment(), UsuariosListener {
         // Infla el diseño para este fragmento
         val ll = inflater.inflate(R.layout.fragment_recycler_view__empleados, container, false)
         this.recycler = ll.findViewById(R.id.rvEmple)
-        val url = "http://192.168.226.77:8080/listarEmpleados"
-        Log.d("RecyclerView_Engorde","Entered to onCreateView")
+        val url = "http://192.168.78.187:8080/listarEmpleados"
+        Log.d("RecyclerView_Empleados","Entered to onCreateView")
         val queue = Volley.newRequestQueue(this.context)
         //queue.timeout = 10000 // aumentar el tiempo de espera a 10 segundos
 
@@ -68,7 +68,7 @@ class RecyclerView_EmpleadosFragment : Fragment(), UsuariosListener {
                     empleList.add(jsonArray[i] as JSONObject)
                     i++
                 }
-                Log.d("listengorde", this.empleList.toString())
+                Log.d("listEmpleado", this.empleList.toString())
 
                 if (empleList != null) {
                     recycler.adapter = UsuariosAdapter(empleList, this)

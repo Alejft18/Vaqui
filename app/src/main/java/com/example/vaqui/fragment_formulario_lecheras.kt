@@ -13,9 +13,11 @@ import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.android.volley.Request
 import com.android.volley.Response
+import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.google.android.material.textfield.TextInputEditText
+import org.json.JSONObject
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -26,7 +28,8 @@ class fragment_formulario_lecheras : Fragment() {
     private lateinit var ingreso_fecha_revi_lechera: TextInputEditText
     private lateinit var fecha_parto_lechera: TextInputEditText
     private lateinit var cantidad_partos_lechera: TextInputEditText
-
+    private var ultimoId : Int = 0
+    private val categoria = "lechera"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -155,40 +158,67 @@ class fragment_formulario_lecheras : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val botonEnviar: Button= view.findViewById(R.id.boton_enviar_lechera)
-        botonEnviar.setOnClickListener { clickAddLechera(view) }
+        botonEnviar.setOnClickListener { obtenerUltimoIdGeneral() }
     }
 
-    private fun clickAddLechera(view: View) {
-        val url="http://192.168.226.187/phpVaqui/agregar_lechera.php"
+    private fun obtenerUltimoIdGeneral(){
+        val url = "http://192.168.78.187:8080/ultimoIdGeneral"
+        val queue = Volley.newRequestQueue(requireContext())
+
+        val request = JsonObjectRequest(Request.Method.GET, url,null,
+            { response ->
+
+                ultimoId = response.getInt("id")
+                println(ultimoId)
+
+                clickAddLechera()
+            },
+            { error ->
+                Toast.makeText(requireContext(), "Error al obtener el último ID", Toast.LENGTH_LONG).show()
+            })
+
+        queue.add(request)
+    }
+
+    private fun clickAddLechera() {
+        val url="http://192.168.78.187:8080/agregarLecheras/$ultimoId"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->
                 Toast.makeText(requireContext(), "Vaca lechera ingresada exitosamente", Toast.LENGTH_LONG).show()
+                findNavController().navigate(R.id.action_fragment_formulario_lecheras_to_gestion)
+
             }, Response.ErrorListener{
                 Toast.makeText(requireContext(), "Vaca lechera no agregada", Toast.LENGTH_LONG).show()
+            }) {
+            override fun getHeaders(): MutableMap<String, String> {
+                val headers = HashMap<String, String>()
+                headers["Content-Type"] = "application/json"
+                return headers
             }
-        ){
-            override fun getParams(): MutableMap<String, String>? {
-                val parametros = HashMap<String, String>()
+            override fun getBodyContentType(): String {
+                return "application/json"
+            }
 
+            override fun getBody(): ByteArray {
+                val parametros = JSONObject()
+
+                parametros.put("id",ultimoId)
                 parametros.put("litros_producidos",ingreso_litros_lechera?.text.toString())
                 parametros.put("fecha_ordeno",ingreso_fecha_ordeno_lechera?.text.toString())
                 parametros.put("peso_kilos",ingreso_peso_lechera?.text.toString())
                 parametros.put("fecha_revision",ingreso_fecha_revi_lechera?.text.toString())
                 parametros.put("fecha_parto",fecha_parto_lechera?.text.toString())
                 parametros.put("cant_partos",cantidad_partos_lechera?.text.toString())
+                parametros.put("categoria",categoria)
 
                 Log.d("error", "$parametros")
                 Log.d("error", "error")
-                return parametros
 
+                return parametros.toString().toByteArray(Charsets.UTF_8)
             }
         }
         queue.add(resultadoPost)
-
-        findNavController().navigate(R.id.action_fragment_formulario_lecheras_to_gestion)
-
-
     }
 
 }

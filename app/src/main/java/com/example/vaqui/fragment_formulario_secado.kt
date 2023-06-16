@@ -12,9 +12,11 @@ import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.android.volley.Request
 import com.android.volley.Response
+import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.google.android.material.textfield.TextInputEditText
+import org.json.JSONObject
 import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.HashMap
@@ -25,6 +27,8 @@ class fragment_formulario_secado : Fragment() {
     private lateinit var ingreso_peso_secado: TextInputEditText
     private lateinit var ingreso_fechaRevision_secado: TextInputEditText
     private lateinit var ingreso_fechaOrdenio_secado: TextInputEditText
+    private var ultimoId : Int = 0
+    private val categoria = "secado"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,7 +38,7 @@ class fragment_formulario_secado : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val botonEnviar: Button = view.findViewById(R.id.boton_enviar_secado)
-        botonEnviar.setOnClickListener { clickAddSecado(view) }
+        botonEnviar.setOnClickListener { obtenerUltimoIdGeneral() }
     }
 
     override fun onCreateView(
@@ -154,33 +158,60 @@ class fragment_formulario_secado : Fragment() {
         ingreso_fechaOrdenio_secado.setText(sdf.format(myCalendar.time))
     }
 
-    private fun clickAddSecado(view: View) {
-        val url="http://192.168.226.187/phpVaqui/agregar_secado.php"
+    private fun obtenerUltimoIdGeneral(){
+        val url = "http://192.168.78.187:8080/ultimoIdGeneral"
+        val queue = Volley.newRequestQueue(requireContext())
+
+        val request = JsonObjectRequest(Request.Method.GET, url,null,
+            { response ->
+
+                ultimoId = response.getInt("id")
+                println(ultimoId)
+
+                clickAddSecado()
+            },
+            { error ->
+                Toast.makeText(requireContext(), "Error al obtener el último ID", Toast.LENGTH_LONG).show()
+            })
+        queue.add(request)
+    }
+
+    private fun clickAddSecado() {
+        val url="http://192.168.78.187:8080/agregarSecado/$ultimoId"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->
                 Toast.makeText(requireContext(), "Vaca en secado ingresada exitosamente", Toast.LENGTH_LONG).show()
+                findNavController().navigate(R.id.action_fragment_formulario_secado_to_gestion2)
+
             }, Response.ErrorListener{
                 Toast.makeText(requireContext(), "Vaca en secado no agregada", Toast.LENGTH_LONG).show()
+            }) {
+            override fun getHeaders(): MutableMap<String, String> {
+                val headers = HashMap<String, String>()
+                headers["Content-Type"] = "application/json"
+                return headers
             }
-        ){
-            override fun getParams(): MutableMap<String, String>? {
-                val parametros = HashMap<String, String>()
+            override fun getBodyContentType(): String {
+                return "application/json"
+            }
 
+            override fun getBody():  ByteArray{
+                val parametros = JSONObject()
+
+                parametros.put("id",ultimoId)
                 parametros.put("fecha_ultParto",ingreso_fechaUltParto_secado?.text.toString())
                 parametros.put("peso_kilos",ingreso_peso_secado?.text.toString())
                 parametros.put("fecha_revision",ingreso_fechaRevision_secado?.text.toString())
                 parametros.put("fecha_ordeño",ingreso_fechaOrdenio_secado?.text.toString())
+                parametros.put("categoria",categoria)
 
                 Log.d("error", "$parametros")
                 Log.d("error", "error")
-                return parametros
 
+                return parametros.toString().toByteArray(Charsets.UTF_8)
             }
         }
         queue.add(resultadoPost)
-        findNavController().navigate(R.id.action_fragment_formulario_secado_to_gestion2)
-
     }
-
 }
