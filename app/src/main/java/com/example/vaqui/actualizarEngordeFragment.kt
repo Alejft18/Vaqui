@@ -18,7 +18,7 @@ import java.util.*
 class actualizarEngordeFragment : Fragment(){
 
 /*    private lateinit var id_engorde: TextView
-    private lateinit var actualizar_fecha_revisión_engorde: EditText
+    private lateinit var actualizar_fecha_revisión_engorde: TextInputEditText
     private lateinit var actualizar_peso_engorde: TextInputEditText
     private lateinit var actualizar_alimento_engorde: TextInputEditText
 

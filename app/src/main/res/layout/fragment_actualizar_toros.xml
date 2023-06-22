@@ -111,7 +111,7 @@
                 android:layout_margin="16dp">
 
                 <EditText
-                    android:id="@+id/actualizar_vmontadas_toro"
+                    android:id="@+id/actualizar_vacas_montadas_toro"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Vacas montadas" />

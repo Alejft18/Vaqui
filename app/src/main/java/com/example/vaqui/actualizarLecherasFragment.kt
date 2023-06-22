@@ -16,14 +16,14 @@ import com.google.android.material.textfield.TextInputEditText
 import java.text.SimpleDateFormat
 import java.util.*
 
-class actualizarLecherasFragment : Fragment() {
+class actualizarLecherasFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
 /*    private lateinit var id_lechera: TextView
-    private lateinit var actualizar_fecha_revisión_lechera: EditText
+    private lateinit var actualizar_fecha_revisión_lechera: TextInputEditText
     private lateinit var actualizar_peso_lechera: TextInputEditText
     private lateinit var actualizar_partos_lechera: TextInputEditText
-    private lateinit var actualizar_ultpartaro_lechera: EditText
-    private lateinit var actualizar_ordeño_lechera: EditText
+    private lateinit var actualizar_ultpartaro_lechera: TextInputEditText
+    private lateinit var actualizar_ordeño_lechera: TextInputEditText
     private lateinit var actualizar_litros_lechera: TextInputEditText
 
     private lateinit var boton_actualizar_lechera: Button
@@ -32,7 +32,7 @@ class actualizarLecherasFragment : Fragment() {
         super.onCreate(savedInstanceState)
     }
 
-    @SuppressLint("MissingInflatedId")
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -178,5 +178,13 @@ class actualizarLecherasFragment : Fragment() {
         val sdf = SimpleDateFormat(myformat, Locale("es","CO"))
         actualizar_ultpartaro_lechera.setText(sdf.format(myCalendar.time))
     }*/
+
+    override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
+        TODO("Not yet implemented")
+    }
+
+    override fun onNothingSelected(p0: AdapterView<*>?) {
+        TODO("Not yet implemented")
+    }
 
 }

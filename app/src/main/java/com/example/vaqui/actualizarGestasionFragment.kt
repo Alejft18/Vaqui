@@ -17,11 +17,11 @@ import java.util.*
 
 class actualizarGestasionFragment : Fragment(){
 /*    private lateinit var id_gestacion: TextView
-    private lateinit var actualizar_fecha_revisión_gestacion: EditText
+    private lateinit var actualizar_fecha_revisión_gestacion: TextInputEditText
     private lateinit var actualizar_peso_gestacion: TextInputEditText
-    private lateinit var actualizar_aproxparto_gestacion: EditText
-    private lateinit var actualizar_ultpartaro_gestacion: EditText
-    private lateinit var actualizar_inseminacion_gestacion: EditText
+    private lateinit var actualizar_aproxparto_gestacion: TextInputEditText
+    private lateinit var actualizar_ultpartaro_gestacion: TextInputEditText
+    private lateinit var actualizar_inseminacion_gestacion: TextInputEditText
 
     private lateinit var boton_actualizar_gestacion: Button
 
