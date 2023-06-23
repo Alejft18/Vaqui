@@ -9,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
+import android.widget.SearchView
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -30,6 +32,23 @@ class RecyclerView_Toro : Fragment(), ToroListener {
     private lateinit var rlToroList: RelativeLayout
     private var toroList = ArrayList<JSONObject>()
 
+    //metodo para filtar en el searchView
+    private fun filterToroList(query: String) {
+        val filteredList = ArrayList<JSONObject>()
+
+        for (toro in toroList) {
+            val id = toro.optString("id")
+            if (id.contains(query, ignoreCase = true)) {
+                filteredList.add(toro)
+            }
+        }
+        if (filteredList.isEmpty()) {
+            Toast.makeText(requireContext(), "No se encontró el ID ", Toast.LENGTH_SHORT).show()
+        }
+
+        recycler.adapter = ToroAdapter(filteredList, this)
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?){
         super.onViewCreated(view, savedInstanceState)
         val adapter = ToroAdapter(toroList,this)
@@ -38,6 +57,18 @@ class RecyclerView_Toro : Fragment(), ToroListener {
 
         recycler.adapter = adapter
         Log.d("RecyclerView_Toro", "Entered to OnViewCreate")
+
+        val searchView = view.findViewById<SearchView>(R.id.searchBusToro)
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                filterToroList(newText)
+                return true
+            }
+        })
     }
 
     @SuppressLint("MissingInflatedId")
@@ -51,7 +82,6 @@ class RecyclerView_Toro : Fragment(), ToroListener {
         val url = "http://192.168.123.187:8080/listarToros"
         Log.d("RecyclerView_Toro", "Entered to onCreateView")
         val queue = Volley.newRequestQueue(this.context)
-
 
         val stringRequest = StringRequest(Request.Method.GET, url,{ response ->
             val jsonArray = JSONArray(response)
@@ -67,6 +97,9 @@ class RecyclerView_Toro : Fragment(), ToroListener {
                 Log.d("listtoro", this.toroList.toString())
 
                 if (toroList != null){
+                    //lo que el usuario va digitando en el searchView
+                    filterToroList("")
+
                     recycler.adapter = ToroAdapter(toroList, this)
                     viewAlpha.visibility = View.INVISIBLE
                     pgbar.visibility = View.INVISIBLE

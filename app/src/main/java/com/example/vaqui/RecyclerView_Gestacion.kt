@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
+import android.widget.SearchView
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -29,6 +31,24 @@ class RecyclerView_Gestacion : Fragment(), GestacionListener {
     private lateinit var rlGestacionList: RelativeLayout
     private var gestacionList= ArrayList<JSONObject>()
 
+    //metodo para filtar en el searchView
+    private fun filterGestacionList(query: String) {
+        val filteredList = ArrayList<JSONObject>()
+
+        for (gestacion in gestacionList) {
+            val id = gestacion.optString("id")
+            if (id.contains(query, ignoreCase = true)) {
+                filteredList.add(gestacion)
+            }
+        }
+        if (filteredList.isEmpty()) {
+            Toast.makeText(requireContext(), "No se encontró el ID ", Toast.LENGTH_SHORT).show()
+        }
+
+        recycler.adapter = GestacionAdapter(filteredList, this)
+    }
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val adapter=GestacionAdapter(gestacionList,this)
@@ -38,6 +58,18 @@ class RecyclerView_Gestacion : Fragment(), GestacionListener {
 
         recycler.adapter=adapter
         Log.d("RecyclerView_Gestacion","Entered to OnViewCreate")
+
+        val searchView = view.findViewById<SearchView>(R.id.searchBusBovigestacion)
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                filterGestacionList(newText)
+                return true
+            }
+        })
     }
 
     override fun onCreateView(
@@ -67,6 +99,9 @@ class RecyclerView_Gestacion : Fragment(), GestacionListener {
                 Log.d("listgestacion", this.gestacionList.toString())
 
                 if (gestacionList != null) {
+                    //lo que el usuario va digitando en el searchView
+                    filterGestacionList("")
+
                     recycler.adapter = GestacionAdapter(gestacionList, this)
                     viewAlpha.visibility = View.INVISIBLE
                     pgbar.visibility = View.INVISIBLE

@@ -6,14 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.animation.AlphaAnimation
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
+import android.widget.SearchView
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.Recycler
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.android.volley.Request
@@ -23,7 +22,7 @@ import com.example.vaqui.adapter.BovinosListener
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
-import kotlin.math.log
+import android.widget.Toast
 
 class BuscadorBovinoFragment : Fragment(), BovinosListener {
     private lateinit var recycler: RecyclerView
@@ -31,6 +30,23 @@ class BuscadorBovinoFragment : Fragment(), BovinosListener {
     private lateinit var pgbar: ProgressBar
     private lateinit var rlBovinosList: RelativeLayout
     private var bovinosList= ArrayList<JSONObject>()
+
+    //metodo para filtar en el searchView
+    private fun filterBovinosList(query: String) {
+        val filteredList = ArrayList<JSONObject>()
+
+        for (bovino in bovinosList) {
+            val id = bovino.optString("id")
+            if (id.contains(query, ignoreCase = true)) {
+                filteredList.add(bovino)
+            }
+        }
+        if (filteredList.isEmpty()) {
+            Toast.makeText(requireContext(), "No se encontró el ID ", Toast.LENGTH_SHORT).show()
+        }
+
+        recycler.adapter = BovinosAdapter(filteredList, this)
+    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -41,6 +57,18 @@ class BuscadorBovinoFragment : Fragment(), BovinosListener {
 
         recycler.adapter=adapter
         Log.d("BuscadorBovinoFragment","Entered to OnViewCreate")
+
+        val searchView = view.findViewById<SearchView>(R.id.searchBusBovi)
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                filterBovinosList(newText)
+                return true
+            }
+        })
     }
 
     override fun onCreateView(
@@ -70,6 +98,9 @@ class BuscadorBovinoFragment : Fragment(), BovinosListener {
                 Log.d("listbovinos", this.bovinosList.toString())
 
                 if (bovinosList != null) {
+                    //lo que el usuario va digitando en el searchView
+                    filterBovinosList("")
+
                     recycler.adapter = BovinosAdapter(bovinosList, this)
                     viewAlpha.visibility = View.INVISIBLE
                     pgbar.visibility = View.INVISIBLE

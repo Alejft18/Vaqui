@@ -12,22 +12,24 @@
 
         <SearchView
             android:layout_width="match_parent"
+            android:layout_height="40dp"
             android:id="@+id/searchBusBovi"
-            android:layout_height="30dp"
-            android:queryHint="Ingrese el ID del bovino"
+            android:queryHint="Busca por ID"
             android:iconifiedByDefault="false"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="70dp"
             android:layout_marginBottom="16dp"
             android:queryBackground="@android:color/transparent"
-            android:background="@drawable/shape_buscadory">
+            android:background="@drawable/shape_buscadory"
+            android:inputType="number">
         </SearchView>
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="300px"
-            android:layout_marginBottom="300px">
+            android:layout_marginTop="120dp"
+            android:layout_marginBottom="65dp">
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvBuscador1"
                 android:layout_width="match_parent"
@@ -45,8 +47,7 @@
             android:layout_marginTop="0dp"
             android:layout_marginBottom="0dp"
             android:alpha="0.5"
-            android:background="@color/black">
-        </View>
+            android:background="@color/black"></View>
 
         <ProgressBar
             android:id="@+id/pgbar_bovinoList"

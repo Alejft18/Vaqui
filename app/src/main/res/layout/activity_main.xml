@@ -36,14 +36,14 @@
 
         </LinearLayout>
 
-        <ImageButton
+        <ImageView
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:id="@+id/btn_perfil"
             android:src="@drawable/perfil_usuario"
             android:layout_gravity="end"
             android:layout_marginRight="20dp">
-        </ImageButton>
+        </ImageView>
     </androidx.appcompat.widget.Toolbar>
 
     <RelativeLayout

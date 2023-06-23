@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
+import android.widget.SearchView
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -32,6 +34,24 @@ class RecyclerViewSecado : Fragment(), SecadoListener {
     private lateinit var rlSecadoList: RelativeLayout
     private var secadoList= ArrayList<JSONObject>()
 
+    //metodo para filtar en el searchView
+    private fun filterSecadoList(query: String) {
+        val filteredList = ArrayList<JSONObject>()
+
+        for (secado in secadoList) {
+            val id = secado.optString("id")
+            if (id.contains(query, ignoreCase = true)) {
+                filteredList.add(secado)
+            }
+        }
+        if (filteredList.isEmpty()) {
+            Toast.makeText(requireContext(), "No se encontró el ID ", Toast.LENGTH_SHORT).show()
+        }
+
+        recycler.adapter = SecadoAdapter(filteredList, this)
+    }
+
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val adapter=SecadoAdapter(secadoList,this)
@@ -41,6 +61,18 @@ class RecyclerViewSecado : Fragment(), SecadoListener {
 
         recycler.adapter=adapter
         Log.d("RecyclerViewSecado","Entered to OnViewCreate")
+
+        val searchView = view.findViewById<SearchView>(R.id.searchBusSecado)
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                filterSecadoList(newText)
+                return true
+            }
+        })
     }
 
 
@@ -72,6 +104,9 @@ class RecyclerViewSecado : Fragment(), SecadoListener {
                 Log.d("listsecado", this.secadoList.toString())
 
                 if (secadoList != null) {
+                    //lo que el usuario va digitando en el searchView
+                    filterSecadoList("")
+
                     recycler.adapter = SecadoAdapter(secadoList, this)
                     viewAlpha.visibility = View.INVISIBLE
                     pgbar.visibility = View.INVISIBLE

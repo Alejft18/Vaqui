@@ -17,7 +17,7 @@ class LecherasAdapter(private val lecherasList: ArrayList<JSONObject>,private va
 
         fun bind(lecheras: JSONObject){
             BovinoID.text = lecheras.getString("id")
-            litros.text = lecheras.getString("litro_producidos")
+            litros.text = lecheras.getString("litros_producidos")
             Log.w("errorrrr", "No cargó la imagen")
         }
     }

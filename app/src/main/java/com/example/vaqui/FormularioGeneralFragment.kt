@@ -79,7 +79,7 @@ class FormularioGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
         }
 
         //Logica de los spinners
-        val spinnerData1= arrayOf("Seleccione el genero","masculino","femenino")
+        val spinnerData1= arrayOf("Seleccione el genero","macho","hembra")
         val spinnerData2= arrayOf("Seleccione la procedencia","de la finca","de otra finca")
 
         val adapter1 = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, spinnerData1)

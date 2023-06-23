@@ -5,9 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
@@ -21,6 +23,7 @@ class fragment_home_estadisticas_empleado : Fragment() {
     private lateinit var promedio_leche : TextView
     private lateinit var cantidad_bovinos : TextView
     private lateinit var cantidad_terneros : TextView
+    private lateinit var btn_perfil : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +39,7 @@ class fragment_home_estadisticas_empleado : Fragment() {
         this.promedio_leche = ll.findViewById(R.id.promedio_leche)
         this.cantidad_bovinos = ll.findViewById(R.id.cantidad_bovinos)
         this.cantidad_terneros = ll.findViewById(R.id.cantidad_terneros)
+        this.btn_perfil = ll.findViewById(R.id.btn_perfil)
 
         val imageSlider = ll.findViewById<ImageSlider>(R.id.image_slider)
 
@@ -48,9 +52,17 @@ class fragment_home_estadisticas_empleado : Fragment() {
 
         imageSlider.setImageList(imageList)
 
+        //Boton del perfil
+        btn_perfil.setOnClickListener {
+            val navController = Navigation.findNavController(requireActivity(),R.id.nav_host_fragment_container)
+            navController.navigate(R.id.perfilFragment)
+        }
+
         promedioLeche()
         cantidadBovinos()
         cantidadTerneros()
+
+
 
         return ll
     }

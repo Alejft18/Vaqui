@@ -10,6 +10,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
+import android.widget.SearchView
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -31,6 +33,23 @@ class RecyclerView_Ternero : Fragment(), TernerosListener {
     private lateinit var rlTerneroList: RelativeLayout
     private var terneroList = ArrayList<JSONObject>()
 
+    //metodo para filtar en el searchView
+    private fun filterTernerosList(query: String) {
+        val filteredList = ArrayList<JSONObject>()
+
+        for (ternero in terneroList) {
+            val id = ternero.optString("id")
+            if (id.contains(query, ignoreCase = true)) {
+                filteredList.add(ternero)
+            }
+        }
+        if (filteredList.isEmpty()) {
+            Toast.makeText(requireContext(), "No se encontró el ID ", Toast.LENGTH_SHORT).show()
+        }
+
+        recycler.adapter = TerneroAdapter(filteredList, this)
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?){
         super.onViewCreated(view, savedInstanceState)
         val adapter = TerneroAdapter(terneroList,this)
@@ -39,6 +58,18 @@ class RecyclerView_Ternero : Fragment(), TernerosListener {
 
         recycler.adapter = adapter
         Log.d("RecyclerView_Ternero", "Entered to OnViewCreate")
+
+        val searchView = view.findViewById<SearchView>(R.id.searchBusTernero)
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                filterTernerosList(newText)
+                return true
+            }
+        })
     }
 
     @SuppressLint("MissingInflatedId")
@@ -68,6 +99,9 @@ class RecyclerView_Ternero : Fragment(), TernerosListener {
             Log.d("listternero", this.terneroList.toString())
 
             if (terneroList != null){
+                //
+                filterTernerosList("")
+
                 recycler.adapter = TerneroAdapter(terneroList, this)
                 viewAlpha.visibility = View.INVISIBLE
                 pgbar.visibility = View.INVISIBLE

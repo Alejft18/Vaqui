@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.navigation.Navigation
+import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
@@ -23,6 +25,7 @@ class FormularioEmpleadoFragment : Fragment(), AdapterView.OnItemSelectedListene
     private lateinit var ingreso_telefono_empleado: TextInputEditText
     private lateinit var spinner_area: Spinner
     private lateinit var ingreso_contrasena_empleado: TextInputEditText
+    private lateinit var imagen_atras : ImageView
     val imagen = ""
     val rol = "Empleado"
 
@@ -45,6 +48,7 @@ class FormularioEmpleadoFragment : Fragment(), AdapterView.OnItemSelectedListene
         this.ingreso_telefono_empleado = ll.findViewById(R.id.ingreso_telefono_empleado)
         this.spinner_area = ll.findViewById(R.id.spinner_area)
         this.ingreso_contrasena_empleado = ll.findViewById(R.id.ingreso_contrasena_empleado)
+        this.imagen_atras = ll.findViewById(R.id.imagen_atras_ingreso_empleado)
 
 
         //Logica del spinner
@@ -56,6 +60,11 @@ class FormularioEmpleadoFragment : Fragment(), AdapterView.OnItemSelectedListene
         val positionDisable = 0
         adapter.getView(positionDisable, null, spinner_area)?.isEnabled = true
         spinner_area.adapter = adapter
+
+        imagen_atras.setOnClickListener {
+            findNavController().navigate(R.id.action_formularioEmpleadoFragment_to_gestionEmpleadosFragment)
+
+        }
 
 
 

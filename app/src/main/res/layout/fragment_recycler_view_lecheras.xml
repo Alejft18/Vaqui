@@ -13,21 +13,23 @@
         <SearchView
             android:layout_width="match_parent"
             android:id="@+id/searchBusBoviLecheras"
-            android:layout_height="30dp"
-            android:queryHint="Ingrese el ID del bovino"
+            android:layout_height="40dp"
+            android:queryHint="Busca por ID"
             android:iconifiedByDefault="false"
             android:layout_marginHorizontal="16dp"
             android:layout_marginTop="70dp"
             android:layout_marginBottom="16dp"
             android:queryBackground="@android:color/transparent"
-            android:background="@drawable/shape_buscadory">
+            android:background="@drawable/shape_buscadory"
+            android:inputType="number">
         </SearchView>
 
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="300px"
-            android:layout_marginBottom="300px">
+            android:layout_marginTop="120dp"
+            android:layout_marginBottom="65dp">
+
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvLecheras"
                 android:layout_width="match_parent"

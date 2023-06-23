@@ -9,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
+import android.widget.SearchView
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -31,6 +33,22 @@ class RecyclerView_Engorde : Fragment(), EngordeListener {
     private lateinit var rlEngordeList: RelativeLayout
     private var engordeList= ArrayList<JSONObject>()
 
+    private fun filterEngordeList(query: String) {
+        val filteredList = ArrayList<JSONObject>()
+
+        for (engorde in engordeList) {
+            val id = engorde.optString("id")
+            if (id.contains(query, ignoreCase = true)) {
+                filteredList.add(engorde)
+            }
+        }
+        if (filteredList.isEmpty()) {
+            Toast.makeText(requireContext(), "No se encontró el ID ", Toast.LENGTH_SHORT).show()
+        }
+
+        recycler.adapter = EngordeAdapter(filteredList, this)
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val adapter=EngordeAdapter(engordeList,this)
@@ -40,6 +58,18 @@ class RecyclerView_Engorde : Fragment(), EngordeListener {
 
         recycler.adapter=adapter
         Log.d("RecyclerView_Engorde","Entered to OnViewCreate")
+
+        val searchView = view.findViewById<SearchView>(R.id.searchBusBoviengorde)
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                filterEngordeList(newText)
+                return true
+            }
+        })
     }
 
     @SuppressLint("MissingInflatedId")
@@ -70,6 +100,10 @@ class RecyclerView_Engorde : Fragment(), EngordeListener {
                 Log.d("listengorde", this.engordeList.toString())
 
                 if (engordeList != null) {
+
+                    //lo que el usuario va digitando en el searchView
+                    filterEngordeList("")
+
                     recycler.adapter = EngordeAdapter(engordeList, this)
                     viewAlpha.visibility = View.INVISIBLE
                     pgbar.visibility = View.INVISIBLE

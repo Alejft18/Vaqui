@@ -69,7 +69,7 @@ class datos_lecheras : DialogFragment() {
 
         val lecheras = JSONObject(arguments?.getString("lecheras"))
             this.id_lechera.text=lecheras.getString("id")
-            this.litros_producidos.text=lecheras.getString("litro_producidos")
+            this.litros_producidos.text=lecheras.getString("litros_producidos")
             this.fecha_ordeno_leche.text=lecheras.getString("fecha_ordeno")
             this.peso_lechera.text=lecheras.getString("peso_kilos")
             this.fecha_revision_lechera.text=lecheras.getString("fecha_revision")

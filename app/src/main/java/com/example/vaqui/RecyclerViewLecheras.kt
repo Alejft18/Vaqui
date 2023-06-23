@@ -9,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
+import android.widget.SearchView
+import android.widget.Toast
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,6 +18,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.example.vaqui.adapter.BovinosAdapter
 import com.example.vaqui.adapter.LecherasAdapter
 import com.example.vaqui.adapter.LecherasListener
 import org.json.JSONArray
@@ -29,6 +32,23 @@ class RecyclerViewLecheras : Fragment(), LecherasListener {
     private lateinit var rlLecherasList: RelativeLayout
     private var lecherasList= ArrayList<JSONObject>()
 
+    //metodo para filtar en el searchView
+    private fun filterLecherasList(query: String) {
+        val filteredList = ArrayList<JSONObject>()
+
+        for (lechera in lecherasList) {
+            val id = lechera.optString("id")
+            if (id.contains(query, ignoreCase = true)) {
+                filteredList.add(lechera)
+            }
+        }
+        if (filteredList.isEmpty()) {
+            Toast.makeText(requireContext(), "No se encontró el ID", Toast.LENGTH_SHORT).show()
+        }
+
+        recycler.adapter = LecherasAdapter(filteredList, this)
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val adapter= LecherasAdapter(lecherasList,this)
@@ -38,9 +58,20 @@ class RecyclerViewLecheras : Fragment(), LecherasListener {
 
         recycler.adapter=adapter
         Log.d("RecyclerViewLecheras","Entered to OnViewCreate")
+
+        val searchView = view.findViewById<SearchView>(R.id.searchBusBoviLecheras)
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String): Boolean {
+                filterLecherasList(newText)
+                return true
+            }
+        })
     }
 
-    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -68,6 +99,10 @@ class RecyclerViewLecheras : Fragment(), LecherasListener {
                 Log.d("listlecheras", this.lecherasList.toString())
 
                 if (lecherasList != null) {
+
+                    //lo que el usuario va digitando en el searchView
+                    filterLecherasList("")
+
                     recycler.adapter = LecherasAdapter(lecherasList, this)
                     viewAlpha.visibility = View.INVISIBLE
                     pgbar.visibility = View.INVISIBLE

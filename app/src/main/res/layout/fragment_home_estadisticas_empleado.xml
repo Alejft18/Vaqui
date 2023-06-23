@@ -37,13 +37,15 @@
 
         </LinearLayout>
 
-        <ImageView
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/btn_perfil"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/perfil_usuario"
             android:layout_gravity="end"
-            android:layout_marginRight="20dp">
-        </ImageView>
+            android:layout_marginRight="20dp"
+            android:src="@drawable/perfil_usuario">
+        </androidx.appcompat.widget.AppCompatImageView>
+
     </androidx.appcompat.widget.Toolbar>
 
 
@@ -65,11 +67,11 @@
 
                 <com.denzcoskun.imageslider.ImageSlider
                     android:id="@+id/image_slider"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="250dp"
                     app:iss_auto_cycle="true"
-                    app:iss_period="2000"
-                    app:iss_delay="1000"
+                    app:iss_period="3000"
+                    app:iss_delay="3000"
                     app:iss_text_align="CENTER"/>
             </androidx.cardview.widget.CardView>
 

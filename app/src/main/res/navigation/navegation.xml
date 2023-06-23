@@ -94,7 +94,11 @@
         android:id="@+id/perfilFragment"
         android:name="com.example.vaqui.Perfil.PerfilFragment"
         android:label="fragment_perfil"
-        tools:layout="@layout/fragment_perfil" />
+        tools:layout="@layout/fragment_perfil" >
+        <action
+            android:id="@+id/action_perfilFragment_to_inicio"
+            app:destination="@id/inicio" />
+    </fragment>
     <dialog
         android:id="@+id/datos_general"
         android:name="com.example.vaqui.datos_general"
@@ -195,6 +199,9 @@
         <action
             android:id="@+id/action_gestionEmpleadosFragment_to_formularioEmpleadoFragment"
             app:destination="@id/formularioEmpleadoFragment" />
+        <action
+            android:id="@+id/action_gestionEmpleadosFragment_to_inicio"
+            app:destination="@id/inicio" />
     </fragment>
     <fragment
         android:id="@+id/formularioGeneralFragment"
@@ -285,9 +292,13 @@
     </fragment>
     <fragment
         android:id="@+id/actualizarGeneralFragment"
-        android:name="com.example.vaqui.ActualizarGeneralFragment"
+        android:name="com.example.vaqui.actualizarGeneralFragment"
         android:label="fragment_actualizar_general"
-        tools:layout="@layout/fragment_actualizar_general" />
+        tools:layout="@layout/fragment_actualizar_general" >
+        <action
+            android:id="@+id/action_actualizarGeneralFragment_to_generalfragment"
+            app:destination="@id/generalfragment" />
+    </fragment>
     <fragment
         android:id="@+id/detalleEmpleadoFragment"
         android:name="com.example.vaqui.Buscador.DetalleEmpleadoFragment"

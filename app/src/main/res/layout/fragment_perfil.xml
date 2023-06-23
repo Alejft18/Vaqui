@@ -22,8 +22,9 @@
             android:orientation="vertical">
 
             <ImageView
-                android:layout_width="50dp"
-                android:layout_height="30dp"
+                android:id="@+id/imagen_atras_perfil"
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
                 android:src="@drawable/atras">
             </ImageView>
 
@@ -35,9 +36,9 @@
             android:layout_height="wrap_content"
             android:text="Perfil"
             android:textColor="@color/white"
-            android:textSize="18dp"
+            android:textSize="20dp"
             android:textStyle="bold"
-            android:layout_marginLeft="30dp">
+            android:layout_marginLeft="60dp">
         </TextView>
     </androidx.appcompat.widget.Toolbar>
 

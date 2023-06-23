@@ -7,7 +7,7 @@
     tools:context=".GestionEmpleadosFragment">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+        android:id="@+id/toolbarNuevoEmpleado"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:background="@color/verde">
@@ -17,32 +17,24 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
+            <ImageView
+                android:id="@+id/imagen_atras_gestion_empleados"
+                android:layout_width="30dp"
                 android:layout_height="wrap_content"
-                android:text="Vaqui"
-                android:textColor="@color/white"
-                android:textSize="18dp"
-                android:textStyle="bold" />
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="cargo"
-                android:textColor="@color/white"
-                android:textSize="13dp"
-                android:textStyle="normal" />
+                android:src="@drawable/atras">
+            </ImageView>
 
         </LinearLayout>
 
-        <ImageView
-            android:layout_width="50dp"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/perfil_usuario"
-            android:layout_gravity="end"
-            android:layout_marginRight="20dp">
-        </ImageView>
+            android:text="Gestion de empleados"
+            android:textColor="@color/white"
+            android:layout_marginLeft="60dp"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
     </androidx.appcompat.widget.Toolbar>
 
 
