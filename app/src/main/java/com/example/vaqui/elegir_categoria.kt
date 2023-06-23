@@ -2,10 +2,12 @@ package com.example.vaqui
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.KeyEvent
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.cardview.widget.CardView
 import androidx.navigation.Navigation
 
@@ -39,6 +41,14 @@ class elegir_categoria : Fragment() {
         this.card_elegir_sementales = ll.findViewById(R.id.card_elegir_sementales)
         this.card_elegir_terneros = ll.findViewById(R.id.card_elegir_terneros)
 
+        ll.isFocusableInTouchMode = true
+        ll.requestFocus()
+        ll.setOnKeyListener { v, keyCode, event ->
+            keyCode == KeyEvent.KEYCODE_BACK
+        }
+
+
+
         card_elegir_lechera.setOnClickListener{
             val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
             navController.navigate(R.id.action_elegir_categoria_to_fragment_formulario_lecheras)
@@ -68,6 +78,8 @@ class elegir_categoria : Fragment() {
             val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
             navController.navigate(R.id.action_elegir_categoria_to_fragment_formulario_ternero)
         }
+
+
 
         return ll
     }

@@ -36,6 +36,7 @@ tools:context=".fragment_formulario_ternero">
                 android:id="@+id/ingreso_id_madre_ternero"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:inputType="number"
                 android:hint="Id madre" />
         </com.google.android.material.textfield.TextInputLayout>
 

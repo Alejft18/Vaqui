@@ -92,8 +92,10 @@ class fragment_formulario_ternero : Fragment() {
         val sdf = SimpleDateFormat(myformat, Locale("es","CO"))
         ingreso_fechaRevision_ternero.setText(sdf.format(myCalendar.time))
     }
+
+
     private fun obtenerUltimoIdGeneral(){
-        val url = "http://192.168.78.187:8080/ultimoIdGeneral"
+        val url = "http://192.168.123.187:8080/ultimoIdGeneral"
         val queue = Volley.newRequestQueue(requireContext())
 
         val request = JsonObjectRequest(Request.Method.GET, url,null,
@@ -113,7 +115,7 @@ class fragment_formulario_ternero : Fragment() {
 
 
     private fun clickAddTernero() {
-        val url="http://192.168.78.187:8080/agregarTernero/$ultimoId/${ingreso_id_madre_ternero.text.toString().toInt()}"
+        val url="http://192.168.123.187:8080/agregarTernero/$ultimoId/${ingreso_id_madre_ternero.text.toString().toInt()}"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->
