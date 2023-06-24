@@ -43,6 +43,7 @@
         </LinearLayout>
 
         <ImageView
+            android:id="@+id/btn_perfil_categoria"
             android:layout_width="50dp"
             android:layout_height="wrap_content"
             android:src="@drawable/perfil_usuario"

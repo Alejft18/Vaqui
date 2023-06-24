@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.cardview.widget.CardView
 import androidx.navigation.Navigation
 import com.example.vaqui.R
@@ -18,6 +19,7 @@ class CategoriasFragment : Fragment() {
     private lateinit var cateSemental : CardView
     private lateinit var cateTernero : CardView
     private lateinit var cateEngorde : CardView
+    private lateinit var btn_perfil_categoria : ImageView
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,6 +43,12 @@ class CategoriasFragment : Fragment() {
         this.cateSemental = ll.findViewById(R.id.cateSemental)
         this.cateTernero = ll.findViewById(R.id.cateTernero)
         this.cateEngorde = ll.findViewById(R.id.cateEngorde)
+        this.btn_perfil_categoria = ll.findViewById(R.id.btn_perfil_categoria)
+
+        btn_perfil_categoria.setOnClickListener {
+            val navController = Navigation.findNavController(requireActivity(),R.id.nav_host_fragment_container)
+            navController.navigate(R.id.perfilFragment)
+        }
 
         cateGenera.setOnClickListener{
             val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)

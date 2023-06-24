@@ -6,13 +6,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.cardview.widget.CardView
 import androidx.navigation.Navigation
 
 
 class GestionFragment : Fragment() {
     private lateinit var card_buscar_bovi : CardView
-    private lateinit var card_ingresar_bovino: CardView
+    private lateinit var card_ingresar_bovino : CardView
+    private lateinit var btn_perfil_gestion : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +28,12 @@ class GestionFragment : Fragment() {
         val ll = inflater.inflate(R.layout.fragment_gestion, container, false)
         this.card_buscar_bovi = ll.findViewById(R.id.card_buscar_bovi)
         this.card_ingresar_bovino = ll.findViewById(R.id.card_ingresar_bovino)
+        this.btn_perfil_gestion = ll.findViewById(R.id.btn_perfil_gestion)
 
+        btn_perfil_gestion.setOnClickListener {
+            val navController = Navigation.findNavController(requireActivity(),R.id.nav_host_fragment_container)
+            navController.navigate(R.id.perfilFragment)
+        }
         card_buscar_bovi.setOnClickListener{
             val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
             navController.navigate(R.id.generalfragment2)
