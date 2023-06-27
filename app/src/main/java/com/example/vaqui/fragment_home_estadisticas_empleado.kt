@@ -44,11 +44,11 @@ class fragment_home_estadisticas_empleado : Fragment() {
         val imageSlider = ll.findViewById<ImageSlider>(R.id.image_slider)
 
 
-        imageList.add(SlideModel(R.drawable.imagen_vacas_1,"vaca 1"))
-        imageList.add(SlideModel(R.drawable.imagen_vacas_2,"vaca 2"))
-        imageList.add(SlideModel(R.drawable.imagen_vacas_3,"vaca 3"))
-        imageList.add(SlideModel(R.drawable.imagen_vacas_4,"vaca 4"))
-        imageList.add(SlideModel(R.drawable.imagen_vacas_5,"vaca 5"))
+        imageList.add(SlideModel(R.drawable.imagen_vacas_1))
+        imageList.add(SlideModel(R.drawable.imagen_vacas_2))
+        imageList.add(SlideModel(R.drawable.imagen_vacas_3))
+        imageList.add(SlideModel(R.drawable.imagen_vacas_4))
+        imageList.add(SlideModel(R.drawable.imagen_vacas_5))
 
         imageSlider.setImageList(imageList)
 
@@ -76,7 +76,7 @@ class fragment_home_estadisticas_empleado : Fragment() {
     }
 
     private fun cantidadTerneros(){
-        val url = "http://192.168.123.187:8080/cantidadTerneros"
+        val url = "http://192.168.252.77:8080/cantidadTerneros"
         val queue = Volley.newRequestQueue(requireContext())
 
         val request = StringRequest(
@@ -98,7 +98,7 @@ class fragment_home_estadisticas_empleado : Fragment() {
 
 
     private fun cantidadBovinos(){
-        val url = "http://192.168.123.187:8080/cantidadBovinos"
+        val url = "http://192.168.252.77:8080/cantidadBovinos"
         val queue = Volley.newRequestQueue(requireContext())
 
         val request = StringRequest(Request.Method.GET, url,
@@ -119,7 +119,7 @@ class fragment_home_estadisticas_empleado : Fragment() {
 
 
     private fun promedioLeche(){
-        val url = "http://192.168.123.187:8080/promedioLeche"
+        val url = "http://192.168.252.77:8080/promedioLeche"
         val queue = Volley.newRequestQueue(requireContext())
 
         val request = StringRequest(Request.Method.GET, url,

@@ -211,6 +211,9 @@
         <action
             android:id="@+id/action_formularioGeneralFragment_to_elegir_categoria"
             app:destination="@id/elegir_categoria" />
+        <action
+            android:id="@+id/action_formularioGeneralFragment_to_gestion"
+            app:destination="@id/gestion"/>
     </fragment>
     <fragment
         android:id="@+id/fragment_formulario_lecheras"

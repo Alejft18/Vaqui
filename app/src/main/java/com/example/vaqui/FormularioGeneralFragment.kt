@@ -11,6 +11,7 @@ import android.widget.*
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 
 import com.android.volley.Request
 import com.android.volley.Response
@@ -28,6 +29,7 @@ class FormularioGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
     private lateinit var txtFechaNacimiento: EditText
     private lateinit var genero: Spinner
     private lateinit var procedencia: Spinner
+    private lateinit var imagen_atras_ingresar_general : ImageView
 
 
 
@@ -42,12 +44,17 @@ class FormularioGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view= inflater.inflate(R.layout.fragment_formulario_general, container, false)
-        txtRaza=view.findViewById(R.id.ingreso_raza)
-        genero=view.findViewById(R.id.spinner_genero)
-        txtFechaNacimiento=view.findViewById(R.id.ingreso_fecha_general)
-        procedencia=view.findViewById(R.id.spinner_procedencia)
+        val view = inflater.inflate(R.layout.fragment_formulario_general, container, false)
+        this.txtRaza = view.findViewById(R.id.ingreso_raza)
+        this.genero = view.findViewById(R.id.spinner_genero)
+        this.txtFechaNacimiento = view.findViewById(R.id.ingreso_fecha_general)
+        this.procedencia = view.findViewById(R.id.spinner_procedencia)
+        this.imagen_atras_ingresar_general = view.findViewById(R.id.imagen_atras_ingresar_general)
 
+
+        imagen_atras_ingresar_general.setOnClickListener{
+            findNavController().navigate(R.id.action_formularioGeneralFragment_to_gestion)
+        }
 
         //logica para la fecha de nacimiento
         val myCalendar=Calendar.getInstance()
@@ -133,7 +140,7 @@ class FormularioGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
 
     //subo los datos al momento de darle click
     private fun clickAddGeneral(view: View) {
-        val url="http://192.168.123.187:8080/agregarGeneral"
+        val url="http://192.168.252.77:8080/agregarGeneral"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->

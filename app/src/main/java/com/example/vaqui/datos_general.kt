@@ -26,6 +26,7 @@ class datos_general : DialogFragment() {
     private lateinit var img_general : ImageView
 
     private lateinit var btn_detalle_actualizar_general: Button
+    private lateinit var btn_eliminar_general : Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,13 +51,25 @@ class datos_general : DialogFragment() {
         this.procedencia = ll.findViewById(R.id.procedencia)
         this.img_general = ll.findViewById(R.id.img_general)
         this.btn_detalle_actualizar_general = ll.findViewById(R.id.btn_detalle_actualizar_general)
+        this.btn_eliminar_general = ll.findViewById(R.id.btn_eliminar_general)
 
         btn_detalle_actualizar_general.setOnClickListener {
-            findNavController().navigate(R.id.action_datos_general_to_actualizarGeneralFragment)
+            val bundle = Bundle()
+            bundle.putString("id_general", id_general.toString())
+            val actualizarGeneralFragment = actualizarGeneralFragment()
+            actualizarGeneralFragment.arguments = bundle
+            findNavController().navigate(R.id.action_datos_general_to_actualizarGeneralFragment, bundle)
         }
+
+        btn_eliminar_general.setOnClickListener {
+
+        }
+
 
         return ll
     }
+
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -82,9 +95,4 @@ class datos_general : DialogFragment() {
         dialog?.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
     }
 
-    private fun getParams(): MutableMap<String, String>? {
-        val params = HashMap<String, String>()
-        params["id_general"] = id_general.text.toString()
-        return params
-    }
 }
