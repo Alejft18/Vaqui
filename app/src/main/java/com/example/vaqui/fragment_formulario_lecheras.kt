@@ -162,7 +162,7 @@ class fragment_formulario_lecheras : Fragment() {
     }
 
     private fun obtenerUltimoIdGeneral(){
-        val url = "http://192.168.252.77:8080/ultimoIdGeneral"
+        val url = "http://192.168.252.187:8080/ultimoIdGeneral"
         val queue = Volley.newRequestQueue(requireContext())
 
         val request = JsonObjectRequest(Request.Method.GET, url,null,
@@ -181,7 +181,7 @@ class fragment_formulario_lecheras : Fragment() {
     }
 
     private fun clickAddLechera() {
-        val url="http://192.168.252.77:8080/agregarLecheras/$ultimoId"
+        val url="http://192.168.252.187:8080/agregarLecheras/$ultimoId"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->

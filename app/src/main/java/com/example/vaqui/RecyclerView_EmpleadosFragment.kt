@@ -52,7 +52,7 @@ class RecyclerView_EmpleadosFragment : Fragment(), UsuariosListener {
         // Infla el diseño para este fragmento
         val ll = inflater.inflate(R.layout.fragment_recycler_view__empleados, container, false)
         this.recycler = ll.findViewById(R.id.rvEmple)
-        val url = "http://192.168.252.77:8080/listarEmpleados"
+        val url = "http://192.168.252.187:8080/listarEmpleados"
         Log.d("RecyclerView_Empleados","Entered to onCreateView")
         val queue = Volley.newRequestQueue(this.context)
         //queue.timeout = 10000 // aumentar el tiempo de espera a 10 segundos

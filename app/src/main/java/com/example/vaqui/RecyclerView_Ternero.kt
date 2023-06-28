@@ -80,7 +80,7 @@ class RecyclerView_Ternero : Fragment(), TernerosListener {
         // Inflate the layout for this fragment
         val ll = inflater.inflate(R.layout.fragment_recycler_view__ternero, container, false)
         this.recycler = ll.findViewById(R.id.rvBuscadorTerne)
-        val url = "http://192.168.252.77:8080/listarTerneros"
+        val url = "http://192.168.252.187:8080/listarTerneros"
         Log.d("RecyclerView_Ternero", "Entered to onCreateView")
         val queue = Volley.newRequestQueue(this.context)
 

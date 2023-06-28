@@ -54,8 +54,14 @@ class datos_general : DialogFragment() {
         this.btn_eliminar_general = ll.findViewById(R.id.btn_eliminar_general)
 
         btn_detalle_actualizar_general.setOnClickListener {
+            //Envio los datos al formulario de actualizar
             val bundle = Bundle()
-            bundle.putString("id_general", id_general.toString())
+            bundle.putString("id_general", id_general.text.toString())
+            bundle.putString("raza_general", raza_general.text.toString())
+            bundle.putString("genero_general", genero_general.text.toString())
+            bundle.putString("fecha_general", fecha_general.text.toString())
+            bundle.putString("procedencia_general", procedencia.text.toString())
+
             val actualizarGeneralFragment = actualizarGeneralFragment()
             actualizarGeneralFragment.arguments = bundle
             findNavController().navigate(R.id.action_datos_general_to_actualizarGeneralFragment, bundle)

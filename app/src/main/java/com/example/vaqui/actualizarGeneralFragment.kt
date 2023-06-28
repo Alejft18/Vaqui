@@ -19,7 +19,7 @@ import java.util.*
 
 
 class actualizarGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener {
-    private lateinit var id_actualizar_general : TextView
+            private lateinit var id_actualizar_general : TextView
     private lateinit var actualizar_raza : TextInputEditText
     private lateinit var actualizar_spinner_genero : Spinner
     private lateinit var actualizar_fecha_general : EditText
@@ -39,7 +39,12 @@ class actualizarGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val id = arguments?.getString("id_general")
+        //traigo los valores de datos_general
+        val idGeneral = arguments?.getString("id_general")
+        val razaGeneral = arguments?.getString("raza_general")
+        val generoGeneral = arguments?.getString("genero_general")
+        val fechaGeneral = arguments?.getString("fecha_general")
+        val procedenciaGeneral = arguments?.getString("procedencia_general")
 
 
         val ll =  inflater.inflate(R.layout.fragment_actualizar_general, container, false)
@@ -101,9 +106,21 @@ class actualizarGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
 
 
         imagen_atras_actualizar_general.setOnClickListener {
-            findNavController().navigate(R.id.action_actualizarGeneralFragment_to_generalfragment)
+            findNavController().navigate(R.id.action_actualizarGeneralFragment_to_generalfragment2)
         }
 
+        //pongo los datos obtenidos en los inputs
+        id_actualizar_general.text = idGeneral
+        actualizar_raza.setText(razaGeneral)
+        val generoPosition = spinnerData1.indexOf(generoGeneral)
+        if (generoPosition >= 0) {
+            actualizar_spinner_genero.setSelection(generoPosition)
+        }
+        actualizar_fecha_general.setText(fechaGeneral)
+        val procedenciaPosition = spinnerData2.indexOf(procedenciaGeneral)
+        if (procedenciaPosition >= 0) {
+            actualizar_spinner_procedencia.setSelection(procedenciaPosition)
+        }
 
         return ll
     }
@@ -141,14 +158,14 @@ class actualizarGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
     }
 
     private fun clickUpdateGeneral(view: View) {
-        val url="http://192.168.252.77:8080/actualizarBovinoGeneral"
+        val url="http://192.168.252.187:8080/actualizarBovinoGeneral"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.PUT, url,
             Response.Listener<String> { response->
                 Toast.makeText(requireContext(), "Bovino actualizado exitosamente", Toast.LENGTH_LONG).show()
 
                 val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
-                navController.navigate(R.id.action_formularioGeneralFragment_to_elegir_categoria)
+                navController.navigate(R.id.action_actualizarGeneralFragment_to_generalfragment)
 
             }, Response.ErrorListener{
                 Toast.makeText(requireContext(), "Bovino no actualizado", Toast.LENGTH_LONG).show()
@@ -163,7 +180,7 @@ class actualizarGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
             }
             override fun getBody(): ByteArray {
                 val params = JSONObject()
-                params.put("id",id.toString())
+                params.put("id",id_actualizar_general.text.toString())
                 params.put("raza",actualizar_raza?.text.toString())
                 params.put("genero",actualizar_spinner_genero?.selectedItem.toString())
                 params.put("fecha_nacimiento",actualizar_fecha_general?.text.toString())
@@ -173,5 +190,4 @@ class actualizarGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
         }
         queue.add(resultadoPost)
     }
-
 }

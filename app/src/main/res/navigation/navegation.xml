@@ -301,6 +301,9 @@
         <action
             android:id="@+id/action_actualizarGeneralFragment_to_generalfragment"
             app:destination="@id/generalfragment" />
+        <action
+            android:id="@+id/action_actualizarGeneralFragment_to_generalfragment2"
+            app:destination="@id/generalfragment" />
     </fragment>
     <fragment
         android:id="@+id/detalleEmpleadoFragment"
