@@ -69,16 +69,16 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Fecha de revisión:"
+                    android:text="ID:"
                     android:textStyle="bold"
-                    android:textSize="18dp">
+                    android:textSize="18sp">
                 </TextView>
                 <TextView
-                    android:id="@+id/fc_revision_engorde"
+                    android:id="@+id/id_engorde"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16dp"
-                    android:text="15/10/2020"
+                    android:text="0"
+                    android:textSize="16sp"
                     android:layout_marginLeft="4dp">
                 </TextView>
             </LinearLayout>
@@ -92,18 +92,18 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="ID:"
+                    android:text="Fecha de revisión:"
                     android:textStyle="bold"
-                    android:textSize="18dp">
+                    android:textSize="18sp">
                 </TextView>
                 <TextView
-                    android:id="@+id/id_engorde"
+                    android:id="@+id/fc_revision_engorde"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="120"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
+                    android:text="00/00/0000"
                     android:layout_marginLeft="4dp">
-            </TextView>
+                </TextView>
             </LinearLayout>
 
             <LinearLayout
@@ -117,15 +117,15 @@
                     android:layout_height="wrap_content"
                     android:text="Peso:"
                     android:textStyle="bold"
-                    android:textSize="18dp">
+                    android:textSize="18sp">
                 </TextView>
 
                 <TextView
                     android:id="@+id/peso_engorde"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="320 Kg"
-                    android:textSize="16dp"
+                    android:text="0"
+                    android:textSize="16sp"
                     android:layout_marginLeft="4dp">
                 </TextView>
             </LinearLayout>
@@ -140,15 +140,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Alimento:"
-                    android:textSize="18dp"
+                    android:textSize="18sp"
                     android:textStyle="bold">
                 </TextView>
                 <TextView
                     android:id="@+id/alimento_engorde"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16dp"
-                    android:text="Concentrado"
+                    android:textSize="16sp"
+                    android:text="xxxxxxx"
                     android:layout_marginLeft="4dp">
                 </TextView>
             </LinearLayout>
@@ -163,7 +163,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Categoría:"
-                    android:textSize="18dp"
+                    android:textSize="18sp"
                     android:textStyle="bold">
                 </TextView>
                 <TextView
@@ -171,7 +171,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Engorde"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:layout_marginLeft="4dp">
                 </TextView>
             </LinearLayout>
@@ -183,20 +183,22 @@
                 android:layout_gravity="center"
                 android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/actualizarSecado"
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_actualizar_secado"
                     android:layout_width="120dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
                     android:backgroundTint="@color/olvidemicontra"
                     android:text="Actualizar"
                     android:textColor="@color/white"/>
 
-                <Button
-                    android:id="@+id/eliminarSecado"
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_cambiar_categoria_secado"
                     android:layout_width="120dp"
                     android:layout_height="33dp"
+                    android:textSize="10sp"
                     android:background="@drawable/border_boton"
-                    android:text="Eliminar"
+                    android:text="cambiar categoria"
                     android:textColor="@color/rojo_botones" />
 
             </LinearLayout>

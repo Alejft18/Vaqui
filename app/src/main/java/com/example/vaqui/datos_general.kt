@@ -1,6 +1,7 @@
 package com.example.vaqui
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -12,6 +13,9 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.android.volley.Request
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 import com.bumptech.glide.Glide
 import org.json.JSONObject
 
@@ -68,6 +72,34 @@ class datos_general : DialogFragment() {
         }
 
         btn_eliminar_general.setOnClickListener {
+
+            val builder = AlertDialog.Builder(requireContext())
+            builder.setTitle("¿Deseas eliminar al bovino ${id_general.text}?")
+            builder.setMessage("Si eliminas este bovino en este apartado tambien lo hara en la categoria en la que se encuentra")
+            builder.setPositiveButton("Aceptar") { dialog, which ->
+
+                val url = "http://192.168.252.187:8080/eliminarBovinoGeneral/${id_general.text}"
+                val queue = Volley.newRequestQueue(requireContext())
+
+                val request = StringRequest(
+                    Request.Method.DELETE, url,
+                    { response ->
+                        Toast.makeText(requireContext(),"eliminacion exitosa", Toast.LENGTH_SHORT).show()
+                        dialog.dismiss()
+                    }
+                ) { error ->
+                    Toast.makeText(requireContext(), "Error al obtener cantidad terneros", Toast.LENGTH_LONG).show()
+                    println("Error en la solicitud: " + error.message)
+                }
+                queue.add(request)
+
+            }
+            builder.setNegativeButton("Cancelar") { dialog, which ->
+                dialog.dismiss()
+            }
+
+            val dialog: AlertDialog = builder.create()
+            dialog.show()
 
         }
 

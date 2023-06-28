@@ -38,13 +38,14 @@
         <entry key="..\:/Users/joseo/AndroidStudioProjects/Vaqui/app/src/main/res/layout/item_secado.xml" value="0.1956521739130435" />
         <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/activity_main.xml" value="0.21467391304347827" />
         <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/fragment_actualizar_empleado.xml" value="0.21467391304347827" />
-        <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/fragment_actualizar_engorde.xml" value="0.21467391304347827" />
+        <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/fragment_actualizar_engorde.xml" value="0.25" />
         <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/fragment_actualizar_general.xml" value="0.22" />
         <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/fragment_actualizar_gestacion.xml" value="0.13272543059777103" />
         <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/fragment_buscador_bovino.xml" value="0.13272543059777103" />
         <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/fragment_categorias.xml" value="0.21467391304347827" />
+        <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/fragment_datos_engorde.xml" value="0.25" />
         <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/fragment_datos_general.xml" value="0.21467391304347827" />
-        <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/fragment_datos_lecheras.xml" value="0.21467391304347827" />
+        <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/fragment_datos_lecheras.xml" value="0.25" />
         <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/fragment_datos_terneros.xml" value="0.33" />
         <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/fragment_formulario_empleado.xml" value="0.21467391304347827" />
         <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/fragment_formulario_general.xml" value="0.21467391304347827" />

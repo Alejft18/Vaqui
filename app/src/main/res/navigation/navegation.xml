@@ -182,7 +182,11 @@
         android:id="@+id/datos_engorde"
         android:name="com.example.vaqui.datos_engorde"
         android:label="fragment_datos_engorde"
-        tools:layout="@layout/fragment_datos_engorde" />
+        tools:layout="@layout/fragment_datos_engorde" >
+        <action
+            android:id="@+id/action_datos_engorde_to_actualizarEngordeFragment"
+            app:destination="@id/actualizarEngordeFragment" />
+    </dialog>
     <dialog
         android:id="@+id/datos_lecheras"
         android:name="com.example.vaqui.datos_lecheras"
@@ -327,6 +331,15 @@
         <action
             android:id="@+id/action_formularioEmpleadoFragment_to_gestionEmpleadosFragment"
             app:destination="@id/gestionEmpleadosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/actualizarEngordeFragment"
+        android:name="com.example.vaqui.actualizarEngordeFragment"
+        android:label="fragment_actualizar_engorde"
+        tools:layout="@layout/fragment_actualizar_engorde" >
+        <action
+            android:id="@+id/action_actualizarEngordeFragment_to_engordefragment"
+            app:destination="@id/engordefragment" />
     </fragment>
 
 </navigation>

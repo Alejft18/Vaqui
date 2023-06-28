@@ -21,7 +21,7 @@ import java.util.*
 class actualizarGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener {
             private lateinit var id_actualizar_general : TextView
     private lateinit var actualizar_raza : TextInputEditText
-    private lateinit var actualizar_spinner_genero : Spinner
+    private lateinit var actualizar_spinner_genero : TextView
     private lateinit var actualizar_fecha_general : EditText
     private lateinit var actualizar_spinner_procedencia : Spinner
 
@@ -87,20 +87,13 @@ class actualizarGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
             dialog.show()
         }
 
-        //Logica de los spinners
-        val spinnerData1= arrayOf("Seleccione el genero","macho","hembra")
+        //Logica del spinner
         val spinnerData2= arrayOf("Seleccione la procedencia","de la finca","de otra finca")
-
-        val adapter1 = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, spinnerData1)
-        adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-        val positionDisable1=0
-        adapter1.getView(positionDisable1,null,actualizar_spinner_genero)?.isEnabled=true
-        actualizar_spinner_genero.adapter = adapter1
 
 
         val adapter2 = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, spinnerData2)
         val positionDisable2=0
-        adapter1.getView(positionDisable2,null,actualizar_spinner_procedencia)?.isEnabled=true
+        adapter2.getView(positionDisable2,null,actualizar_spinner_procedencia)?.isEnabled=true
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         actualizar_spinner_procedencia.adapter = adapter2
 
@@ -112,10 +105,7 @@ class actualizarGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
         //pongo los datos obtenidos en los inputs
         id_actualizar_general.text = idGeneral
         actualizar_raza.setText(razaGeneral)
-        val generoPosition = spinnerData1.indexOf(generoGeneral)
-        if (generoPosition >= 0) {
-            actualizar_spinner_genero.setSelection(generoPosition)
-        }
+        actualizar_spinner_genero.setText(generoGeneral)
         actualizar_fecha_general.setText(fechaGeneral)
         val procedenciaPosition = spinnerData2.indexOf(procedenciaGeneral)
         if (procedenciaPosition >= 0) {
@@ -135,7 +125,6 @@ class actualizarGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        actualizar_spinner_genero.onItemSelectedListener = this
         actualizar_spinner_procedencia.onItemSelectedListener = this
 
         val botonActualizar: Button = view.findViewById(R.id.boton_actualizar_general)
@@ -182,7 +171,7 @@ class actualizarGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
                 val params = JSONObject()
                 params.put("id",id_actualizar_general.text.toString())
                 params.put("raza",actualizar_raza?.text.toString())
-                params.put("genero",actualizar_spinner_genero?.selectedItem.toString())
+                params.put("genero",actualizar_spinner_genero?.text.toString())
                 params.put("fecha_nacimiento",actualizar_fecha_general?.text.toString())
                 params.put("procedencia",actualizar_spinner_procedencia?.selectedItem.toString())
                 return  params.toString().toByteArray(Charsets.UTF_8)

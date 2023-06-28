@@ -46,6 +46,7 @@
             android:layout_gravity="center_vertical">
 
             <LinearLayout
+                android:layout_marginTop="65dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
@@ -90,17 +91,18 @@
                     android:id="@+id/actualizar_raza"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Raza Bovino" />
+                    android:hint="Raza Bovino"/>
             </com.google.android.material.textfield.TextInputLayout>
 
 
 
-            <Spinner
+            <TextView
                 android:id="@+id/actualizar_spinner_genero"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_margin="16dp"
-                android:layout_marginBottom="30dp" />
+                android:textSize="18sp"
+                android:layout_marginBottom="30dp"/>
 
 
             <com.google.android.material.textfield.TextInputLayout
