@@ -221,8 +221,14 @@
                     android:background="@drawable/border_boton"
                     android:text="Eliminar"
                     android:textColor="@color/rojo_botones" />
-
             </LinearLayout>
+
+            <TextView
+                android:id="@+id/contrasena_empleado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+
 
         </LinearLayout>
 

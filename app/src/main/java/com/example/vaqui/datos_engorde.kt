@@ -29,8 +29,8 @@ class datos_engorde : DialogFragment() {
     private lateinit var alimento_engorde : TextView
     private lateinit var catego_engorde : TextView
 
-    private lateinit var btn_actualizar_secado : Button
-    private lateinit var btn_cambiar_categoria_secado : Button
+    private lateinit var btn_actualizar_engorde : Button
+    private lateinit var btn_cambiar_categoria_engorde : Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,10 +58,10 @@ class datos_engorde : DialogFragment() {
         this.viewAlpha = ll.findViewById(R.id.view_BovinosEngorde)
         this.rlEngordeList = ll.findViewById(R.id.rl_Bovinosengorde)
 
-        this.btn_actualizar_secado = ll.findViewById(R.id.btn_actualizar_secado)
-        this.btn_cambiar_categoria_secado = ll.findViewById(R.id.btn_cambiar_categoria_secado)
+        this.btn_actualizar_engorde = ll.findViewById(R.id.btn_actualizar_engorde)
+        this.btn_cambiar_categoria_engorde = ll.findViewById(R.id.btn_cambiar_categoria_engorde)
 
-        btn_actualizar_secado.setOnClickListener {
+        btn_actualizar_engorde.setOnClickListener {
             val bundle = Bundle()
             bundle.putString("id_engorde",id_engorde.text.toString())
             bundle.putString("peso_engorde",peso_engorde.text.toString())

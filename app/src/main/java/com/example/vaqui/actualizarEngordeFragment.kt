@@ -44,7 +44,6 @@ class actualizarEngordeFragment : Fragment(){
         val pesoEngorde = arguments?.getString("peso_engorde")
         val alimentoEngorde = arguments?.getString("alimento_engorde")
         val fechaRevisionEngorde = arguments?.getString("fecha_revision_engorde")
-        val categoria = arguments?.getString("categoria_engorde")
 
         val ll= inflater.inflate(R.layout.fragment_actualizar_engorde, container, false)
         this.imagen_atras_actualizar_engorde = ll.findViewById(R.id.imagen_atras_actualizar_engorde)
@@ -94,7 +93,7 @@ class actualizarEngordeFragment : Fragment(){
             findNavController().navigate(R.id.action_actualizarEngordeFragment_to_engordefragment)
         }
 
-        //pongo los datos obtenidos de datos_engorde
+        //sobrepongo los datos obtenidos de datos_engorde
         id_actualizar_engorde.text = idEngorde
         actualizar_peso_engorde.setText(pesoEngorde)
         actualizar_alimento_engorde.setText(alimentoEngorde)

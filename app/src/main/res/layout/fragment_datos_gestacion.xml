@@ -58,7 +58,7 @@
                 android:layout_margin="10dp"
                 android:textStyle="bold"
                 android:textColor="@color/verde"
-                android:textSize="20dp">
+                android:textSize="20sp">
             </TextView>
 
             <LinearLayout
@@ -72,14 +72,14 @@
                     android:layout_height="wrap_content"
                     android:text="Fecha de revisión:"
                     android:textStyle="bold"
-                    android:textSize="18dp">
+                    android:textSize="18sp">
                 </TextView>
                 <TextView
                     android:id="@+id/fecha_revision_gestacion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="15/10/2020"
-                    android:textSize="16dp"
+                    android:text="00/00/0000"
+                    android:textSize="16sp"
                     android:layout_marginLeft="4dp">
                 </TextView>
             </LinearLayout>
@@ -95,15 +95,15 @@
                     android:layout_height="wrap_content"
                     android:text="ID: "
                     android:textStyle="bold"
-                    android:textSize="18dp">
+                    android:textSize="18sp">
                 </TextView>
                 <TextView
                     android:id="@+id/id_gestacion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="120"
-                    android:textSize="16dp"
-                    android:layout_marginLeft="4dp">
+                    android:text="0"
+                    android:textSize="16sp"
+                    android:layout_marginStart="4dp">
                 </TextView>
             </LinearLayout>
 
@@ -118,15 +118,23 @@
                     android:layout_height="wrap_content"
                     android:text="Peso: "
                     android:textStyle="bold"
-                    android:textSize="18dp">
-                </TextView>
+                    android:textSize="18sp"/>
+
                 <TextView
                     android:id="@+id/peso_gestacion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16dp"
-                    android:text="320 Kg"
-                    android:layout_marginLeft="4dp">
+                    android:textSize="16sp"
+                    android:text="0"
+                    android:layout_marginStart="4dp">
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:text="Kg"
+                    android:layout_marginStart="4dp">
                 </TextView>
             </LinearLayout>
 
@@ -141,15 +149,15 @@
                     android:layout_height="wrap_content"
                     android:text="Fecha aprox del parto:"
                     android:textStyle="bold"
-                    android:textSize="18dp">
+                    android:textSize="18sp">
                 </TextView>
                 <TextView
                     android:id="@+id/fecha_aproxPartoGesta"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="02/03/2023"
-                    android:textSize="16dp"
-                    android:layout_marginLeft="4dp">
+                    android:text="00/00/0000"
+                    android:textSize="16sp"
+                    android:layout_marginStart="4dp">
                 </TextView>
             </LinearLayout>
 
@@ -164,15 +172,15 @@
                     android:layout_height="wrap_content"
                     android:text="Último parto:"
                     android:textStyle="bold"
-                    android:textSize="18dp">
+                    android:textSize="18sp">
                 </TextView>
                 <TextView
                     android:id="@+id/fecha_ultiPartoGesta"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="01/01/2022"
-                    android:textSize="16dp"
-                    android:layout_marginLeft="4dp">
+                    android:text="00/00/0000"
+                    android:textSize="16sp"
+                    android:layout_marginStart="4dp">
                 </TextView>
             </LinearLayout>
 
@@ -193,9 +201,9 @@
                     android:id="@+id/fecha_inseminacionGesta"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16dp"
-                    android:text="01/01/2022"
-                    android:layout_marginLeft="4dp">
+                    android:textSize="16sp"
+                    android:text="00/00/0000"
+                    android:layout_marginStart="4dp">
                 </TextView>
             </LinearLayout>
 
@@ -211,40 +219,43 @@
                     android:layout_height="wrap_content"
                     android:text="Categoria:"
                     android:textStyle="bold"
-                    android:textSize="18dp">
+                    android:textSize="18sp">
                 </TextView>
                 <TextView
                     android:id="@+id/catego_gestacion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Gestación"
-                    android:textSize="16dp"
-                    android:layout_marginLeft="4dp">
+                    android:textSize="16sp"
+                    android:layout_marginStart="4dp">
                 </TextView>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_margin="20dp"
+                android:layout_marginTop="15dp"
                 android:layout_gravity="center"
                 android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/actualizarGestacion"
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_actualizar_gestacion"
                     android:layout_width="120dp"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/olvidemicontra"
                     android:text="Actualizar"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white"
+                    android:layout_marginEnd="10dp"/>
 
-                <Button
-                    android:id="@+id/eliminarGestacion"
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_cambiar_categoria_gestacion"
                     android:layout_width="120dp"
                     android:layout_height="33dp"
                     android:background="@drawable/border_boton"
-                    android:text="Eliminar"
-                    android:textColor="@color/rojo_botones" />
+                    android:text="cambiar categoria"
+                    android:textSize="10sp"
+                    android:textColor="@color/rojo_botones"
+                    tools:ignore="SmallSp" />
 
             </LinearLayout>
 

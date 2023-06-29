@@ -140,7 +140,11 @@
         android:id="@+id/datos_gestacion"
         android:name="com.example.vaqui.datos_gestacion"
         android:label="fragment_datos_gestacion"
-        tools:layout="@layout/fragment_datos_gestacion" />
+        tools:layout="@layout/fragment_datos_gestacion" >
+        <action
+            android:id="@+id/action_datos_gestacion_to_actualizarGestacionFragment"
+            app:destination="@id/actualizarGestacionFragment" />
+    </dialog>
     <fragment
         android:id="@+id/ternerofragment"
         android:name="com.example.vaqui.RecyclerView_Ternero"
@@ -313,7 +317,11 @@
         android:id="@+id/detalleEmpleadoFragment"
         android:name="com.example.vaqui.Buscador.DetalleEmpleadoFragment"
         android:label="fragment_detalle_empleado"
-        tools:layout="@layout/fragment_detalle_empleado" />
+        tools:layout="@layout/fragment_detalle_empleado" >
+        <action
+            android:id="@+id/action_detalleEmpleadoFragment_to_actualizarEmpleadoFragment"
+            app:destination="@id/actualizarEmpleadoFragment" />
+    </fragment>
     <fragment
         android:id="@+id/recyclerView_EmpleadosFragment"
         android:name="com.example.vaqui.RecyclerView_EmpleadosFragment"
@@ -340,6 +348,24 @@
         <action
             android:id="@+id/action_actualizarEngordeFragment_to_engordefragment"
             app:destination="@id/engordefragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/actualizarGestacionFragment"
+        android:name="com.example.vaqui.actualizarGestacionFragment"
+        android:label="fragment_actualizar_gestacion"
+        tools:layout="@layout/fragment_actualizar_gestacion" >
+        <action
+            android:id="@+id/action_actualizarGestacionFragment_to_gestacionfragment"
+            app:destination="@id/gestacionfragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/actualizarEmpleadoFragment"
+        android:name="com.example.vaqui.actualizarEmpleadoFragment"
+        android:label="fragment_actualizar_empleado"
+        tools:layout="@layout/fragment_actualizar_empleado" >
+        <action
+            android:id="@+id/action_actualizarEmpleadoFragment_to_gestionEmpleadosFragment"
+            app:destination="@id/gestionEmpleadosFragment" />
     </fragment>
 
 </navigation>

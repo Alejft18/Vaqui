@@ -19,8 +19,8 @@
 
             <ImageView
                 android:layout_width="30dp"
-
                 android:layout_height="wrap_content"
+                android:id="@+id/imagen_atras_actualizar_empleado"
                 android:src="@drawable/atras">
             </ImageView>
 
@@ -29,23 +29,21 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Actualizar bovino"
+            android:text="Actualizar Empleado"
             android:textColor="@color/white"
-            android:layout_marginLeft="60dp"
-            android:textSize="18dp"
+            android:layout_marginStart="60dp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
     </androidx.appcompat.widget.Toolbar>
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar_actualizar_empleado">
-
+        android:layout_height="wrap_content">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_gravity="center_vertical">
 
@@ -67,9 +65,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
-                android:text="Ingresa los nuevos datos para el ID: "
+                android:text="Ingresa los nuevos para: "
                 android:textAlignment="center"
-                android:textSize="20dp"
+                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -77,27 +75,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="854"
+                android:text="0"
                 android:textAlignment="center"
-                android:textSize="20dp" />
+                android:textSize="20sp" />
 
         </LinearLayout>
 
+
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="12dp"
-            android:background="@drawable/shape_buscadory"
             android:orientation="horizontal">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/actualizar_documento_empleado"
+                android:id="@+id/actualizar_nombre_empleado"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:hint="Número de documento"
-                tools:visibility="invisible" />
+                android:hint="Nombres"/>
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -106,25 +103,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="12dp"
-            android:background="@drawable/shape_buscadory"
-            android:orientation="horizontal">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/actualizar_nombre"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:hint="Nombres"
-                tools:visibility="invisible" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="12dp"
-            android:background="@drawable/shape_buscadory"
             android:orientation="horizontal">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -132,8 +110,7 @@
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:hint="Apellidos"
-                tools:visibility="invisible" />
+                android:hint="Apellidos"/>
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -142,7 +119,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="12dp"
-            android:background="@drawable/shape_buscadory"
             android:orientation="horizontal">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -151,7 +127,38 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:hint="Número celular"
-                tools:visibility="invisible" />
+                android:inputType="phone"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/actualizar_correo_empleado"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:hint="Correo Electronico"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="12dp"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/actualizar_contrasena_empleado"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:hint="Contraseña"
+                android:inputType="numberPassword"/>
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -160,28 +167,27 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="12dp"
-            android:background="@drawable/shape_buscadory"
             android:orientation="horizontal">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/actualizar_cargo"
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/actualizar_area_empleado"
                 android:layout_width="300dp"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:gravity="center"
-                android:hint="Cargo / puesto"
+                android:hint="area"
                 tools:visibility="invisible" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/boton_actualizar_empleado"
-            android:layout_width="150dp"
+            android:layout_width="155dp"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/verde"
             android:layout_gravity="center"
             android:background="@color/verde"
             android:text="Actualizar empleado"
             android:textColor="@color/white"
-            android:onClick="clickUpdateGeneral"
+            android:onClick="clickUpdateEmpleado"
             android:layout_marginTop="30dp"/>
     </LinearLayout>
     </ScrollView>

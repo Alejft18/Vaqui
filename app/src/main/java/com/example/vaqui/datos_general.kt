@@ -88,7 +88,7 @@ class datos_general : DialogFragment() {
                         dialog.dismiss()
                     }
                 ) { error ->
-                    Toast.makeText(requireContext(), "Error al obtener cantidad terneros", Toast.LENGTH_LONG).show()
+                    Toast.makeText(requireContext(), "Error al eliminar el bovino", Toast.LENGTH_SHORT).show()
                     println("Error en la solicitud: " + error.message)
                 }
                 queue.add(request)

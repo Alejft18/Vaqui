@@ -31,8 +31,8 @@
             android:layout_height="wrap_content"
             android:text="Gestion de empleados"
             android:textColor="@color/white"
-            android:layout_marginLeft="60dp"
-            android:textSize="20dp"
+            android:layout_marginStart="60dp"
+            android:textSize="20sp"
             android:textStyle="bold" />
 
     </androidx.appcompat.widget.Toolbar>
@@ -51,7 +51,7 @@
             android:layout_marginTop="120dp"
             android:textColor="@color/verde"
             android:textStyle="bold"
-            android:textSize="21dp">
+            android:textSize="21sp">
 
         </TextView>
 
@@ -82,9 +82,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Ingresar Empleado"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginStart="40dp"
                     android:textStyle="normal"
-                    android:textSize="22dp"
+                    android:textSize="22sp"
                     android:layout_gravity="center_vertical"/>
 
             </LinearLayout>
@@ -108,17 +108,17 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="15dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
                     android:src="@drawable/buscar">
                 </ImageView>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Buscar Empleado"
-                    android:layout_marginLeft="40dp"
+                    android:text="Gestion De Empleados"
+                    android:layout_marginStart="40dp"
                     android:textStyle="normal"
-                    android:textSize="23dp"
+                    android:textSize="21sp"
                     android:layout_gravity="center_vertical"/>
 
             </LinearLayout>
@@ -150,9 +150,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Actualizar Empleado"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginStart="40dp"
                     android:textStyle="normal"
-                    android:textSize="22dp"
+                    android:textSize="22sp"
                     android:layout_gravity="center_vertical"/>
 
             </LinearLayout>
@@ -176,7 +176,7 @@
                     android:layout_width="50dp"
                     android:layout_height="50dp"
                     android:layout_marginTop="15dp"
-                    android:layout_marginLeft="15dp"
+                    android:layout_marginStart="15dp"
                     android:src="@drawable/eliminar_emple">
                 </ImageView>
 
@@ -184,9 +184,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Eliminar Empleado"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginStart="40dp"
                     android:textStyle="normal"
-                    android:textSize="22dp"
+                    android:textSize="22sp"
                     android:layout_gravity="center_vertical"/>
 
             </LinearLayout>

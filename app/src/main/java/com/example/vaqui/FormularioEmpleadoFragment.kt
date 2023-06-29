@@ -27,7 +27,7 @@ class FormularioEmpleadoFragment : Fragment(), AdapterView.OnItemSelectedListene
     private lateinit var ingreso_contrasena_empleado: TextInputEditText
     private lateinit var imagen_atras : ImageView
     val imagen = ""
-    val rol = "Empleado"
+    val rol = "empleado"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,8 +54,7 @@ class FormularioEmpleadoFragment : Fragment(), AdapterView.OnItemSelectedListene
         //Logica del spinner
         val spinnerData = arrayOf("Seleccione el area", "Ordeño", "Limpieza")
 
-        val adapter =
-            ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, spinnerData)
+        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, spinnerData)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         val positionDisable = 0
         adapter.getView(positionDisable, null, spinner_area)?.isEnabled = true

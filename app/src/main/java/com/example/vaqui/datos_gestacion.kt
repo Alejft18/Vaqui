@@ -6,12 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.RelativeLayout
-import android.widget.TextView
-import android.widget.Toolbar
+import android.widget.*
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import org.json.JSONObject
@@ -29,6 +27,9 @@ class datos_gestacion : DialogFragment() {
     private lateinit var fecha_ultiPartoGesta : TextView
     private lateinit var fecha_inseminacionGesta : TextView
     private lateinit var catego_gestacion : TextView
+
+    private lateinit var btn_actualizar_gestacion : Button
+    private lateinit var btn_cambiar_categoria_gestacion : Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,6 +56,23 @@ class datos_gestacion : DialogFragment() {
         this.recycler = ll.findViewById(R.id.gestacion_recycler)
         this.viewAlpha = ll.findViewById(R.id.view_gestacion)
         this.rlGestacionList = ll.findViewById(R.id.rl_gestacion)
+
+        this.btn_actualizar_gestacion = ll.findViewById(R.id.btn_actualizar_gestacion)
+        this.btn_cambiar_categoria_gestacion = ll.findViewById(R.id.btn_cambiar_categoria_gestacion)
+
+        btn_actualizar_gestacion.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putString("id_gestacion", id_gestacion.text.toString())
+            bundle.putString("peso_gestacion",peso_gestacion.text.toString())
+            bundle.putString("fecha_insemi_gestacion",fecha_inseminacionGesta.text.toString())
+            bundle.putString("fecha_aprox_parto_gestacion",fecha_aproxPartoGesta.text.toString())
+            bundle.putString("fecha_ulti_parto_gestacion",fecha_ultiPartoGesta.text.toString())
+            bundle.putString("fecha_revision_gestacion",fecha_revision_gestacion.text.toString())
+
+            val actualizarGestacionFragment = actualizarGestacionFragment()
+            actualizarGestacionFragment.arguments = bundle
+            findNavController().navigate(R.id.action_datos_gestacion_to_actualizarGestacionFragment, bundle)
+        }
 
         return ll
     }
