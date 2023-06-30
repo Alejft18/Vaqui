@@ -8,24 +8,24 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.navigation.Navigation
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.google.android.material.textfield.TextInputEditText
+import org.json.JSONObject
 import java.text.SimpleDateFormat
 import java.util.*
 
-class actualizarSecadoFragment : Fragment(), AdapterView.OnItemSelectedListener {
+class actualizarSecadoFragment : Fragment() {
 
     private lateinit var id_secado: TextView
-    private lateinit var actualizar_fecha_revisión_secado: TextInputEditText
-    private lateinit var actualizar_peso_secado: TextInputEditText
-    private lateinit var actualizar_ultleche_secado: TextInputEditText
+    private lateinit var actualizar_fecha_revisión_secado : TextInputEditText
+    private lateinit var actualizar_peso_secado : TextInputEditText
+    private lateinit var actualizar_fecha_ordeno_secado : TextInputEditText
     private lateinit var actualizar_ultpartaro_secado: TextInputEditText
-
-    private lateinit var boton_actualizar_secado: Button
-
+    private val categoria = "secado"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,18 +37,22 @@ class actualizarSecadoFragment : Fragment(), AdapterView.OnItemSelectedListener 
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+        //traigo la informacion de datos_secado()
+        val idSecado = arguments?.getString("id_secado")
+        val fechaRevision =  arguments?.getString("fecha_revision")
+        val pesoSecado = arguments?.getString("peso_secado")
+        val fechaOrdeno = arguments?.getString("fecha_ordeno_secado")
+        val fechaUltiParto = arguments?.getString("fecha_ultiParto")
+
         val ll = inflater.inflate(R.layout.fragment_actualizar_secado, container, false)
 
-        this.id_secado = ll.findViewById(R.id.id_secado)
+        this.id_secado = ll.findViewById(R.id.id_actualizar_secado)
         this.actualizar_fecha_revisión_secado = ll.findViewById(R.id.actualizar_fecha_revisión_secado)
         this.actualizar_peso_secado = ll.findViewById(R.id.actualizar_peso_secado)
-        this.actualizar_ultleche_secado = ll.findViewById(R.id.actualizar_ultleche_secado)
+        this.actualizar_fecha_ordeno_secado = ll.findViewById(R.id.actualizar_fecha_ordeno_secado)
         this.actualizar_ultpartaro_secado = ll.findViewById(R.id.actualizar_ultpartaro_secado)
 
-        this.boton_actualizar_secado = ll.findViewById(R.id.boton_actualizar_secado)
-
-
+        //logica de los calendarios
         val myCalendar= Calendar.getInstance()
         val datePicker= DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
             myCalendar.set(Calendar.YEAR,year)
@@ -78,7 +82,7 @@ class actualizarSecadoFragment : Fragment(), AdapterView.OnItemSelectedListener 
             isClickable = true   // Hacer el EditText clickeable
         }
 
-        actualizar_ultleche_secado.apply {
+        actualizar_fecha_ordeno_secado.apply {
             isFocusable = false
             isClickable = true
         }
@@ -101,7 +105,7 @@ class actualizarSecadoFragment : Fragment(), AdapterView.OnItemSelectedListener 
             dialog.show()
         }
 
-        actualizar_ultleche_secado.setOnClickListener {
+        actualizar_fecha_ordeno_secado.setOnClickListener {
             val dialog = DatePickerDialog(requireContext(),datePicker2,myCalendar2.get(Calendar.YEAR),myCalendar2.get(Calendar.MONTH),myCalendar2.get(Calendar.DAY_OF_MONTH))
             //pongo la fecha maxima como dia actual
             dialog.datePicker.maxDate=Calendar.getInstance().timeInMillis
@@ -127,35 +131,20 @@ class actualizarSecadoFragment : Fragment(), AdapterView.OnItemSelectedListener 
             dialog.show()
         }
 
-
-        boton_actualizar_secado.setOnClickListener {
-            val url="http://192.168.226.77/phpVaqui/actualizar_bovino_secado.php"
-            val queue = Volley.newRequestQueue(getActivity())
-            val resultPost= object  : StringRequest(
-                Request.Method.POST,url,
-                Response.Listener { response->
-                    Toast.makeText(getActivity(), "Se modificó la vaca general", Toast.LENGTH_LONG).show()
-                },{error->
-                    Toast.makeText(getActivity(), " No Se modificó la vaca general", Toast.LENGTH_LONG).show()
-                }
-            ){
-                override fun getParams(): MutableMap<String, String>? {
-                    val parametros  = HashMap<String,String>()
-                    //id posicionar
-                    parametros.put("id", id_secado?.text.toString())
-                    parametros.put("fecha_revisión",actualizar_fecha_revisión_secado?.text.toString())
-                    parametros.put("peso",actualizar_peso_secado?.text.toString())
-                    parametros.put("toma_de_leche",actualizar_ultleche_secado?.text.toString())
-                    parametros.put("fecha_último_parto",actualizar_ultpartaro_secado?.text.toString())
-
-                    return parametros
-                }
-            }
-            queue.add(resultPost)
-        }
+        //sobrepongo los datos en los inputs
+        id_secado.text = idSecado
+        actualizar_fecha_revisión_secado.setText(fechaRevision)
+        actualizar_peso_secado.setText(pesoSecado)
+        actualizar_fecha_ordeno_secado.setText(fechaOrdeno)
+        actualizar_ultpartaro_secado.setText(fechaUltiParto)
 
         return ll
+    }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val botonEnviar: Button = view.findViewById(R.id.boton_actualizar_secado)
+        botonEnviar.setOnClickListener { clickUpdateSecado(view) }
     }
 
     private fun updateLable(myCalendar: Calendar) {
@@ -167,7 +156,7 @@ class actualizarSecadoFragment : Fragment(), AdapterView.OnItemSelectedListener 
     private fun updateLable2(myCalendar: Calendar) {
         val myformat = "yyyy-MM-dd"
         val sdf = SimpleDateFormat(myformat, Locale("es","CO"))
-        actualizar_ultleche_secado.setText(sdf.format(myCalendar.time))
+        actualizar_fecha_ordeno_secado.setText(sdf.format(myCalendar.time))
     }
 
     private fun updateLable3(myCalendar: Calendar) {
@@ -176,13 +165,39 @@ class actualizarSecadoFragment : Fragment(), AdapterView.OnItemSelectedListener 
         actualizar_ultpartaro_secado.setText(sdf.format(myCalendar.time))
     }
 
-    override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-        TODO("Not yet implemented")
-    }
+    private fun clickUpdateSecado(view: View) {
+        val url="http://192.168.234.187:8080/actualizarSecado/${id_secado.text}"
+        val queue = Volley.newRequestQueue(requireContext())
+        val resultadoPost = object : StringRequest(Request.Method.PUT, url,
+            Response.Listener<String> { response->
+                Toast.makeText(requireContext(), "Vaca en secado actualizada", Toast.LENGTH_SHORT).show()
 
-    override fun onNothingSelected(p0: AdapterView<*>?) {
-        TODO("Not yet implemented")
-    }
+                val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
+                navController.navigate(R.id.action_actualizarSecadoFragment_to_secadofragment)
 
+            }, Response.ErrorListener{
+                Toast.makeText(requireContext(), "Bovino no actualizado", Toast.LENGTH_SHORT).show()
+            }) {
+            override fun getHeaders(): MutableMap<String, String> {
+                val headers = HashMap<String, String>()
+                headers["Content-Type"] = "application/json" // Establece el tipo de contenido como JSON
+                return headers
+            }
+            override fun getBodyContentType(): String {
+                return "application/json"
+            }
+            override fun getBody(): ByteArray {
+                val params = JSONObject()
+                params.put("id",id_secado.text.toString())
+                params.put("fecha_ultimo_parto", actualizar_ultpartaro_secado.text.toString())
+                params.put("peso_kilos", actualizar_peso_secado.text.toString())
+                params.put("fecha_revision", actualizar_fecha_revisión_secado.text.toString())
+                params.put("fecha_ordeno", actualizar_fecha_ordeno_secado.text.toString())
+                params.put("categoria",categoria)
+                return  params.toString().toByteArray(Charsets.UTF_8)
+            }
+        }
+        queue.add(resultadoPost)
+    }
 
 }

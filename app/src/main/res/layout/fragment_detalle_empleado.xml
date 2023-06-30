@@ -48,7 +48,7 @@
                 android:layout_gravity="center"
                 android:textStyle="bold"
                 android:textColor="@color/verde"
-                android:textSize="20dp">
+                android:textSize="20sp">
             </TextView>
 
             <LinearLayout
@@ -63,15 +63,15 @@
                     android:layout_height="wrap_content"
                     android:text="ID:"
                     android:textStyle="bold"
-                    android:textSize="18dp">
+                    android:textSize="18sp">
                 </TextView>
                 <TextView
                     android:id="@+id/id_empleados"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16dp"
-                    android:text="0000000000"
-                    android:layout_marginLeft="4dp">
+                    android:textSize="16sp"
+                    android:text="0"
+                    android:layout_marginStart="4dp">
                 </TextView>
             </LinearLayout>
 
@@ -86,7 +86,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Nombre:"
-                    android:textSize="18dp"
+                    android:textSize="18sp"
                     android:textStyle="bold">
                 </TextView>
 
@@ -94,9 +94,9 @@
                     android:id="@+id/nombre_empleado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:text=" xxxxxxxxxx"
-                    android:layout_marginLeft="4dp">
+                    android:layout_marginStart="4dp">
                 </TextView>
             </LinearLayout>
 
@@ -112,16 +112,16 @@
                     android:layout_height="wrap_content"
                     android:text="Apellidos:"
                     android:textStyle="bold"
-                    android:textSize="18dp">
+                    android:textSize="18sp">
                 </TextView>
 
                 <TextView
                     android:id="@+id/apellidos_empleado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:text="xxxxxxxxxx"
-                    android:layout_marginLeft="4dp">
+                    android:layout_marginStart="4dp">
                 </TextView>
             </LinearLayout>
 
@@ -136,7 +136,7 @@
                     android:layout_height="wrap_content"
                     android:text="Telefono:"
                     android:textStyle="bold"
-                    android:textSize="18dp">
+                    android:textSize="18sp">
                 </TextView>
 
                 <TextView
@@ -144,8 +144,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0000000000"
-                    android:textSize="16dp"
-                    android:layout_marginLeft="4dp">
+                    android:textSize="16sp"
+                    android:layout_marginStart="4dp">
                 </TextView>
             </LinearLayout>
 
@@ -161,7 +161,7 @@
                     android:layout_height="wrap_content"
                     android:text="Correo:"
                     android:textStyle="bold"
-                    android:textSize="18dp">
+                    android:textSize="18sp">
                 </TextView>
 
                 <TextView
@@ -169,8 +169,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="0000000000"
-                    android:textSize="16dp"
-                    android:layout_marginLeft="4dp">
+                    android:textSize="16sp"
+                    android:layout_marginStart="4dp">
                 </TextView>
             </LinearLayout>
 
@@ -186,16 +186,16 @@
                     android:layout_height="wrap_content"
                     android:text="Area:"
                     android:textStyle="bold"
-                    android:textSize="18dp">
+                    android:textSize="18sp">
                 </TextView>
 
                 <TextView
                     android:id="@+id/area_empleado"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textSize="16dp"
+                    android:textSize="16sp"
                     android:text="xxxxxxxxxx"
-                    android:layout_marginLeft="4dp">
+                    android:layout_marginStart="4dp">
                 </TextView>
             </LinearLayout>
 

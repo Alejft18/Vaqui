@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
@@ -170,6 +171,10 @@ class actualizarGestacionFragment : Fragment(){
         actualizar_ultpartaro_gestacion.setText(fechaUltiParto)
         actualizar_fecha_revisión_gestacion.setText(fechaRevision)
 
+        imagen_atras_actualizar_gestacion.setOnClickListener {
+            findNavController().navigate(R.id.action_actualizarLecherasFragment_to_lecherasfragment)
+        }
+
 
 
         return ll
@@ -207,7 +212,7 @@ class actualizarGestacionFragment : Fragment(){
 
     }
     private fun clickUpdateGestacion(view: View) {
-        val url="http://192.168.252.187:8080/actualizarGestacion/${id_gestacion.text}"
+        val url="http://192.168.234.187:8080/actualizarGestacion/${id_gestacion.text}"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.PUT, url,
             Response.Listener<String> { response->

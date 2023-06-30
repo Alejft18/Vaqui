@@ -159,7 +159,7 @@ class fragment_formulario_secado : Fragment() {
     }
 
     private fun obtenerUltimoIdGeneral(){
-        val url = "http:/192.168.252.187:8080/ultimoIdGeneral"
+        val url = "http:/192.168.234.187:8080/ultimoIdGeneral"
         val queue = Volley.newRequestQueue(requireContext())
 
         val request = JsonObjectRequest(Request.Method.GET, url,null,
@@ -177,7 +177,7 @@ class fragment_formulario_secado : Fragment() {
     }
 
     private fun clickAddSecado() {
-        val url="http://192.168.252.187:8080/agregarSecado/$ultimoId"
+        val url="http://192.168.234.187:8080/agregarSecado/$ultimoId"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->
@@ -200,10 +200,10 @@ class fragment_formulario_secado : Fragment() {
                 val parametros = JSONObject()
 
                 parametros.put("id",ultimoId)
-                parametros.put("fecha_ultParto",ingreso_fechaUltParto_secado?.text.toString())
+                parametros.put("fecha_ultimo_parto",ingreso_fechaUltParto_secado?.text.toString())
                 parametros.put("peso_kilos",ingreso_peso_secado?.text.toString())
                 parametros.put("fecha_revision",ingreso_fechaRevision_secado?.text.toString())
-                parametros.put("fecha_ordeño",ingreso_fechaOrdenio_secado?.text.toString())
+                parametros.put("fecha_ordeno",ingreso_fechaOrdenio_secado?.text.toString())
                 parametros.put("categoria",categoria)
 
                 Log.d("error", "$parametros")

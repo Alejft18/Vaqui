@@ -126,7 +126,11 @@
         android:id="@+id/datos_secado"
         android:name="com.example.vaqui.datos_secado"
         android:label="fragment_datos_secado"
-        tools:layout="@layout/fragment_datos_secado" />
+        tools:layout="@layout/fragment_datos_secado" >
+        <action
+            android:id="@+id/action_datos_secado_to_actualizarSecadoFragment"
+            app:destination="@id/actualizarSecadoFragment" />
+    </dialog>
     <fragment
         android:id="@+id/gestacionfragment"
         android:name="com.example.vaqui.RecyclerView_Gestacion"
@@ -195,7 +199,11 @@
         android:id="@+id/datos_lecheras"
         android:name="com.example.vaqui.datos_lecheras"
         android:label="fragment_datos_lecheras"
-        tools:layout="@layout/fragment_datos_lecheras" />
+        tools:layout="@layout/fragment_datos_lecheras" >
+        <action
+            android:id="@+id/action_datos_lecheras_to_actualizarLecherasFragment"
+            app:destination="@id/actualizarLecherasFragment" />
+    </dialog>
     <fragment
         android:id="@+id/gestionEmpleadosFragment"
         android:name="com.example.vaqui.GestionEmpleadosFragment"
@@ -366,6 +374,24 @@
         <action
             android:id="@+id/action_actualizarEmpleadoFragment_to_gestionEmpleadosFragment"
             app:destination="@id/gestionEmpleadosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/actualizarLecherasFragment"
+        android:name="com.example.vaqui.actualizarLecherasFragment"
+        android:label="fragment_actualizar_lecheras"
+        tools:layout="@layout/fragment_actualizar_lecheras" >
+        <action
+            android:id="@+id/action_actualizarLecherasFragment_to_lecherasfragment"
+            app:destination="@id/lecherasfragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/actualizarSecadoFragment"
+        android:name="com.example.vaqui.actualizarSecadoFragment"
+        android:label="fragment_actualizar_secado"
+        tools:layout="@layout/fragment_actualizar_secado" >
+        <action
+            android:id="@+id/action_actualizarSecadoFragment_to_secadofragment"
+            app:destination="@id/secadofragment" />
     </fragment>
 
 </navigation>

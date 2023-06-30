@@ -5,11 +5,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.RelativeLayout
 import android.widget.TextView
 import android.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import org.json.JSONObject
 
@@ -29,10 +31,13 @@ class datos_lecheras : DialogFragment() {
     private lateinit var litros_producidos : TextView
     private lateinit var catego_lechera : TextView
 
+    private lateinit var btn_actualizar_lecheras : Button
+    private lateinit var btn_cambiar_categoria_lechera : Button
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setStyle(DialogFragment.STYLE_NORMAL,R.style.FullScreenDialogStyle)
+        setStyle(STYLE_NORMAL,R.style.FullScreenDialogStyle)
     }
 
     @SuppressLint("MissingInflateId")
@@ -53,9 +58,28 @@ class datos_lecheras : DialogFragment() {
         this.litros_producidos = ll.findViewById(R.id.litros_producidos)
         this.catego_lechera = ll.findViewById(R.id.catego_lechera)
 
+        this.btn_actualizar_lecheras = ll.findViewById(R.id.btn_actualizar_lecheras)
+        this.btn_cambiar_categoria_lechera = ll.findViewById(R.id.btn_cambiar_categoria_lechera)
+
         this.recycler = ll.findViewById(R.id.lecheras_recycler)
         this.viewAlpha = ll.findViewById(R.id.view_lecheras)
         this.rlLecheras = ll.findViewById(R.id.rl_lecheras)
+
+        btn_actualizar_lecheras.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putString("id_lechera",id_lechera.text.toString())
+            bundle.putString("fecha_revision_lechera",fecha_revision_lechera.text.toString())
+            bundle.putString("peso_lechera",peso_lechera.text.toString())
+            bundle.putString("partos_lechera",partos_lechera.text.toString())
+            bundle.putString("fecha_ultiParto_leche",fecha_ultiParto_leche.text.toString())
+            bundle.putString("fecha_ordeno_leche",fecha_ordeno_leche.text.toString())
+            bundle.putString("litros_producidos",litros_producidos.text.toString())
+
+            val actualizarLecherasFragment = actualizarLecherasFragment()
+            actualizarLecherasFragment.arguments = bundle
+            findNavController().navigate(R.id.action_datos_lecheras_to_actualizarLecherasFragment, bundle)
+        }
+
 
         return ll
     }
@@ -82,4 +106,5 @@ class datos_lecheras : DialogFragment() {
         super.onStart()
         dialog?.window?.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT)
     }
+
 }

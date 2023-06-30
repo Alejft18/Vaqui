@@ -136,6 +136,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/card_actualizar_bovino"
             android:layout_width="320dp"
             android:layout_height="80dp"
             android:layout_gravity="center_horizontal"
@@ -169,6 +170,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/card_eliminar_bovino"
             android:layout_width="320dp"
             android:layout_height="80dp"
             android:layout_gravity="center_horizontal"

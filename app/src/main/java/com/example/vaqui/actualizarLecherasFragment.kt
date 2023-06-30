@@ -8,25 +8,27 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.navigation.Navigation
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.google.android.material.textfield.TextInputEditText
+import org.json.JSONObject
 import java.text.SimpleDateFormat
 import java.util.*
 
-class actualizarLecherasFragment : Fragment(), AdapterView.OnItemSelectedListener {
+class actualizarLecherasFragment : Fragment(){
 
-/*    private lateinit var id_lechera: TextView
+    private lateinit var id_lechera: TextView
     private lateinit var actualizar_fecha_revisión_lechera: TextInputEditText
     private lateinit var actualizar_peso_lechera: TextInputEditText
-    private lateinit var actualizar_partos_lechera: TextInputEditText
+    private lateinit var actualizar_cantidad_partos_lechera: TextInputEditText
     private lateinit var actualizar_ultpartaro_lechera: TextInputEditText
-    private lateinit var actualizar_ordeño_lechera: TextInputEditText
+    private lateinit var actualizar_ordeno_lechera: TextInputEditText
     private lateinit var actualizar_litros_lechera: TextInputEditText
+    private val categoria = "lechera"
 
-    private lateinit var boton_actualizar_lechera: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,18 +39,24 @@ class actualizarLecherasFragment : Fragment(), AdapterView.OnItemSelectedListene
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
+        val idGestracion = arguments?.getString("id_lechera")
+        val fecha_revision = arguments?.getString("fecha_revision_lechera")
+        val peso = arguments?.getString("peso_lechera")
+        val partos = arguments?.getString("partos_lechera")
+        val ultiParto = arguments?.getString("fecha_ultiParto_leche")
+        val fechaOrdeno = arguments?.getString("fecha_ordeno_leche")
+        val litros = arguments?.getString("litros_producidos")
+
         val ll = inflater.inflate(R.layout.fragment_actualizar_lecheras, container, false)
 
-        this.id_lechera = ll.findViewById(R.id.id_lechera)
+        this.id_lechera = ll.findViewById(R.id.id_actualizar_lecheras)
         this.actualizar_fecha_revisión_lechera = ll.findViewById(R.id.actualizar_fecha_revisión_lechera)
         this.actualizar_peso_lechera = ll.findViewById(R.id.actualizar_peso_lechera)
-        this.actualizar_partos_lechera = ll.findViewById(R.id.actualizar_partos_lechera)
-        this.actualizar_ultpartaro_lechera = ll.findViewById(R.id.actualizar_ultpartaro_lechera)
-        this.actualizar_ordeño_lechera = ll.findViewById(R.id.actualizar_ordeño_lechera)
+        this.actualizar_cantidad_partos_lechera = ll.findViewById(R.id.actualizar_cantidad_partos_lechera)
+        this.actualizar_ultpartaro_lechera = ll.findViewById(R.id.actualizar_ultparto_lechera)
+        this.actualizar_ordeno_lechera = ll.findViewById(R.id.actualizar_ordeño_lechera)
         this.actualizar_litros_lechera = ll.findViewById(R.id.actualizar_litros_lechera)
-
-        this.boton_actualizar_lechera = ll.findViewById(R.id.boton_actualizar_lechera)
 
 
         val myCalendar= Calendar.getInstance()
@@ -85,7 +93,7 @@ class actualizarLecherasFragment : Fragment(), AdapterView.OnItemSelectedListene
             isClickable = true
         }
 
-        actualizar_ordeño_lechera.apply {
+        actualizar_ordeno_lechera.apply {
             isFocusable = false
             isClickable = true
         }
@@ -116,7 +124,7 @@ class actualizarLecherasFragment : Fragment(), AdapterView.OnItemSelectedListene
             dialog.show()
         }
 
-        actualizar_ordeño_lechera.setOnClickListener {
+        actualizar_ordeno_lechera.setOnClickListener {
             val dialog = DatePickerDialog(requireContext(),datePicker3,myCalendar3.get(Calendar.YEAR),myCalendar3.get(Calendar.MONTH),myCalendar3.get(Calendar.DAY_OF_MONTH))
             //pongo la fecha maxima como dia actual
             dialog.datePicker.maxDate=Calendar.getInstance().timeInMillis
@@ -129,36 +137,24 @@ class actualizarLecherasFragment : Fragment(), AdapterView.OnItemSelectedListene
             dialog.show()
         }
 
-        boton_actualizar_lechera.setOnClickListener {
-            val url="http://192.168.226.77/phpVaqui/actualizar_bovino_lechera.php"
-            val queue = Volley.newRequestQueue(getActivity())
-            val resultPost= object  : StringRequest(
-                Request.Method.POST,url,
-                Response.Listener { response->
-                    Toast.makeText(getActivity(), "Se modificó la vaca general", Toast.LENGTH_LONG).show()
-                },{error->
-                    Toast.makeText(getActivity(), " No Se modificó la vaca general", Toast.LENGTH_LONG).show()
-                }
-            ){
-                override fun getParams(): MutableMap<String, String>? {
-                    val parametros  = HashMap<String,String>()
-                    //id posicionar
-                    parametros.put("id", id_lechera?.text.toString())
-                    parametros.put("fecha_revisión",actualizar_fecha_revisión_lechera?.text.toString())
-                    parametros.put("peso",actualizar_peso_lechera?.text.toString())
-                    parametros.put("partos",actualizar_partos_lechera?.text.toString())
-                    parametros.put("fecha_último_parto",actualizar_ultpartaro_lechera?.text.toString())
-                    parametros.put("fecha_ordeño",actualizar_ordeño_lechera?.text.toString())
-                    parametros.put("litros",actualizar_litros_lechera?.text.toString())
+        //sobrepongo los datos en el formulario
+        id_lechera.text = idGestracion
+        actualizar_peso_lechera.setText(peso)
+        actualizar_cantidad_partos_lechera.setText(partos)
+        actualizar_fecha_revisión_lechera.setText(fecha_revision)
+        actualizar_ultpartaro_lechera.setText(ultiParto)
+        actualizar_ordeno_lechera.setText(fechaOrdeno)
+        actualizar_litros_lechera.setText(litros)
 
-                    return parametros
-                }
-            }
-            queue.add(resultPost)
-        }
 
         return ll
 
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val botonEnviar: Button = view.findViewById(R.id.boton_actualizar_lechera)
+        botonEnviar.setOnClickListener { clickUpdateLechera(view) }
     }
 
     private fun updateLable(myCalendar: Calendar){
@@ -170,21 +166,50 @@ class actualizarLecherasFragment : Fragment(), AdapterView.OnItemSelectedListene
     private fun updateLable2(myCalendar: Calendar){
         val myformat = "yyyy-MM-dd"
         val sdf = SimpleDateFormat(myformat, Locale("es","CO"))
-        actualizar_ordeño_lechera.setText(sdf.format(myCalendar.time))
+        actualizar_ordeno_lechera.setText(sdf.format(myCalendar.time))
     }
 
     private fun updateLable3(myCalendar: Calendar){
         val myformat = "yyyy-MM-dd"
         val sdf = SimpleDateFormat(myformat, Locale("es","CO"))
         actualizar_ultpartaro_lechera.setText(sdf.format(myCalendar.time))
-    }*/
-
-    override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-        TODO("Not yet implemented")
     }
 
-    override fun onNothingSelected(p0: AdapterView<*>?) {
-        TODO("Not yet implemented")
+    private fun clickUpdateLechera(view: View) {
+        val url="http://192.168.234.187:8080/actualizarLechera/${id_lechera.text}"
+        val queue = Volley.newRequestQueue(requireContext())
+        val resultadoPost = object : StringRequest(Request.Method.PUT, url,
+            Response.Listener<String> { response->
+                Toast.makeText(requireContext(), "Vaca lechera actualizado", Toast.LENGTH_SHORT).show()
+
+                val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
+                navController.navigate(R.id.action_actualizarLecherasFragment_to_lecherasfragment)
+
+            }, Response.ErrorListener{
+                Toast.makeText(requireContext(), "Bovino no actualizado", Toast.LENGTH_SHORT).show()
+            }) {
+            override fun getHeaders(): MutableMap<String, String> {
+                val headers = HashMap<String, String>()
+                headers["Content-Type"] = "application/json" // Establece el tipo de contenido como JSON
+                return headers
+            }
+            override fun getBodyContentType(): String {
+                return "application/json"
+            }
+            override fun getBody(): ByteArray {
+                val params = JSONObject()
+                params.put("id",id_lechera.text.toString())
+                params.put("litros_producidos",actualizar_litros_lechera?.text.toString())
+                params.put("fecha_ordeno",actualizar_ordeno_lechera.text.toString())
+                params.put("peso_kilos",actualizar_peso_lechera?.text.toString())
+                params.put("fecha_revision",actualizar_fecha_revisión_lechera?.text.toString())
+                params.put("fecha_parto", actualizar_ultpartaro_lechera.text.toString())
+                params.put("cant_partos", actualizar_cantidad_partos_lechera.text.toString())
+                params.put("categoria",categoria)
+                return  params.toString().toByteArray(Charsets.UTF_8)
+            }
+        }
+        queue.add(resultadoPost)
     }
 
 }
