@@ -162,7 +162,11 @@
         android:id="@+id/datos_terneros"
         android:name="com.example.vaqui.datos_terneros"
         android:label="fragment_datos_terneros"
-        tools:layout="@layout/fragment_datos_terneros" />
+        tools:layout="@layout/fragment_datos_terneros" >
+        <action
+            android:id="@+id/action_datos_terneros_to_actualizarTernerosFragment"
+            app:destination="@id/actualizarTernerosFragment" />
+    </dialog>
     <fragment
         android:id="@+id/torofragment"
         android:name="com.example.vaqui.RecyclerView_Toro"
@@ -176,7 +180,11 @@
         android:id="@+id/datos_sementales"
         android:name="com.example.vaqui.datos_sementales"
         android:label="fragment_datos_sementales"
-        tools:layout="@layout/fragment_datos_sementales" />
+        tools:layout="@layout/fragment_datos_sementales" >
+        <action
+            android:id="@+id/action_datos_sementales_to_actualizarTorosFragment"
+            app:destination="@id/actualizarTorosFragment" />
+    </dialog>
     <fragment
         android:id="@+id/engordefragment"
         android:name="com.example.vaqui.RecyclerView_Engorde"
@@ -392,6 +400,24 @@
         <action
             android:id="@+id/action_actualizarSecadoFragment_to_secadofragment"
             app:destination="@id/secadofragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/actualizarTorosFragment"
+        android:name="com.example.vaqui.actualizarTorosFragment"
+        android:label="fragment_actualizar_toros"
+        tools:layout="@layout/fragment_actualizar_toros" >
+        <action
+            android:id="@+id/action_actualizarTorosFragment_to_torofragment"
+            app:destination="@id/torofragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/actualizarTernerosFragment"
+        android:name="com.example.vaqui.actualizarTernerosFragment"
+        android:label="fragment_actualizar_terneros"
+        tools:layout="@layout/fragment_actualizar_terneros" >
+        <action
+            android:id="@+id/action_actualizarTernerosFragment_to_ternerofragment"
+            app:destination="@id/ternerofragment" />
     </fragment>
 
 </navigation>

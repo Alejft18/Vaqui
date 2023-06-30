@@ -11,21 +11,27 @@ import android.widget.AdapterView
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.navigation.Navigation
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
 import com.google.android.material.textfield.TextInputEditText
+import org.json.JSONObject
 import java.text.SimpleDateFormat
 import java.util.*
 
-class actualizarTernerosFragment : Fragment(), AdapterView.OnItemSelectedListener {
+class actualizarTernerosFragment : Fragment() {
 
-    private lateinit var id_ternero: TextView
+    private lateinit var id_actualizar_ternero: TextView
     private lateinit var actualizar_fecha_revisión_ternero: TextInputEditText
     private lateinit var actualizar_peso_ternero: TextInputEditText
 
     private lateinit var boton_actualizar_ternero: Button
+    private val categoria = "ternero"
+
+    private val idMadre = arguments?.getString("id_madre")
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,10 +44,14 @@ class actualizarTernerosFragment : Fragment(), AdapterView.OnItemSelectedListene
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+        val revision = arguments?.getString("fecha_revision")
+        val idTernero = arguments?.getString("id_ternero")
+        val peso = arguments?.getString("peos_ternero")
+
+
         val ll = inflater.inflate(R.layout.fragment_actualizar_terneros, container, false)
 
-        this.id_ternero = ll.findViewById(R.id.id_ternero)
+        this.id_actualizar_ternero = ll.findViewById(R.id.id_actualizar_ternero)
         this.actualizar_fecha_revisión_ternero = ll.findViewById(R.id.actualizar_fecha_revisión_ternero)
         this.actualizar_peso_ternero = ll.findViewById(R.id.actualizar_peso_ternero)
 
@@ -73,32 +83,21 @@ class actualizarTernerosFragment : Fragment(), AdapterView.OnItemSelectedListene
             dialog.show()
         }
 
-        boton_actualizar_ternero.setOnClickListener {
-            val url="http://192.168.226.77/phpVaqui/actualizar_bovino_ternero.php"
-            val queue = Volley.newRequestQueue(getActivity())
-            val resultPost= object  : StringRequest(
-                Request.Method.POST,url,
-                Response.Listener { response->
-                    Toast.makeText(getActivity(), "Se modificó la vaca general", Toast.LENGTH_LONG).show()
-                },{error->
-                    Toast.makeText(getActivity(), " No Se modificó la vaca general", Toast.LENGTH_LONG).show()
-                }
-            ){
-                override fun getParams(): MutableMap<String, String>? {
-                    val parametros  = HashMap<String,String>()
-                    //id posicionar
-                    parametros.put("id", id_ternero?.text.toString())
-                    parametros.put("fecha_revisión",actualizar_fecha_revisión_ternero?.text.toString())
-                    parametros.put("peso",actualizar_peso_ternero?.text.toString())
+        //sobrepongo los datos en el formularios
+        id_actualizar_ternero.text = idTernero
+        actualizar_peso_ternero.setText(peso)
+        actualizar_fecha_revisión_ternero.setText(revision)
 
-                    return parametros
-                }
-            }
-            queue.add(resultPost)
-        }
+
+
 
         return ll
+    }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val botonEnviar: Button = view.findViewById(R.id.boton_actualizar_ternero)
+        botonEnviar.setOnClickListener { clickUpdateTernero(view) }
     }
 
     private fun updateLable(myCalendar: Calendar) {
@@ -107,13 +106,41 @@ class actualizarTernerosFragment : Fragment(), AdapterView.OnItemSelectedListene
         actualizar_fecha_revisión_ternero.setText(sdf.format(myCalendar.time))
     }
 
-    override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-        TODO("Not yet implemented")
+    private fun clickUpdateTernero(view: View) {
+        val url="http://192.168.234.187:8080/actualizarTernero/${id_actualizar_ternero.text}"
+        val queue = Volley.newRequestQueue(requireContext())
+        val resultadoPost = object : StringRequest(Request.Method.PUT, url,
+            Response.Listener<String> { response->
+                Toast.makeText(requireContext(), "Ternero actualizado", Toast.LENGTH_LONG).show()
+
+                val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
+                navController.navigate(R.id.action_actualizarTernerosFragment_to_ternerofragment)
+
+            }, Response.ErrorListener{
+                Toast.makeText(requireContext(), "Ternero no actualizado", Toast.LENGTH_LONG).show()
+            }) {
+            override fun getHeaders(): MutableMap<String, String> {
+                val headers = HashMap<String, String>()
+                headers["Content-Type"] = "application/json" // Establece el tipo de contenido como JSON
+                return headers
+            }
+            override fun getBodyContentType(): String {
+                return "application/json"
+            }
+            override fun getBody(): ByteArray {
+                val params = JSONObject()
+                params.put("id", id_actualizar_ternero?.text.toString())
+                params.put("fecha_revision",actualizar_fecha_revisión_ternero.text.toString())
+                params.put("peso_kilos",actualizar_peso_ternero.text.toString())
+                params.put("id_madre",idMadre)
+                params.put("categoria",categoria)
+
+                return  params.toString().toByteArray(Charsets.UTF_8)
+            }
+        }
+        queue.add(resultadoPost)
     }
 
-    override fun onNothingSelected(p0: AdapterView<*>?) {
-        TODO("Not yet implemented")
-    }
 
 
 }

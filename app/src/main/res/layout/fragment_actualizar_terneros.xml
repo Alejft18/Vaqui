@@ -30,8 +30,8 @@
             android:layout_height="wrap_content"
             android:text="Actualizar bovino"
             android:textColor="@color/white"
-            android:layout_marginLeft="60dp"
-            android:textSize="18dp"
+            android:layout_marginStart="60dp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
     </androidx.appcompat.widget.Toolbar>
@@ -40,37 +40,38 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar_actualizar_ternero">
+        android:layout_marginTop="57dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_gravity="center_vertical">
 
-
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
 
                 <TextView
-                    android:layout_width="421dp"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginBottom="50dp"
+                    android:textAlignment="center"
+                    android:textStyle="normal"
                     android:layout_gravity="center"
-                    android:layout_marginTop="100dp"
-                    android:text="Ingresa los nuevos datos para el ID: "
-                    android:textAlignment="center"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
+                    android:text="actualiza datos del ID: "/>
 
                 <TextView
-                    android:id="@+id/id_ternero"
-                    android:layout_width="match_parent"
+                    android:id="@+id/id_actualizar_ternero"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="88578"
-                    android:textAlignment="center"
-                    android:textSize="20dp" />
+                    android:layout_marginTop="50dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text="0"/>
 
             </LinearLayout>
 
@@ -98,11 +99,12 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp">
 
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/actualizar_peso_ternero"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Peso" />
+                    android:hint="Peso"
+                    android:inputType="numberDecimal"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <androidx.appcompat.widget.AppCompatButton
@@ -114,7 +116,7 @@
                 android:background="@color/verde"
                 android:text="Actualizar bovino"
                 android:textColor="@color/white"
-                android:onClick="clickUpdateGeneral"
+                android:onClick="clickUpdateTernero"
                 android:layout_marginTop="40dp"/>
         </LinearLayout>
     </ScrollView>

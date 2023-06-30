@@ -43,6 +43,8 @@
         <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/fragment_actualizar_gestacion.xml" value="0.2" />
         <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/fragment_actualizar_lecheras.xml" value="0.25" />
         <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/fragment_actualizar_secado.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/fragment_actualizar_terneros.xml" value="0.1" />
+        <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/fragment_actualizar_toros.xml" value="0.27291666666666664" />
         <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/fragment_buscador_bovino.xml" value="0.13272543059777103" />
         <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/fragment_categorias.xml" value="0.21467391304347827" />
         <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/fragment_datos_engorde.xml" value="0.25" />
@@ -50,7 +52,8 @@
         <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/fragment_datos_gestacion.xml" value="0.25" />
         <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/fragment_datos_lecheras.xml" value="0.25" />
         <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/fragment_datos_secado.xml" value="0.23596014492753623" />
-        <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/fragment_datos_terneros.xml" value="0.33" />
+        <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/fragment_datos_sementales.xml" value="0.23596014492753623" />
+        <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/fragment_datos_terneros.xml" value="0.25" />
         <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/fragment_detalle_empleado.xml" value="0.1" />
         <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/fragment_formulario_empleado.xml" value="0.21467391304347827" />
         <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/fragment_formulario_general.xml" value="0.21467391304347827" />

@@ -87,10 +87,10 @@ class datos_secado : DialogFragment() {
 
     val secado = JSONObject(arguments?.getString("secado"))
         this.id_secado.text=secado.getString("id")
-        this.fecha_ultiParto_seca.text=secado.getString("fecha_ultParto")
+        this.fecha_ultiParto_seca.text=secado.getString("fecha_ultimo_parto")
         this.peso_secado.text=secado.getString("peso_kilos")
         this.fecha_revision_secado.text=secado.getString("fecha_revision")
-        this.fecha_ordeno_secado.text=secado.getString("fecha_ultimoOrdeno")
+        this.fecha_ordeno_secado.text=secado.getString("fecha_ordeno")
         this.catego_secado.text=secado.getString("categoria")
 
     }

@@ -6,15 +6,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".datos_general">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:alpha="0.4"
+            android:background="@color/black">
+        </View>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="300dp"
-        android:layout_height="450dp"
-        android:orientation="vertical"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         app:cardElevation="8dp"
-        android:background="@null"
-        >
+        android:background="@drawable/shape_detalle_mpleado"
+        android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="match_parent"

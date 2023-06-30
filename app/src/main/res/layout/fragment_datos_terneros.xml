@@ -15,12 +15,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:alpha="0.4"
-            android:background="@color/black"></View>
+            android:background="@color/black">
+        </View>
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="300dp"
-        android:layout_height="450dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="center"
         app:cardElevation="8dp"
         android:background="@drawable/shape_detalle_mpleado"
@@ -57,8 +58,83 @@
             android:layout_gravity="center"
             android:textStyle="bold"
             android:textColor="@color/verde"
-            android:textSize="20dp">
+            android:textSize="20sp">
         </TextView>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID:"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/id_ternero"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="16sp"
+                android:layout_marginStart="4dp"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Peso:"
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/peso_ternero"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="16sp"
+                android:layout_marginStart="4dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:text="Kg"
+                android:layout_marginStart="4dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ID de la mamá: "
+                android:textStyle="bold"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:id="@+id/id_madre_Ternero"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="16sp"
+                android:layout_marginStart="4dp"/>
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -77,78 +153,9 @@
                 android:id="@+id/fecha_revision_ternero"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="15/10/2020"
-                android:textSize="16dp"
-                android:layout_marginLeft="4dp">
-            </TextView>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_gravity="center"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ID:"
-                android:textStyle="bold"
-                android:textSize="18dp">
-            </TextView>
-            <TextView
-                android:id="@+id/id_ternero"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="120"
-                android:textSize="16dp"
-                android:layout_marginLeft="4dp">
-            </TextView>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_gravity="center"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Peso:"
-                android:textStyle="bold"
-                android:textSize="18dp">
-            </TextView>
-            <TextView
-                android:id="@+id/peso_ternero"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="100 Kg"
-                android:textSize="16dp"
-                android:layout_marginLeft="4dp">
-            </TextView>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_gravity="center"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="ID de la mamá: "
-                android:textStyle="bold"
-                android:textSize="18dp">
-            </TextView>
-            <TextView
-                android:id="@+id/id_madre_Ternero"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="255"
-                android:textSize="16dp"
-                android:layout_marginLeft="4dp">
+                android:text="00/00/0000"
+                android:textSize="16sp"
+                android:layout_marginStart="4dp">
             </TextView>
         </LinearLayout>
 
@@ -163,40 +170,43 @@
                 android:layout_height="wrap_content"
                 android:text="Categoría: "
                 android:textStyle="bold"
-                android:textSize="18dp">
-            </TextView>
+                android:textSize="18sp"/>
+
             <TextView
                 android:id="@+id/catego_ternero"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Terneros"
-                android:textSize="16dp"
-                android:layout_marginLeft="4dp">
-            </TextView>
+                android:textSize="16sp"
+                android:layout_marginStart="4dp"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="20dp"
+            android:layout_marginTop="20dp"
             android:layout_gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="30dp">
 
-            <Button
-                android:id="@+id/actualizarTerneros"
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_actualizar_ternero"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/olvidemicontra"
                 android:text="Actualizar"
-                android:textColor="@color/white"/>
+                android:textColor="@color/white"
+                android:layout_marginEnd="10dp"/>
 
-            <Button
-                android:id="@+id/eliminarTerneros"
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_cambiar_categoria_ternero"
                 android:layout_width="120dp"
                 android:layout_height="33dp"
                 android:background="@drawable/border_boton"
-                android:text="Eliminar"
-                android:textColor="@color/rojo_botones" />
+                android:text="cambiar categoria"
+                android:textSize="10sp"
+                android:textColor="@color/rojo_botones"
+                tools:ignore="SmallSp" />
 
         </LinearLayout>
     </LinearLayout>

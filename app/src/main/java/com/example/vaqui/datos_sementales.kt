@@ -6,11 +6,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.RelativeLayout
 import android.widget.TextView
 import android.widget.Toolbar
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.DialogFragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import org.json.JSONObject
 
@@ -27,10 +29,13 @@ class datos_sementales : DialogFragment() {
     private lateinit var fecha_revision_toro : TextView
     private lateinit var catego_toro : TextView
 
+    private lateinit var btn_actualizar_toro : Button
+    private lateinit var btn_cambiar_categoria_toro : Button
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setStyle(STYLE_NORMAL,R.style.FullScreenDialogStyle)
+        setStyle(STYLE_NORMAL, androidx.transition.R.style.AlertDialog_AppCompat)
     }
 
     @SuppressLint("MissingInflatedId")
@@ -49,9 +54,27 @@ class datos_sementales : DialogFragment() {
         this.fecha_revision_toro = ll.findViewById(R.id.fecha_revision_toro)
         this.catego_toro = ll.findViewById(R.id.catego_toro)
 
+        this.btn_actualizar_toro = ll.findViewById(R.id.btn_actualizar_toro)
+        this.btn_cambiar_categoria_toro = ll.findViewById(R.id.btn_cambiar_categoria_toro)
+
         this.recycler = ll.findViewById(R.id.toros_recycler)
         this.viewAlpha = ll.findViewById(R.id.view_Toros)
         this.rltoro = ll.findViewById(R.id.rl_Toros)
+
+        btn_actualizar_toro.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putString("id_toro",id_toro.text.toString())
+            bundle.putString("peso_toro",peso_toro.text.toString())
+            bundle.putString("fecha_extraccion",fecha_extraccion_toro.text.toString())
+            bundle.putString("vacas_montadas",vacas_montadas_toro.text.toString())
+            bundle.putString("fecha_revision",fecha_revision_toro.text.toString())
+
+            val actualizarTorosFragment = actualizarTorosFragment()
+            actualizarTorosFragment.arguments = bundle
+            findNavController().navigate(R.id.action_datos_sementales_to_actualizarTorosFragment, bundle)
+        }
+
+
 
         return ll
     }

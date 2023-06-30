@@ -41,7 +41,7 @@ class DetalleEmpleadoFragment : DialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setStyle(STYLE_NORMAL,R.style.FullScreenDialogStyle)
+        setStyle(STYLE_NORMAL, androidx.appcompat.R.style.AlertDialog_AppCompat)
     }
 
     @SuppressLint("MissingInflatedId")

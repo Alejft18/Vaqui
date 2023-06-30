@@ -18,8 +18,8 @@
 
             <ImageView
                 android:layout_width="30dp"
-
                 android:layout_height="wrap_content"
+                android:id="@+id/imagen_atras_actualizar_toro"
                 android:src="@drawable/atras">
             </ImageView>
 
@@ -28,10 +28,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Actualizar bovino"
+            android:text="Actualizar toro"
             android:textColor="@color/white"
-            android:layout_marginLeft="60dp"
-            android:textSize="18dp"
+            android:layout_marginStart="60dp"
+            android:textSize="18sp"
             android:textStyle="bold" />
 
     </androidx.appcompat.widget.Toolbar>
@@ -40,37 +40,39 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/toolbar_actualizar_toro">
+        android:layout_marginTop="57dp">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_gravity="center_vertical">
 
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal">
 
                 <TextView
-                    android:layout_width="421dp"
+                    android:layout_width="200dp"
                     android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:layout_marginTop="80dp"
+                    android:layout_marginBottom="50dp"
+                    android:textAlignment="center"
+                    android:textStyle="normal"
                     android:layout_gravity="center"
-                    android:layout_marginTop="100dp"
-                    android:text="Ingresa los nuevos datos para el ID: "
-                    android:textAlignment="center"
-                    android:textSize="20dp"
-                    android:textStyle="bold" />
+                    android:text="actualiza datos del ID: "/>
 
                 <TextView
-                    android:id="@+id/id_toro"
-                    android:layout_width="match_parent"
+                    android:id="@+id/id_actualizar_toro"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="88578"
-                    android:textAlignment="center"
-                    android:textSize="20dp" />
+                    android:layout_marginTop="95dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text="0"/>
 
             </LinearLayout>
 
@@ -78,6 +80,19 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp">
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/actualizar_peso_toro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Peso"
+                    android:inputType="numberDecimal"/>
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -93,28 +108,18 @@
                     android:hint="Fecha de revisión" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp">
-
-                <EditText
-                    android:id="@+id/actualizar_peso_toro"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Peso" />
-            </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp">
 
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/actualizar_vacas_montadas_toro"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Vacas montadas" />
+                    android:hint="Vacas montadas"
+                    android:inputType="number"/>
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -122,7 +127,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="16dp">
 
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/actualizar_extraccion_toro"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -138,7 +143,7 @@
                 android:background="@color/verde"
                 android:text="Actualizar bovino"
                 android:textColor="@color/white"
-                android:onClick="clickUpdateGeneral"
+                android:onClick="clickUpdateToro"
                 android:layout_marginTop="40dp"/>
         </LinearLayout>
     </ScrollView>
