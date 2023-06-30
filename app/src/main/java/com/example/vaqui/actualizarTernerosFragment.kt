@@ -107,14 +107,14 @@ class actualizarTernerosFragment : Fragment() {
     }
 
     private fun clickUpdateTernero(view: View) {
-        val url="http://192.168.234.187:8080/actualizarTernero/${id_actualizar_ternero.text}"
+        val url="http://192.168.234.77:8080/actualizarTernero/${id_actualizar_ternero.text}"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.PUT, url,
             Response.Listener<String> { response->
                 Toast.makeText(requireContext(), "Ternero actualizado", Toast.LENGTH_LONG).show()
 
                 val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
-                navController.navigate(R.id.action_actualizarTernerosFragment_to_ternerofragment)
+                navController.navigate(R.id.action_actualizarTernerosFragment_to_categorias)
 
             }, Response.ErrorListener{
                 Toast.makeText(requireContext(), "Ternero no actualizado", Toast.LENGTH_LONG).show()

@@ -176,14 +176,14 @@ class actualizarLecherasFragment : Fragment(){
     }
 
     private fun clickUpdateLechera(view: View) {
-        val url="http://192.168.234.187:8080/actualizarLechera/${id_lechera.text}"
+        val url="http://192.168.234.77:8080/actualizarLechera/${id_lechera.text}"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.PUT, url,
             Response.Listener<String> { response->
                 Toast.makeText(requireContext(), "Vaca lechera actualizado", Toast.LENGTH_SHORT).show()
 
                 val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
-                navController.navigate(R.id.action_actualizarLecherasFragment_to_lecherasfragment)
+                navController.navigate(R.id.action_actualizarLecherasFragment_to_categorias)
 
             }, Response.ErrorListener{
                 Toast.makeText(requireContext(), "Bovino no actualizado", Toast.LENGTH_SHORT).show()

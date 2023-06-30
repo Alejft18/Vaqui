@@ -99,7 +99,7 @@ class actualizarGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
 
 
         imagen_atras_actualizar_general.setOnClickListener {
-            findNavController().navigate(R.id.action_actualizarGeneralFragment_to_generalfragment2)
+            findNavController().navigate(R.id.action_actualizarGeneralFragment_to_categorias)
         }
 
         //pongo los datos obtenidos en los inputs
@@ -147,14 +147,14 @@ class actualizarGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
     }
 
     private fun clickUpdateGeneral(view: View) {
-        val url="http://192.168.234.187:8080/actualizarBovinoGeneral"
+        val url="http://192.168.234.77:8080/actualizarBovinoGeneral"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.PUT, url,
             Response.Listener<String> { response->
                 Toast.makeText(requireContext(), "Bovino actualizado exitosamente", Toast.LENGTH_LONG).show()
 
                 val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
-                navController.navigate(R.id.action_actualizarGeneralFragment_to_generalfragment)
+                navController.navigate(R.id.action_actualizarGeneralFragment_to_categorias)
 
             }, Response.ErrorListener{
                 Toast.makeText(requireContext(), "Bovino no actualizado", Toast.LENGTH_LONG).show()

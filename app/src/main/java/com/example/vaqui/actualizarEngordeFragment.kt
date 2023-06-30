@@ -90,7 +90,7 @@ class actualizarEngordeFragment : Fragment(){
         }
 
         imagen_atras_actualizar_engorde.setOnClickListener {
-            findNavController().navigate(R.id.action_actualizarEngordeFragment_to_engordefragment)
+            findNavController().navigate(R.id.action_actualizarEngordeFragment_to_categorias)
         }
 
         //sobrepongo los datos obtenidos de datos_engorde
@@ -117,14 +117,14 @@ class actualizarEngordeFragment : Fragment(){
     }
 
     private fun clickUpdateEngorde(view: View) {
-        val url="http://192.168.234.187:8080/actualizarEngorde/${id_actualizar_engorde.text}"
+        val url="http://192.168.234.77:8080/actualizarEngorde/${id_actualizar_engorde.text}"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.PUT, url,
             Response.Listener<String> { response->
                 Toast.makeText(requireContext(), "Bovino actualizado en engorde exitosamente", Toast.LENGTH_LONG).show()
 
                 val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
-                navController.navigate(R.id.action_actualizarEngordeFragment_to_engordefragment)
+                navController.navigate(R.id.action_actualizarEngordeFragment_to_categorias)
 
             }, Response.ErrorListener{
                 Toast.makeText(requireContext(), "Bovino no actualizado", Toast.LENGTH_LONG).show()

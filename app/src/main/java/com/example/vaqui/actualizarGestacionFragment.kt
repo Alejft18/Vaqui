@@ -212,7 +212,7 @@ class actualizarGestacionFragment : Fragment(){
 
     }
     private fun clickUpdateGestacion(view: View) {
-        val url="http://192.168.234.187:8080/actualizarGestacion/${id_gestacion.text}"
+        val url="http://192.168.234.77:8080/actualizarGestacion/${id_gestacion.text}"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.PUT, url,
             Response.Listener<String> { response->

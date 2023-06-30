@@ -323,11 +323,8 @@
         android:label="fragment_actualizar_general"
         tools:layout="@layout/fragment_actualizar_general" >
         <action
-            android:id="@+id/action_actualizarGeneralFragment_to_generalfragment"
-            app:destination="@id/generalfragment" />
-        <action
-            android:id="@+id/action_actualizarGeneralFragment_to_generalfragment2"
-            app:destination="@id/generalfragment" />
+            android:id="@+id/action_actualizarGeneralFragment_to_categorias"
+            app:destination="@id/categorias" />
     </fragment>
     <fragment
         android:id="@+id/detalleEmpleadoFragment"
@@ -362,8 +359,8 @@
         android:label="fragment_actualizar_engorde"
         tools:layout="@layout/fragment_actualizar_engorde" >
         <action
-            android:id="@+id/action_actualizarEngordeFragment_to_engordefragment"
-            app:destination="@id/engordefragment" />
+            android:id="@+id/action_actualizarEngordeFragment_to_categorias"
+            app:destination="@id/categorias" />
     </fragment>
     <fragment
         android:id="@+id/actualizarGestacionFragment"
@@ -389,8 +386,8 @@
         android:label="fragment_actualizar_lecheras"
         tools:layout="@layout/fragment_actualizar_lecheras" >
         <action
-            android:id="@+id/action_actualizarLecherasFragment_to_lecherasfragment"
-            app:destination="@id/lecherasfragment" />
+            android:id="@+id/action_actualizarLecherasFragment_to_categorias"
+            app:destination="@id/categorias" />
     </fragment>
     <fragment
         android:id="@+id/actualizarSecadoFragment"
@@ -407,8 +404,8 @@
         android:label="fragment_actualizar_toros"
         tools:layout="@layout/fragment_actualizar_toros" >
         <action
-            android:id="@+id/action_actualizarTorosFragment_to_torofragment"
-            app:destination="@id/torofragment" />
+            android:id="@+id/action_actualizarTorosFragment_to_categorias"
+            app:destination="@id/categorias" />
     </fragment>
     <fragment
         android:id="@+id/actualizarTernerosFragment"
@@ -416,8 +413,8 @@
         android:label="fragment_actualizar_terneros"
         tools:layout="@layout/fragment_actualizar_terneros" >
         <action
-            android:id="@+id/action_actualizarTernerosFragment_to_ternerofragment"
-            app:destination="@id/ternerofragment" />
+            android:id="@+id/action_actualizarTernerosFragment_to_categorias"
+            app:destination="@id/categorias" />
     </fragment>
 
 </navigation>
