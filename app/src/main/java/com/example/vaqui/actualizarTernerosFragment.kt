@@ -7,11 +7,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
@@ -26,7 +24,7 @@ class actualizarTernerosFragment : Fragment() {
     private lateinit var id_actualizar_ternero: TextView
     private lateinit var actualizar_fecha_revisión_ternero: TextInputEditText
     private lateinit var actualizar_peso_ternero: TextInputEditText
-
+    private lateinit var imagen_atras_actualizar_Ternero : ImageView
     private lateinit var boton_actualizar_ternero: Button
     private val categoria = "ternero"
 
@@ -54,9 +52,14 @@ class actualizarTernerosFragment : Fragment() {
         this.id_actualizar_ternero = ll.findViewById(R.id.id_actualizar_ternero)
         this.actualizar_fecha_revisión_ternero = ll.findViewById(R.id.actualizar_fecha_revisión_ternero)
         this.actualizar_peso_ternero = ll.findViewById(R.id.actualizar_peso_ternero)
-
+        this.imagen_atras_actualizar_Ternero = ll.findViewById(R.id.imagen_atras_actualizar_Ternero)
         this.boton_actualizar_ternero = ll.findViewById(R.id.boton_actualizar_ternero)
 
+        imagen_atras_actualizar_Ternero.setOnClickListener {
+            findNavController().navigate(R.id.action_actualizarTernerosFragment_to_categorias)
+        }
+
+        //logica de los calendarios
         val myCalendar= Calendar.getInstance()
         val datePicker= DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
             myCalendar.set(Calendar.YEAR,year)
@@ -107,7 +110,7 @@ class actualizarTernerosFragment : Fragment() {
     }
 
     private fun clickUpdateTernero(view: View) {
-        val url="http://192.168.234.77:8080/actualizarTernero/${id_actualizar_ternero.text}"
+        val url="http://192.168.234.187:8080/actualizarTernero/${id_actualizar_ternero.text}"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.PUT, url,
             Response.Listener<String> { response->

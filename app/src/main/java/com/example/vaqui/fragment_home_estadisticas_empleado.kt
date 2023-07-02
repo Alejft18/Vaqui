@@ -1,6 +1,7 @@
 package com.example.vaqui
 
 import android.os.Bundle
+import android.view.KeyEvent
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -41,6 +42,13 @@ class fragment_home_estadisticas_empleado : Fragment() {
         this.cantidad_terneros = ll.findViewById(R.id.cantidad_terneros)
         this.btn_perfil = ll.findViewById(R.id.btn_perfil)
 
+        ll.isFocusableInTouchMode = true
+        ll.requestFocus()
+        ll.setOnKeyListener { v, keyCode, event ->
+            keyCode == KeyEvent.KEYCODE_BACK
+        }
+
+
         val imageSlider = ll.findViewById<ImageSlider>(R.id.image_slider)
 
 
@@ -76,7 +84,7 @@ class fragment_home_estadisticas_empleado : Fragment() {
     }
 
     private fun cantidadTerneros(){
-        val url = "http://192.168.234.77:8080/cantidadTerneros"
+        val url = "http://192.168.234.187:8080/cantidadTerneros"
         val queue = Volley.newRequestQueue(requireContext())
 
         val request = StringRequest(
@@ -98,7 +106,7 @@ class fragment_home_estadisticas_empleado : Fragment() {
 
 
     private fun cantidadBovinos(){
-        val url = "http://192.168.234.77:8080/cantidadBovinos"
+        val url = "http://192.168.234.187:8080/cantidadBovinos"
         val queue = Volley.newRequestQueue(requireContext())
 
         val request = StringRequest(Request.Method.GET, url,
@@ -119,7 +127,7 @@ class fragment_home_estadisticas_empleado : Fragment() {
 
 
     private fun promedioLeche(){
-        val url = "http://192.168.234.77:8080/promedioLeche"
+        val url = "http://192.168.234.187:8080/promedioLeche"
         val queue = Volley.newRequestQueue(requireContext())
 
         val request = StringRequest(Request.Method.GET, url,

@@ -2,6 +2,7 @@ package com.example.vaqui.Categorias
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.view.KeyEvent
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -44,6 +45,13 @@ class CategoriasFragment : Fragment() {
         this.cateTernero = ll.findViewById(R.id.cateTernero)
         this.cateEngorde = ll.findViewById(R.id.cateEngorde)
         this.btn_perfil_categoria = ll.findViewById(R.id.btn_perfil_categoria)
+
+        ll.isFocusableInTouchMode = true
+        ll.requestFocus()
+        ll.setOnKeyListener { v, keyCode, event ->
+            keyCode == KeyEvent.KEYCODE_BACK
+        }
+
 
         btn_perfil_categoria.setOnClickListener {
             val navController = Navigation.findNavController(requireActivity(),R.id.nav_host_fragment_container)

@@ -97,11 +97,6 @@ class actualizarGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         actualizar_spinner_procedencia.adapter = adapter2
 
-
-        imagen_atras_actualizar_general.setOnClickListener {
-            findNavController().navigate(R.id.action_actualizarGeneralFragment_to_categorias)
-        }
-
         //pongo los datos obtenidos en los inputs
         id_actualizar_general.text = idGeneral
         actualizar_raza.setText(razaGeneral)
@@ -110,6 +105,10 @@ class actualizarGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
         val procedenciaPosition = spinnerData2.indexOf(procedenciaGeneral)
         if (procedenciaPosition >= 0) {
             actualizar_spinner_procedencia.setSelection(procedenciaPosition)
+        }
+
+        imagen_atras_actualizar_general.setOnClickListener{
+            findNavController().navigate(R.id.action_actualizarGeneralFragment_to_categorias)
         }
 
         return ll
@@ -147,7 +146,7 @@ class actualizarGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
     }
 
     private fun clickUpdateGeneral(view: View) {
-        val url="http://192.168.234.77:8080/actualizarBovinoGeneral"
+        val url="http://192.168.234.187:8080/actualizarBovinoGeneral"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.PUT, url,
             Response.Listener<String> { response->

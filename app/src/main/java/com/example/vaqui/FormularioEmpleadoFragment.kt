@@ -93,7 +93,7 @@ class FormularioEmpleadoFragment : Fragment(), AdapterView.OnItemSelectedListene
     }
 
     private fun clickAddEmpleado(view: View) {
-        val url = "http://192.168.234.77:8080/agregarUsuario"
+        val url = "http://192.168.234.187:8080/agregarUsuario"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response ->

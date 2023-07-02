@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
@@ -27,6 +28,7 @@ class actualizarLecherasFragment : Fragment(){
     private lateinit var actualizar_ultpartaro_lechera: TextInputEditText
     private lateinit var actualizar_ordeno_lechera: TextInputEditText
     private lateinit var actualizar_litros_lechera: TextInputEditText
+    private lateinit var imagen_atras_actualizar_lechera : ImageView
     private val categoria = "lechera"
 
 
@@ -57,6 +59,11 @@ class actualizarLecherasFragment : Fragment(){
         this.actualizar_ultpartaro_lechera = ll.findViewById(R.id.actualizar_ultparto_lechera)
         this.actualizar_ordeno_lechera = ll.findViewById(R.id.actualizar_ordeño_lechera)
         this.actualizar_litros_lechera = ll.findViewById(R.id.actualizar_litros_lechera)
+        this.imagen_atras_actualizar_lechera = ll.findViewById(R.id.imagen_atras_actualizar_lechera)
+
+        imagen_atras_actualizar_lechera.setOnClickListener {
+            findNavController().navigate(R.id.action_actualizarLecherasFragment_to_categorias)
+        }
 
 
         val myCalendar= Calendar.getInstance()
@@ -176,7 +183,7 @@ class actualizarLecherasFragment : Fragment(){
     }
 
     private fun clickUpdateLechera(view: View) {
-        val url="http://192.168.234.77:8080/actualizarLechera/${id_lechera.text}"
+        val url="http://192.168.234.187:8080/actualizarLechera/${id_lechera.text}"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.PUT, url,
             Response.Listener<String> { response->

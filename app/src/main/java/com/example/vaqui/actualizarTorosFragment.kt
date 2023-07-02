@@ -7,11 +7,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.AdapterView
-import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
@@ -28,6 +26,7 @@ class actualizarTorosFragment : Fragment() {
     private lateinit var actualizar_fecha_revisión_toro: TextInputEditText
     private lateinit var actualizar_vacas_montadas_toro: TextInputEditText
     private lateinit var actualizar_extraccion_toro: TextInputEditText
+    private lateinit var imagen_atras_actualizar_toro : ImageView
     private val categoria = "toro"
 
 
@@ -56,7 +55,14 @@ class actualizarTorosFragment : Fragment() {
         this.actualizar_peso_toro = ll.findViewById(R.id.actualizar_peso_toro)
         this.actualizar_vacas_montadas_toro = ll.findViewById(R.id.actualizar_vacas_montadas_toro)
         this.actualizar_extraccion_toro = ll.findViewById(R.id.actualizar_extraccion_toro)
+        this.imagen_atras_actualizar_toro = ll.findViewById(R.id.imagen_atras_actualizar_toro)
 
+        imagen_atras_actualizar_toro.setOnClickListener {
+            findNavController().navigate(R.id.action_actualizarTorosFragment_to_categorias)
+        }
+
+
+        //Logica de los calendarios
         val myCalendar= Calendar.getInstance()
         val datePicker= DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
             myCalendar.set(Calendar.YEAR,year)
@@ -141,7 +147,7 @@ class actualizarTorosFragment : Fragment() {
 
 
     private fun clickUpdateToro(view: View) {
-        val url="http://192.168.234.77:8080/actualizarToro/${id_actualizar_toro.text}"
+        val url="http://192.168.234.187:8080/actualizarToro/${id_actualizar_toro.text}"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.PUT, url,
             Response.Listener<String> { response->

@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
@@ -58,6 +59,11 @@ class actualizarEmpleadoFragment : Fragment(), AdapterView.OnItemSelectedListene
         this.actualizar_correo = ll.findViewById(R.id.actualizar_correo_empleado)
         this.actualizar_contrasena = ll.findViewById(R.id.actualizar_contrasena_empleado)
         this.actualizar_area_empleado = ll.findViewById(R.id.actualizar_area_empleado)
+        this.imagen_atras_actualizar_empleado = ll.findViewById(R.id.imagen_atras_actualizar_empleado)
+
+        imagen_atras_actualizar_empleado.setOnClickListener {
+            findNavController().navigate(R.id.action_actualizarEmpleadoFragment_to_gestionEmpleadosFragment)
+        }
 
         //Logica del spinner
         val spinnerData = arrayOf("Seleccione el area", "Ordeño", "Limpieza")
@@ -117,7 +123,7 @@ class actualizarEmpleadoFragment : Fragment(), AdapterView.OnItemSelectedListene
 
 
     private fun clickUpdateEmpleado(view: View) {
-        val url="http://192.168.234.77:8080/actualizarUsuario"
+        val url="http://192.168.234.187:8080/actualizarUsuario"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.PUT, url,
             Response.Listener<String> { response->

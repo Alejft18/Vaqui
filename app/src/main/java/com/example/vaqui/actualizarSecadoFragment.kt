@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
@@ -25,6 +26,7 @@ class actualizarSecadoFragment : Fragment() {
     private lateinit var actualizar_peso_secado : TextInputEditText
     private lateinit var actualizar_fecha_ordeno_secado : TextInputEditText
     private lateinit var actualizar_ultpartaro_secado: TextInputEditText
+    private lateinit var imagen_atras_actualizar_secado : ImageView
     private val categoria = "secado"
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -51,6 +53,12 @@ class actualizarSecadoFragment : Fragment() {
         this.actualizar_peso_secado = ll.findViewById(R.id.actualizar_peso_secado)
         this.actualizar_fecha_ordeno_secado = ll.findViewById(R.id.actualizar_fecha_ordeno_secado)
         this.actualizar_ultpartaro_secado = ll.findViewById(R.id.actualizar_ultpartaro_secado)
+        this.imagen_atras_actualizar_secado = ll.findViewById(R.id.imagen_atras_actualizar_secado)
+
+        imagen_atras_actualizar_secado.setOnClickListener {
+            findNavController().navigate(R.id.action_actualizarSecadoFragment_to_categorias)
+        }
+
 
         //logica de los calendarios
         val myCalendar= Calendar.getInstance()
@@ -166,14 +174,14 @@ class actualizarSecadoFragment : Fragment() {
     }
 
     private fun clickUpdateSecado(view: View) {
-        val url="http://192.168.234.77:8080/actualizarSecado/${id_secado.text}"
+        val url="http://192.168.234.187:8080/actualizarSecado/${id_secado.text}"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.PUT, url,
             Response.Listener<String> { response->
                 Toast.makeText(requireContext(), "Vaca en secado actualizada", Toast.LENGTH_SHORT).show()
 
                 val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
-                navController.navigate(R.id.action_actualizarSecadoFragment_to_secadofragment)
+                navController.navigate(R.id.action_actualizarSecadoFragment_to_categorias)
 
             }, Response.ErrorListener{
                 Toast.makeText(requireContext(), "Bovino no actualizado", Toast.LENGTH_SHORT).show()

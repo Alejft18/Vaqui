@@ -172,7 +172,7 @@ class actualizarGestacionFragment : Fragment(){
         actualizar_fecha_revisión_gestacion.setText(fechaRevision)
 
         imagen_atras_actualizar_gestacion.setOnClickListener {
-            findNavController().navigate(R.id.action_actualizarLecherasFragment_to_lecherasfragment)
+            findNavController().navigate(R.id.action_actualizarGestacionFragment_to_categorias)
         }
 
 
@@ -212,14 +212,14 @@ class actualizarGestacionFragment : Fragment(){
 
     }
     private fun clickUpdateGestacion(view: View) {
-        val url="http://192.168.234.77:8080/actualizarGestacion/${id_gestacion.text}"
+        val url="http://192.168.234.187:8080/actualizarGestacion/${id_gestacion.text}"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.PUT, url,
             Response.Listener<String> { response->
                 Toast.makeText(requireContext(), "Bovino actualizado en gestacion exitosamente", Toast.LENGTH_SHORT).show()
 
                 val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
-                navController.navigate(R.id.action_actualizarGestacionFragment_to_gestacionfragment)
+                navController.navigate(R.id.action_actualizarGestacionFragment_to_categorias)
 
             }, Response.ErrorListener{
                 Toast.makeText(requireContext(), "Bovino no actualizado", Toast.LENGTH_SHORT).show()

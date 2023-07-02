@@ -368,8 +368,8 @@
         android:label="fragment_actualizar_gestacion"
         tools:layout="@layout/fragment_actualizar_gestacion" >
         <action
-            android:id="@+id/action_actualizarGestacionFragment_to_gestacionfragment"
-            app:destination="@id/gestacionfragment" />
+            android:id="@+id/action_actualizarGestacionFragment_to_categorias"
+            app:destination="@id/categorias" />
     </fragment>
     <fragment
         android:id="@+id/actualizarEmpleadoFragment"
@@ -395,8 +395,8 @@
         android:label="fragment_actualizar_secado"
         tools:layout="@layout/fragment_actualizar_secado" >
         <action
-            android:id="@+id/action_actualizarSecadoFragment_to_secadofragment"
-            app:destination="@id/secadofragment" />
+            android:id="@+id/action_actualizarSecadoFragment_to_categorias"
+            app:destination="@id/categorias" />
     </fragment>
     <fragment
         android:id="@+id/actualizarTorosFragment"
