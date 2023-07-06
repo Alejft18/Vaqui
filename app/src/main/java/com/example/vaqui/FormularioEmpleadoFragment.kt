@@ -93,24 +93,17 @@ class FormularioEmpleadoFragment : Fragment(), AdapterView.OnItemSelectedListene
     }
 
     private fun clickAddEmpleado(view: View) {
-        val url = "http://192.168.234.187:8080/agregarUsuario"
+        val url = "http://192.168.208.187:8080/agregarUsuario"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response ->
-                Toast.makeText(
-                    requireContext(),
-                    "Usuario ingresado exitosamente",
-                    Toast.LENGTH_LONG
-                ).show()
+                Toast.makeText(requireContext(), "Usuario ingresado exitosamente", Toast.LENGTH_SHORT).show()
 
-                val navController = Navigation.findNavController(
-                    requireActivity(),
-                    R.id.nav_host_fragment_container
-                )
+                val navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
                 navController.navigate(R.id.action_formularioEmpleadoFragment_to_gestionEmpleadosFragment)
 
             }, Response.ErrorListener {
-                Toast.makeText(requireContext(), "Usuario no agregado", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), "Usuario no agregado", Toast.LENGTH_SHORT).show()
             }) {
             override fun getHeaders(): MutableMap<String, String> {
                 val headers = HashMap<String, String>()

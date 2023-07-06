@@ -28,6 +28,7 @@ class datos_engorde : DialogFragment() {
     private lateinit var peso_engorde : TextView
     private lateinit var alimento_engorde : TextView
     private lateinit var catego_engorde : TextView
+    private var eliminarEngorde = "eliminarEngorde/"
 
     private lateinit var btn_actualizar_engorde : Button
     private lateinit var btn_cambiar_categoria_engorde : Button
@@ -72,6 +73,16 @@ class datos_engorde : DialogFragment() {
             val actualizarEngordeFragment = actualizarEngordeFragment()
             actualizarEngordeFragment.arguments = bundle
             findNavController().navigate(R.id.action_datos_engorde_to_actualizarEngordeFragment, bundle)
+        }
+
+
+        btn_cambiar_categoria_engorde.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putString("id_cambio",id_engorde.text.toString())
+            bundle.putString("funcion_eliminar",eliminarEngorde)
+            val elegirCambioMachofragment = elegir_cambio_machoFragment()
+            elegirCambioMachofragment.arguments = bundle
+            findNavController().navigate(R.id.action_datos_engorde_to_elegir_cambio_machoFragment, bundle)
         }
 
         return ll

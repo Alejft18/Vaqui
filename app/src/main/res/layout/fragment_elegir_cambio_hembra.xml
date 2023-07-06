@@ -48,7 +48,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Selecione la categoría a la que pertenecera"
+            android:text="Selecione la categoría a la que pertenecerá"
             android:textSize="22sp"
             android:layout_gravity="center_horizontal"
             android:textColor="@color/verde"

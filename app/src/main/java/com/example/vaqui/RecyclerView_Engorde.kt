@@ -1,16 +1,14 @@
 package com.example.vaqui
 
 import android.annotation.SuppressLint
+import android.media.Image
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
-import android.widget.RelativeLayout
-import android.widget.SearchView
-import android.widget.Toast
+import android.widget.*
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -31,6 +29,7 @@ class RecyclerView_Engorde : Fragment(), EngordeListener {
     private lateinit var viewAlpha: View
     private lateinit var pgbar: ProgressBar
     private lateinit var rlEngordeList: RelativeLayout
+    private lateinit var imagen_atras_lista_engorde : ImageView
     private var engordeList= ArrayList<JSONObject>()
 
     private fun filterEngordeList(query: String) {
@@ -81,7 +80,13 @@ class RecyclerView_Engorde : Fragment(), EngordeListener {
         // Infla el diseño para este fragmento
         val ll = inflater.inflate(R.layout.fragment_recycler_view__engorde, container, false)
         this.recycler = ll.findViewById(R.id.rvEngorde)
-        val url = "http://192.168.234.187:8080/listarEngorde"
+        this.imagen_atras_lista_engorde = ll.findViewById(R.id.imagen_atras_lista_engorde)
+
+        imagen_atras_lista_engorde.setOnClickListener {
+            findNavController().navigate(R.id.action_engordefragment_to_categorias)
+        }
+
+        val url = "http://192.168.208.187:8080/listarEngorde"
         Log.d("RecyclerView_Engorde","Entered to onCreateView")
         val queue = Volley.newRequestQueue(this.context)
         //queue.timeout = 10000 // aumentar el tiempo de espera a 10 segundos
@@ -128,10 +133,7 @@ class RecyclerView_Engorde : Fragment(), EngordeListener {
     override fun onItemClicked(engorde: JSONObject, position: Int) {
 
         val bundle = bundleOf("engorde" to engorde.toString())
-        findNavController().navigate(
-            R.id.datos_engorde,
-            bundle
-        )
+        findNavController().navigate(R.id.datos_engorde, bundle)
     }
 
 

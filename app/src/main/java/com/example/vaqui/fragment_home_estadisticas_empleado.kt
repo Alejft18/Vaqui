@@ -25,6 +25,7 @@ class fragment_home_estadisticas_empleado : Fragment() {
     private lateinit var cantidad_bovinos : TextView
     private lateinit var cantidad_terneros : TextView
     private lateinit var btn_perfil : ImageView
+    private lateinit var prueba : CardView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,11 +42,16 @@ class fragment_home_estadisticas_empleado : Fragment() {
         this.cantidad_bovinos = ll.findViewById(R.id.cantidad_bovinos)
         this.cantidad_terneros = ll.findViewById(R.id.cantidad_terneros)
         this.btn_perfil = ll.findViewById(R.id.btn_perfil)
+        this.prueba = ll.findViewById(R.id.prueba)
 
         ll.isFocusableInTouchMode = true
         ll.requestFocus()
         ll.setOnKeyListener { v, keyCode, event ->
             keyCode == KeyEvent.KEYCODE_BACK
+        }
+
+        prueba.setOnClickListener {
+            findNavController().navigate(R.id.action_inicio_to_fragment_home_inicio_sesion)
         }
 
 
@@ -84,7 +90,7 @@ class fragment_home_estadisticas_empleado : Fragment() {
     }
 
     private fun cantidadTerneros(){
-        val url = "http://192.168.234.187:8080/cantidadTerneros"
+        val url = "http://192.168.208.187:8080/cantidadTerneros"
         val queue = Volley.newRequestQueue(requireContext())
 
         val request = StringRequest(
@@ -106,7 +112,7 @@ class fragment_home_estadisticas_empleado : Fragment() {
 
 
     private fun cantidadBovinos(){
-        val url = "http://192.168.234.187:8080/cantidadBovinos"
+        val url = "http://192.168.208.187:8080/cantidadBovinos"
         val queue = Volley.newRequestQueue(requireContext())
 
         val request = StringRequest(Request.Method.GET, url,
@@ -127,7 +133,7 @@ class fragment_home_estadisticas_empleado : Fragment() {
 
 
     private fun promedioLeche(){
-        val url = "http://192.168.234.187:8080/promedioLeche"
+        val url = "http://192.168.208.187:8080/promedioLeche"
         val queue = Volley.newRequestQueue(requireContext())
 
         val request = StringRequest(Request.Method.GET, url,

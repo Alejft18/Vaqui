@@ -7,10 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
-import android.widget.RelativeLayout
-import android.widget.SearchView
-import android.widget.Toast
+import android.widget.*
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -31,6 +28,7 @@ class RecyclerView_Toro : Fragment(), ToroListener {
     private lateinit var pgbar: ProgressBar
     private lateinit var rlToroList: RelativeLayout
     private var toroList = ArrayList<JSONObject>()
+    private lateinit var imagen_atras_lista_toro : ImageView
 
     //metodo para filtar en el searchView
     private fun filterToroList(query: String) {
@@ -79,7 +77,13 @@ class RecyclerView_Toro : Fragment(), ToroListener {
         // Inflate the layout for this fragment
         val ll = inflater.inflate(R.layout.fragment_recycler_view__toro, container, false)
         this.recycler = ll.findViewById(R.id.rvBuscadorToro)
-        val url = "http://192.168.234.187:8080/listarToros"
+        this.imagen_atras_lista_toro = ll.findViewById(R.id.imagen_atras_lista_toro)
+
+        imagen_atras_lista_toro.setOnClickListener {
+            findNavController().navigate(R.id.action_torofragment_to_categorias)
+        }
+
+        val url = "http://192.168.208.187:8080/listarToros"
         Log.d("RecyclerView_Toro", "Entered to onCreateView")
         val queue = Volley.newRequestQueue(this.context)
 

@@ -110,7 +110,7 @@ class actualizarTernerosFragment : Fragment() {
     }
 
     private fun clickUpdateTernero(view: View) {
-        val url="http://192.168.234.187:8080/actualizarTernero/${id_actualizar_ternero.text}"
+        val url="http://192.168.208.187:8080/actualizarTernero/${id_actualizar_ternero.text}"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.PUT, url,
             Response.Listener<String> { response->

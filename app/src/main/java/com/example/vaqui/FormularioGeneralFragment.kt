@@ -31,13 +31,8 @@ class FormularioGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
     private lateinit var procedencia: Spinner
     private lateinit var imagen_atras_ingresar_general : ImageView
 
-
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
-
-
+    private var generoSeleccionado = false
+    private var procedenciaSeleccionada = false
 
 
     override fun onCreateView(
@@ -92,13 +87,13 @@ class FormularioGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
         val adapter1 = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, spinnerData1)
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         val positionDisable1=0
-        adapter1.getView(positionDisable1,null,genero)?.isEnabled=true
+        adapter1.getView(positionDisable1,null,genero).isEnabled =true
         genero.adapter = adapter1
 
 
         val adapter2 = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, spinnerData2)
         val positionDisable2=0
-        adapter1.getView(positionDisable2,null,procedencia)?.isEnabled=true
+        adapter1.getView(positionDisable2,null,procedencia).isEnabled =true
         adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         procedencia.adapter = adapter2
 
@@ -124,13 +119,8 @@ class FormularioGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
 
     override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
         val selectedItem = parent?.getItemAtPosition(position).toString()
-        if (selectedItem == "Seleccione el genero"){
-            Toast.makeText(requireContext(),"Por favor, selecciona una opción válida",Toast.LENGTH_SHORT).show()
-
-        }
-        if (selectedItem == "Seleccione la procedencia"){
-            Toast.makeText(requireContext(),"Por favor, selecciona una opción válida",Toast.LENGTH_SHORT).show()
-        }
+        generoSeleccionado = selectedItem != "Seleccione el genero"
+        procedenciaSeleccionada = selectedItem != "Seleccione la procedencia"
     }
 
     override fun onNothingSelected(p0: AdapterView<*>?) {
@@ -140,11 +130,19 @@ class FormularioGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
 
     //subo los datos al momento de darle click
     private fun clickAddGeneral(view: View) {
-        val url="http://192.168.234.187:8080/agregarGeneral"
+        if (!generoSeleccionado) {
+            Toast.makeText(requireContext(), "Por favor, selecciona una opción válida en el género", Toast.LENGTH_SHORT).show()
+            return
+        }else if (!procedenciaSeleccionada) {
+            Toast.makeText(requireContext(), "Por favor, selecciona una opción válida en la procedencia", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val url="http://192.168.208.187:8080/agregarGeneral"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->
-                Toast.makeText(requireContext(), "Bovino ingresado exitosamente", Toast.LENGTH_LONG).show()
+                Toast.makeText(requireContext(), "Bovino ingresado exitosamente", Toast.LENGTH_SHORT).show()
 
                     val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
                     navController.navigate(R.id.action_formularioGeneralFragment_to_elegir_categoria)
@@ -162,10 +160,10 @@ class FormularioGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
             }
             override fun getBody(): ByteArray {
                 val params = JSONObject()
-                params.put("raza",txtRaza?.text.toString())
-                params.put("genero",genero?.selectedItem.toString())
-                params.put("fecha_nacimiento",txtFechaNacimiento?.text.toString())
-                params.put("procedencia",procedencia?.selectedItem.toString())
+                params.put("raza", txtRaza.text.toString())
+                params.put("genero", genero.selectedItem.toString())
+                params.put("fecha_nacimiento", txtFechaNacimiento.text.toString())
+                params.put("procedencia", procedencia.selectedItem.toString())
                 return  params.toString().toByteArray(Charsets.UTF_8)
             }
         }

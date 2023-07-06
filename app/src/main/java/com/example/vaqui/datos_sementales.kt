@@ -32,6 +32,8 @@ class datos_sementales : DialogFragment() {
     private lateinit var btn_actualizar_toro : Button
     private lateinit var btn_cambiar_categoria_toro : Button
 
+    private var eliminarToro = "eliminarToro/"
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -72,6 +74,16 @@ class datos_sementales : DialogFragment() {
             val actualizarTorosFragment = actualizarTorosFragment()
             actualizarTorosFragment.arguments = bundle
             findNavController().navigate(R.id.action_datos_sementales_to_actualizarTorosFragment, bundle)
+        }
+
+        btn_cambiar_categoria_toro.setOnClickListener {
+            val bundle2 = Bundle()
+            bundle2.putString("id_cambio",id_toro.text.toString())
+            bundle2.putString("funcion_eliminar",eliminarToro)
+            val elegirCambioMachofragment = elegir_cambio_machoFragment()
+            elegirCambioMachofragment.arguments = bundle2
+            findNavController().navigate(R.id.action_datos_sementales_to_elegir_cambio_machoFragment,bundle2)
+
         }
 
 

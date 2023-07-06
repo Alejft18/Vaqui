@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.android.volley.Request
@@ -25,6 +26,7 @@ class fragment_formulario_engorde : Fragment() {
     private lateinit var ingreso_peso_engorde: TextInputEditText
     private lateinit var ingreso_fecha_revi_engorde: TextInputEditText
     private lateinit var ingreso_alimento: TextInputEditText
+    private lateinit var imagen_atras_ingrersar_engorde : ImageView
     private var ultimoId: Int =0
     private val categoria = "engorde"
 
@@ -47,12 +49,18 @@ class fragment_formulario_engorde : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val view= inflater.inflate(R.layout.fragment_formulario_engorde, container, false)
-        ingreso_peso_engorde=view.findViewById(R.id.ingreso_peso_engorde)
-        ingreso_fecha_revi_engorde=view.findViewById(R.id.ingreso_fecha_revi_engorde)
-        ingreso_alimento=view.findViewById(R.id.ingreso_alimento)
+        this.ingreso_peso_engorde = view.findViewById(R.id.ingreso_peso_engorde)
+        this.ingreso_fecha_revi_engorde = view.findViewById(R.id.ingreso_fecha_revi_engorde)
+        this.ingreso_alimento = view.findViewById(R.id.ingreso_alimento)
+        this.imagen_atras_ingrersar_engorde = view.findViewById(R.id.imagen_atras_ingrersar_engorde)
 
+        imagen_atras_ingrersar_engorde.setOnClickListener {
+            findNavController().navigate(R.id.action_fragment_formulario_engorde_to_elegir_categoria)
+        }
+
+
+        //logica de los calendar
         val myCalendar= Calendar.getInstance()
-
         val datePicker= DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
             myCalendar.set(Calendar.YEAR,year)
             myCalendar.set(Calendar.MONTH,month)
@@ -94,7 +102,7 @@ class fragment_formulario_engorde : Fragment() {
     }
 
     private fun obtenerUltimoIdGeneral(){
-        val url = "http://192.168.234.187:8080/ultimoIdGeneral"
+        val url = "http://192.168.208.187:8080/ultimoIdGeneral"
         val queue = Volley.newRequestQueue(requireContext())
 
         val request = JsonObjectRequest(Request.Method.GET, url,null,
@@ -113,7 +121,7 @@ class fragment_formulario_engorde : Fragment() {
     }
 
     private fun clickAddEngorde() {
-        val url= "http://192.168.234.187:8080/ingresarEngorde/$ultimoId"
+        val url= "http://192.168.208.187:8080/ingresarEngorde/$ultimoId"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->

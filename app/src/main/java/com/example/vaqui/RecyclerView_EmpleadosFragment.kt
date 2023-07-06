@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.RelativeLayout
 import androidx.core.os.bundleOf
@@ -29,6 +30,7 @@ class RecyclerView_EmpleadosFragment : Fragment(), UsuariosListener {
     private lateinit var viewAlpha: View
     private lateinit var pgbar: ProgressBar
     private lateinit var rlEmpleList: RelativeLayout
+    private lateinit var imagen_atras_lista_empleados : ImageView
     private var empleList= ArrayList<JSONObject>()
 
 
@@ -52,7 +54,13 @@ class RecyclerView_EmpleadosFragment : Fragment(), UsuariosListener {
         // Infla el diseño para este fragmento
         val ll = inflater.inflate(R.layout.fragment_recycler_view__empleados, container, false)
         this.recycler = ll.findViewById(R.id.rvEmple)
-        val url = "http://192.168.234.187:8080/listarEmpleados"
+        this.imagen_atras_lista_empleados = ll.findViewById(R.id.imagen_atras_lista_empleados)
+
+        imagen_atras_lista_empleados.setOnClickListener {
+            findNavController().navigate(R.id.action_recyclerView_EmpleadosFragment_to_gestionEmpleadosFragment)
+        }
+
+        val url = "http://192.168.208.187:8080/listarEmpleados"
         Log.d("RecyclerView_Empleados","Entered to onCreateView")
         val queue = Volley.newRequestQueue(this.context)
         //queue.timeout = 10000 // aumentar el tiempo de espera a 10 segundos

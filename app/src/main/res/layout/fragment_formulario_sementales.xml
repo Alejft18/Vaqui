@@ -1,95 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="match_parent"
-tools:context=".fragment_formulario_sementales">
-
-<LinearLayout
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    tools:context=".fragment_formulario_sementales"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:textSize="20dp"
-        android:layout_marginTop="60dp"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        android:text="Ingresa los siguientes datos del toro"/>
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_ingresar_toro"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/verde">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/imagen_atras_ingresar_toro"
+                android:src="@drawable/atras">
+            </ImageView>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ingresar Toro"
+            android:textColor="@color/white"
+            android:layout_marginStart="60dp"
+            android:textSize="19sp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginTop="60dp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:text="Ingresa los siguientes datos del toro"/>
 
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/ingreso_peso_toro"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp">
+            android:orientation="vertical">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ingreso_peso_semental"
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/ingreso_peso_toro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="numberDecimal"
-                android:hint="Peso en kilos" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:layout_margin="16dp">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ingreso_peso_semental"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:hint="Peso en kilos" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ingreso_fecha_extraccion_toro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Fecha de extraccion" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ingreso_vacas_montadas_toro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:hint="Cantidad de vacas montadas" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ingreso_fecha_revi_toro"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Fecha de revision" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/boton_enviar_toro"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ingreso_fecha_extraccion_toro"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Fecha de extraccion" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ingreso_vacas_montadas_toro"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:hint="Cantidad de vacas montadas" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/ingreso_fecha_revi_toro"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Fecha de revision" />
-        </com.google.android.material.textfield.TextInputLayout>
+            android:backgroundTint="@color/verde"
+            android:layout_gravity="center"
+            android:text="Ingresar Bovino"
+            android:textColor="@color/white"
+            android:onClick="clickAddToro"/>
 
     </LinearLayout>
-
-    <Button
-        android:id="@+id/boton_enviar_toro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/verde"
-        android:layout_gravity="center"
-        android:text="Ingresar Bovino"
-        android:textColor="@color/white"
-        android:onClick="clickAddToro"/>
-
-</LinearLayout>
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>

@@ -123,11 +123,11 @@ class actualizarEmpleadoFragment : Fragment(), AdapterView.OnItemSelectedListene
 
 
     private fun clickUpdateEmpleado(view: View) {
-        val url="http://192.168.234.187:8080/actualizarUsuario"
+        val url="http://192.168.208.187:8080/actualizarUsuario"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.PUT, url,
             Response.Listener<String> { response->
-                Toast.makeText(requireContext(), "Bovino actualizado exitosamente", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Empleado actualizado exitosamente", Toast.LENGTH_SHORT).show()
 
                 val navController= Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_container)
                 navController.navigate(R.id.action_actualizarEmpleadoFragment_to_gestionEmpleadosFragment)

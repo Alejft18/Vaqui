@@ -6,10 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
-import android.widget.RelativeLayout
-import android.widget.SearchView
-import android.widget.Toast
+import android.widget.*
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -32,6 +29,7 @@ class RecyclerViewSecado : Fragment(), SecadoListener {
     private lateinit var viewAlpha: View
     private lateinit var pgbar: ProgressBar
     private lateinit var rlSecadoList: RelativeLayout
+    private lateinit var imagen_atras_secado : ImageView
     private var secadoList= ArrayList<JSONObject>()
 
     //metodo para filtar en el searchView
@@ -85,7 +83,13 @@ class RecyclerViewSecado : Fragment(), SecadoListener {
         // Inflate the layout for this fragment
         val ll = inflater.inflate(R.layout.fragment_recycler_view_secado, container, false)
         this.recycler = ll.findViewById(R.id.rvBuscadorSecado)
-        val url = "http://192.168.234.187:8080/listarSecado"
+        this.imagen_atras_secado = ll.findViewById(R.id.imagen_atras_lista_secado)
+
+        imagen_atras_secado.setOnClickListener {
+            findNavController().navigate(R.id.action_secadofragment_to_categorias)
+        }
+
+        val url = "http://192.168.208.187:8080/listarSecado"
         Log.d("RecyclerViewSecado","Entered to onCreateView")
         val queue = Volley.newRequestQueue(this.context)
         //queue.timeout = 10000 // aumentar el tiempo de espera a 10 segundos

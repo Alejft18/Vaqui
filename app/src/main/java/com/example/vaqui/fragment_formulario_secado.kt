@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.android.volley.Request
@@ -27,6 +28,7 @@ class fragment_formulario_secado : Fragment() {
     private lateinit var ingreso_peso_secado: TextInputEditText
     private lateinit var ingreso_fechaRevision_secado: TextInputEditText
     private lateinit var ingreso_fechaOrdenio_secado: TextInputEditText
+    private lateinit var imagen_atras_ingresar_secado : ImageView
     private var ultimoId : Int = 0
     private val categoria = "secado"
 
@@ -48,11 +50,15 @@ class fragment_formulario_secado : Fragment() {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_formulario_secado, container, false)
 
-        ingreso_fechaUltParto_secado = view.findViewById(R.id.ingreso_fechaUltParto_secado)
-        ingreso_peso_secado = view.findViewById(R.id.ingreso_peso_secado)
-        ingreso_fechaRevision_secado = view.findViewById(R.id.ingreso_fechaRevision_secado)
-        ingreso_fechaOrdenio_secado = view.findViewById(R.id.ingreso_fechaOrdenio_secado)
+        this.ingreso_fechaUltParto_secado = view.findViewById(R.id.ingreso_fechaUltParto_secado)
+        this.ingreso_peso_secado = view.findViewById(R.id.ingreso_peso_secado)
+        this.ingreso_fechaRevision_secado = view.findViewById(R.id.ingreso_fechaRevision_secado)
+        this.ingreso_fechaOrdenio_secado = view.findViewById(R.id.ingreso_fechaOrdenio_secado)
+        this.imagen_atras_ingresar_secado = view.findViewById(R.id.imagen_atras_ingresar_secado)
 
+        imagen_atras_ingresar_secado.setOnClickListener {
+            findNavController().navigate(R.id.action_fragment_formulario_secado_to_elegir_categoria)
+        }
 
         //logica de las fechas (datePicker)
         val myCalendar= Calendar.getInstance()
@@ -159,7 +165,7 @@ class fragment_formulario_secado : Fragment() {
     }
 
     private fun obtenerUltimoIdGeneral(){
-        val url = "http:/192.168.234.187:8080/ultimoIdGeneral"
+        val url = "http:/192.168.208.187:8080/ultimoIdGeneral"
         val queue = Volley.newRequestQueue(requireContext())
 
         val request = JsonObjectRequest(Request.Method.GET, url,null,
@@ -177,7 +183,7 @@ class fragment_formulario_secado : Fragment() {
     }
 
     private fun clickAddSecado() {
-        val url="http://192.168.234.187:8080/agregarSecado/$ultimoId"
+        val url="http://192.168.208.187:8080/agregarSecado/$ultimoId"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->

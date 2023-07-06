@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
@@ -28,6 +29,7 @@ class fragment_formulario_lecheras : Fragment() {
     private lateinit var ingreso_fecha_revi_lechera: TextInputEditText
     private lateinit var fecha_parto_lechera: TextInputEditText
     private lateinit var cantidad_partos_lechera: TextInputEditText
+    private lateinit var imagen_atras_ingresar_lechera : ImageView
     private var ultimoId : Int = 0
     private val categoria = "lechera"
 
@@ -43,12 +45,17 @@ class fragment_formulario_lecheras : Fragment() {
         // Inflate the layout for this fragment
         val view =inflater.inflate(R.layout.fragment_formulario_lecheras, container, false)
 
-        ingreso_litros_lechera=view.findViewById(R.id.ingreso_litros_lechera)
-        ingreso_fecha_ordeno_lechera=view.findViewById(R.id.ingreso_fecha_ordeno_lechera)
-        ingreso_peso_lechera=view.findViewById(R.id.ingreso_peso_lechera)
-        ingreso_fecha_revi_lechera=view.findViewById(R.id.ingreso_fecha_revi_lechera)
-        fecha_parto_lechera=view.findViewById(R.id.ingreso_fecha_parto_lechera)
-        cantidad_partos_lechera=view.findViewById(R.id.ingreso_cantidad_partos_lechera)
+        this.ingreso_litros_lechera=view.findViewById(R.id.ingreso_litros_lechera)
+        this.ingreso_fecha_ordeno_lechera=view.findViewById(R.id.ingreso_fecha_ordeno_lechera)
+        this.ingreso_peso_lechera=view.findViewById(R.id.ingreso_peso_lechera)
+        this.ingreso_fecha_revi_lechera=view.findViewById(R.id.ingreso_fecha_revi_lechera)
+        this.fecha_parto_lechera=view.findViewById(R.id.ingreso_fecha_parto_lechera)
+        this.cantidad_partos_lechera=view.findViewById(R.id.ingreso_cantidad_partos_lechera)
+        this.imagen_atras_ingresar_lechera = view.findViewById(R.id.imagen_atras_ingresar_lechera)
+
+        imagen_atras_ingresar_lechera.setOnClickListener {
+            findNavController().navigate(R.id.action_fragment_formulario_lecheras_to_elegir_categoria)
+        }
 
 
 
@@ -162,7 +169,7 @@ class fragment_formulario_lecheras : Fragment() {
     }
 
     private fun obtenerUltimoIdGeneral(){
-        val url = "http://192.168.234.187:8080/ultimoIdGeneral"
+        val url = "http://192.168.208.187:8080/ultimoIdGeneral"
         val queue = Volley.newRequestQueue(requireContext())
 
         val request = JsonObjectRequest(Request.Method.GET, url,null,
@@ -181,7 +188,7 @@ class fragment_formulario_lecheras : Fragment() {
     }
 
     private fun clickAddLechera() {
-        val url="http://192.168.234.187:8080/agregarLecheras/$ultimoId"
+        val url="http://192.168.208.187:8080/agregarLecheras/$ultimoId"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->

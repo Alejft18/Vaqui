@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.android.volley.Request
@@ -28,6 +29,7 @@ class fragment_formulario_gestacion : Fragment() {
     private lateinit var ingreso_fecha_aproxParto_gesta : TextInputEditText
     private lateinit var ingreso_fecha_ulti_parto_gesta : TextInputEditText
     private lateinit var ingreso_fecha_revi_gesta : TextInputEditText
+    private lateinit var imagen_atras_ingreso_gestacion : ImageView
     private var ultimoId: Int = 0
     private val categoria = "gestacion"
 
@@ -54,14 +56,17 @@ class fragment_formulario_gestacion : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val ll= inflater.inflate(R.layout.fragment_formulario_gestacion, container, false)
+        val ll = inflater.inflate(R.layout.fragment_formulario_gestacion, container, false)
+        this.ingreso_peso_gestacion = ll.findViewById(R.id.ingreso_peso_gestacion)
+        this.ingreso_fecha_inseminacionGesta = ll.findViewById(R.id.ingreso_fecha_inseminacionGesta)
+        this.ingreso_fecha_aproxParto_gesta = ll.findViewById(R.id.ingreso_fecha_aproxParto_gesta)
+        this.ingreso_fecha_ulti_parto_gesta = ll.findViewById(R.id.ingreso_fecha_ulti_parto_gesta)
+        this.ingreso_fecha_revi_gesta = ll.findViewById(R.id.ingreso_fecha_revi_gesta)
+        this.imagen_atras_ingreso_gestacion = ll.findViewById(R.id.imagen_atras_ingresar_gestacion)
 
-        ingreso_peso_gestacion=ll.findViewById(R.id.ingreso_peso_gestacion)
-        ingreso_fecha_inseminacionGesta=ll.findViewById(R.id.ingreso_fecha_inseminacionGesta)
-        ingreso_fecha_aproxParto_gesta=ll.findViewById(R.id.ingreso_fecha_aproxParto_gesta)
-        ingreso_fecha_ulti_parto_gesta=ll.findViewById(R.id.ingreso_fecha_ulti_parto_gesta)
-        ingreso_fecha_revi_gesta=ll.findViewById(R.id.ingreso_fecha_revi_gesta)
-
+        imagen_atras_ingreso_gestacion.setOnClickListener {
+            findNavController().navigate(R.id.action_fragment_formulario_gestacion_to_elegir_categoria)
+        }
 
         //logica de las fechas (datePicker)
         val myCalendar= Calendar.getInstance()
@@ -199,7 +204,7 @@ class fragment_formulario_gestacion : Fragment() {
     }
 
     private fun obtenerUltimoIdGeneral(){
-        val url = "http://192.168.234.187:8080/ultimoIdGeneral"
+        val url = "http://192.168.208.187:8080/ultimoIdGeneral"
         val queue = Volley.newRequestQueue(requireContext())
 
         val request = JsonObjectRequest(Request.Method.GET, url,null,
@@ -218,7 +223,7 @@ class fragment_formulario_gestacion : Fragment() {
     }
 
     private fun clickAddGestacion() {
-        val url="http://192.168.234.187:8080/agregarGestacion/$ultimoId"
+        val url="http://192.168.208.187:8080/agregarGestacion/$ultimoId"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->

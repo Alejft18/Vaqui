@@ -6,9 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ProgressBar
-import android.widget.RelativeLayout
-import android.widget.SearchView
+import android.widget.*
 import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,13 +20,14 @@ import com.example.vaqui.adapter.BovinosListener
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
-import android.widget.Toast
 
 class BuscadorBovinoFragment : Fragment(), BovinosListener {
     private lateinit var recycler: RecyclerView
     private lateinit var viewAlpha: View
     private lateinit var pgbar: ProgressBar
     private lateinit var rlBovinosList: RelativeLayout
+    private lateinit var imagen_atras_lista_general : ImageView
+
     private var bovinosList= ArrayList<JSONObject>()
 
     //metodo para filtar en el searchView
@@ -79,7 +78,13 @@ class BuscadorBovinoFragment : Fragment(), BovinosListener {
         // Infla el diseño para este fragmento
         val ll = inflater.inflate(R.layout.fragment_buscador_bovino, container, false)
         this.recycler = ll.findViewById(R.id.rvBuscador1)
-        val url = "http://192.168.234.187:8080/listarGeneral"
+        this.imagen_atras_lista_general = ll.findViewById(R.id.imagen_atras_lista_general)
+
+        imagen_atras_lista_general.setOnClickListener {
+            findNavController().navigate(R.id.action_generalfragment_to_categorias)
+        }
+
+        val url = "http://192.168.208.187:8080/listarGeneral"
         Log.d("BuscadorBovinoFragment","Entered to onCreateView")
         val queue = Volley.newRequestQueue(this.context)
         //queue.timeout = 10000 // aumentar el tiempo de espera a 10 segundos

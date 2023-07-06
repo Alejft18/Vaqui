@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.android.volley.Request
@@ -26,6 +27,7 @@ class fragment_formulario_sementales : Fragment() {
     private lateinit var ingreso_fecha_extraccion_toro: TextInputEditText
     private lateinit var ingreso_vacas_montadas_toro: TextInputEditText
     private lateinit var ingreso_fecha_revi_toro: TextInputEditText
+    private lateinit var imagen_atras_ingresar_toro : ImageView
     private var ultimoId: Int = 0
     private val categoria= "toro"
 
@@ -50,11 +52,15 @@ class fragment_formulario_sementales : Fragment() {
         // Inflate the layout for this fragment
         val view= inflater.inflate(R.layout.fragment_formulario_sementales, container, false)
 
-        ingreso_peso_semental=view.findViewById(R.id.ingreso_peso_semental)
-        ingreso_fecha_extraccion_toro=view.findViewById(R.id.ingreso_fecha_extraccion_toro)
-        ingreso_vacas_montadas_toro=view.findViewById(R.id.ingreso_vacas_montadas_toro)
-        ingreso_fecha_revi_toro=view.findViewById(R.id.ingreso_fecha_revi_toro)
+        this.ingreso_peso_semental=view.findViewById(R.id.ingreso_peso_semental)
+        this.ingreso_fecha_extraccion_toro=view.findViewById(R.id.ingreso_fecha_extraccion_toro)
+        this.ingreso_vacas_montadas_toro=view.findViewById(R.id.ingreso_vacas_montadas_toro)
+        this.ingreso_fecha_revi_toro=view.findViewById(R.id.ingreso_fecha_revi_toro)
+        this.imagen_atras_ingresar_toro = view.findViewById(R.id.imagen_atras_ingresar_toro)
 
+        imagen_atras_ingresar_toro.setOnClickListener {
+            findNavController().navigate(R.id.action_fragment_formulario_sementales_to_elegir_categoria)
+        }
 
         //logica de las fechas (datePicker)
         val myCalendar= Calendar.getInstance()
@@ -129,7 +135,7 @@ class fragment_formulario_sementales : Fragment() {
     }
 
     private fun obtenerUltimoIdGeneral(){
-        val url = "http://192.168.234.187:8080/ultimoIdGeneral"
+        val url = "http://192.168.208.187:8080/ultimoIdGeneral"
         val queue = Volley.newRequestQueue(requireContext())
 
         val request = JsonObjectRequest(Request.Method.GET, url,null,
@@ -150,7 +156,7 @@ class fragment_formulario_sementales : Fragment() {
 
 
     private fun clickAddToro() {
-        val url="http://192.168.234.187:8080/agregarToro/$ultimoId"
+        val url="http://192.168.208.187:8080/agregarToro/$ultimoId"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->

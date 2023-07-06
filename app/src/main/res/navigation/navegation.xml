@@ -18,6 +18,9 @@
         <action
             android:id="@+id/action_inicio_to_gestionEmpleadosFragment"
             app:destination="@id/gestionEmpleadosFragment" />
+        <action
+            android:id="@+id/action_inicio_to_fragment_home_inicio_sesion"
+            app:destination="@id/fragment_home_inicio_sesion" />
     </fragment>
 
     <fragment
@@ -71,6 +74,9 @@
         <action
             android:id="@+id/action_generalfragment_to_datos_general"
             app:destination="@id/datos_general" />
+        <action
+            android:id="@+id/action_generalfragment_to_categorias"
+            app:destination="@id/categorias" />
     </fragment>
     <fragment
         android:id="@+id/generalfragment2"
@@ -89,6 +95,9 @@
         <action
             android:id="@+id/action_secadofragment_to_datos_secado"
             app:destination="@id/datos_secado" />
+        <action
+            android:id="@+id/action_secadofragment_to_categorias"
+            app:destination="@id/categorias" />
     </fragment>
     <fragment
         android:id="@+id/perfilFragment"
@@ -121,6 +130,9 @@
         <action
             android:id="@+id/action_lecherasfragment_to_datos_lecheras"
             app:destination="@id/datos_lecheras" />
+        <action
+            android:id="@+id/action_lecherasfragment_to_categorias"
+            app:destination="@id/categorias" />
     </fragment>
     <dialog
         android:id="@+id/datos_secado"
@@ -139,6 +151,9 @@
         <action
             android:id="@+id/action_recyclerView_Gestacion_to_datos_gestacion"
             app:destination="@id/datos_gestacion" />
+        <action
+            android:id="@+id/action_gestacionfragment_to_categorias"
+            app:destination="@id/categorias" />
     </fragment>
     <dialog
         android:id="@+id/datos_gestacion"
@@ -157,6 +172,9 @@
         <action
             android:id="@+id/action_recyclerView_Ternero_to_datos_terneros"
             app:destination="@id/datos_terneros" />
+        <action
+            android:id="@+id/action_ternerofragment_to_categorias"
+            app:destination="@id/categorias" />
     </fragment>
     <dialog
         android:id="@+id/datos_terneros"
@@ -175,6 +193,9 @@
         <action
             android:id="@+id/action_recyclerView_Toro_to_datos_sementales"
             app:destination="@id/datos_sementales" />
+        <action
+            android:id="@+id/action_torofragment_to_categorias"
+            app:destination="@id/categorias" />
     </fragment>
     <dialog
         android:id="@+id/datos_sementales"
@@ -184,6 +205,9 @@
         <action
             android:id="@+id/action_datos_sementales_to_actualizarTorosFragment"
             app:destination="@id/actualizarTorosFragment" />
+        <action
+            android:id="@+id/action_datos_sementales_to_elegir_cambio_machoFragment"
+            app:destination="@id/elegir_cambio_machoFragment" />
     </dialog>
     <fragment
         android:id="@+id/engordefragment"
@@ -193,6 +217,9 @@
         <action
             android:id="@+id/action_recyclerView_Engorde_to_datos_engorde"
             app:destination="@id/datos_engorde" />
+        <action
+            android:id="@+id/action_engordefragment_to_categorias"
+            app:destination="@id/categorias" />
     </fragment>
     <dialog
         android:id="@+id/datos_engorde"
@@ -202,6 +229,9 @@
         <action
             android:id="@+id/action_datos_engorde_to_actualizarEngordeFragment"
             app:destination="@id/actualizarEngordeFragment" />
+        <action
+            android:id="@+id/action_datos_engorde_to_elegir_cambio_machoFragment"
+            app:destination="@id/elegir_cambio_machoFragment" />
     </dialog>
     <dialog
         android:id="@+id/datos_lecheras"
@@ -247,6 +277,9 @@
         <action
             android:id="@+id/action_fragment_formulario_lecheras_to_gestion"
             app:destination="@id/gestion" />
+        <action
+            android:id="@+id/action_fragment_formulario_lecheras_to_elegir_categoria"
+            app:destination="@id/elegir_categoria" />
     </fragment>
     <fragment
         android:id="@+id/elegir_categoria"
@@ -280,6 +313,9 @@
         <action
             android:id="@+id/action_fragment_formulario_gestacion_to_gestion2"
             app:destination="@id/gestion" />
+        <action
+            android:id="@+id/action_fragment_formulario_gestacion_to_elegir_categoria"
+            app:destination="@id/elegir_categoria" />
     </fragment>
     <fragment
         android:id="@+id/fragment_formulario_secado"
@@ -289,6 +325,9 @@
         <action
             android:id="@+id/action_fragment_formulario_secado_to_gestion2"
             app:destination="@id/gestion" />
+        <action
+            android:id="@+id/action_fragment_formulario_secado_to_elegir_categoria"
+            app:destination="@id/elegir_categoria" />
     </fragment>
     <fragment
         android:id="@+id/fragment_formulario_engorde"
@@ -298,6 +337,9 @@
         <action
             android:id="@+id/action_fragment_formulario_engorde_to_gestion"
             app:destination="@id/gestion" />
+        <action
+            android:id="@+id/action_fragment_formulario_engorde_to_elegir_categoria"
+            app:destination="@id/elegir_categoria" />
     </fragment>
     <fragment
         android:id="@+id/fragment_formulario_sementales"
@@ -307,6 +349,9 @@
         <action
             android:id="@+id/action_fragment_formulario_sementales_to_gestion"
             app:destination="@id/gestion" />
+        <action
+            android:id="@+id/action_fragment_formulario_sementales_to_elegir_categoria"
+            app:destination="@id/elegir_categoria" />
     </fragment>
     <fragment
         android:id="@+id/fragment_formulario_ternero"
@@ -316,6 +361,9 @@
         <action
             android:id="@+id/action_fragment_formulario_ternero_to_gestion"
             app:destination="@id/gestion" />
+        <action
+            android:id="@+id/action_fragment_formulario_ternero_to_elegir_categoria"
+            app:destination="@id/elegir_categoria" />
     </fragment>
     <fragment
         android:id="@+id/actualizarGeneralFragment"
@@ -343,6 +391,9 @@
         <action
             android:id="@+id/action_recyclerView_EmpleadosFragment_to_detalleEmpleadoFragment"
             app:destination="@id/detalleEmpleadoFragment" />
+        <action
+            android:id="@+id/action_recyclerView_EmpleadosFragment_to_gestionEmpleadosFragment"
+            app:destination="@id/gestionEmpleadosFragment" />
     </fragment>
     <fragment
         android:id="@+id/formularioEmpleadoFragment"
@@ -414,6 +465,41 @@
         tools:layout="@layout/fragment_actualizar_terneros" >
         <action
             android:id="@+id/action_actualizarTernerosFragment_to_categorias"
+            app:destination="@id/categorias" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_home_inicio_sesion"
+        android:name="com.example.vaqui.fragment_home_inicio_sesion"
+        android:label="fragment_home_inicio_sesion"
+        tools:layout="@layout/fragment_home_inicio_sesion" />
+    <fragment
+        android:id="@+id/elegir_cambio_machoFragment"
+        android:name="com.example.vaqui.elegir_cambio_machoFragment"
+        android:label="fragment_elegir_cambio_macho"
+        tools:layout="@layout/fragment_elegir_cambio_macho" >
+        <action
+            android:id="@+id/action_elegir_cambio_machoFragment_to_cambioCategoriaEngordeFragment"
+            app:destination="@id/cambioCategoriaEngordeFragment" />
+        <action
+            android:id="@+id/action_elegir_cambio_machoFragment_to_cambioCategoriaToroFragment"
+            app:destination="@id/cambioCategoriaToroFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cambioCategoriaEngordeFragment"
+        android:name="com.example.vaqui.CambioCategoriaEngordeFragment"
+        android:label="fragment_cambio_categoria_engorde"
+        tools:layout="@layout/fragment_cambio_categoria_engorde" >
+        <action
+            android:id="@+id/action_cambioCategoriaEngordeFragment_to_categorias"
+            app:destination="@id/categorias" />
+    </fragment>
+    <fragment
+        android:id="@+id/cambioCategoriaToroFragment"
+        android:name="com.example.vaqui.CambioCategoriaToroFragment"
+        android:label="fragment_cambio_categoria_toro"
+        tools:layout="@layout/fragment_cambio_categoria_toro" >
+        <action
+            android:id="@+id/action_cambioCategoriaToroFragment_to_categorias"
             app:destination="@id/categorias" />
     </fragment>
 
