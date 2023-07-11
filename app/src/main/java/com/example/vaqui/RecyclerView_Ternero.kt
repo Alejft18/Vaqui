@@ -84,7 +84,7 @@ class RecyclerView_Ternero : Fragment(), TernerosListener {
             findNavController().navigate(R.id.action_ternerofragment_to_categorias)
         }
 
-        val url = "http://192.168.56.187:8080/listarTerneros"
+        val url = "http://192.168.180.187:8080/listarTerneros"
         Log.d("RecyclerView_Ternero", "Entered to onCreateView")
         val queue = Volley.newRequestQueue(this.context)
 

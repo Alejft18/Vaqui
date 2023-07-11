@@ -147,7 +147,7 @@ class actualizarTorosFragment : Fragment() {
 
 
     private fun clickUpdateToro(view: View) {
-        val url="http://192.168.56.187:8080/actualizarToro/${id_actualizar_toro.text}"
+        val url="http://192.168.180.187:8080/actualizarToro/${id_actualizar_toro.text}"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.PUT, url,
             Response.Listener<String> { response->

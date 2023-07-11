@@ -86,7 +86,7 @@ class DetalleEmpleadoFragment : DialogFragment() {
             builder.setMessage("¿Estas seguro de eliminar a ${nombre_empleado.text} de tus empleados?")
             builder.setPositiveButton("Aceptar") { dialog, which ->
 
-                val url = "http://192.168.56.187:8080/eliminarUsuario/${id_empleados.text}"
+                val url = "http://192.168.180.187:8080/eliminarUsuario/${id_empleados.text}"
                 val queue = Volley.newRequestQueue(requireContext())
 
                 val request = StringRequest(

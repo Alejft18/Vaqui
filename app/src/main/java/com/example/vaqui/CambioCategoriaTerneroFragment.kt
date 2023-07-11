@@ -56,7 +56,11 @@ class CambioCategoriaTerneroFragment : Fragment() {
         id_cambio_ternero.text = idCambioTernero
         funcion_eliminar_ternero.text = funcionEliminar
 
-//logica de las fechas (datePicker)
+        imagen_atras_cambiar_ternero.setOnClickListener {
+            findNavController().navigate(R.id.action_cambioCategoriaTerneroFragment_to_categorias)
+        }
+
+        //logica de las fechas (datePicker)
         val myCalendar= Calendar.getInstance()
 
         val datePicker= DatePickerDialog.OnDateSetListener { view, year, month, dayOfMonth ->
@@ -92,9 +96,6 @@ class CambioCategoriaTerneroFragment : Fragment() {
             builder.setMessage("¿Seguro que desea realizar el cambio de categoria para el bovino ${idCambioTernero}?")
             builder.setPositiveButton("Aceptar") { dialog, which ->
                 clickCambioTernero()
-                eliminarCategoria()
-
-
             }
             builder.setNegativeButton("Cancelar") { dialog, which ->
                 dialog.dismiss()
@@ -115,7 +116,7 @@ class CambioCategoriaTerneroFragment : Fragment() {
 
 
     private fun clickCambioTernero() {
-        val url= "http://192.168.56.187:8080/agregarTernero/${id_cambio_ternero.text}/${cambio_id_madre_ternero.text.toString()}"
+        val url= "http://192.168.180.187:8080/agregarTernero/${id_cambio_ternero.text}/${cambio_id_madre_ternero.text.toString()}"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->
@@ -150,7 +151,7 @@ class CambioCategoriaTerneroFragment : Fragment() {
     }
 
     private fun eliminarCategoria() {
-        val url = "http://192.168.56.187:8080/${funcion_eliminar_ternero.text}${id_cambio_ternero.text}"
+        val url = "http://192.168.180.187:8080/${funcion_eliminar_ternero.text}${id_cambio_ternero.text}"
         val queue = Volley.newRequestQueue(requireContext())
 
         val request = StringRequest(

@@ -33,6 +33,7 @@ class datos_lecheras : DialogFragment() {
 
     private lateinit var btn_actualizar_lecheras : Button
     private lateinit var btn_cambiar_categoria_lechera : Button
+    private val funcionEliminar = "eliminarLechera/"
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -78,6 +79,15 @@ class datos_lecheras : DialogFragment() {
             val actualizarLecherasFragment = actualizarLecherasFragment()
             actualizarLecherasFragment.arguments = bundle
             findNavController().navigate(R.id.action_datos_lecheras_to_actualizarLecherasFragment, bundle)
+        }
+
+        btn_cambiar_categoria_lechera.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putString("id_cambio",id_lechera.text.toString())
+            bundle.putString("funcion_eliminar",funcionEliminar)
+            val elegirCambioCategoriaLecheraFragment = ElegirCambioCategoriaLecheraFragment()
+            elegirCambioCategoriaLecheraFragment.arguments = bundle
+            findNavController().navigate(R.id.action_datos_lecheras_to_elegirCambioCategoriaLecheraFragment, bundle)
         }
 
 

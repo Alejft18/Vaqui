@@ -89,7 +89,7 @@ class RecyclerViewSecado : Fragment(), SecadoListener {
             findNavController().navigate(R.id.action_secadofragment_to_categorias)
         }
 
-        val url = "http://192.168.56.187:8080/listarSecado"
+        val url = "http://192.168.180.187:8080/listarSecado"
         Log.d("RecyclerViewSecado","Entered to onCreateView")
         val queue = Volley.newRequestQueue(this.context)
         //queue.timeout = 10000 // aumentar el tiempo de espera a 10 segundos

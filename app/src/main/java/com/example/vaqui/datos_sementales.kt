@@ -80,9 +80,9 @@ class datos_sementales : DialogFragment() {
             val bundle2 = Bundle()
             bundle2.putString("id_cambio",id_toro.text.toString())
             bundle2.putString("funcion_eliminar",eliminarToro)
-            val elegirCambioMachofragment = elegir_cambio_machoFragment()
-            elegirCambioMachofragment.arguments = bundle2
-            findNavController().navigate(R.id.action_datos_sementales_to_elegir_cambio_machoFragment,bundle2)
+            val elegirCambioCategoriaToroFragment = ElegirCambioCategoriaToroFragment()
+            elegirCambioCategoriaToroFragment.arguments = bundle2
+            findNavController().navigate(R.id.action_datos_sementales_to_elegirCambioCategoriaToroFragment,bundle2)
 
         }
 

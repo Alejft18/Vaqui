@@ -31,6 +31,8 @@ class datos_gestacion : DialogFragment() {
     private lateinit var btn_actualizar_gestacion : Button
     private lateinit var btn_cambiar_categoria_gestacion : Button
 
+    private var funcionEliminar = "eliminarGestacion/"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setStyle(STYLE_NORMAL, androidx.appcompat.R.style.AlertDialog_AppCompat)
@@ -72,6 +74,17 @@ class datos_gestacion : DialogFragment() {
             val actualizarGestacionFragment = actualizarGestacionFragment()
             actualizarGestacionFragment.arguments = bundle
             findNavController().navigate(R.id.action_datos_gestacion_to_actualizarGestacionFragment, bundle)
+        }
+
+        btn_cambiar_categoria_gestacion.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putString("id_cambio",id_gestacion.text.toString())
+            bundle.putString("funcion_eliminar",funcionEliminar)
+
+            val elegirCambioCategoriaGestacionFragment = ElegirCambioCategoriaGestacionFragment()
+            elegirCambioCategoriaGestacionFragment.arguments = bundle
+            findNavController().navigate(R.id.action_datos_gestacion_to_elegirCambioCategoriaGestacionFragment,bundle)
+
         }
 
         return ll

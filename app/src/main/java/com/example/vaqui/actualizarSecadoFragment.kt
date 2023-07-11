@@ -174,7 +174,7 @@ class actualizarSecadoFragment : Fragment() {
     }
 
     private fun clickUpdateSecado(view: View) {
-        val url="http://192.168.56.187:8080/actualizarSecado/${id_secado.text}"
+        val url="http://192.168.180.187:8080/actualizarSecado/${id_secado.text}"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.PUT, url,
             Response.Listener<String> { response->

@@ -20,6 +20,7 @@
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="wrap_content"
+                android:id="@+id/imagen_atras_cambiar_lechera"
                 android:src="@drawable/atras">
             </ImageView>
 

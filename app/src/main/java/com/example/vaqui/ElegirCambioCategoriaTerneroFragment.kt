@@ -91,10 +91,6 @@ class ElegirCambioCategoriaTerneroFragment : Fragment() {
 
         }
 
-
-
-
-
         return ll
     }
 

@@ -138,7 +138,7 @@ class FormularioGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
             return
         }
 
-        val url="http://192.168.56.187:8080/agregarGeneral"
+        val url="http://192.168.180.187:8080/agregarGeneral"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->

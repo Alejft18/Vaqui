@@ -1,14 +1,136 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CambioCategoriaSecadoFragment">
+    tools:context=".CambioCategoriaSecadoFragment"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar_ingresar_secado"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:background="@color/verde">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/imagen_atras_cambio_secado"
+                android:src="@drawable/atras">
+            </ImageView>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cambiar A Secado"
+            android:textColor="@color/white"
+            android:layout_marginStart="60dp"
+            android:textSize="19sp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:orientation="vertical">
 
-</FrameLayout>
+        <TextView
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:layout_marginTop="60dp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:text="Ingresa los siguientes datos de la vaca en secado">
+        </TextView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/cambio_secado_fecha_ultimo_parto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Fecha ultimo parto" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/cambio_secado_peso"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:hint="Peso en kilos" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/cambio_secado_fecha_revi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Fecha de revision" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/cambio_secado_fecha_ordeno"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Fecha de ordeño" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/id_cambio_secado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+
+            <TextView
+                android:id="@+id/funcion_eliminar_secado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"/>
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/boton_cambio_a_secado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/verde"
+            android:layout_gravity="center"
+            android:text="Cambiar categoria"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>
