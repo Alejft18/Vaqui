@@ -558,6 +558,10 @@
         android:id="@+id/cambioCategoriaTerneroFragment"
         android:name="com.example.vaqui.CambioCategoriaTerneroFragment"
         android:label="fragment_cambio_categoria_ternero"
-        tools:layout="@layout/fragment_cambio_categoria_ternero" />
+        tools:layout="@layout/fragment_cambio_categoria_ternero" >
+        <action
+            android:id="@+id/action_cambioCategoriaTerneroFragment_to_categorias"
+            app:destination="@id/categorias" />
+    </fragment>
 
 </navigation>
