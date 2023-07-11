@@ -184,6 +184,9 @@
         <action
             android:id="@+id/action_datos_terneros_to_actualizarTernerosFragment"
             app:destination="@id/actualizarTernerosFragment" />
+        <action
+            android:id="@+id/action_datos_terneros_to_elegirCambioCategoriaTerneroFragment"
+            app:destination="@id/elegirCambioCategoriaTerneroFragment" />
     </dialog>
     <fragment
         android:id="@+id/torofragment"
@@ -483,6 +486,9 @@
         <action
             android:id="@+id/action_elegir_cambio_machoFragment_to_cambioCategoriaToroFragment"
             app:destination="@id/cambioCategoriaToroFragment" />
+        <action
+            android:id="@+id/action_elegir_cambio_machoFragment_to_categorias"
+            app:destination="@id/categorias" />
     </fragment>
     <fragment
         android:id="@+id/cambioCategoriaEngordeFragment"
@@ -502,5 +508,56 @@
             android:id="@+id/action_cambioCategoriaToroFragment_to_categorias"
             app:destination="@id/categorias" />
     </fragment>
+    <fragment
+        android:id="@+id/elegirCambioCategoriaTerneroFragment"
+        android:name="com.example.vaqui.ElegirCambioCategoriaTerneroFragment"
+        android:label="fragment_elegir_cambio_categoria_ternero"
+        tools:layout="@layout/fragment_elegir_cambio_categoria_ternero" >
+        <action
+            android:id="@+id/action_elegirCambioCategoriaTerneroFragment_to_categorias"
+            app:destination="@id/categorias" />
+        <action
+            android:id="@+id/action_elegirCambioCategoriaTerneroFragment_to_cambioCategoriaToroFragment"
+            app:destination="@id/cambioCategoriaToroFragment" />
+        <action
+            android:id="@+id/action_elegirCambioCategoriaTerneroFragment_to_cambioCategoriaEngordeFragment"
+            app:destination="@id/cambioCategoriaEngordeFragment" />
+        <action
+            android:id="@+id/action_elegirCambioCategoriaTerneroFragment_to_cambioCategoriaGestacionFragment"
+            app:destination="@id/cambioCategoriaGestacionFragment" />
+        <action
+            android:id="@+id/action_elegirCambioCategoriaTerneroFragment_to_cambioCategoriaLecheraFragment"
+            app:destination="@id/cambioCategoriaLecheraFragment" />
+        <action
+            android:id="@+id/action_elegirCambioCategoriaTerneroFragment_to_cambioCategoriaSecadoFragment"
+            app:destination="@id/cambioCategoriaSecadoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cambioCategoriaGestacionFragment"
+        android:name="com.example.vaqui.CambioCategoriaGestacionFragment"
+        android:label="fragment_cambio_categoria_gestacion"
+        tools:layout="@layout/fragment_cambio_categoria_gestacion" >
+        <action
+            android:id="@+id/action_cambioCategoriaGestacionFragment_to_elegirCambioCategoriaTerneroFragment"
+            app:destination="@id/elegirCambioCategoriaTerneroFragment" />
+        <action
+            android:id="@+id/action_cambioCategoriaGestacionFragment_to_categorias"
+            app:destination="@id/categorias" />
+    </fragment>
+    <fragment
+        android:id="@+id/cambioCategoriaLecheraFragment"
+        android:name="com.example.vaqui.CambioCategoriaLecheraFragment"
+        android:label="fragment_cambio_categoria_lechera"
+        tools:layout="@layout/fragment_cambio_categoria_lechera" />
+    <fragment
+        android:id="@+id/cambioCategoriaSecadoFragment"
+        android:name="com.example.vaqui.CambioCategoriaSecadoFragment"
+        android:label="fragment_cambio_categoria_secado"
+        tools:layout="@layout/fragment_cambio_categoria_secado" />
+    <fragment
+        android:id="@+id/cambioCategoriaTerneroFragment"
+        android:name="com.example.vaqui.CambioCategoriaTerneroFragment"
+        android:label="fragment_cambio_categoria_ternero"
+        tools:layout="@layout/fragment_cambio_categoria_ternero" />
 
 </navigation>

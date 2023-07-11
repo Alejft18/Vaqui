@@ -60,7 +60,7 @@ class RecyclerView_EmpleadosFragment : Fragment(), UsuariosListener {
             findNavController().navigate(R.id.action_recyclerView_EmpleadosFragment_to_gestionEmpleadosFragment)
         }
 
-        val url = "http://192.168.208.187:8080/listarEmpleados"
+        val url = "http://192.168.56.187:8080/listarEmpleados"
         Log.d("RecyclerView_Empleados","Entered to onCreateView")
         val queue = Volley.newRequestQueue(this.context)
         //queue.timeout = 10000 // aumentar el tiempo de espera a 10 segundos

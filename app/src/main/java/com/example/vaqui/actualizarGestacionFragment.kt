@@ -212,7 +212,7 @@ class actualizarGestacionFragment : Fragment(){
 
     }
     private fun clickUpdateGestacion(view: View) {
-        val url="http://192.168.208.187:8080/actualizarGestacion/${id_gestacion.text}"
+        val url="http://192.168.56.187:8080/actualizarGestacion/${id_gestacion.text}"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.PUT, url,
             Response.Listener<String> { response->
@@ -237,8 +237,8 @@ class actualizarGestacionFragment : Fragment(){
                 params.put("id",id_gestacion.text.toString())
                 params.put("peso_kilos",actualizar_peso_gestacion?.text.toString())
                 params.put("fecha_inseminacion",actualizar_inseminacion_gestacion.text.toString())
-                params.put("fecha_aproxParto",actualizar_aproxparto_gestacion.text.toString())
-                params.put("fecha_ultimoParto",actualizar_ultpartaro_gestacion.text.toString())
+                params.put("fecha_aprox_parto",actualizar_aproxparto_gestacion.text.toString())
+                params.put("fecha_ultimo_parto",actualizar_ultpartaro_gestacion.text.toString())
                 params.put("fecha_revision",actualizar_fecha_revisión_gestacion?.text.toString())
                 params.put("categoria",categoria)
                 return  params.toString().toByteArray(Charsets.UTF_8)

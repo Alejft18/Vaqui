@@ -204,7 +204,7 @@ class fragment_formulario_gestacion : Fragment() {
     }
 
     private fun obtenerUltimoIdGeneral(){
-        val url = "http://192.168.208.187:8080/ultimoIdGeneral"
+        val url = "http://192.168.56.187:8080/ultimoIdGeneral"
         val queue = Volley.newRequestQueue(requireContext())
 
         val request = JsonObjectRequest(Request.Method.GET, url,null,
@@ -223,7 +223,7 @@ class fragment_formulario_gestacion : Fragment() {
     }
 
     private fun clickAddGestacion() {
-        val url="http://192.168.208.187:8080/agregarGestacion/$ultimoId"
+        val url="http://192.168.56.187:8080/agregarGestacion/$ultimoId"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->
@@ -247,8 +247,8 @@ class fragment_formulario_gestacion : Fragment() {
                 parametros.put("id",ultimoId)
                 parametros.put("peso_kilos",ingreso_peso_gestacion?.text.toString())
                 parametros.put("fecha_inseminacion",ingreso_fecha_inseminacionGesta?.text.toString())
-                parametros.put("fecha_aproxParto",ingreso_fecha_aproxParto_gesta?.text.toString())
-                parametros.put("fecha_ultimoParto",ingreso_fecha_ulti_parto_gesta?.text.toString())
+                parametros.put("fecha_aprox_parto",ingreso_fecha_aproxParto_gesta?.text.toString())
+                parametros.put("fecha_ultimo_parto",ingreso_fecha_ulti_parto_gesta?.text.toString())
                 parametros.put("fecha_revision",ingreso_fecha_revi_gesta?.text.toString())
                 parametros.put("categoria",categoria)
 

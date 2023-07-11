@@ -84,7 +84,7 @@ class RecyclerView_Gestacion : Fragment(), GestacionListener {
             findNavController().navigate(R.id.action_gestacionfragment_to_categorias)
         }
 
-        val url = "http://192.168.208.187:8080/listarGestacion"
+        val url = "http://192.168.56.187:8080/listarGestacion"
         Log.d("RecyclerView_Gestacion","Entered to onCreateView")
         val queue = Volley.newRequestQueue(this.context)
         //queue.timeout = 10000 // aumentar el tiempo de espera a 10 segundos

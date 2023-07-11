@@ -160,7 +160,7 @@ class CambioCategoriaToroFragment : Fragment() {
     }
 
     private fun clickCambioToro() {
-        val url="http://192.168.208.187:8080/agregarToro/${id_cambio_toro.text}"
+        val url="http://192.168.56.187:8080/agregarToro/${id_cambio_toro.text}"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->
@@ -198,7 +198,7 @@ class CambioCategoriaToroFragment : Fragment() {
     }
 
     private fun eliminarCategoria() {
-        val url = "http://192.168.208.187:8080/${funcion_eliminar_toro.text}${id_cambio_toro.text}"
+        val url = "http://192.168.56.187:8080/${funcion_eliminar_toro.text}${id_cambio_toro.text}"
         val queue = Volley.newRequestQueue(requireContext())
 
         val request = StringRequest(

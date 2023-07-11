@@ -30,6 +30,7 @@ class datos_terneros : DialogFragment() {
 
     private lateinit var btn_actualizar_ternero : Button
     private lateinit var btn_cambiar_categoria_ternero : Button
+    val funcionEliminar = "eliminarTernero/"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -68,6 +69,15 @@ class datos_terneros : DialogFragment() {
             val actualizarTernerosFragment = actualizarTernerosFragment()
             actualizarTernerosFragment.arguments = bundle
             findNavController().navigate(R.id.action_datos_terneros_to_actualizarTernerosFragment,bundle)
+        }
+
+        btn_cambiar_categoria_ternero.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putString("id_cambio",id_ternero.text.toString())
+            bundle.putString("funcion_eliminar",funcionEliminar)
+            val elegirCambioCategoriaTerneroFragment = ElegirCambioCategoriaTerneroFragment()
+            elegirCambioCategoriaTerneroFragment.arguments = bundle
+            findNavController().navigate(R.id.action_datos_terneros_to_elegirCambioCategoriaTerneroFragment, bundle)
         }
 
         return ll

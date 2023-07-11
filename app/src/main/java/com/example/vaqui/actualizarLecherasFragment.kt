@@ -183,7 +183,7 @@ class actualizarLecherasFragment : Fragment(){
     }
 
     private fun clickUpdateLechera(view: View) {
-        val url="http://192.168.208.187:8080/actualizarLechera/${id_lechera.text}"
+        val url="http://192.168.56.187:8080/actualizarLechera/${id_lechera.text}"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.PUT, url,
             Response.Listener<String> { response->

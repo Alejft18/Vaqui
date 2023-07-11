@@ -84,7 +84,7 @@ class RecyclerViewLecheras : Fragment(), LecherasListener {
             findNavController().navigate(R.id.action_lecherasfragment_to_categorias)
         }
 
-        val url = "http://192.168.208.187:8080/listarLecheras"
+        val url = "http://192.168.56.187:8080/listarLecheras"
         Log.d("RecyclerViewLecheras","Entered to onCreateView")
         val queue = Volley.newRequestQueue(this.context)
         //queue.timeout = 10000 // aumentar el tiempo de espera a 10 segundos

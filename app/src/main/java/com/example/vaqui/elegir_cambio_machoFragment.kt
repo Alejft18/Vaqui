@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import androidx.cardview.widget.CardView
 import androidx.navigation.fragment.findNavController
 
@@ -12,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 class elegir_cambio_machoFragment : Fragment() {
     private lateinit var card_cambio_engorde_macho : CardView
     private lateinit var card_cambio_toro : CardView
+    private lateinit var imagen_atras_elegir_cate_macho : ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,6 +49,11 @@ class elegir_cambio_machoFragment : Fragment() {
             val cambioCategoriaToroFragment = CambioCategoriaToroFragment()
             cambioCategoriaToroFragment.arguments = bundle
             findNavController().navigate(R.id.action_elegir_cambio_machoFragment_to_cambioCategoriaToroFragment,bundle)
+        }
+
+
+        imagen_atras_elegir_cate_macho.setOnClickListener {
+            findNavController().navigate(R.id.action_elegir_cambio_machoFragment_to_categorias)
         }
 
 

@@ -84,7 +84,7 @@ class BuscadorBovinoFragment : Fragment(), BovinosListener {
             findNavController().navigate(R.id.action_generalfragment_to_categorias)
         }
 
-        val url = "http://192.168.208.187:8080/listarGeneral"
+        val url = "http://192.168.56.187:8080/listarGeneral"
         Log.d("BuscadorBovinoFragment","Entered to onCreateView")
         val queue = Volley.newRequestQueue(this.context)
         //queue.timeout = 10000 // aumentar el tiempo de espera a 10 segundos

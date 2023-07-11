@@ -88,8 +88,8 @@ class datos_gestacion : DialogFragment() {
         this.id_gestacion.text=gestacion.getString("id")
         this.peso_gestacion.text=gestacion.getString("peso_kilos")
         this.fecha_inseminacionGesta.text=gestacion.getString("fecha_inseminacion")
-        this.fecha_aproxPartoGesta.text=gestacion.getString("fecha_aproxParto")
-        this.fecha_ultiPartoGesta.text=gestacion.getString("fecha_ultimoParto")
+        this.fecha_aproxPartoGesta.text=gestacion.getString("fecha_aprox_parto")
+        this.fecha_ultiPartoGesta.text=gestacion.getString("fecha_ultimo_parto")
         this.fecha_revision_gestacion.text=gestacion.getString("fecha_revision")
         this.catego_gestacion.text=gestacion.getString("categoria")
 

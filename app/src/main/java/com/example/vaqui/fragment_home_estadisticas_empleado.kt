@@ -90,7 +90,7 @@ class fragment_home_estadisticas_empleado : Fragment() {
     }
 
     private fun cantidadTerneros(){
-        val url = "http://192.168.208.187:8080/cantidadTerneros"
+        val url = "http://192.168.56.187:8080/cantidadTerneros"
         val queue = Volley.newRequestQueue(requireContext())
 
         val request = StringRequest(
@@ -112,7 +112,7 @@ class fragment_home_estadisticas_empleado : Fragment() {
 
 
     private fun cantidadBovinos(){
-        val url = "http://192.168.208.187:8080/cantidadBovinos"
+        val url = "http://192.168.56.187:8080/cantidadBovinos"
         val queue = Volley.newRequestQueue(requireContext())
 
         val request = StringRequest(Request.Method.GET, url,
@@ -133,7 +133,7 @@ class fragment_home_estadisticas_empleado : Fragment() {
 
 
     private fun promedioLeche(){
-        val url = "http://192.168.208.187:8080/promedioLeche"
+        val url = "http://192.168.56.187:8080/promedioLeche"
         val queue = Volley.newRequestQueue(requireContext())
 
         val request = StringRequest(Request.Method.GET, url,
