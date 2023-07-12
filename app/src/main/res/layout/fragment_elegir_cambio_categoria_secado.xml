@@ -20,6 +20,7 @@
             <ImageView
                 android:layout_width="30dp"
                 android:layout_height="wrap_content"
+                android:id="@+id/imagen_atras_cambio_secado"
                 android:src="@drawable/atras">
             </ImageView>
 

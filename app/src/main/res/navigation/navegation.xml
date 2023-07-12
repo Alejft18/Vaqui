@@ -142,6 +142,9 @@
         <action
             android:id="@+id/action_datos_secado_to_actualizarSecadoFragment"
             app:destination="@id/actualizarSecadoFragment" />
+        <action
+            android:id="@+id/action_datos_secado_to_elegirCambioCategoriaSecadoFragment"
+            app:destination="@id/elegirCambioCategoriaSecadoFragment" />
     </dialog>
     <fragment
         android:id="@+id/gestacionfragment"
@@ -611,7 +614,17 @@
         android:id="@+id/elegirCambioCategoriaToroFragment"
         android:name="com.example.vaqui.ElegirCambioCategoriaToroFragment"
         android:label="fragment_elegir_cambio_categoria_toro"
-        tools:layout="@layout/fragment_elegir_cambio_categoria_toro" />
+        tools:layout="@layout/fragment_elegir_cambio_categoria_toro" >
+        <action
+            android:id="@+id/action_elegirCambioCategoriaToroFragment_to_categorias"
+            app:destination="@id/categorias" />
+        <action
+            android:id="@+id/action_elegirCambioCategoriaToroFragment_to_cambioCategoriaTerneroFragment"
+            app:destination="@id/cambioCategoriaTerneroFragment" />
+        <action
+            android:id="@+id/action_elegirCambioCategoriaToroFragment_to_cambioCategoriaEngordeFragment"
+            app:destination="@id/cambioCategoriaEngordeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/elegirCambioCategoriaLecheraFragment"
         android:name="com.example.vaqui.ElegirCambioCategoriaLecheraFragment"
@@ -632,6 +645,27 @@
         <action
             android:id="@+id/action_elegirCambioCategoriaLecheraFragment_to_cambioCategoriaEngordeFragment"
             app:destination="@id/cambioCategoriaEngordeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/elegirCambioCategoriaSecadoFragment"
+        android:name="com.example.vaqui.ElegirCambioCategoriaSecadoFragment"
+        android:label="fragment_elegir_cambio_categoria_secado"
+        tools:layout="@layout/fragment_elegir_cambio_categoria_secado" >
+        <action
+            android:id="@+id/action_elegirCambioCategoriaSecadoFragment_to_categorias"
+            app:destination="@id/categorias" />
+        <action
+            android:id="@+id/action_elegirCambioCategoriaSecadoFragment_to_cambioCategoriaEngordeFragment"
+            app:destination="@id/cambioCategoriaEngordeFragment" />
+        <action
+            android:id="@+id/action_elegirCambioCategoriaSecadoFragment_to_cambioCategoriaGestacionFragment"
+            app:destination="@id/cambioCategoriaGestacionFragment" />
+        <action
+            android:id="@+id/action_elegirCambioCategoriaSecadoFragment_to_cambioCategoriaLecheraFragment"
+            app:destination="@id/cambioCategoriaLecheraFragment" />
+        <action
+            android:id="@+id/action_elegirCambioCategoriaSecadoFragment_to_cambioCategoriaTerneroFragment"
+            app:destination="@id/cambioCategoriaTerneroFragment" />
     </fragment>
 
 </navigation>

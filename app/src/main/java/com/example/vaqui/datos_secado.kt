@@ -28,6 +28,7 @@ class datos_secado : DialogFragment() {
     private lateinit var fecha_ordeno_secado : TextView
     private lateinit var fecha_ultiParto_seca : TextView
     private lateinit var catego_secado : TextView
+    private val eliminarSecado = "eliminarSecado/"
 
     private lateinit var btn_actualizar_secado : Button
     private lateinit var btn_cambiar_categoria_secado : Button
@@ -72,6 +73,15 @@ class datos_secado : DialogFragment() {
             val actualizarSecadoFragment = actualizarSecadoFragment()
             actualizarSecadoFragment.arguments = bundle
             findNavController().navigate(R.id.action_datos_secado_to_actualizarSecadoFragment, bundle)
+        }
+
+        btn_cambiar_categoria_secado.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putString("id_cambio",id_secado.text.toString())
+            bundle.putString("funcion_eliminar",eliminarSecado)
+            val elegirCambioCategoriaSecadoFragment = ElegirCambioCategoriaSecadoFragment()
+            elegirCambioCategoriaSecadoFragment.arguments = bundle
+            findNavController().navigate(R.id.action_datos_secado_to_elegirCambioCategoriaSecadoFragment,bundle)
         }
 
 
