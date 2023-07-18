@@ -45,7 +45,7 @@ class fragment_home_inicio_sesion : Fragment() {
 
 
     private fun obtenerUsuario() {
-        val url = "http://192.168.56.187:8080/buscarUsuario/${documento_inicio_sesion.text.toString()}"
+        val url = "https://vaquijpa2-production.up.railway.app/buscarUsuario/${documento_inicio_sesion.text.toString()}"
         val queue = Volley.newRequestQueue(requireContext())
 
         val jsonObjectRequest = JsonObjectRequest(

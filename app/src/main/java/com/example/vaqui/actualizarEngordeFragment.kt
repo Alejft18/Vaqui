@@ -117,7 +117,7 @@ class actualizarEngordeFragment : Fragment(){
     }
 
     private fun clickUpdateEngorde(view: View) {
-        val url="http://192.168.180.187:8080/actualizarEngorde/${id_actualizar_engorde.text}"
+        val url="https://vaquijpa2-production.up.railway.app/actualizarEngorde/${id_actualizar_engorde.text}"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.PUT, url,
             Response.Listener<String> { response->

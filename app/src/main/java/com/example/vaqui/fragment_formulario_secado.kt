@@ -183,7 +183,7 @@ class fragment_formulario_secado : Fragment() {
     }
 
     private fun clickAddSecado() {
-        val url="http://192.168.180.187:8080/agregarSecado/$ultimoId"
+        val url="https://vaquijpa2-production.up.railway.app/agregarSecado/$ultimoId"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->

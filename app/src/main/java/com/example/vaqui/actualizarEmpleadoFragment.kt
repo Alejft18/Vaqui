@@ -123,7 +123,7 @@ class actualizarEmpleadoFragment : Fragment(), AdapterView.OnItemSelectedListene
 
 
     private fun clickUpdateEmpleado(view: View) {
-        val url="http://192.168.180.187:8080/actualizarUsuario"
+        val url="https://vaquijpa2-production.up.railway.app/actualizarUsuario"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.PUT, url,
             Response.Listener<String> { response->

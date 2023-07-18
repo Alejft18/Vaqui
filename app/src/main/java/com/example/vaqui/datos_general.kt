@@ -78,7 +78,7 @@ class datos_general : DialogFragment() {
             builder.setMessage("Si eliminas este bovino en este apartado tambien lo hara en la categoria en la que se encuentra")
             builder.setPositiveButton("Aceptar") { dialog, which ->
 
-                val url = "http://192.168.180.187:8080/eliminarBovinoGeneral/${id_general.text}"
+                val url = "https://vaquijpa2-production.up.railway.app/eliminarBovinoGeneral/${id_general.text}"
                 val queue = Volley.newRequestQueue(requireContext())
 
                 val request = StringRequest(

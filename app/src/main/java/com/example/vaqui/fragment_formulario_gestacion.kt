@@ -204,7 +204,7 @@ class fragment_formulario_gestacion : Fragment() {
     }
 
     private fun obtenerUltimoIdGeneral(){
-        val url = "http://192.168.180.187:8080/ultimoIdGeneral"
+        val url = "https://vaquijpa2-production.up.railway.app/ultimoIdGeneral"
         val queue = Volley.newRequestQueue(requireContext())
 
         val request = JsonObjectRequest(Request.Method.GET, url,null,
@@ -223,7 +223,7 @@ class fragment_formulario_gestacion : Fragment() {
     }
 
     private fun clickAddGestacion() {
-        val url="http://192.168.180.187:8080/agregarGestacion/$ultimoId"
+        val url="https://vaquijpa2-production.up.railway.app/agregarGestacion/$ultimoId"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->

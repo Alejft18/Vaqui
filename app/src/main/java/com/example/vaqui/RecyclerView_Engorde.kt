@@ -86,7 +86,7 @@ class RecyclerView_Engorde : Fragment(), EngordeListener {
             findNavController().navigate(R.id.action_engordefragment_to_categorias)
         }
 
-        val url = "http://192.168.180.187:8080/listarEngorde"
+        val url = "https://vaquijpa2-production.up.railway.app/listarEngorde"
         Log.d("RecyclerView_Engorde","Entered to onCreateView")
         val queue = Volley.newRequestQueue(this.context)
         //queue.timeout = 10000 // aumentar el tiempo de espera a 10 segundos

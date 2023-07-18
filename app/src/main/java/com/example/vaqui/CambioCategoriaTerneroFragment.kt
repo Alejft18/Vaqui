@@ -116,7 +116,7 @@ class CambioCategoriaTerneroFragment : Fragment() {
 
 
     private fun clickCambioTernero() {
-        val url= "http://192.168.180.187:8080/agregarTernero/${id_cambio_ternero.text}/${cambio_id_madre_ternero.text.toString()}"
+        val url= "https://vaquijpa2-production.up.railway.app/agregarTernero/${id_cambio_ternero.text}/${cambio_id_madre_ternero.text.toString()}"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.POST, url,
             Response.Listener<String> { response->
@@ -151,7 +151,7 @@ class CambioCategoriaTerneroFragment : Fragment() {
     }
 
     private fun eliminarCategoria() {
-        val url = "http://192.168.180.187:8080/${funcion_eliminar_ternero.text}${id_cambio_ternero.text}"
+        val url = "https://vaquijpa2-production.up.railway.app/${funcion_eliminar_ternero.text}${id_cambio_ternero.text}"
         val queue = Volley.newRequestQueue(requireContext())
 
         val request = StringRequest(

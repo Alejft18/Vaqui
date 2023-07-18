@@ -83,7 +83,7 @@ class RecyclerView_Toro : Fragment(), ToroListener {
             findNavController().navigate(R.id.action_torofragment_to_categorias)
         }
 
-        val url = "http://192.168.180.187:8080/listarToros"
+        val url = "https://vaquijpa2-production.up.railway.app/listarToros"
         Log.d("RecyclerView_Toro", "Entered to onCreateView")
         val queue = Volley.newRequestQueue(this.context)
 
