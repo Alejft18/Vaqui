@@ -35,9 +35,7 @@ class fragment_home_adquiere_nuestros_servicios : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(
-            R.layout.fragment_home_adquiere_nuestros_servicios,
-            container,
-            false
+            R.layout.fragment_home_adquiere_nuestros_servicios, container, false
         )
     }
 

@@ -95,7 +95,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="90dp"
         android:textColor="@color/black"
         android:backgroundTint="@color/white"
         android:text="Iniciar sesion">
@@ -110,13 +110,13 @@
         android:layout_gravity="center"
         android:textStyle="normal"
         android:textColor="@color/olvidemicontra"
-        android:textSize="15sp"
+        android:textSize="17sp"
         android:text="Olvidé mi constraseña"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="50dp"/>
 
 
 
-    <TextView
+<!--    <TextView
         android:id="@+id/texto_adquiere_nuestros_servicios"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -126,6 +126,6 @@
         android:layout_marginTop="25dp"
         android:textColor="#EA5455"
         android:textSize="15sp"
-        android:text="Adquiere nuestros servicios"/>
+        android:text="Adquiere nuestros servicios"/>-->
 
 </androidx.appcompat.widget.LinearLayoutCompat>

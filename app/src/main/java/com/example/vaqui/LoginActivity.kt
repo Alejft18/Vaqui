@@ -7,7 +7,10 @@ import android.os.Bundle
 import android.util.AttributeSet
 import android.view.View
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContentProviderCompat.requireContext
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.Response
@@ -18,6 +21,7 @@ import com.google.android.material.textfield.TextInputEditText
 class LoginActivity : AppCompatActivity() {
     private lateinit var documentoInicioSesion: TextInputEditText
     private lateinit var contrasenaInicioSesion: TextInputEditText
+    private lateinit var olvide_contrasena : TextView
     private lateinit var botonIniciarSesion: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -27,9 +31,21 @@ class LoginActivity : AppCompatActivity() {
         documentoInicioSesion = findViewById(R.id.documento_inicio_sesion)
         contrasenaInicioSesion = findViewById(R.id.contrasena_inicio_sesion)
         botonIniciarSesion = findViewById(R.id.boton_iniciar_sesion)
+        olvide_contrasena = findViewById(R.id.olvide_contrasena)
 
         botonIniciarSesion.setOnClickListener {
             obtenerUsuario()
+        }
+
+        olvide_contrasena.setOnClickListener {
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("¿olvidaste tu contraseña?")
+            builder.setMessage("Ponte en contacto con el administrador para gestionar el cambio de contraseña")
+            builder.setPositiveButton("Aceptar") { dialog, which ->
+                dialog.dismiss()
+            }
+            val dialog: AlertDialog = builder.create()
+            dialog.show()
         }
     }
 
