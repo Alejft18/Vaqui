@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
@@ -84,6 +85,9 @@
         <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/fragment_recycler_view_secado.xml" value="0.21467391304347827" />
         <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/hola.xml" value="0.14" />
         <entry key="..\:/Users/joseo/Downloads/Vaqui/app/src/main/res/layout/item_lecheras.xml" value="0.25" />
+        <entry key="..\:/Users/joseo/StudioProjects/Vaqui/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/joseo/StudioProjects/Vaqui/app/src/main/res/layout/fragment_home_estadisticas_empleado.xml" value="0.1" />
+        <entry key="..\:/Users/joseo/StudioProjects/Vaqui/app/src/main/res/layout/fragment_perfil.xml" value="0.18" />
       </map>
     </option>
   </component>

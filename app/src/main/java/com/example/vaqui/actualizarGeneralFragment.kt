@@ -146,7 +146,7 @@ class actualizarGeneralFragment : Fragment(), AdapterView.OnItemSelectedListener
     }
 
     private fun clickUpdateGeneral(view: View) {
-        val url="https://vaquijpa2-production.up.railway.app/actualizarBovinoGeneral"
+        val url="https://192.168.74.187:8080/actualizarBovinoGeneral"
         val queue = Volley.newRequestQueue(requireContext())
         val resultadoPost = object : StringRequest(Request.Method.PUT, url,
             Response.Listener<String> { response->

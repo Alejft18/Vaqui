@@ -20,6 +20,7 @@ import com.example.vaqui.adapter.BovinosListener
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
+import java.util.*
 
 class BuscadorBovinoFragment : Fragment(), BovinosListener {
     private lateinit var recycler: RecyclerView
@@ -84,7 +85,7 @@ class BuscadorBovinoFragment : Fragment(), BovinosListener {
             findNavController().navigate(R.id.action_generalfragment_to_categorias)
         }
 
-        val url = "https://vaquijpa2-production.up.railway.app/listarGeneral"
+        val url = "http://192.168.74.187:8080/listarEngorde"
         Log.d("BuscadorBovinoFragment","Entered to onCreateView")
         val queue = Volley.newRequestQueue(this.context)
         //queue.timeout = 10000 // aumentar el tiempo de espera a 10 segundos

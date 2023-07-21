@@ -1,5 +1,6 @@
 package com.example.vaqui
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -11,12 +12,15 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.navigation.findNavController
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
+import com.example.vaqui.Perfil.PerfilFragment
 import com.google.android.material.textfield.TextInputEditText
+import java.sql.DriverManager.println
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var documentoInicioSesion: TextInputEditText
@@ -49,6 +53,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    @SuppressLint("ResourceType")
     private fun obtenerUsuario() {
         val url = "https://vaquijpa2-production.up.railway.app/buscarUsuario/${documentoInicioSesion.text.toString()}"
         val queue: RequestQueue = Volley.newRequestQueue(this)
@@ -56,6 +61,7 @@ class LoginActivity : AppCompatActivity() {
         val jsonObjectRequest = JsonObjectRequest(
             Request.Method.GET, url, null,
             { response ->
+                val documento = response.getString("id")
                 val nombre = response.getString("nombre")
                 val apellido = response.getString("apellido")
                 val telefono = response.getString("telefono")
@@ -66,19 +72,23 @@ class LoginActivity : AppCompatActivity() {
                 val imagen = response.getString("imagen")
 
 
-                val bundle = Bundle()
-                bundle.putString("nombre_perfil",nombre)
-                bundle.putString("apellido_perfil",apellido)
-                bundle.putString("telefono_perfil",telefono)
-                bundle.putString("correo_perfil",correo)
-                bundle.putString("contrasena_perfil",contrasena)
-                bundle.putString("rol_perfil",rol)
-                bundle.putString("area_perfil",area)
+
+
 
                 if (contrasenaInicioSesion.text.toString() == contrasena.toString()){
                     Toast.makeText(this, "Bienvenido $nombre", Toast.LENGTH_SHORT).show()
                     val intent = Intent(this, MainActivity::class.java)
-                    intent.putExtras(bundle)
+
+                    val bundle = Bundle()
+                    bundle.putString("documento_perfil",documento)
+                    bundle.putString("nombre_perfil",nombre)
+                    bundle.putString("apellido_perfil",apellido)
+                    bundle.putString("telefono_perfil",telefono)
+                    bundle.putString("correo_perfil",correo)
+                    bundle.putString("contrasena_perfil",contrasena)
+                    bundle.putString("rol_perfil",rol)
+                    bundle.putString("area_perfil",area)
+
                     startActivity(intent)
 
                 }else {

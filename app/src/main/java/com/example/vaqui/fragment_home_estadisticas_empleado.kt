@@ -1,6 +1,8 @@
 package com.example.vaqui
 
+import android.app.AlertDialog
 import android.os.Bundle
+import android.util.Log
 import android.view.KeyEvent
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -25,7 +27,7 @@ class fragment_home_estadisticas_empleado : Fragment() {
     private lateinit var cantidad_bovinos : TextView
     private lateinit var cantidad_terneros : TextView
     private lateinit var btn_perfil : ImageView
-    private lateinit var prueba : CardView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +37,7 @@ class fragment_home_estadisticas_empleado : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         // Inflate the layout for this fragment
         val ll = inflater.inflate(R.layout.fragment_home_estadisticas_empleado, container, false)
         this.card_gestion_empleados = ll.findViewById(R.id.card_gestion_empleados)
@@ -42,16 +45,12 @@ class fragment_home_estadisticas_empleado : Fragment() {
         this.cantidad_bovinos = ll.findViewById(R.id.cantidad_bovinos)
         this.cantidad_terneros = ll.findViewById(R.id.cantidad_terneros)
         this.btn_perfil = ll.findViewById(R.id.btn_perfil)
-        this.prueba = ll.findViewById(R.id.prueba)
+
 
         ll.isFocusableInTouchMode = true
         ll.requestFocus()
         ll.setOnKeyListener { v, keyCode, event ->
             keyCode == KeyEvent.KEYCODE_BACK
-        }
-
-        prueba.setOnClickListener {
-            findNavController().navigate(R.id.action_inicio_to_fragment_home_inicio_sesion)
         }
 
 
@@ -85,7 +84,19 @@ class fragment_home_estadisticas_empleado : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         card_gestion_empleados.setOnClickListener{
-            findNavController().navigate(R.id.action_inicio_to_gestionEmpleadosFragment)
+            val builder = AlertDialog.Builder(requireContext())
+            builder.setTitle("Administrador")
+            builder.setMessage("¿Eres administrador?")
+            builder.setPositiveButton("Aceptar") { dialog, which ->
+                findNavController().navigate(R.id.action_inicio_to_gestionEmpleadosFragment)
+            }
+            builder.setNegativeButton("Cancelar") { dialog, which ->
+                dialog.dismiss()
+            }
+
+            val dialog: AlertDialog = builder.create()
+            dialog.show()
+
         }
     }
 
